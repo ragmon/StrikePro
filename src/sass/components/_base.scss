@@ -4,8 +4,8 @@
 html,
 body {
     font-family: "OpenSans-Regular";
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 19px;
+    line-height: 30px;
     color: #000;
     width: 100%;
     height: 100%;
@@ -14,6 +14,10 @@ body {
 }
 a {
     text-decoration: none;
+    color: $color3;
+    &:hover{
+        text-decoration: none !important;
+    }
 }
 p {
     margin: 0;
@@ -48,36 +52,60 @@ img {
         display: block;
     }
 }
+.title {
+    // h1
+    &__lg {
+        font-family: "OpenSans-Italic";
+        font-size: 48px;
+        color: $color3;
+        text-transform: uppercase;
+        font-weight: normal;
+    }
+    //h2
+    &__md {
+        font-family: "OpenSans-Bold";
+        font-size: 30px;
+        color: $color1;
+    }
+    //h3
+    &__sm {
+        font-family: "OpenSans-Italic";
+        font-size: 26px;
+        color: $color3;
+        text-transform: uppercase;
+        line-height: 30px
+    }
+    //h4
+    &__xs {
+        font-size: 19px;
+        color: $color1;
+        line-height: 26px;
+            font-family: "OpenSans-Bold";
+    }
+}
+
 // custom class grid bootstrap
 // 2 из 10
 .col-2_4 {
-    height: 20vw;
-//    border: 1px solid black;
     @media(min-width: 1400px) {
         float: left;
         width: 20%;
-        height: calc(20vw - 32px);
-//        border: 1px solid black;
+        
     }
 }
 // 4 из 10
-.col-4_8 {
-    height: 20vw;
-//    border: 1px solid black;
+.col-4_8 {    
     @media(min-width: 1400px) {
         float: left;
-        width: 40%;
-        height: calc(20vw - 32px);
-//        border: 1px solid black;
+        width: 40%;        
     }
 }
-.mainContent__index{
+.mainContent__index {
     @media(min-width: 1400px) {
         padding: 0 70px;
-    }    
+    }
 }
-
-.btnMain{
+.btnMain {
     display: inline-block;
     color: #fff;
     text-transform: uppercase;
@@ -87,43 +115,20 @@ img {
     background-color: transparent;
     border: none;
     z-index: 1;
-    padding: 12px 18px;    
+    padding: 0 18px;
+    height: 43px;
     vertical-align: middle;
-    &:after{
+    &:after {
         content: "";
         display: block;
         position: absolute;
         left: 0;
         top: 0;
         bottom: 0;
-        right: 0;     
+        right: 0;
         background-color: $color3;
         transform: skew(-15deg);
         z-index: -1;
     }
 }
-
-input[type="email"]{
-    border-radius: 0;
-    border: 1px solid #989898;
-    color: #000000;
-    font-size: 17px;
-    padding: 18px 10px;
-    position: relative;
-    min-width: 265px;
-    vertical-align: middle;
-}
-
-.form-group-noWrap{
-    white-space: nowrap;
-}
-
-
-
-
-
-
-
-
-
 

@@ -1,86 +1,94 @@
-.mainContent.mainContent__index
+main.mainContent.mainContent__index
     .container-fluid
         ul.row
-            li.itemProduct__wrapper.col-4_8.col-md-6
-                a.itemProduct.itemProduct__new
+            li.tile__wrapper.col-4_8.col-md-6
+                a.tile.product.product__new
                     img(src="/image/productImg-4.png", alt="")
-                    .itemProduct__text Challenger X Deep Diver
-                    .itemProduct__marker
-            li.itemVideo__wrapper.col-4_8.col-md-6
-                .itemVideo
+                    .product__text Challenger X Deep Diver
+                    .product__marker
+            li.tile__wrapper.col-4_8.col-md-6
+                .tile
                     img(src="/image/itemvideo-img1.jpg", alt="")
-                    .itemVideo__control
-                        .itemVideo__control--icon.icon-youtube-play
-                        .itemVideo__control--text посмотреть видео
-            li.itemVideo__wrapper.col-2_4.col-md-6
-                .itemVideo
+                    .video__control
+                        .video__control--icon.icon-youtube-play
+                        .video__control--text посмотреть видео
+            li.tile__wrapper.col-4_8.col-md-6
+                .tile
                     img(src="/image/itemvideo-img2.jpg", alt="")
-                    .itemVideo__control
-                        .itemVideo__control--icon.icon-youtube-play
-                        .itemVideo__control--text посмотреть видео
-            li.itemNews__wrapper.col-2_4.col-md-3
-                .itemNews
-                    .itemNews__data 12 сен
-                    .itemNews__title Соревнования по ловле форели спиннингом «Пятнистый Кубок Фион 2015»
+                    .video__control
+                        .video__control--icon.icon-youtube-play
+                        .video__control--text посмотреть видео
+            li.tile__wrapper.col-2_4.col-md-3
+                .tile.news
+                    .news__data 12 сен
+                    .title__xs Соревнования по ловле форели спиннингом «Пятнистый Кубок Фион 2015»
                     a(href="#").btnMain Перейти
-            li.itemProduct__wrapper.col-2_4.col-md-3
-                a.itemProduct.itemProduct__new
+            li.tile__wrapper.col-2_4.col-md-3
+                a.tile.product.product__new
                     img(src="/image/productImg-3.png", alt="")
-                    .itemProduct__text Supersonic
-                    .itemProduct__marker
-            li.itemBlog__wrapper.col-4_8.col-md-6
-                .itemBlog
-                    p.itemBlog__text
+                    .product__text Supersonic
+                    .product__marker
+            li.tile__wrapper.col-4_8.col-md-6
+                .tile.blog
+                    p
                        | История торговой марки STRIKE PRO® 
                        | скромно началась в 1973 году на острове Тайвань. В то 
                        | время компания была производителем блесен под патронажем известных американских и               
                        | шведских фирм. Менялись технологии, накапливался опыт, увеличивались объемы, и к концу 
                        | 80-х  годов компания уже являлась...
-            li.itemGallery__wrapper.col-2_4.col-md-3
-                a.itemGallery                
+            li.tile__wrapper.col-2_4.col-md-3
+                a.tile.gallery               
                     img(src="/image/itemGallery-img1.jpg", alt="")
-                    .itemGallery__text.icon-instagram 5 фотографий
-            li.itemSocial__wrapper.col-2_4.col-md-3
-                a.itemSocial
-                    .itemSocial__title присоединяйтесь к нам
-                    .itemSocial__text Подписались 754 человека
-                    .itemSocial__icon.icon-vk
-            li.itemGallery__wrapper.col-2_4.col-md-3
-                a.itemGallery                
+                    .gallery__text
+                        span.icon-instagram 
+                        span 5 фотографий
+            li.tile__wrapper.col-2_4.col-md-3
+                a(href="#!").tile.social
+                    .title__sm присоединяйтесь к нам
+                    .social__text Подписались 754 человека
+                    .social__icon.icon-vk
+            li.tile__wrapper.col-2_4.col-md-3
+                a(href="#!").tile.gallery                   
                     img(src="/image/itemGallery-img2.jpg", alt="")
-                    .itemGallery__text.icon-instagram 19 фотографий
-            li.itemNews__wrapper.col-2_4.col-md-3
-                .itemNews
-                    .itemNews__data 1 CЕН
-                    .itemNews__title Международный фестиваль рыбной ловли «Ладожские шхеры 2015»
+                    .gallery__text
+                        span.icon-instagram 
+                        span 19 фотографий
+            li.tile__wrapper.col-2_4.col-md-3
+                .tile.news
+                    .news__data 1 CЕН
+                    .title__xs Международный фестиваль рыбной ловли «Ладожские шхеры 2015»
                     a(href="#").btnMain Перейти
-            li.itemProduct__wrapper.col-2_4.col-md-3
-                a.itemProduct
+            li.tile__wrapper.col-2_4.col-md-3
+                a(href="#!").tile.product
                     img(src="/image/productImg-2.png", alt="")
-                    .itemProduct__text Jer-O Minnow
-            li.itemNews__wrapper.col-2_4.col-md-3
-                .itemNews
-                    .itemNews__data 27 АВГ
-                    .itemNews__title На Камчатке пройдет лососевый фестиваль
+                    .product__text Jer-O Minnow
+                    .product__marker
+            li.tile__wrapper.col-2_4.col-md-3
+                .tile.news
+                    .news__data 27 АВГ
+                    .title__xs На Камчатке пройдет лососевый фестиваль
                     a(href="#").btnMain Перейти
-            li.itemProduct__wrapper.col-2_4.col-md-3
-                a.itemProduct
+            li.tile__wrapper.col-2_4.col-md-3
+                a(href="#!").tile.product
                     img(src="/image/productImg-1.png", alt="")
-                    .itemProduct__text Small Supersonic
-            li.itemSocial__wrapper.col-2_4.col-md-3
-                a.itemSocial
-                    .itemSocial__title присоединяйтесь к нам
-                    .itemSocial__text Подписались 754 человека
-                    .itemSocial__icon.icon-facebook           
-            li.itemNews__wrapper.col-2_4.col-md-3
-                .itemNews
-                    .itemNews__data 20 АВГ
-                    .itemNews__title Женский турнир по ловле на поплавок прошел в Воронеже
+                    .product__text Small Supersonic
+                    .product__marker
+            li.tile__wrapper.col-2_4.col-md-3
+                a(href="#!").tile.social
+                    .title__sm присоединяйтесь к нам
+                    .social__text Подписались 754 человека
+                    .social__icon.icon-facebook           
+            li.tile__wrapper.col-2_4.col-md-3
+                .tile.news
+                    .news__data 20 АВГ
+                    .title__xs Женский турнир по ловле на поплавок прошел в Воронеже
                     a(href="#").btnMain Перейти
-            li.itemGallery__wrapper.col-2_4.col-md-3
-                a.itemGallery                
+            li.tile__wrapper.col-2_4.col-md-3
+                a(href="#!").tile.gallery                 
                     img(src="/image/itemGallery-img3.jpg", alt="")
-                    .itemGallery__text.icon-instagram 23 фотографий
+                    .gallery__text
+                        span.icon-instagram 
+                        span 23 фотографий
             
        
     

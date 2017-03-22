@@ -138,7 +138,8 @@ gulp.task('build', gulp.series('clean', gulp.parallel('sass', 'scripts', 'jade',
 /////////////////////////////////////////////////
 gulp.task('serv', function () {
         browserSync.init({
-            server: 'public'
+            server: 'public',
+            index: "aboutCompany.html"
         });
         browserSync.watch('public/**/*.*').on('change', browserSync.reload);
     })

@@ -1,0 +1,42 @@
+main.page__contact
+    include breadcrumb   
+    .container
+        h1.title__lg Контакты
+        .row
+            .col-md-4
+                h4.title__xs Склад
+                p
+                    | Россия, Санкт-Петербург
+                    | Химический пер., 12
+                    | +7 (981) 878-52-72
+                a(href="mailto:#!") shop@strikepro.ru
+            .col-md-4 
+                h4.title__xs Офис
+                p
+                    | Россия, Санкт-Петербург
+                    | пр. Луначарского, д.15, корп. 1
+                    | +7 (499) 491-11-01
+                a(href="mailto:#!") shop@strikepro.ru
+            .col-md-4
+                h4.title__xs Служба поддержки
+                p
+                    | 8 (800) 300 2010
+                    | звоните круглосуточно
+        .row
+            .col-md-4
+                p Если у вас есть вопросы о наших продуктах или услугах, воспользуйтесь формой обратной связи. Пожалуйста, заполняйте форму обратной связи как можно подробнее, чтобы мы могли наиболее эффективно помочь вам. Благодарим за ваши отзывы и предложения.
+            .col-md-8
+                form(action="#" role="form")
+                    .form-group.col-md-12
+                        label(for="inp_name") ФИО*
+                        input(type="text" class="form-control" id="inp_name")
+                    .form-group.col-md-6
+                        label(for="inp_email1") E-mail*
+                        input(type="email" class="form-control" id="inp_email1")
+                    .form-group.col-md-6
+                        label(for="inp_tel") Телефон*
+                        input(type="tel" class="form-control" id="inp_email1")
+                    .form-group.col-md-12
+                        label(for="inp_tel") Cообщение*
+                        textarea(class="form-control" rows="3")
+                    button.btnMain.navbar-right(type="submit") ОТПРАВИТЬ

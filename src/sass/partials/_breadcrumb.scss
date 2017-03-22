@@ -1,0 +1,25 @@
+.breadcrumb {
+    margin-bottom: 0;
+    &__wrap {
+        background-color: $color5;
+        padding: 11px 80px;
+        margin-bottom: 50px;
+    }
+    
+    li {
+        &.active {
+            a {
+                color: $color3;
+            }
+            &:before {
+                padding: 0 10px;
+                color: #000000;
+                content: ">";
+            }
+        }
+        a {
+            font-size: 17px;
+            color: #000000;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.form-control {
+    background-color: $color5;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    color: #000;
+    height: 45px;
+}
+
+.nav-tabs{
+    border: none;
+    & > li{
+        margin-bottom: 0;
+       margin-right: 25px;
+        & > a{
+            color: #000000;
+            border-radius: 0;
+            border: none !important;
+            background-color: $color5 !important;
+            height: 47px !important;
+        }
+    }
+    & > li.active{
+         & > a{
+            color: #fff !important;
+            background-color: $color3 !important;
+        }
+    }
+}
