@@ -1,6 +1,6 @@
 footer.footer
     .container-fluid
-        .row
+        .row.footer__top
             .col-lg-3.col-sm-6
                 .footer__colTitle о компании
                 ul.footer__menuList
@@ -37,21 +37,21 @@ footer.footer
             .col-lg-3.col-sm-6
                 .footer__colTitle стань подписчиком      
                 form.form-inline
-                    div.form-group
+                    div.form-group.form-group-noWrap
                         input( type="email" class="form-control" placeholder="адрес электронной почты")
-                    button( type="submit" class="btn btn-default") да                
+                        button.btnMain( type="submit") да                
                 ul.footer__socialList
                     li.footer__socialItem
-                        a.footer__socialLink Facebook
+                        a.footer__socialLink.icon-facebook Facebook
                     li.footer__socialItem
-                        a.footer__socialLink Дружба с магазинами 
+                        a.footer__socialLink.icon-rocket Дружба с магазинами 
                     li.footer__socialItem
-                        a.footer__socialLink youtube
+                        a.footer__socialLink.icon-youtube-play youtube
                     li.footer__socialItem
-                        a.footer__socialLink vk
+                        a.footer__socialLink.icon-vk vk
                     li.footer__socialItem
-                        a.footer__socialLink instagram
-        .row
+                        a.footer__socialLink.icon-instagram instagram
+        .row.footer__bottom
             .col-xs-12
-                p.center
+                p.copyright
                     | STRIKE PRO Россия, Все права защищены

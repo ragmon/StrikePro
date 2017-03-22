@@ -1,0 +1,109 @@
+.nav .open>a,
+.nav .open>a:focus,
+.nav .open>a:hover {
+    background-color: transparent;
+    color: #fff;
+}
+.header {
+    &__top {
+        background-color: $color3;
+    }
+    &__logo {
+        float: left;
+        margin-left: -15px;
+        font-size: 0;
+        line-height: 0;
+        background-color: #fff;
+        position: relative;
+        z-index: 1;
+        padding: 0 20px;
+        margin-right: 50px;
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: -17px;
+            background-color: #fff;
+            transform: skew(-20deg);
+            z-index: -1;
+        }
+    }
+    input {
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        color: #fff;
+        &::-webkit-input-placeholder {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            color: #fff;
+        }
+        &::-moz-placeholder {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            color: #fff;
+        }
+        &:-moz-placeholder {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            color: #fff;
+        }
+        &:-ms-input-placeholder {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            color: #fff;
+        }
+        &:focus::-webkit-input-placeholder {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        &:focus::-moz-placeholder {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        &:focus:-moz-placeholder {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        &:focus:-ms-input-placeholder {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    }
+    button[type='submit'] {
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        color: #fff;
+        font-size: 0;
+        transform: scale(-1, 1);
+        &:before {
+            font-size: 24px;
+        }
+    }
+}
+.headerNav {
+    &__list {
+        padding: 20px 0;
+    }
+    &__item {}
+    &__link {
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 23px;
+        font-family: "OpenSans-Italic";
+        &:hover {
+            background-color: transparent !important;
+        }
+    }
+}
