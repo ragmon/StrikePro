@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
 }
 html,
@@ -47,4 +47,33 @@ img {
         width: 100%;
         display: block;
     }
+}
+// custom class grid bootstrap
+// 2 из 10
+.col-2_4 {
+    height: 20vw;
+    border: 1px solid black;
+    @media(min-width: 1400px) {
+        float: left;
+        width: 20%;
+        height: calc(20vw - 32px);
+        border: 1px solid black;
+    }
+}
+// 4 из 10
+.col-4_8 {
+    height: 20vw;
+    border: 1px solid black;
+    @media(min-width: 1400px) {
+        float: left;
+        width: 40%;
+        height: calc(20vw - 32px);
+        border: 1px solid black;
+    }
+}
+.mainContent__index{
+    @media(min-width: 1400px) {
+        padding: 0 70px;
+    }
+    
 }
