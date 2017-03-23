@@ -1,0 +1,50 @@
+.location{
+    
+    &__tabs{
+        margin-top: 20px;
+        margin-bottom: 70px;
+    }
+    
+    &__right{
+        width: 350px;
+        height: 700px;
+        background-color: $color5;
+        float: left;
+        padding: 35px 30px 30px 30px;
+        overflow: auto;
+        border-right: 4px solid #fff;
+    }
+    &__left{
+        width: calc(100% - 350px);
+        float: left;
+        height: 700px;
+        background-color: $color3
+    }
+    &__list{
+        overflow: auto;
+    }
+    &__item{
+        margin-bottom: 35px;
+    }
+    
+    &__text{
+        font-size: 18px;
+        line-height: 26px;
+    }
+    &__title{
+        margin-bottom: 12px;
+        span{
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &-num{
+            background-color: $color3;
+            color: #fff;
+            width: 32px;
+            height: 34px;
+            text-align: center;
+            line-height: 34px;
+            margin-right: 12px;
+        }
+    }
+}

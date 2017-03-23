@@ -6,16 +6,19 @@
     right: 2px;
     bottom: 2px;
     left: 2px;
-    
-    
-    
+    &__data {
+        color: $color3;
+        font-size: 20px;
+        line-height: 24px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
     &__wrapper {
         position: relative;
         height: 24vw;
-    
-    @media(min-width: 1400px) {        
-        height: calc(20vw - 32px);        
-    }
+        @media(min-width: 1400px) {
+            height: calc(20vw - 32px);
+        }
     }
     img {
         height: 100%;
@@ -142,13 +145,6 @@
     }
     &.news {
         padding: 20px;
-        .news__data {
-            color: $color3;
-            font-size: 20px;
-            line-height: 24px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
         .title__xs {
             margin-bottom: 25px;
         }
@@ -173,18 +169,17 @@
             color: $color3;
             text-transform: uppercase;
             line-height: 21px;
-            span{
+            span {
                 font-family: "OpenSans-Regular";
                 vertical-align: middle;
             }
             .icon-instagram {
                 &:before {
-                color: #fff;
-                font-size: 18px;
-                margin-right: 5px;
+                    color: #fff;
+                    font-size: 18px;
+                    margin-right: 5px;
+                }
             }
-            }
-            
         }
     }
 }
