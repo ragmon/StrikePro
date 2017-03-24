@@ -5,6 +5,10 @@
     color: #fff;
 }
 .header {
+    .container-fluid{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
     &__top {
         background-color: $color3;
     }
@@ -100,7 +104,7 @@
     &__link {
         color: #fff;
         text-transform: uppercase;
-        font-size: 23px;
+        font-size: 1.211rem;
         font-family: "OpenSans-Italic";
         &:hover {
             background-color: transparent !important;

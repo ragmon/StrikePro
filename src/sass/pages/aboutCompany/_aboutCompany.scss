@@ -1,0 +1,42 @@
+.bg--dark{
+    background-color: $color5;
+}
+.position--0{
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.page__aboutCompany{
+    .title__md{
+        margin-bottom: 35px;
+    }
+    .tile__text{
+       padding-left: 50px;
+       padding-right: 50px;
+    }
+    .tile__wrapper{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    
+    .title__sm{
+        margin-bottom: 25px;
+    }
+    .title__xs{
+        margin-bottom: 40px;
+    }
+    .team__item{
+        margin-bottom: 55px;
+        ul{
+            padding-left: 30px;
+        }
+        li{
+            list-style: disc;
+        }
+    }
+    .team__wrapper{
+        margin-top: 40px;
+    }
+}
