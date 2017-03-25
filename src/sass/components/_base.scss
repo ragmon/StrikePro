@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    text-decoration: none;
 }
 html,
 body {
@@ -8,18 +9,42 @@ body {
     line-height: 27px;
     color: #000;
     width: 100%;
-    height: 100%;
     margin: 0;
+    left: 0;
+    transition: all .2s ease-in-out;
     background-color: #fff;
+    position: relative;
     @media(min-width: 1400px) {
-        font-size: 19px; 
+        font-size: 19px;
         line-height: 30px;
+    }
+    &:after {
+        transition: all .2s ease-in-out;
+        content: "";
+        width: 100%;
+        height: 100%;
+        display: block;
+        background-color: rgba(0, 0, 0, 0);
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+    }
+    &.nav__active {
+        left: -270px;
+            overflow: hidden;
+        &:after {
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
     }
 }
 a {
     text-decoration: none;
     color: $color3;
-    &:hover{
+    &:hover {
         text-decoration: none !important;
     }
 }
@@ -49,6 +74,15 @@ img {
     width: 100%;
     min-height: 100%;
     overflow: hidden;
+    &:before {
+        content: "";
+        width: 100%;
+        display: block;
+        height: 60px;
+        @media(min-width: 1024px) {
+            height: 80px;
+        }
+    }
     &:after {
         content: "";
         min-height: 381px;
@@ -82,45 +116,39 @@ img {
         font-size: 1.368rem;
         line-height: 1.579rem;
         color: $color3;
-        text-transform: uppercase;       
+        text-transform: uppercase;
     }
     //h4
     &__xs {
         font-size: 19px;
         line-height: 26px;
-        
         font-size: 1rem;
         line-height: 1.368rem;
-        
         color: $color1;
         font-family: "OpenSans-Bold";
     }
 }
-
 // custom class grid bootstrap
 // 2 из 10
 .col-2_4 {
     @media(min-width: 1400px) {
         float: left;
-        width: 20%;        
+        width: 20%;
     }
 }
 // 4 из 10
-.col-4_8 {    
+.col-4_8 {
     @media(min-width: 1400px) {
         float: left;
-        width: 40%;        
+        width: 40%;
     }
 }
-
-
-
 .container-fluid {
     @media(min-width: 1400px) {
         padding: 0 70px;
     }
 }
-.btnMain {    
+.btnMain {
     line-height: 43px;
     text-transform: uppercase;
     font-size: 18px;
@@ -128,11 +156,12 @@ img {
     border: none;
     background-color: transparent;
     vertical-align: middle;
-    display: inline-block;    
-    padding: 0 18px;    
+    display: inline-block;
+    padding: 0 18px;
     position: relative;
-    left: -10px;
-    z-index: 1;     
+    left: 5px;
+    z-index: 1;
+    transition: all .2s;
     &:after {
         content: "";
         display: block;
@@ -145,9 +174,41 @@ img {
         transform: skew(-15deg);
         z-index: -1;
     }
+    &:hover {
+        color: #fff !important;
+        &:after {
+            background-color: #8fbf47;
+        }
+    }
+    &:active {
+        top: 3px;
+    }
 }
-
-
-
-
-
+//.navbar-toggle {
+//    display: block;
+//    background-color: #fff;
+//}
+//@media(min-width: 768px) {
+//    .navbar-toggle {
+//        display: block;
+//    }
+//    .navbar-nav>li {
+//        float: none;
+//    }
+//    .navbar-nav {
+//        float: right;
+//        margin: 0;
+//    }
+//}
+//@media(min-width: 1170px) {
+//    .navbar-toggle {
+//        display: none;
+//    }
+//    .navbar-nav>li {
+//        float: left;
+//    }
+//    .navbar-nav {
+//        float: left;
+//        margin: 0;
+//    }
+//}

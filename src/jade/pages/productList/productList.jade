@@ -7,9 +7,9 @@ main.page__productList
                     h1.title__lg Challenger X
                 .col-xs-12
                     p Предлагаем вашему вниманию плавающие воблеры Beakster длиной 7,9 и 11 см. В отличие от других приманок, используется язык особой формы, напоминающий загнутый лепесток или ноготь, что придает приманке наиболее привлекательную игру и рыскающий стиль. 
-    // https://refreshless.com/nouislider/
-    .container.productList__filtrBlock
-        form(action="")
+        // https://refreshless.com/nouislider/
+    form(action="#!")
+        .container.productList__filtrBlock        
             .row
                 .col-md-3
                     .title__xs Рыбак
@@ -45,6 +45,11 @@ main.page__productList
                     .title__xs Заглубление
                     .form-group
                         #input_range-3.input__range
+        .container.productList__filtrBlock--control
+            .row
+                button.productList__filtrBlock--close.active 
+                    span ❮
+                button(type="reset", class="productList__filtrBlock--reset") сбросить фильтр
     .container-fluid
         ul.row
             li.tile__wrapper.col-4_8.col-md-6

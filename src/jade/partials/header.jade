@@ -1,67 +1,76 @@
 .header__top
     nav
         .container-fluid
-            .navbar-header
-                button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
-                    span.sr-only Toggle navigation
-                    span.icon-bar
-                    span.icon-bar
-                    span.icon-bar
-                a.header__logo(href='#') Brand
-                    img(src="/image/logo.png", alt="")
-            #bs-example-navbar-collapse-1.collapse.navbar-collapse
-                ul.nav.navbar-nav.headerNav__list
-                    li.dropdown.headerNav__item
-                        a.dropdown-toggle.headerNav__link(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') О компании	
+            .row
+                .header__logo                
+                    a(href='#') Brand
+                        img(src="/image/logo.png", alt="")            
+                ul.headerNav__list
+                    li.headerNav__item
+                        a.headerNav__link.dropdown__toogle(href='#!') О компании	
                             span.caret
-                        ul.dropdown-menu
+                        ul.dropdown__menu
                             li
-                                a(href='#') item 1
+                                a(href='/aboutCompany.html') История бренда
                             li
-                                a(href='#') item 2
+                                a(href='/aboutCompany.html') Производство
                             li
-                                a(href='#') item 3
-                    li.dropdown.headerNav__item
-                        a.dropdown-toggle.headerNav__link(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Каталог
+                                a(href='/aboutCompany.html') STRIKEPRO TEAM
+                            li
+                                a(href='/aboutCompany.html') Сертификаты
+                            li
+                                a(href='/aboutCompany.html') Работа у нас
+                    li.headerNav__item
+                        a.headerNav__link(href='#') Каталог
                             span.caret
-                        ul.dropdown-menu
-                            li
-                                a(href='#') item 1
-                            li
-                                a(href='#') item 2
-                            li
-                                a(href='#') item 3
-                    li.dropdown.headerNav__item
-                        a.dropdown-toggle.headerNav__link(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Где купить
+                        ul.dropdown__menu#catalog__tabs
+                            li.container-tab
+                                ul.accordion-tabs
+                                    li.tab-head-cont
+                                        a(href='#!') Воблеры 
+                                        include tabs1
+                                    li.tab-head-cont
+                                        a(href='#!') Аксессуары
+                                        include tabs2
+                                    li.tab-head-cont
+                                        a(href='#!') Балансиры
+                                        include tabs3
+                                    li.tab-head-cont
+                                        a(href='#!') Блесны
+                                        include tabs4                        
+                    li.headerNav__item
+                        a.headerNav__link(href='#!') Где купить
                             span.caret
-                        ul.dropdown-menu
+                        ul.dropdown__menu
                             li
-                                a(href='#') item 1
+                                a(href='/location.html') item 1
                             li
-                                a(href='#') item 2
+                                a(href='/location.html') item 2
                             li
-                                a(href='#') item 3
-                    li.dropdown.headerNav__item
-                        a.dropdown-toggle.headerNav__link(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Блог
+                                a(href='/location.html') item 3
+                    li.headerNav__item
+                        a.headerNav__link(href='#!') Блог
                             span.caret
-                        ul.dropdown-menu
+                        ul.dropdown__menu
                             li
-                                a(href='#') item 1
+                                a(href='/blog.html') item 1
                             li
-                                a(href='#') item 2
+                                a(href='/blog.html') item 2
                             li
-                                a(href='#') item 3
-                    li.dropdown.headerNav__item
-                        a.dropdown-toggle.headerNav__link(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false') Контакты   
+                                a(href='/blog.html') item 3
+                    li.headerNav__item
+                        a.headerNav__link(href='#!') Контакты   
                             span.caret       
-                        ul.dropdown-menu
+                        ul.dropdown__menu
                             li
-                                a(href='#') item 1
+                                a(href='/contact.html') item 1
                             li
-                                a(href='#') item 2
+                                a(href='/contact.html') item 2
                             li
-                                a(href='#') item 3
-                form.navbar-form.navbar-right
+                                a(href='/contact.html') item 3
+                button.headerNav__toggle(type='button') &#9776;
+                form.header__search
                     .form-group
-                        input.form-control(type='text', placeholder='Search')
+                        input.form-control(type='search', placeholder='Search')
                     button.btn.icon-search(type='submit') Submit
+                

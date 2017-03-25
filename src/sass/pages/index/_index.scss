@@ -29,6 +29,9 @@
         @media(min-width: 1400px) {            
             min-height: calc(20vw - 22px);
         }
+        &--big{
+            height: 41vw;
+        }
     }
     img {
         height: 100%;

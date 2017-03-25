@@ -1,0 +1,35 @@
+main.page__product
+    include breadcrumb   
+    .product__wrapper
+        .product
+            .product__title
+                h1 Supersonic
+                span Challenger X
+            .product__action
+                a(href="#!").btnMain хочу купить
+                span артикул: 1258-001
+                span код товара: EG-124B #SM37F
+    .container-fluid.product__desc
+        .row
+            .tile__wrapper.col-md-6
+                .tile
+                    img(src="/image/itemvideo-img2.jpg", alt="")
+                    .video__control
+                        .video__control--icon.icon-youtube-play
+                        .video__control--text посмотреть видео
+            .col-md-6.tile__text.tile__wrapper.bg--dark
+                p Предлагаем вашему вниманию плавающие воблеры Beakster STRIKE PRO® длиной 7,9 и 11 см. В отличие от других приманок, используется язык особой формы, напоминающий загнутый лепесток или ноготь, что придает приманке наиболее привлекательную игру и рыскающий стиль. 
+            .col-xs-12
+                include product_table
+    .container-fluid
+        .row
+            .tile__wrapper.col-xs-12.tile__wrapper--big
+                .tile
+                    img(src="/image/itemvideo-img2.jpg", alt="")
+                    .video__control
+                        .video__control--icon.icon-youtube-play
+                        .video__control--text посмотреть видео       
+    .container-fluid
+        .row
+            .col-xs-12
+                include color_table
