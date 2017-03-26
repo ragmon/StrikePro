@@ -1,8 +1,23 @@
 .footer {
-    margin-top: -381px;
-    padding: 60px 5% 50px;
+    margin-top: -339px;
+    padding: 60px 3% 50px;
     background-color: $color2;
     color: #fff;
+    @media(min-width: 768px) {
+        padding: 60px 7% 50px;
+        margin-top: -381px;
+    }
+    @media(min-width: 1400px) {
+        padding: 60px 5% 50px;
+    }
+    @media(min-width: 992px) {
+        .col-sm-pull-6 {
+            right: 0%;
+        }
+        .col-sm-push-6 {
+            left: 0%
+        }
+    }
     &__top {
         padding-bottom: 30px;
     }
@@ -13,15 +28,25 @@
         font-size: 0.895rem;
         padding: 18px 10px;
         position: relative;
-        min-width: 265px;
         height: 41px;
         vertical-align: middle;
+        display: inline-block;
+        width: calc(100% - 56px);
+        @media(min-width: 768px) {
+            width: auto;
+        }
     }
     .form-group-noWrap {
         white-space: nowrap;
+        .btnMain {
+            left: -10px;
+            &:active {
+                top: 0;
+            }
+        }
     }
     &__colTitle {
-        font-size: 23px;
+        font-size: 1.211rem;
         line-height: 27px;
         font-family: "OpenSans-Italic";
         text-transform: uppercase;
@@ -34,9 +59,13 @@
         color: #fff;
         font-size: 1rem;
         line-height: 1.211rem;
+        &:hover{
+            color: $color3;
+        }
     }
     &__socialList {
         margin-top: 35px;
+        white-space: nowrap;
     }
     &__socialItem {
         display: inline-block;

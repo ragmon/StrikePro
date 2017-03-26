@@ -1,45 +1,63 @@
-.location{
-    
-    &__tabs{
+.location {
+    &__wrapper {
+        min-height: 700px;
+        position: relative;
+    }
+    &__tabs {
         margin-top: 20px;
         margin-bottom: 70px;
     }
-    
-    &__right{
-        width: 350px;
+    &__right {
+        width: 100%;
+        min-height: 700px;
         height: 700px;
         background-color: $color5;
-        float: left;
-        padding: 35px 30px 30px 30px;
-        overflow: auto;
+        overflow: hidden;
+        padding: 35px 15px 30px 15px;
         border-right: 4px solid #fff;
+        @media(min-width: 768px) {
+            width: 270px;
+            float: left;
+            overflow: auto;
+            min-height: inherit;
+        }
+        @media(min-width: 1024px) {
+            width: 350px;
+            padding: 35px 30px 30px 30px;
+        }
     }
-    &__left{
-        width: calc(100% - 350px);
+    &__left {
+        width: calc(100% - 270px);
         float: left;
         height: 700px;
-        background-color: $color3
-    }
-    &__list{
-        overflow: auto;
-    }
-    &__item{
-        margin-bottom: 35px;
+        background-color: $color3;
+        display: none;
+        @media(min-width: 768px) {
+            display: block;
+        }
+        @media(min-width: 1024px) {
+            width: calc(100% - 350px);
+        }
     }
     
-    &__text{
-        //font-size: 18px;
-        //line-height: 26px;
+    &__list {
+        overflow: auto;
+    }
+    &__item {
+        margin-bottom: 35px;
+    }
+    &__text {
         font-size: 0.947rem;
         line-height: 1.368rem;
     }
-    &__title{
+    &__title {
         margin-bottom: 12px;
-        span{
+        span {
             display: inline-block;
             vertical-align: middle;
+            margin-bottom: 0  !important;
         }
-        &-num{
+        &-num {
             background-color: $color3;
             color: #fff;
             width: 32px;
@@ -50,3 +68,16 @@
         }
     }
 }
+.more{
+        display: block;
+        margin-top: 40px;
+        margin-bottom: 100px;
+        .btnMain {
+	        display: block;
+            margin: 0 auto;
+        }
+        @media(min-width: 768px) {
+            
+            display: none;
+        }
+    }

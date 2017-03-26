@@ -6,20 +6,23 @@
     color: #000;
     height: 45px;
 }
-
-.nav-tabs{
+.nav-tabs {
     border: none;
     background-color: transparent!important;
     margin-top: 40px;
-    
-    & > li{
-        margin-bottom: 0;
-        margin-right: 25px;
-        & > a{
+    & > li {
+        margin-bottom: 10px;
+        margin-right: 10px;
+        
+        @media(min-width: 375px) {
+            margin-bottom: 25px;
+            margin-right: 25px;
+        }
+        & > a {
             color: #000000;
             border-radius: 0;
             border: none !important;
-            background-color: $color5 !important;            
+            background-color: $color5 !important;
             min-width: 127px;
             height: 45px !important;
             line-height: 45px;
@@ -27,8 +30,8 @@
             text-align: center;
         }
     }
-    & > li.active{
-         & > a{
+    & > li.active {
+        & > a {
             color: #fff !important;
             background-color: $color3 !important;
         }

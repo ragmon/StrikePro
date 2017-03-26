@@ -1,11 +1,29 @@
 .breadcrumb {
     margin-bottom: 0;
+    background-color: transparent;
+     margin-left: auto;
+        margin-right: auto;
+    @media (min-width: 768px) {
+        width: 750px;
+    }
+    @media (min-width: 992px) {
+        width: 970px;
+    }
+    @media (min-width: 1200px) {
+        width: 1170px;
+       
+    }
+    @media(min-width:1325px) {
+        width: auto;
+    }
     &__wrap {
         background-color: $color5;
-        padding: 11px 80px;
+        padding: 11px 0px;
         margin-bottom: 50px;
+        @media(min-width: 1325px) {
+            padding: 11px 80px;
+        }
     }
-    
     li {
         &.active {
             a {
@@ -22,13 +40,13 @@
             color: #000000;
         }
         &:before {
-                padding: 0 10px;
-                color: #000000 !important;
-                content: ">" !important;
-            }
-        &:first-child{
+            padding: 0 10px;
+            color: #000000 !important;
+            content: ">" !important;
+        }
+        &:first-child {
             &:before {
-               display: none !important;            
+                display: none !important;
             }
         }
     }

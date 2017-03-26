@@ -5,6 +5,11 @@
         right: 0;
         left: 0;
     }
+    .more__wrap{
+        @media(max-width: 767px){
+            display: block !important;
+        }
+    }
 }
 .blog {
     &__articl {
@@ -21,6 +26,7 @@
     &__wrap {
         display: inline-block;
         margin-right: 20px;
+            margin-bottom: 15px;
         border: none;
         border-radius: 0;
         background-color: $color3;

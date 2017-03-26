@@ -11,19 +11,18 @@
         .title__lg {
             margin-bottom: 35px;
         }
-        
     }
     &__filtrBlock {
         overflow: hidden;
         padding-top: 50px;
-        padding-bottom: 50px;        
+        padding-bottom: 50px;
         .title__xs {
             margin-bottom: 15px;
         }
         &--control {
             position: relative;
             text-align: center;
-                padding-top: 2px;
+            padding-top: 2px;
         }
     }
 }
@@ -32,7 +31,12 @@
         &--wrapper {
             display: inline-block;
             vertical-align: middle;
-            margin-right: 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            @media(min-width: 980px) {
+                margin-right: 20px;
+                margin-bottom: 0;
+            }
             &:last-child {
                 margin-right: 0;
             }
@@ -60,6 +64,13 @@
     height: 34px;
     border: none !important;
     border-radius: 0;
+    margin: 0 30px;
+    @media(min-width: 768px) {
+        margin: 0 10px;
+    }
+    @media(min-width: 980px) {
+        margin: 0;
+    }
     .ui-slider-range {
         background-color: $color1;
         border: none !important;
@@ -103,8 +114,8 @@
     z-index: 1;
     vertical-align: top;
     outline: none;
-    &.active{
-        span{
+    &.active {
+        span {
             transform: rotate(90deg);
         }
     }
@@ -140,10 +151,16 @@
     position: relative;
     z-index: 1;
     vertical-align: top;
-    position: absolute;
-    right: 0;
-    top: 2px;
+    display: inline-block;
     outline: none;
+    position: relative;
+    margin-left: 20px;
+
+    @media(min-width: 768px) {
+        position: absolute;
+        right: 0;
+        top: 2px;
+    }
     &:after {
         background-color: $color5;
         content: "";

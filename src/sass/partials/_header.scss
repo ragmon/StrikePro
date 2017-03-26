@@ -55,6 +55,82 @@
         @media(min-width: 1024px) {
             margin: 0 7px 0 0;
         }
+        &--mobile {            
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 10000;
+            width: 100vw;
+            height: 100vh;
+            display: none;
+            
+            .form-group {
+                max-width: 690px;
+                height: 50px;
+                position: absolute;
+                top: -30%;
+                right: 20px;
+                bottom: 0;
+                left: 20px;
+                margin: auto !important;
+            }
+            input[type="search"] {
+                display: inline-block !important;
+                background-color: #fff !important;
+                width: calc(100% - 79px);
+                height: 50px;
+                vertical-align: top;
+                font-size: 1.421rem !important;
+                color: #000 !important;
+                &::-webkit-input-placeholder {
+                    opacity: 1;
+                    transition: opacity 0.3s ease;
+                    color: #000 !important;
+                }
+                &::-moz-placeholder {
+                    opacity: 1;
+                    transition: opacity 0.3s ease;
+                    color: #000 !important;
+                }
+                &:-moz-placeholder {
+                    opacity: 1;
+                    transition: opacity 0.3s ease;
+                    color: #000 !important;
+                }
+                &:-ms-input-placeholder {
+                    opacity: 1;
+                    transition: opacity 0.3s ease;
+                    color: #000 !important;
+                }
+                &:focus::-webkit-input-placeholder {
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+                &:focus::-moz-placeholder {
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+                &:focus:-moz-placeholder {
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+                &:focus:-ms-input-placeholder {
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+            }
+            button[type='submit'] {
+                display: inline-block !important;
+                font-size: 27px !important;
+                transform: scale(1, 1) !important;
+                height: 50px;
+                vertical-align: top;
+                left: -10px;
+            }
+        }
         .form-group {
             display: inline-block;
             vertical-align: middle;
@@ -67,6 +143,9 @@
             box-shadow: none;
             color: #fff;
             display: none;
+            @media(min-width: 1180px) {
+                display: block;
+            }
             &::-webkit-input-placeholder {
                 opacity: 1;
                 transition: opacity 0.3s ease;
@@ -102,9 +181,6 @@
             &:focus:-ms-input-placeholder {
                 opacity: 0;
                 transition: opacity 0.3s ease;
-            }
-            @media(min-width:1180px) {
-                display: block;
             }
         }
         button[type='submit'] {

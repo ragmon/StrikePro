@@ -18,54 +18,74 @@ main.page__blogArticl
                         a(href='#media' data-toggle='tab') Медиа
     .container-fluid
         ul.row
-            li.tile__wrapper.col-4_8.col-md-6
+            li.tile__wrapper.col-4_8.col-sm-6.bg--dark
                 .tile.news
                     .tile__data 24 CЕН
                     .title__xs Женский турнир по ловле на поплавок прошел в Воронеже
                     p В этом году почетный кубок разыграли 30 участниц, съехавшиеся со всей Воронежской области. По условиям соревнований они ловили рыбу поплавочной удочкой...
                     a(href="/blogArticl.html").btnMain Перейти
-            li.tile__wrapper.col-4_8.col-md-6
+            li.tile__wrapper.col-4_8.col-sm-6
                 .tile
                     img(src="/image/itemvideo-img1.jpg", alt="")
                     .video__control
                         .video__control--icon.icon-youtube-play
                         .video__control--text посмотреть видео
-            li.tile__wrapper.col-2_4.col-md-6
+            li.tile__wrapper.col-2_4.col-md-6.col-sm-4.col-xs-6
                 .tile
                     img(src="/image/itemvideo-img2.jpg", alt="")
                     .video__control
                         .video__control--icon.icon-youtube-play
                         .video__control--text посмотреть видео
-            li.tile__wrapper.col-2_4.col-md-3
+            li.tile__wrapper.col-2_4.col-md-3.col-sm-4.col-xs-6.bg--dark
                 .tile.news
                     .tile__data 12 сен
                     .title__xs Соревнования по ловле форели спиннингом «Пятнистый Кубок Фион 2015»
                     a(href="/blogArticl.html").btnMain Перейти
-            li.tile__wrapper.col-2_4.col-md-3
+            li.tile__wrapper.col-2_4.col-md-3.col-sm-4.col-xs-6
                 a.tile.gallery               
                     img(src="/image/itemGallery-img1.jpg", alt="")
                     .gallery__text
                         span.icon-instagram 
                         span 5 фотографий
-            li.tile__wrapper.col-2_4.col-md-3
+            li.tile__wrapper.col-2_4.col-md-3.col-sm-4.col-xs-6
                 a.tile.gallery               
                     img(src="/image/itemGallery-img2.jpg", alt="")
                     .gallery__text
                         span.icon-instagram 
                         span 25 фотографий
-            li.tile__wrapper.col-2_4.col-md-3
+            li.tile__wrapper.col-2_4.col-md-3.col-sm-4.col-xs-6.bg--dark
                 .tile.news
                     .tile__data 12 сен
                     .title__xs Соревнования по ловле форели спиннингом «Пятнистый Кубок Фион 2015»
                     a(href="/blogArticl.html").btnMain Перейти
-            li.tile__wrapper.col-2_4.col-md-3
+            li.tile__wrapper.col-2_4.col-md-3.col-sm-4.col-xs-6
                 a.tile.gallery               
                     img(src="/image/itemGallery-img2.jpg", alt="")
                     .gallery__text
                         span.icon-instagram 
                         span 25 фотографий
-            li.tile__wrapper.col-2_4.col-md-3
+            li.tile__wrapper.col-2_4.col-md-3.col-sm-4.col-xs-6
                 .tile.news
                     .tile__data 12 сен
                     .title__xs Соревнования по ловле форели спиннингом «Пятнистый Кубок Фион 2015»
-                    a(href="/blogArticl.html").btnMain Перейти          
+                    a(href="/blogArticl.html").btnMain Перейти
+    .container
+        .row.pagination__wrap
+            ul.pagination
+                li
+                    a(href="#!") 1
+                li.active
+                    a(href="#!") 2
+                li
+                    a(href="#!") 3
+                li
+                    a(href="#!") 4
+                li
+                    a(href="#!") 5
+                li
+                    a(href="#!") ...
+                li
+                    a(href="#!") 17
+        .row.more__wrap
+            .more
+                button.btnMain Показать еще
