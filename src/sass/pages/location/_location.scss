@@ -45,6 +45,10 @@
     }
     &__item {
         margin-bottom: 35px;
+        cursor: pointer;
+        &.active{
+            background-color: darken($color5, 5%);
+        }
     }
     &__text {
         font-size: 0.947rem;

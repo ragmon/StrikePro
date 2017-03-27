@@ -23,6 +23,7 @@ $(document).ready(function () {
     init();
 
     $(".left").on("click", function () {
+
         if (currentPosition <= 0) {
             currentPosition = 0;
             $(slideContainer).css({
@@ -31,7 +32,7 @@ $(document).ready(function () {
             console.log(currentPosition);
             return;
         }
-        console.log(currentPosition);
+
         currentPosition -= widthStep;
         $(slideContainer).css({
             "transform": "translateX(-" + currentPosition + "px)"
@@ -128,6 +129,15 @@ $(".js__videoPopup").on("click", function (event) {
 })
 
 
+$(window).load(function () {
+    $('.header__slider').flexslider({
+        animation: "slide",
+        slideshow: false,
+        touch: true,
+        directionNav: false,
+        controlNav: true
+    });
+});
 
 
 // Jquery UI range

@@ -1,22 +1,42 @@
-div(id="header__slider" class="carousel slide" data-ride="carousel")
-    ol(class="carousel-indicators")
-        li(data-target="#header__slider" data-slide-to="0" class="active")
-        li(data-target="#header__slider" data-slide-to="1")
-        li(data-target="#header__slider" data-slide-to="2")
-    div(class="carousel-inner" role="listbox")
-        div(class="item active" style="height: 730px; overflow: hidden")
-            img(src="/image/Slider-img.jpg" alt=".")
+.header__slider
+    ul.slides
+        li
+            img(src="/image/Slider-img.jpg", alt="")
             div(class="carousel-caption")
-        div(class="item" style="height: 730px; overflow: hidden")
-            img(src="/image/Slider-img.jpg" alt=".")
+                .header__slider__title 
+                    span.header__slider__title--green STRIKE
+                    span PRO
+                .header__slider__desc
+                    | One fish, two fish, thee fish,
+                    | MORE fish!
+                    button.btnMain перейти в каталог
+        li
+            img(src="/image/Slider-img.jpg", alt="")
             div(class="carousel-caption")
-        div(class="item" style="height: 730px; overflow: hidden")
-            img(src="/image/Slider-img.jpg" alt=".")
+                .header__slider__title 
+                    span.header__slider__title--green STRIKE
+                    span PRO
+                .header__slider__desc
+                    | One fish, two fish, thee fish,
+                    | MORE fish!
+                    button.btnMain перейти в каталог
+        li
+            img(src="/image/Slider-img.jpg", alt="")
             div(class="carousel-caption")
-    a(class="left carousel-control" href="#header__slider"  role="button" data-slide="prev")
-        span(class="glyphicon glyphicon-chevron-left" aria-hidden="true")
-        span(class="sr-only") Previous
-    a(class="right carousel-control" href="#header__slider"  role="button" data-slide="next")
-        span(class="glyphicon glyphicon-chevron-left" aria-hidden="true")
-        span(class="sr-only") Next
-    
+                .header__slider__title 
+                    span.header__slider__title--green STRIKE
+                    span PRO
+                .header__slider__desc
+                    | One fish, two fish, thee fish,
+                    | MORE fish!
+                    button.btnMain перейти в каталог
+        li
+            img(src="/image/Slider-img.jpg", alt="")
+            div(class="carousel-caption")
+                .header__slider__title 
+                    span.header__slider__title--green STRIKE
+                    span PRO
+                .header__slider__desc
+                    | One fish, two fish, thee fish,
+                    | MORE fish!
+                    button.btnMain перейти в каталог

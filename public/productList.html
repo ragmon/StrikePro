@@ -7,6 +7,7 @@
     <title>Fish</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/flexslider.css" rel="stylesheet">
     <link href="css/styles.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
@@ -19,13 +20,21 @@
   <body>              
     <div class="wrapper">
       <header class="header">
+        <svg style="display: none">
+          <symbol id="svg_arrow">
+            <polyline points="0,0 7,7 15,0" fill="rgba(249,249,249, 0)" stroke-width="2">  </polyline>
+          </symbol>
+        </svg>
         <div class="header__top">
           <nav>
             <div class="container-fluid">
               <div class="row">
                 <div class="header__logo">               <a href="#">Brand<img src="/image/logo.png" alt=""></a></div>
                 <ul class="headerNav__list">
-                  <li class="headerNav__item"><a href="#!" class="headerNav__link dropdown__toogle">О компании	<span class="caret"></span></a>
+                  <li class="headerNav__item"><a href="#!" class="headerNav__link dropdown__toogle">О компании	<span class="caret">
+                        <svg>
+                          <use xlink:href="#svg_arrow" class="caret__arrow">  </use>
+                        </svg></span></a>
                     <ul class="dropdown__menu">
                       <li><a href="/aboutCompany.html">История бренда</a></li>
                       <li><a href="/aboutCompany.html">Производство</a></li>
@@ -34,7 +43,10 @@
                       <li><a href="/aboutCompany.html">Работа у нас</a></li>
                     </ul>
                   </li>
-                  <li class="headerNav__item"><a href="#" class="headerNav__link">Каталог<span class="caret"></span></a>
+                  <li class="headerNav__item"><a href="#" class="headerNav__link">Каталог<span class="caret">
+                        <svg>
+                          <use xlink:href="#svg_arrow" class="caret__arrow"> </use>
+                        </svg></span></a>
                     <ul id="catalog__tabs" class="dropdown__menu">
                       <li class="container-tab">
                         <ul class="accordion-tabs">
@@ -140,21 +152,30 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="headerNav__item"><a href="#!" class="headerNav__link">Где купить<span class="caret"></span></a>
+                  <li class="headerNav__item"><a href="#!" class="headerNav__link">Где купить<span class="caret">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="7">
+                          <use xlink:href="#svg_arrow" class="caret__arrow"></use>
+                        </svg></span></a>
                     <ul class="dropdown__menu">
                       <li><a href="/location.html">item 1</a></li>
                       <li><a href="/location.html">item 2</a></li>
                       <li><a href="/location.html">item 3</a></li>
                     </ul>
                   </li>
-                  <li class="headerNav__item"><a href="#!" class="headerNav__link">Блог<span class="caret"></span></a>
+                  <li class="headerNav__item"><a href="#!" class="headerNav__link">Блог<span class="caret">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="7">
+                          <use xlink:href="#svg_arrow" class="caret__arrow"></use>
+                        </svg></span></a>
                     <ul class="dropdown__menu">
                       <li><a href="/blog.html">item 1</a></li>
                       <li><a href="/blog.html">item 2</a></li>
                       <li><a href="/blog.html">item 3</a></li>
                     </ul>
                   </li>
-                  <li class="headerNav__item"><a href="#!" class="headerNav__link">Контакты   <span class="caret">      </span></a>
+                  <li class="headerNav__item"><a href="#!" class="headerNav__link">Контакты   <span class="caret">      
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="7">
+                          <use xlink:href="#svg_arrow" class="caret__arrow"></use>
+                        </svg></span></a>
                     <ul class="dropdown__menu">
                       <li><a href="/contact.html">item 1</a></li>
                       <li><a href="/contact.html">item 2</a></li>
@@ -357,6 +378,7 @@
       </div>
     </footer>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>

@@ -1,3 +1,7 @@
+svg(style="display: none")
+    symbol#svg_arrow
+        polyline( points="0,0 7,7 15,0" fill="rgba(249,249,249, 0)" stroke-width="2")   
+
 .header__top
     nav
         .container-fluid
@@ -9,6 +13,8 @@
                     li.headerNav__item
                         a.headerNav__link.dropdown__toogle(href='#!') О компании	
                             span.caret
+                                svg
+                                    use.caret__arrow(xlink:href="#svg_arrow")   
                         ul.dropdown__menu
                             li
                                 a(href='/aboutCompany.html') История бренда
@@ -23,6 +29,8 @@
                     li.headerNav__item
                         a.headerNav__link(href='#') Каталог
                             span.caret
+                                svg
+                                    use.caret__arrow(xlink:href="#svg_arrow")  
                         ul.dropdown__menu#catalog__tabs
                             li.container-tab
                                 ul.accordion-tabs
@@ -41,6 +49,8 @@
                     li.headerNav__item
                         a.headerNav__link(href='#!') Где купить
                             span.caret
+                                svg(xmlns="http://www.w3.org/2000/svg" width="15" height="7"  )
+                                    use.caret__arrow(xlink:href="#svg_arrow")
                         ul.dropdown__menu
                             li
                                 a(href='/location.html') item 1
@@ -51,6 +61,9 @@
                     li.headerNav__item
                         a.headerNav__link(href='#!') Блог
                             span.caret
+                                svg(xmlns="http://www.w3.org/2000/svg" width="15" height="7"  )
+                                    use.caret__arrow(xlink:href="#svg_arrow")
+                                    
                         ul.dropdown__menu
                             li
                                 a(href='/blog.html') item 1
@@ -61,6 +74,8 @@
                     li.headerNav__item
                         a.headerNav__link(href='#!') Контакты   
                             span.caret       
+                                svg(xmlns="http://www.w3.org/2000/svg" width="15" height="7"  )
+                                    use.caret__arrow(xlink:href="#svg_arrow")
                         ul.dropdown__menu
                             li
                                 a(href='/contact.html') item 1
