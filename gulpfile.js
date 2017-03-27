@@ -48,7 +48,7 @@ gulp.task('sass', function () {
         }))
         .pipe(gulpif(isDevelopment, smaps.init()))
         .pipe(sass().on('error', sass.logError))
-//        .pipe(cssnano())
+        //        .pipe(cssnano())
         .pipe(gulpif(isDevelopment, smaps.write("./")))
         .pipe(rename('styles.min.css'))
         .pipe(gulp.dest('public/css'));
@@ -59,8 +59,10 @@ gulp.task('sass', function () {
 //
 /////////////////////////////////////////////////
 gulp.task('jade', function () {
-    return gulp.src('src/jade/*.jade')        
-        .pipe(jade())
+    return gulp.src('src/jade/*.jade')
+        .pipe(jade({
+            pretty: true
+        }))
         .pipe(gulp.dest('public'));
 });
 //////////////////////////////////////////////////
@@ -70,9 +72,9 @@ gulp.task('jade', function () {
 /////////////////////////////////////////////////
 gulp.task('scripts', function () {
     return gulp.src('src/js/*.js')
-//        .pipe(concat("all.js"))
-//        .pipe(uglify())
-//        .pipe(rename('script.min.js'))
+        //        .pipe(concat("all.js"))
+        //        .pipe(uglify())
+        //        .pipe(rename('script.min.js'))
         .pipe(gulp.dest('public/js'));
 });
 
