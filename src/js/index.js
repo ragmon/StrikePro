@@ -4,6 +4,7 @@ $(document).ready(function () {
     var currentPosition = 0;
     var widthStep;
     var maxStep;
+    
     function init(){
         
         for(var i = 0; i < elemList.length; i++){
@@ -26,7 +27,7 @@ $(document).ready(function () {
             return;
         }
         currentPosition -= widthStep; 
-        $(slideContainer).css({ "transform" : "translateX(-" + currentPosition + "px)"})  
+        $(slideContainer).css({ "transform" : "translateX(-" + currentPosition + "px)"});  
     })
     $(".right").on("click",function(){
         if(currentPosition == maxStep){
@@ -34,15 +35,31 @@ $(document).ready(function () {
             return;
         }
         currentPosition += widthStep; 
-        $(slideContainer).css({ "transform" : "translateX(-" + currentPosition + "px)"})   
+        $(slideContainer).css({ "transform" : "translateX(-" + currentPosition + "px)"});   
     })
     
     $(".slider__item").on("click",function(event){
         event.preventDefault();
         
+        
         $(".colorTable__gallery--img img").attr("src", $(this).find("img").attr("src"));
         $(".colorTable__gallery--title__model").text($(this).find("img").attr("alt"));
+        
     })
+    
+    $(elemList).on("click",function(event){
+        $(this).find("span").text();
+        $(".colorTable__gallery--img img").attr("src", $(this).find("img").attr("src"));
+        $(".colorTable__gallery--title__model").text($(this).find("span").text());
+        
+        currentPosition = widthStep * $( this ).index(); 
+        $(slideContainer).css({ "transform" : "translateX(-" + currentPosition + "px)"});  
+           
+        console.log();
+        
+    })
+    
+    
     
 });
 
