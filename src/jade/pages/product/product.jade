@@ -12,7 +12,7 @@ main.page__product
     .container-fluid.product__desc
         .row
             .tile__wrapper.col-md-6
-                .tile
+                a(href="https://www.youtube.com/embed/-uzkjrEnI84").tile.js__videoPopup
                     img(src="/image/itemvideo-img2.jpg", alt="")
                     .video__control
                         .video__control--icon.icon-youtube-play
@@ -33,8 +33,9 @@ main.page__product
         .row
             .col-xs-12
                 include color_table
-.colorTable__gallery--wrapper
+.colorTable__gallery--wrapper.js__popup
     .colorTable__gallery--popup
+        button.close__popup.js__closePopup X
         .colorTable__gallery--top
             .colorTable__gallery--img
                 img(src="/image/color-4.png", alt="")

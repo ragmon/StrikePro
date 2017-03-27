@@ -1318,13 +1318,14 @@ a.tile:hover {
     vertical-align: middle; }
 
 .colorTable__gallery--wrapper {
+  display: none;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 1000000; }
 
@@ -1335,7 +1336,6 @@ a.tile:hover {
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
   margin: auto;
   z-index: 1111;
@@ -1429,6 +1429,40 @@ a.tile:hover {
       display: block;
       width: 100%;
       height: auto; }
+
+.close__popup {
+  background-color: transparent;
+  border: none;
+  color: #000;
+  position: absolute;
+  top: 10px;
+  right: 10px; }
+
+.popUP__wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000000; }
+  .popUP__wrapper.active {
+    display: block; }
+
+.popUP__video {
+  max-width: 640px;
+  max-height: 360px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto; }
 
 .page__searchingResults .prompt {
   margin-top: 15px;
