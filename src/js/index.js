@@ -100,7 +100,7 @@ $(document).ready(function () {
                 "overflow": "inherit"
             });
             return
-        } else if ($(event.target).closest(".colorTable__gallery--popup").length == 1) {
+        } else if ($(event.target).closest(".colorTable__gallery--popup").length == 1 || $(event.target).closest(".popUP__video").length == 1) {
             event.stopPropagation();
             return
         } else if ($(event.target).closest(".js__popup").length == 1) {
@@ -116,19 +116,58 @@ $(document).ready(function () {
 
 });
 
+$(document).ready(function () {
 
-$(".js__videoPopup").on("click", function (event) {
-    event.preventDefault();
-    var link = $(this).attr('href');
-    var popUp_content = '<iframe width="640" height="360" src="' + link + '" frameborder="0" allowfullscreen></iframe>';
-    var popUp = '<div class="popUP__wrapper js__popup active"><div class="popUP__video">' + popUp_content + '</div></div>';
-    $("body").css({
-        "overflow": "hidden"
+    $(".product__sliderImg ul li a").on('click', function (event) {
+        event.preventDefault();
+        $(".product__stand img").attr("src", $(this).attr("href"));
+    })
+
+    $(window).resize(function () {
+        var k = 500 / 304;
+        var w = screen.width;
+
+        if (w < 500) {
+            $('.product__stand').height($('.product__stand').width() / k);
+        }
     });
-    $("body").append(popUp);
+
+
 })
 
 
+
+
+// VIDEO POPUP
+$(document).ready(function () {
+
+    $(".js__videoPopup").on("click", function (event) {
+        event.preventDefault();
+        var link = $(this).attr('href');
+        var popUp_content = '<iframe width="100%" height="100%" src="' + link + '" frameborder="0" allowfullscreen></iframe>';
+        var popUp = '<div class="popUP__wrapper js__popup active"><div class="popUP__video"> <button class="close__popup js__closePopup">&#215;</button>' + popUp_content + '</div></div>';
+        $("body").css({
+            "overflow": "hidden"
+        });
+        $("body").append(popUp);
+    })
+
+
+
+    $(window).resize(function () {
+        var k = 700 / 420;
+        var w = screen.width;
+
+        if (w < 700) {
+            $('.popUP__video').height($('.popUP__video').width() / k);
+        }
+    });
+
+
+})
+
+
+// FLEXSLIDER PAGE INDEX
 $(window).load(function () {
     $('.header__slider').flexslider({
         animation: "slide",
@@ -141,25 +180,27 @@ $(window).load(function () {
 
 
 // Jquery UI range
+$(document).ready(function () {
+    jQuery("#input_range-1").slider({
+        min: 0,
+        max: 15,
+        values: [0, 15],
+        range: true
+    });
+    jQuery("#input_range-2").slider({
+        min: 0,
+        max: 11,
+        values: [0, 11],
+        range: true
+    });
+    jQuery("#input_range-3").slider({
+        min: 0,
+        max: 6,
+        values: [0, 6],
+        range: true
+    });
+})
 
-jQuery("#input_range-1").slider({
-    min: 0,
-    max: 15,
-    values: [0, 15],
-    range: true
-});
-jQuery("#input_range-2").slider({
-    min: 0,
-    max: 11,
-    values: [0, 11],
-    range: true
-});
-jQuery("#input_range-3").slider({
-    min: 0,
-    max: 6,
-    values: [0, 6],
-    range: true
-});
 
 // close product filtr
 $(".productList__filtrBlock--close").on("click", function () {
@@ -230,3 +271,44 @@ $(document).on("click", function (event) {
         return
     }
 })
+
+
+
+
+var hoverColor = "#eaeaea"
+
+$(".location__item").on("click", function (event) {
+    var itemList = $(".location__item");
+
+    for (var i = 0; i < itemList.length; i++) {
+        $(itemList[i]).removeClass("active");
+    }
+    if ($(this).hasClass("active")) {
+        return
+    }
+    $(this).addClass("active");
+})
+
+$(".location__item").hover(
+    function () {
+        if ($(this).hasClass("active")) {
+            return
+        }
+        $(".location__item.active").css({
+            "background-color": "transparent"
+        })
+        $(this).css({
+            "background-color": hoverColor
+        })
+    },
+    function () {
+        if ($(this).hasClass("active")) {
+            return
+        }
+        $(".location__item.active").css({
+            "background-color": hoverColor
+        })
+        $(this).css({
+            "background-color": "transparent"
+        })
+    });

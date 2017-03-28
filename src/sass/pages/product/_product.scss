@@ -3,20 +3,60 @@
     .tile__text {
         padding: 60px 50px;
     }
-    .breadcrumb__wrap {
-        margin-bottom: 0;
-    }
     .product {
-        height: 40vw;
         position: relative;
+        @media(min-width: 768px) {
+            height: 40vw;
+            min-height: 600px;
+        }
         &__wrapper {
-            padding: 50px 95px;
+            padding: 0 5% 50px;
             background-color: $color5;
+            position: relative;
+            z-index: 1;
+            @media(min-width: 768px) {
+                padding: 0 5% 20px;
+            }
+            @media(min-width: 1024px) {
+                padding: 0 95px 50px;
+            }
+            .breadcrumb__wrap {
+                margin-bottom: 10px;
+                background-color: transparent;
+                padding-left: 0;
+                padding-right: 0;
+                margin-left: -15px;
+                @media(min-width: 768px) {
+                    margin-bottom: 20px;
+                }
+                @media(min-width: 1024px) {
+                    margin-bottom: 50px;
+                }
+            }
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                background-color: #fff;
+                z-index: -1;
+                @media(max-width: 767px) {
+                    width: 100%;
+                    height: 178px;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+                @media(min-width: 768px) {
+                    width: 60%;
+                    height: 100%;
+                    top: 0;
+                    bottom: 0;
+                    right: -10%;
+                    transform: skew(-10deg);
+                }
+            }
         }
         &__title {
-            position: absolute;
-            top: 0;
-            left: 0;
             h1 {
                 font-size: 3.158rem;
                 text-transform: uppercase;
@@ -28,22 +68,144 @@
                 font-size: 1.105rem;
                 font-weight: bold;
             }
+            @media(min-width: 768px) {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
         }
         &__action {
-            position: absolute;
-            bottom: 0;
-            left: 0;
+            background-color: #fff;
+            padding-top: 15px;
+            @media(min-width: 768px) {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: transparent;
+                padding-top: 0;
+            }
             .btnMain {
                 display: block;
                 font-size: 1.316rem;
                 font-family: "OpenSans-Italic";
                 text-align: center;
                 left: 5px;
-                margin-bottom: 40px;
+                margin-bottom: 20px;
+                @media(min-width: 768px) {
+                    margin-bottom: 40px;
+                }
             }
             span {
                 display: block;
-                color: light
+                color: lighten(#000, 50% );
+                text-align: center;
+                @media(min-width: 768px) {
+                    text-align: left;
+                }
+            }
+        }
+        &__rightSidebar {
+            width: 270px;
+            padding: 10px;
+            margin: 0 auto;
+            overflow: hidden;
+            @media(min-width: 768px) {
+                position: absolute;
+                right: 0;
+                top: calc(60% - 333px);
+                width: 93px;
+            }
+            .btnMain {
+                margin-top: 10px;
+                margin-right: auto;
+                margin-left: auto;
+                @media(max-width: 767px) {
+                    position: absolute;
+                    top: 90px;
+                    right: -10px;
+                    left: initial;
+                }
+            }
+        }
+        &__sliderImg {
+            ul {
+                height: 80px;
+                overflow: auto;
+                width: 270px;
+                position: relative;
+                right: 0;
+                font-size: 0;
+                white-space: nowrap;
+                @media(min-width: 768px) {
+                    height: 270px;
+                    width: 100px;
+                }
+                li {
+                    display: inline-block;
+                    @media(min-width: 768px) {
+                        display: block;
+                    }
+                    a {
+                        display: block;
+                        width: 80px;
+                        height: 80px;
+                        margin-right: 10px;
+                        background-color: #fff;
+                        padding: 31px 3px;
+                        @media(min-width: 768px) {
+                            margin-right: 0;
+                            margin-bottom: 10px;
+                            background-color: $color5;
+                        }
+                        img {
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+        &__stand {
+            width: 100%;
+            height: 304px;
+            margin: 0 auto;
+            position: relative;
+            padding-top: 80px;
+            @media(min-width: 500px) {
+                width: 500px;
+                height: 304px;
+            }
+            @media(min-width: 768px) {
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                margin: auto;
+            }
+            @media(min-width: 1325px) {
+                width: 625px;
+                height: 380px;
+            }
+            &--img {
+                width: 80%;
+                margin: 0 auto;
+            }
+            &:after {
+                content: "";
+                background-image: url(/image/product_stand-bg.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 100%;
+                height: 104px;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                opacity: 0.4;
+                @media(min-width: 1325px) {
+                    width: 100%;
+                    height: 130px;
+                }
             }
         }
     }
@@ -185,11 +347,23 @@
             top: -73px;
             z-index: 1;
             background-color: transparent;
+            svg {
+                position: relative;
+                top: -3px;
+                width: 15px;
+                height: 8px;
+                .caret__arrow {
+                    stroke: #fafafa;
+                }
+            }
         }
         .left {
             float: left;
             left: -10px;
             bottom: 0;
+            svg {
+                transform: rotate(90deg);
+            }
             &:after {
                 content: "";
                 background-color: $color3;
@@ -208,6 +382,9 @@
             float: right;
             right: -10px;
             bottom: 0;
+            svg {
+                transform: rotate(-90deg);
+            }
             &:after {
                 content: "";
                 background-color: $color3;
@@ -277,6 +454,11 @@
     position: absolute;
     top: 10px;
     right: 10px;
+    top: 8px;
+    right: 8px;
+    line-height: 15px;
+    padding: 0;
+    font-size: 30px;
 }
 .popUP__wrapper {
     display: none;
@@ -289,13 +471,13 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.4);
     z-index: 1000000;
-    &.active{
+    &.active {
         display: block;
     }
 }
-.popUP__video{
-    max-width:640px;
-    max-height: 360px;
+.popUP__video {
+    max-width: 700px;
+    max-height: 420px;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -304,4 +486,13 @@
     bottom: 0;
     left: 0;
     margin: auto;
+    background-color: #fff;
+    padding: 30px;
+    .close__popup {
+        top: 8px;
+        right: 8px;
+        line-height: 15px;
+        padding: 0;
+        font-size: 30px;
+    }
 }

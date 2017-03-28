@@ -2,6 +2,11 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+button,
+a,
+input {
+    outline: none !important;
+}
 html,
 body {
     font-family: "OpenSans-Regular";
@@ -191,31 +196,3 @@ img {
         top: 3px;
     }
 }
-//.navbar-toggle {
-//    display: block;
-//    background-color: #fff;
-//}
-//@media(min-width: 768px) {
-//    .navbar-toggle {
-//        display: block;
-//    }
-//    .navbar-nav>li {
-//        float: none;
-//    }
-//    .navbar-nav {
-//        float: right;
-//        margin: 0;
-//    }
-//}
-//@media(min-width: 1170px) {
-//    .navbar-toggle {
-//        display: none;
-//    }
-//    .navbar-nav>li {
-//        float: left;
-//    }
-//    .navbar-nav {
-//        float: left;
-//        margin: 0;
-//    }
-//}

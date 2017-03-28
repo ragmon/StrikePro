@@ -16,6 +16,22 @@ a.tile:hover {
     left: 2px;
     transition: all .2s ease-in-out;
     cursor: pointer;
+    z-index: 1;
+    &.bgElem {
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            background-color: #fff;
+            z-index: -1;
+            width: 30%;
+            height: 100%;
+            top: 0;
+            bottom: 0;
+            right: -10%;
+            transform: skew(-10deg);
+        }
+    }
     &__data {
         color: $color3;
         font-size: 20px;

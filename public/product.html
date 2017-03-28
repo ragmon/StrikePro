@@ -201,21 +201,36 @@
           </nav>
         </div>
       </header>
-      <main class="page__product">
-        <div class="breadcrumb__wrap">
-          <ol class="breadcrumb">
-            <li><a href="#!">Каталог</a></li>
-            <li><a href="#!">Воблеры </a></li>
-            <li><a href="#!">Challenger X </a></li>
-            <li class="active"><a href="#!">Supersonic</a></li>
-          </ol>
-        </div>
+      <main class="page__product">     
         <div class="product__wrapper">
+          <div class="breadcrumb__wrap">
+            <ol class="breadcrumb">
+              <li><a href="#!">Каталог</a></li>
+              <li><a href="#!">Воблеры </a></li>
+              <li><a href="#!">Challenger X </a></li>
+              <li class="active"><a href="#!">Supersonic</a></li>
+            </ol>
+          </div>
           <div class="product">
             <div class="product__title">
-              <h1>Supersonic</h1><span>Challenger X</span>
+              <h1>Supersonic</h1><span>Challenger X            </span>
             </div>
-            <div class="product__action"><a href="#!" class="btnMain">хочу купить</a><span>артикул: 1258-001</span><span>код товара: EG-124B #SM37F</span></div>
+            <div class="product__stand">
+              <div class="product__stand--img"><img src="/image/product.png" alt=""></div>
+            </div>
+            <div class="product__rightSidebar">
+              <div class="product__sliderImg">
+                <ul>
+                  <li><a href="/image/product.png"><img src="/image/product.png" alt="smallImg"></a></li>
+                  <li><a href="/image/product.png"><img src="/image/product.png" alt="smallImg"></a></li>
+                  <li><a href="/image/product.png"><img src="/image/product.png" alt="smallImg"></a></li>
+                  <li><a href="/image/product.png"><img src="/image/product.png" alt="smallImg"></a></li>
+                  <li><a href="/image/product.png"><img src="/image/product.png" alt="smallImg"></a></li>
+                </ul>
+              </div>
+              <button class="btnMain">3D</button>
+            </div>
+            <div class="product__action"><a href="#!" class="btnMain">хочу купить</a><span>артикул: 1258-001</span><span>код товара: EG-124B #SM37F    </span></div>
           </div>
         </div>
         <div class="container-fluid product__desc">
@@ -329,7 +344,7 @@
       </main>
       <div class="colorTable__gallery--wrapper js__popup">
         <div class="colorTable__gallery--popup">
-          <button class="close__popup js__closePopup">X</button>
+          <button class="close__popup js__closePopup">&#215;</button>
           <div class="colorTable__gallery--top">
             <div class="colorTable__gallery--img"><img src="/image/color-4.png" alt=""></div>
             <div class="colorTable__gallery--title"><span class="colorTable__gallery--title__name"> </span><span class="colorTable__gallery--title__model"> </span></div>
@@ -339,8 +354,16 @@
               <ul class="slider__wrap"></ul>
             </div>
             <div class="colorTable__gallery--control">
-              <button class="left"><</button>
-              <button class="right">></button>
+              <button class="left"> 
+                <svg>
+                  <use xlink:href="#svg_arrow" class="caret__arrow"></use>
+                </svg>
+              </button>
+              <button class="right">
+                <svg>
+                  <use xlink:href="#svg_arrow" class="caret__arrow"></use>
+                </svg>
+              </button>
             </div>
           </div>
         </div>

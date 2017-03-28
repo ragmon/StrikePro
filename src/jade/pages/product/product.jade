@@ -1,14 +1,36 @@
-main.page__product
-    include breadcrumb   
+main.page__product      
     .product__wrapper
+        include breadcrumb 
         .product
             .product__title
                 h1 Supersonic
-                span Challenger X
+                span Challenger X            
+            .product__stand
+                .product__stand--img
+                    img(src="/image/product.png", alt="")
+            .product__rightSidebar
+                .product__sliderImg
+                    ul
+                        li
+                            a(href="/image/product.png")
+                                img(src="/image/product.png", alt="smallImg")
+                        li
+                            a(href="/image/product.png")
+                                img(src="/image/product.png", alt="smallImg")
+                        li
+                            a(href="/image/product.png")
+                                img(src="/image/product.png", alt="smallImg")
+                        li
+                            a(href="/image/product.png")
+                                img(src="/image/product.png", alt="smallImg")
+                        li
+                            a(href="/image/product.png")
+                                img(src="/image/product.png", alt="smallImg")
+                button.btnMain 3D
             .product__action
                 a(href="#!").btnMain хочу купить
                 span артикул: 1258-001
-                span код товара: EG-124B #SM37F
+                span код товара: EG-124B #SM37F    
     .container-fluid.product__desc
         .row
             .tile__wrapper.col-md-6
@@ -35,7 +57,7 @@ main.page__product
                 include color_table
 .colorTable__gallery--wrapper.js__popup
     .colorTable__gallery--popup
-        button.close__popup.js__closePopup X
+        button.close__popup.js__closePopup &#215;
         .colorTable__gallery--top
             .colorTable__gallery--img
                 img(src="/image/color-4.png", alt="")
@@ -47,5 +69,9 @@ main.page__product
                 ul.slider__wrap
                     
             .colorTable__gallery--control
-                button.left <
-                button.right >
+                button.left 
+                    svg
+                        use.caret__arrow(xlink:href="#svg_arrow")
+                button.right
+                    svg
+                        use.caret__arrow(xlink:href="#svg_arrow")
