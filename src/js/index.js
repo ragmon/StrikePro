@@ -186,7 +186,7 @@ $(document).ready(function () {
         max: 15,
         step: 1,
         value: '',
-        range: "max"
+        range: true
     });
 
     jQuery("#input_range-2").slider({
@@ -197,9 +197,9 @@ $(document).ready(function () {
     });
     jQuery("#input_range-3").slider({
         min: 0,
-        max: 6,
+        max: 61,
         values: "",
-        range: "min"
+        range: true
     });
     addValue()
 
@@ -211,22 +211,29 @@ $(document).ready(function () {
     }
 
     $('#input_range-1').bind('slide', function () {
-        $('#input_range-1 .input_range-value').text($('#input_range-1').slider('value') + " кг");
+        var rangList = $('#input_range-1 .input_range-value');
+        $(rangList[0]).text($('#input_range-1').slider('values')[0] + " кг");
+        $(rangList[1]).text($('#input_range-1').slider('values')[1] + " кг");
+        console.log($('#input_range-1').slider('values'))
     });
     $('#input_range-2').bind('slide', function () {
-        $('#input_range-2 .input_range-value').text($('#input_range-2').slider('values') + " см");
+        var rangList = $('#input_range-2 .input_range-value');
+        $(rangList[0]).text($('#input_range-2').slider('values')[0] + " cм");
+        $(rangList[1]).text($('#input_range-2').slider('values')[1] + " см");
     });
     $('#input_range-3').bind('slide', function () {
-        $('#input_range-3 .input_range-value').text($('#input_range-3').slider('value') + " метр");
+        var rangList = $('#input_range-3 .input_range-value');
+        $(rangList[0]).text($('#input_range-3').slider('values')[0] + " метров");
+        $(rangList[1]).text($('#input_range-3').slider('values')[1] + " метров");
     });
 
     $(".productList__filtrBlock--reset").on('click', function () {
-        $('#input_range-3').slider('value', 0)
-        $('#input_range-1 .input_range-value').text($('#input_range-1').slider('value') + " кг");
+        $('#input_range-3').slider('values', [0, 15])
+        $('#input_range-1 .input_range-value').text($('#input_range-1').slider('values') + " кг");
         $('#input_range-2').slider('values', [0, 11]);
         $('#input_range-2 .input_range-value').text($('#input_range-2').slider('values') + " см");
-        $('#input_range-1').slider('value', 0)
-        $('#input_range-3 .input_range-value').text($('#input_range-3').slider('value') + " метр");
+        $('#input_range-1').slider('values', [0, 6])
+        $('#input_range-3 .input_range-value').text($('#input_range-3').slider('values') + " метр");
 
     })
 
