@@ -39,10 +39,16 @@
     .form-group-noWrap {
         white-space: nowrap;
         .btnMain {
-            left: -10px;
+            left: -11px;
             &:active {
                 top: 0;
             }
+            &:hover {
+            
+                &:after{
+                    background-color: lighten($color3, 10%) !important;
+                }
+        }
         }
     }
     &__colTitle {
@@ -86,6 +92,7 @@
         }
         &:hover {
             text-decoration: none;
+            background-color: lighten($color3, 10%) !important;
         }
     }
     .copyright {

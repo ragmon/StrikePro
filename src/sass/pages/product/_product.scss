@@ -1,7 +1,10 @@
 .page__product {
     position: relative;
     .tile__text {
-        padding: 60px 50px;
+        padding: 30px 15px;
+        @media(min-width: 768px) {
+            padding: 60px 50px;
+        }
     }
     .product {
         position: relative;

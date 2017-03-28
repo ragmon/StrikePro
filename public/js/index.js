@@ -184,26 +184,63 @@ $(document).ready(function () {
     jQuery("#input_range-1").slider({
         min: 0,
         max: 15,
-        values: [0, 15],
-        range: true
+        step: 1,
+        value: '',
+        range: "max"
     });
+
     jQuery("#input_range-2").slider({
         min: 0,
         max: 11,
-        values: [0, 11],
+        values: '',
         range: true
     });
     jQuery("#input_range-3").slider({
         min: 0,
         max: 6,
-        values: [0, 6],
-        range: true
+        values: "",
+        range: "min"
     });
+    addValue()
+
+    function addValue() {
+        var btn = $(".ui-slider-handle");
+        for (var i = 0; i < btn.length; i++) {
+            $(btn[i]).append("<span class='input_range-value'></span>")
+        }
+    }
+
+    $('#input_range-1').bind('slide', function () {
+        $('#input_range-1 .input_range-value').text($('#input_range-1').slider('value') + " кг");
+    });
+    $('#input_range-2').bind('slide', function () {
+        $('#input_range-2 .input_range-value').text($('#input_range-2').slider('values') + " см");
+    });
+    $('#input_range-3').bind('slide', function () {
+        $('#input_range-3 .input_range-value').text($('#input_range-3').slider('value') + " метр");
+    });
+
+    $(".productList__filtrBlock--reset").on('click', function () {
+        $('#input_range-3').slider('value', 0)
+        $('#input_range-1 .input_range-value').text($('#input_range-1').slider('value') + " кг");
+        $('#input_range-2').slider('values', [0, 11]);
+        $('#input_range-2 .input_range-value').text($('#input_range-2').slider('values') + " см");
+        $('#input_range-1').slider('value', 0)
+        $('#input_range-3 .input_range-value').text($('#input_range-3').slider('value') + " метр");
+
+    })
+
 })
 
 
+
+
+
+
+
 // close product filtr
-$(".productList__filtrBlock--close").on("click", function () {
+$(".productList__filtrBlock--close").on("click", function (event) {
+    event.preventDefault();
     var filtr = $(".productList__filtrBlock");
     filtr.slideToggle();
     $(".productList__filtrBlock--close").toggleClass("active");
@@ -311,4 +348,16 @@ $(".location__item").hover(
         $(this).css({
             "background-color": "transparent"
         })
-    });
+    }
+);
+
+
+// JQUERY UI Autocomplete Widget
+$(document).ready(function () {
+    var flowers = ["Астра", "Нарцисс", "Роза", "Пион", "Примула", "Подснежник", "Мак", "Первоцвет", "Петуния", "Фиалка"];
+
+
+    $('.js__search').autocomplete({
+        source: flowers
+    })
+});

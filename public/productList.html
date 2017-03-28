@@ -191,7 +191,7 @@
                   <button type="submit" class="header__search--btn btn icon-search">Submit</button>
                   <div class="header__search--mobile">
                     <div class="form-group form-group-noWrap">
-                      <input type="search" placeholder="Искать..." class="form-control">
+                      <input type="search" placeholder="Искать..." class="form-control js__search">
                       <button type="submit" class="btnMain">да </button>
                     </div>
                   </div>
@@ -222,7 +222,7 @@
           </div>
           <!-- https://refreshless.com/nouislider/-->
         </div>
-        <form action="#!">
+        <form id="filtrProduct" action="#!">
           <div class="container productList__filtrBlock">       
             <div class="row">
               <div class="col-md-3 col-sm-6">
@@ -261,6 +261,7 @@
                 <div class="title__xs">Нагрузка</div>
                 <div class="form-group">
                   <div id="input_range-1" class="input__range"></div>
+                  <div id="input_range-1_value"></div>
                 </div>
               </div>
               <div class="col-md-3 col-md-offset-1 col-sm-6">

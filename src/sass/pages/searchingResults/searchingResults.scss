@@ -1,49 +1,38 @@
-.page__searchingResults{
+.page__searchingResults {
     .prompt {
         margin-top: 15px;
         margin-bottom: 30px;
     }
-    .title__sm{
+    .title__sm {
         margin-top: 20px;
         margin-bottom: 20px;
     }
-    .title__md{
+    .title__md {
         margin-bottom: 20px;
     }
-    p{
+    p {
         margin-bottom: 30px;
     }
-    .more__wrap{
-        @media(max-width: 767px){
+    .more__wrap {
+        @media(max-width: 767px) {
             display: block !important;
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-.pagination{
+.pagination {
     background-color: $color5;
     margin: 0 auto;
-    &__wrap{
+    &__wrap {
         text-align: center;
         margin-top: 40px;
         margin-bottom: 70px;
         display: none;
-        @media(min-width: 768px){
+        @media(min-width: 768px) {
             display: block;
         }
     }
-    li{
-        
-        a{
+    li {
+        a {
             height: 35px;
             border: none;
             background-color: transparent;
@@ -52,8 +41,9 @@
             color: #000000;
             margin-left: 2px;
             margin-right: 2px;
+            cursor: pointer;
             
-            &:after{
+            &:after {
                 content: "";
                 display: block;
                 position: absolute;
@@ -66,14 +56,26 @@
                 transform: skewY(-10deg);
             }
         }
-        &.active{
-            a{
+        &.active {
+            a {
                 background-color: $color3;
-                &:after{
+                &:after {
                     background-color: $color3;
                 }
-                
             }
         }
+    }
+}
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover,
+.pagination>.active>span,
+.pagination>.active>span:focus,
+.pagination>.active>span:hover {
+    background-color: lighten($color3, 10%) !important;
+    border: none !important;
+    &:after {
+        background-color: $color3;
+        background-color: lighten($color3, 10%) !important;
     }
 }

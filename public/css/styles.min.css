@@ -345,7 +345,7 @@ img {
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: rgba(0, 0, 0, 0.7);
       z-index: 10000;
       width: 100vw;
       height: 100vh;
@@ -686,6 +686,13 @@ img {
         .header__slider .flex-control-nav li a.flex-active {
           background-color: #fff; }
 
+.ui-autocomplete {
+  z-index: 100000;
+  display: block !important;
+  background-color: transparent !important;
+  border: none !important;
+  color: #73af19; }
+
 .breadcrumb {
   margin-bottom: 0;
   background-color: transparent;
@@ -726,7 +733,7 @@ img {
   .breadcrumb li:first-child:before {
     display: none !important; }
 
-a.tile:hover {
+.tile:hover {
   top: -10px;
   right: -10px;
   bottom: -10px;
@@ -1213,6 +1220,14 @@ a.tile:hover {
   @media (min-width: 980px) {
     .input__range {
       margin: 0; } }
+  .input__range .input_range-value {
+    position: absolute;
+    color: #000;
+    font-size: 1rem;
+    bottom: -40px;
+    width: 100px;
+    display: block;
+    text-align: left; }
   .input__range .ui-slider-range {
     background-color: #3d3d3d;
     border: none !important;
@@ -1223,7 +1238,8 @@ a.tile:hover {
     border-radius: 0;
     top: -2px !important;
     width: 37px;
-    height: 37px; }
+    height: 37px;
+    outline: none; }
     .input__range .ui-slider-handle:before {
       content: "\2630";
       position: absolute;
@@ -1309,7 +1325,10 @@ a.tile:hover {
 .page__product {
   position: relative; }
   .page__product .tile__text {
-    padding: 60px 50px; }
+    padding: 30px 15px; }
+    @media (min-width: 768px) {
+      .page__product .tile__text {
+        padding: 60px 50px; } }
   .page__product .product {
     position: relative; }
     @media (min-width: 768px) {
@@ -1778,7 +1797,8 @@ a.tile:hover {
     z-index: 1;
     color: #000000;
     margin-left: 2px;
-    margin-right: 2px; }
+    margin-right: 2px;
+    cursor: pointer; }
     .pagination li a:after {
       content: "";
       display: block;
@@ -1794,6 +1814,23 @@ a.tile:hover {
     background-color: #73af19; }
     .pagination li.active a:after {
       background-color: #73af19; }
+
+.pagination > .active > a,
+.pagination > .active > a:focus,
+.pagination > .active > a:hover,
+.pagination > .active > span,
+.pagination > .active > span:focus,
+.pagination > .active > span:hover {
+  background-color: #90dc1f !important;
+  border: none !important; }
+  .pagination > .active > a:after,
+  .pagination > .active > a:focus:after,
+  .pagination > .active > a:hover:after,
+  .pagination > .active > span:after,
+  .pagination > .active > span:focus:after,
+  .pagination > .active > span:hover:after {
+    background-color: #73af19;
+    background-color: #90dc1f !important; }
 
 .footer {
   margin-top: -339px;
@@ -1831,9 +1868,11 @@ a.tile:hover {
   .footer .form-group-noWrap {
     white-space: nowrap; }
     .footer .form-group-noWrap .btnMain {
-      left: -10px; }
+      left: -11px; }
       .footer .form-group-noWrap .btnMain:active {
         top: 0; }
+      .footer .form-group-noWrap .btnMain:hover:after {
+        background-color: #90dc1f !important; }
   .footer__colTitle {
     font-size: 1.211rem;
     line-height: 27px;
@@ -1867,7 +1906,8 @@ a.tile:hover {
       line-height: 37px;
       color: #fff; }
     .footer__socialLink:hover {
-      text-decoration: none; }
+      text-decoration: none;
+      background-color: #90dc1f !important; }
   .footer .copyright {
     text-align: center; }
 
