@@ -1,0 +1,30 @@
+main.mainContent
+    .container
+        .row
+            .col-md-12
+                h1.title__lg Попап логин
+            .col-md-12                
+                .popUP__wrapper.js__popup(style="display: none")
+                    .Modal__wrapper.js__noPropagation
+                        button.close__popup.js__closePopup ×
+                        form(action="").Modal__login--wrap
+                            .form-group
+                                label(for="popUp__inp_name") Представьтесь
+                                input(type="text", name="" id="popUp__inp_name")
+                            .form-group
+                                label(for="popUp__inp_name") Телефон
+                                input(type="text", name="" id="popUp__inp_name")
+                            .form-group
+                                button.btnMain Войти
+    .container
+        .row
+            .col-md-12
+                h1.title__lg Попап спасибо
+            .col-md-12                
+                .popUP__wrapper.js__popup(style="display: none")
+                    .Modal__wrapper.js__noPropagation
+                        button.close__popup.js__closePopup ×
+                        .Modal
+                            .Modal__title Спасибо!
+                            p.Modal__text Менеджер нашей компании свяжется с вами в течении 10 минут
+                            button.btnMain.js__closePopup Закрыть

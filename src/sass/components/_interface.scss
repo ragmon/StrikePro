@@ -1,1 +1,46 @@
-
+.Modal {
+    color: #fff;
+    &__title {
+        text-align: center;
+        font-size: 21px;
+        font-family: "OpenSans-Bold";
+        margin-bottom: 5px;
+        margin-top: 40px;
+    }
+    &__text {
+        text-align: center;
+        font-size: 1rem;
+        font-family: "OpenSans-Light";
+        margin-bottom: 60px;
+        line-height: 1.1rem;
+    }
+    &__wrapper {
+        max-width: 340px;
+        width: 100%;
+        max-height: 320px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        background-color: #000;
+        padding: 40px;
+        label {
+            display: block;
+            color: #fff;
+        }
+        input {
+            width: 100%;
+            color: #000;
+        }
+        .close__popup {
+            color: #fff;
+        }
+        .btnMain {
+            margin: 30px auto;
+            display: block;
+        }
+    }
+}

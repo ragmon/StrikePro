@@ -202,8 +202,6 @@ img {
   text-transform: uppercase; }
 
 .title__xs {
-  font-size: 19px;
-  line-height: 26px;
   font-size: 1rem;
   line-height: 1.368rem;
   color: #3d3d3d;
@@ -254,6 +252,45 @@ img {
       background-color: #8fbf47; }
   .btnMain:active {
     top: 3px; }
+
+.Modal {
+  color: #fff; }
+  .Modal__title {
+    text-align: center;
+    font-size: 21px;
+    font-family: "OpenSans-Bold";
+    margin-bottom: 5px;
+    margin-top: 40px; }
+  .Modal__text {
+    text-align: center;
+    font-size: 1rem;
+    font-family: "OpenSans-Light";
+    margin-bottom: 60px;
+    line-height: 1.1rem; }
+  .Modal__wrapper {
+    max-width: 340px;
+    width: 100%;
+    max-height: 320px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-color: #000;
+    padding: 40px; }
+    .Modal__wrapper label {
+      display: block;
+      color: #fff; }
+    .Modal__wrapper input {
+      width: 100%;
+      color: #000; }
+    .Modal__wrapper .close__popup {
+      color: #fff; }
+    .Modal__wrapper .btnMain {
+      margin: 30px auto;
+      display: block; }
 
 .form-control {
   background-color: #f7f7f7;
@@ -1759,6 +1796,40 @@ img {
     line-height: 15px;
     padding: 0;
     font-size: 30px; }
+
+.popUP__productImg {
+  max-width: 700px;
+  max-height: 420px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  background-color: #fff;
+  padding: 30px; }
+  .popUP__productImg--wrap img {
+    width: 100%;
+    height: auto;
+    display: block; }
+
+.product__zoom {
+  background-color: transparent;
+  background-image: url(/image/zoom_icon.png);
+  background-repeat: no-repeat;
+  display: block;
+  width: 32px;
+  height: 31px;
+  border: none;
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  cursor: pointer;
+  z-index: 4; }
 
 .page__searchingResults .prompt {
   margin-top: 15px;

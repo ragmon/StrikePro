@@ -217,6 +217,7 @@
             </div>
             <div class="product__stand">
               <div class="product__stand--img"><img src="/image/product.png" alt=""></div>
+              <button class="product__zoom">               </button>
             </div>
             <div class="product__rightSidebar">
               <div class="product__sliderImg">
@@ -343,7 +344,7 @@
         </div>
       </main>
       <div class="colorTable__gallery--wrapper js__popup">
-        <div class="colorTable__gallery--popup">
+        <div class="colorTable__gallery--popup js__noPropagation">
           <button class="close__popup js__closePopup">&#215;</button>
           <div class="colorTable__gallery--top">
             <div class="colorTable__gallery--img"><img src="/image/color-4.png" alt=""></div>
@@ -366,6 +367,12 @@
               </button>
             </div>
           </div>
+        </div>
+      </div>
+      <div style="display: none" class="popUP__wrapper js__popup">
+        <div class="popUP__productImg js__noPropagation">
+          <button class="close__popup js__closePopup">×</button>
+          <div class="popUP__productImg--wrap"><img src="" alt=""></div>
         </div>
       </div>
     </div>

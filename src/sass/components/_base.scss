@@ -122,18 +122,14 @@ img {
     }
     //h3
     &__sm {
-        font-family: "OpenSans-Italic";
-        //font-size: 26px;
-        //line-height: 30px;
+        font-family: "OpenSans-Italic";       
         font-size: 1.368rem;
         line-height: 1.579rem;
         color: $color3;
         text-transform: uppercase;
     }
     //h4
-    &__xs {
-        font-size: 19px;
-        line-height: 26px;
+    &__xs {        
         font-size: 1rem;
         line-height: 1.368rem;
         color: $color1;

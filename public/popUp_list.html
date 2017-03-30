@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fish</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jquery-ui.min.css" rel="stylesheet">
+    <link href="css/flexslider.css" rel="stylesheet">
+    <link href="css/styles.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <!--if lt IE 9
+    script(src='https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js')
+    |       
+    script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+    -->
+  </head>
+  <body>              
+    <div class="wrapper">           
+      <main class="mainContent">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="title__lg">Попап логин</h1>
+            </div>
+            <div class="col-md-12">               
+              <div style="display: none" class="popUP__wrapper js__popup">
+                <div class="Modal__wrapper js__noPropagation">
+                  <button class="close__popup js__closePopup">×</button>
+                  <form action="" class="Modal__login--wrap">
+                    <div class="form-group">
+                      <label for="popUp__inp_name">Представьтесь</label>
+                      <input type="text" name="" id="popUp__inp_name">
+                    </div>
+                    <div class="form-group">
+                      <label for="popUp__inp_name">Телефон</label>
+                      <input type="text" name="" id="popUp__inp_name">
+                    </div>
+                    <div class="form-group">
+                      <button class="btnMain">Войти</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1 class="title__lg">Попап спасибо</h1>
+            </div>
+            <div class="col-md-12">               
+              <div style="display: none" class="popUP__wrapper js__popup">
+                <div class="Modal__wrapper js__noPropagation">
+                  <button class="close__popup js__closePopup">×</button>
+                  <div class="Modal">
+                    <div class="Modal__title">Спасибо!</div>
+                    <p class="Modal__text">Менеджер нашей компании свяжется с вами в течении 10 минут</p>
+                    <button class="btnMain js__closePopup">Закрыть</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

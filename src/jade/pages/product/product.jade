@@ -8,6 +8,7 @@ main.page__product
             .product__stand
                 .product__stand--img
                     img(src="/image/product.png", alt="")
+                button.product__zoom                
             .product__rightSidebar
                 .product__sliderImg
                     ul
@@ -56,7 +57,7 @@ main.page__product
             .col-xs-12
                 include color_table
 .colorTable__gallery--wrapper.js__popup
-    .colorTable__gallery--popup
+    .colorTable__gallery--popup.js__noPropagation
         button.close__popup.js__closePopup &#215;
         .colorTable__gallery--top
             .colorTable__gallery--img
@@ -75,3 +76,8 @@ main.page__product
                 button.right
                     svg
                         use.caret__arrow(xlink:href="#svg_arrow")
+.popUP__wrapper.js__popup(style="display: none")
+                    .popUP__productImg.js__noPropagation
+                        button.close__popup.js__closePopup ×
+                        .popUP__productImg--wrap
+                            img(src="", alt="")

@@ -100,7 +100,7 @@ $(document).ready(function () {
                 "overflow": "inherit"
             });
             return
-        } else if ($(event.target).closest(".colorTable__gallery--popup").length == 1 || $(event.target).closest(".popUP__video").length == 1) {
+        } else if ($(event.target).closest(".js__noPropagation").length == 1) {
             event.stopPropagation();
             return
         } else if ($(event.target).closest(".js__popup").length == 1) {
@@ -145,7 +145,7 @@ $(document).ready(function () {
         event.preventDefault();
         var link = $(this).attr('href');
         var popUp_content = '<iframe width="100%" height="100%" src="' + link + '" frameborder="0" allowfullscreen></iframe>';
-        var popUp = '<div class="popUP__wrapper js__popup active"><div class="popUP__video"> <button class="close__popup js__closePopup">&#215;</button>' + popUp_content + '</div></div>';
+        var popUp = '<div class="popUP__wrapper js__popup active"><div class="popUP__video js__noPropagation"> <button class="close__popup js__closePopup">&#215;</button>' + popUp_content + '</div></div>';
         $("body").css({
             "overflow": "hidden"
         });
@@ -368,3 +368,21 @@ $(document).ready(function () {
         source: flowers
     })
 });
+
+
+$(".product__zoom").on("click", function(){
+   var link = $(this).closest(".product__stand").find("img").attr("src");
+    
+    $("body").css({
+        "overflow":"hidden"
+    })
+    
+    $(".popUP__productImg").css({
+        "width": $(this).closest(".product__stand").find("img").width() + "px",
+        "height": $(this).closest(".product__stand").find("img").height() +  "px"
+    })
+    
+    $(".popUP__productImg").find("img").attr("src",link);
+    $(".popUP__productImg").closest(".popUP__wrapper").show();
+    
+})
