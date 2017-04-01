@@ -294,18 +294,22 @@ $(".tab-head-cont section a").on("click", function (event) {
     event.stopPropagation();
 })
 
-
+// удалить это
+// var w = screen.width;
+//   if (w < 1180) {
+//
+//}
 
 // mobile search popup
 $(".header__search--btn").on("click", function (event) {
-    var w = screen.width;
-    if (w < 1180) {
-        event.preventDefault();
-        if (!$("body").hasClass("nav__active")) {
-            $(".header__search--mobile").show();
-        }
+
+    event.preventDefault();
+    if (!$("body").hasClass("nav__active")) {
+        $(".header__search--mobile").show();
     }
+
 })
+
 $(document).on("click", function (event) {
     if ($(event.target).closest(".form-group").length == 1) {
         event.stopPropagation();
@@ -370,19 +374,67 @@ $(document).ready(function () {
 });
 
 
-$(".product__zoom").on("click", function(){
-   var link = $(this).closest(".product__stand").find("img").attr("src");
-    
+$(".product__zoom").on("click", function () {
+    var link = $(this).closest(".product__stand").find("img").attr("src");
+
     $("body").css({
-        "overflow":"hidden"
+        "overflow": "hidden"
     })
-    
+
     $(".popUP__productImg").css({
         "width": $(this).closest(".product__stand").find("img").width() + "px",
-        "height": $(this).closest(".product__stand").find("img").height() +  "px"
+        "height": $(this).closest(".product__stand").find("img").height() + "px"
     })
-    
-    $(".popUP__productImg").find("img").attr("src",link);
+
+    $(".popUP__productImg").find("img").attr("src", link);
     $(".popUP__productImg").closest(".popUP__wrapper").show();
-    
+
 })
+
+//--------------------------------------------------------------
+//--------------------------------------------------------------
+/* 
+
+код ниже нужен для горизонтального скрола на странице списка продуктов  для прокрутки вариация проддуктов
+
+*/
+//--------------------------------------------------------------
+//--------------------------------------------------------------
+
+$(document).ready(
+    function () {
+        //$("html").niceScroll();
+        $(".productVariation__wrap").niceScroll({
+            touchbehavior: true,
+            cursorcolor: "transparent",
+            cursorborder: "0px solid transparent"
+        });
+
+        // проверяет есть ли у карточки с товаром ссылки на вариации
+        // если есть добавит градиент если общая ширина ссылок больше ширины контейнера
+        function addGradientBlock() {
+
+            var blockList = $(".productVariation__wrap");
+
+
+            for (var i = 0; i < blockList.length; i++) {
+                var elements = $(blockList[i]).find("li");
+                var itemWidth = $(elements[0]).width() * $(elements).length;
+                
+                if ($(elements).length != 0 && $(blockList[i]).width() < itemWidth) {
+                    if($(blockList[i]).find(".gradientBlock").length == 1) continue
+                    $(blockList[i]).append("<div class='gradientBlock'></div>");
+                    
+                } else {
+                    $(blockList[i]).find(".gradientBlock").remove()
+                }
+                
+            }
+        };
+        addGradientBlock()
+
+        $(window).resize(function () {
+            addGradientBlock()
+        });
+    }
+);

@@ -1250,7 +1250,7 @@ img {
   height: 34px;
   border: none !important;
   border-radius: 0;
-  margin: 0 30px; }
+  margin: 0 30px 50px; }
   @media (min-width: 768px) {
     .input__range {
       margin: 0 10px; } }
@@ -1278,13 +1278,15 @@ img {
     height: 37px;
     outline: none; }
     .input__range .ui-slider-handle:before {
-      content: "\2630";
+      content: "| | |";
       position: absolute;
       left: 7px;
-      top: 4px;
+      top: 3px;
       color: #fff;
       font-size: 24px;
-      transform: rotate(90deg); }
+      letter-spacing: -2px;
+      overflow: hidden;
+      height: 27px; }
     .input__range .ui-slider-handle:after {
       content: "";
       width: 37px;
@@ -1358,6 +1360,43 @@ img {
     left: -7px;
     z-index: -1;
     transform: skew(-20deg); }
+
+.product__footer {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  overflow: hidden; }
+  .product__footer .product__text {
+    position: static !important;
+    width: 100%;
+    margin-bottom: 5px; }
+
+.productVariation__wrap {
+  overflow: auto; }
+  .productVariation__wrap .gradientBlock {
+    content: "";
+    height: 30px;
+    width: 15px;
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.65+100 */
+    background: -moz-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+    z-index: 11; }
+
+.productVariation__list {
+  white-space: nowrap;
+  text-align: left; }
+  .productVariation__list li {
+    display: inline-block; }
+    .productVariation__list li .btnMain {
+      line-height: 30px !important; }
 
 .page__product {
   position: relative; }
