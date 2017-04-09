@@ -23,7 +23,11 @@ $(document).ready(function () {
     init();
 
     $(".left").on("click", function () {
-
+        
+        if(elemList.length <= 6){
+            return
+        }
+        
         if (currentPosition <= 0) {
             currentPosition = 0;
             $(slideContainer).css({
@@ -39,6 +43,9 @@ $(document).ready(function () {
         });
     })
     $(".right").on("click", function () {
+        if(elemList.length <= 6){
+            return
+        }
         if (currentPosition == maxStep) {
             currentPosition = maxStep;
             $(slideContainer).css({
