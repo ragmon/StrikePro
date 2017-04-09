@@ -810,7 +810,8 @@ img {
   .tile__wrapper {
     position: relative;
     min-height: 50vw;
-    height: auto; }
+    height: auto;
+    display: block; }
     @media (max-width: 560px) {
       .tile__wrapper {
         width: 100% !important;
@@ -1574,47 +1575,27 @@ img {
       .page__product .product__stand--img {
         width: 80%;
         margin: 0 auto; }
-      .page__product .product__stand:after {
-        content: "";
-        background-image: url(/image/product_stand-bg.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 100%;
-        height: 104px;
-        display: block;
-        position: absolute;
-        bottom: 0;
-        opacity: 0.4; }
-        @media (min-width: 1325px) {
-          .page__product .product__stand:after {
-            width: 100%;
-            height: 130px; } }
-  .page__product .produstTable {
-    overflow: auto;
+  .page__product .productTable {
     padding-top: 60px;
     padding-bottom: 100px; }
-    .page__product .produstTable table {
-      width: 1220px;
-      margin: 0 auto; }
-    .page__product .produstTable thead {
-      border-bottom: 2px solid #c1c1c1;
-      margin-bottom: 10px; }
-    .page__product .produstTable th {
-      width: 14.2857143%;
-      height: 40px;
-      vertical-align: top; }
-      .page__product .produstTable th:first-child {
-        padding-left: 30px; }
-      .page__product .produstTable th:last-child {
-        padding-right: 30px; }
-    .page__product .produstTable td {
-      width: 14.2857143%;
-      height: 40px;
-      vertical-align: top; }
-      .page__product .produstTable td:first-child {
-        padding-left: 30px; }
-      .page__product .produstTable td:last-child {
-        padding-right: 30px; }
+    .page__product .productTable__wrap {
+      font-size: 0;
+      white-space: nowrap;
+      min-height: 60px; }
+    .page__product .productTable__title {
+      width: 45%;
+      display: inline-block;
+      vertical-align: middle;
+      white-space: normal;
+      margin-right: 5%;
+      font-size: 1rem;
+      font-weight: bold; }
+    .page__product .productTable__desc {
+      width: 50%;
+      display: inline-block;
+      vertical-align: middle;
+      white-space: normal;
+      font-size: 1rem; }
   .page__product .colorTable {
     font-size: 0;
     text-align: left;

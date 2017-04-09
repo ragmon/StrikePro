@@ -402,7 +402,7 @@ $(".product__zoom").on("click", function () {
 //--------------------------------------------------------------
 
 $(document).ready(
-    function () {        
+    function () {
         $(".productVariation__wrap").niceScroll({
             touchbehavior: true,
             cursorcolor: "transparent",
@@ -419,15 +419,15 @@ $(document).ready(
             for (var i = 0; i < blockList.length; i++) {
                 var elements = $(blockList[i]).find("li");
                 var itemWidth = $(elements[0]).width() * $(elements).length;
-                
+
                 if ($(elements).length != 0 && $(blockList[i]).width() < itemWidth) {
-                    if($(blockList[i]).find(".gradientBlock").length == 1) continue
+                    if ($(blockList[i]).find(".gradientBlock").length == 1) continue
                     $(blockList[i]).append("<div class='gradientBlock'></div>");
-                    
+
                 } else {
                     $(blockList[i]).find(".gradientBlock").remove()
                 }
-                
+
             }
         };
         addGradientBlock();
@@ -435,5 +435,18 @@ $(document).ready(
         $(window).resize(function () {
             addGradientBlock()
         });
+
+        $(".tile__wrapper--big").on("click", function (event) {
+            event.preventDefault();
+            var href = $(this).attr('href');
+            var video_content = '<iframe width="100%" height="100%" src="' + href + '" frameborder="0" allowfullscreen></iframe>';
+            $(this).empty()
+            $(this).append(video_content);
+            
+            
+        })
+
     }
+
+
 );
