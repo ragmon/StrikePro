@@ -178,7 +178,7 @@ $(document).ready(function () {
 $(window).load(function () {
     $('.header__slider').flexslider({
         animation: "slide",
-        slideshow: false,
+        slideshow: true,
         touch: true,
         directionNav: false,
         controlNav: true

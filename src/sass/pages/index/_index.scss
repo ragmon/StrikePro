@@ -100,9 +100,11 @@
         color: #fff;
         padding: 20px;
         text-align: center;
+        white-space: nowrap;
+        
         img {
             display: inline-block;
-            width: auto;
+            width: 100%;
             height: auto;
             max-width: 100%;
             vertical-align: middle;
@@ -116,7 +118,9 @@
             color: $color3;
             text-transform: uppercase;
             line-height: 21px;
-            text-align: left;
+            text-align: left;            
+            right: 0;
+            white-space: normal;
         }
         &__marker {
             display: none;
