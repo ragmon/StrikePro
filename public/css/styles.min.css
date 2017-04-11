@@ -438,7 +438,7 @@ img {
         transform: scale(1, 1) !important;
         height: 50px;
         vertical-align: top;
-        left: -10px; }
+        left: -15px; }
     .header__search .form-group {
       display: inline-block;
       vertical-align: middle;
@@ -730,6 +730,12 @@ img {
   border: none !important;
   color: #73af19; }
 
+.ui-state-active {
+  border: none !important;
+  background: transparent !important;
+  font-weight: normal;
+  color: #fff; }
+
 .breadcrumb {
   margin-bottom: 0;
   background-color: transparent;
@@ -857,7 +863,6 @@ img {
   .tile.product {
     background-color: #f7f7f7;
     color: #fff;
-    padding: 20px;
     text-align: center;
     white-space: nowrap; }
     .tile.product img {
@@ -1122,6 +1127,8 @@ img {
     vertical-align: middle;
     line-height: 44px;
     font-size: 17px; }
+  .socialBtn__wrap--vk {
+    background-color: transparent; }
 
 .socialBtn__icon {
   width: 44px;

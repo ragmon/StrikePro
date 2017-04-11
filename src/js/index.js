@@ -23,11 +23,11 @@ $(document).ready(function () {
     init();
 
     $(".left").on("click", function () {
-        
-        if(elemList.length <= 6){
+
+        if (elemList.length <= 6) {
             return
         }
-        
+
         if (currentPosition <= 0) {
             currentPosition = 0;
             $(slideContainer).css({
@@ -43,7 +43,7 @@ $(document).ready(function () {
         });
     })
     $(".right").on("click", function () {
-        if(elemList.length <= 6){
+        if (elemList.length <= 6) {
             return
         }
         if (currentPosition == maxStep) {
@@ -449,11 +449,24 @@ $(document).ready(
             var video_content = '<iframe width="100%" height="100%" src="' + href + '" frameborder="0" allowfullscreen></iframe>';
             $(this).empty()
             $(this).append(video_content);
-            
-            
+
+
         })
 
     }
 
 
 );
+
+
+
+VK.init({apiId: 5978511, onlyWidgets: true});
+VK.Widgets.Like("vk_like", {type: "mini"});
+
+
+
+
+
+
+
+

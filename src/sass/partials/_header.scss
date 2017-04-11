@@ -127,7 +127,7 @@
                 transform: scale(1, 1) !important;
                 height: 50px;
                 vertical-align: top;
-                left: -10px;
+                left: -15px;
             }
         }
         .form-group {
@@ -488,6 +488,12 @@
     color: $color3;
 }
 
+.ui-state-active {
+	border: none !important;
+    background: transparent !important;
+    font-weight: normal;
+    color: #fff;
+}
 
 
 
