@@ -460,13 +460,10 @@ $(document).ready(
 
 
 
-VK.init({apiId: 5978511, onlyWidgets: true});
-VK.Widgets.Like("vk_like", {type: "mini"});
-
-
-
-
-
-
-
-
+VK.init({
+    apiId: 5978511, // ID получить тут https://vk.com/dev/Like
+    onlyWidgets: true
+});
+VK.Widgets.Like("vk_like", {
+    type: "mini" // формат кнопки
+});
