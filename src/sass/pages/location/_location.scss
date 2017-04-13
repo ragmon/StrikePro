@@ -42,6 +42,10 @@
     
     &__list {
         overflow: auto;
+        display: none;
+        &.active{
+            display: block;
+        }
     }
     &__item {
         margin-bottom: 35px;
@@ -86,3 +90,8 @@
             display: none;
         }
     }
+
+#GMap{
+    width: 100%;
+    height: 700px;
+}

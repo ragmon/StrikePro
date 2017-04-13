@@ -1,7 +1,7 @@
-div(class="tab-pane fade in active clearfix" id="moscow")
+div(class="clearfix")
     .location__right
-        ul.location__list
-            li.location__item.active
+        ul.location__list.active#Moscow
+            li.location__item
                 .location__title 
                     span.location__title-num 1
                     span.title__xs Избушка рыбака
@@ -23,46 +23,77 @@ div(class="tab-pane fade in active clearfix" id="moscow")
                     span.title__xs Мечта Рыболова
                 p.location__text Россия, Москва
                     | Кузнечный пер., 19/21
-                    | +7 (499) 764-49-15              
+                    | +7 (499) 764-49-15
+        ul.location__list#Spb
             li.location__item
                 .location__title 
-                    span.location__title-num 4
-                    span.title__xs Рыболовный центр
-                p.location__text Россия, Москва
-                    | Химический пер., 12
-                    | +7 (499) 424-35-25
-                a(href="#!") www.lovisnami.ru
-            li.location__item
-                .location__title 
-                    span.location__title-num 5
+                    span.location__title-num 1
                     span.title__xs Избушка рыбака
-                p.location__text Россия, Москва
-                    | пр. Луначарского, д.15, корп. 1
+                p.location__text Россия, Санкт-Петербург
+                    | Звёздная улица, 22
                     | +7 (499) 491-11-01
                 a(href="#!") www.fishers-house.ru
             li.location__item
                 .location__title 
-                    span.location__title-num 6
+                    span.location__title-num 2
                     span.title__xs Рыбачок
-                p.location__text Россия, Москва
-                    | Химический пер., 12
+                p.location__text Россия, Санкт-Петербург
+                    | Beloostrovskaya ul., 8
                     | +7 (499) 424-35-25
                 a(href="#!") www.lovisnami.ru
+        ul.location__list#Novosibirsk
             li.location__item
                 .location__title 
-                    span.location__title-num 7
-                    span.title__xs Мечта Рыболова
-                p.location__text Россия, Москва
-                    | Кузнечный пер., 19/21
-                    | +7 (499) 764-49-15              
+                    span.location__title-num 1
+                    span.title__xs Избушка рыбака
+                p.location__text Россия, Новосибирск
+                    | ул. Некрасова, 54
+                    | +7 (499) 491-11-01
+                a(href="#!") www.fishers-house.ru
             li.location__item
                 .location__title 
-                    span.location__title-num 8
-                    span.title__xs Рыболовный центр
-                p.location__text Россия, Москва
-                    | Химический пер., 12
+                    span.location__title-num 2
+                    span.title__xs Рыбачок
+                p.location__text Россия, Новосибирск
+                    | ул. Тульская, 527
                     | +7 (499) 424-35-25
-                a(href="#!") www.lovisnami.ru
+                a(href="#!") www.lovisnami.ru 
+        ul.location__list#Kazan
+            li.location__item
+                .location__title 
+                    span.location__title-num 1
+                    span.title__xs Избушка рыбака
+                p.location__text Россия, Казань
+                    | ул. Маршала Чуйкова, 11А
+                    | +7 (499) 491-11-01
+                a(href="#!") www.fishers-house.ru
+            li.location__item
+                .location__title 
+                    span.location__title-num 2
+                    span.title__xs Рыбачок
+                p.location__text Россия, Казань
+                    | ул. Воровского, 67
+                    | +7 (499) 424-35-25
+                a(href="#!") www.lovisnami.ru 
+        
+        ul.location__list#Samara
+            li.location__item
+                .location__title 
+                    span.location__title-num 1
+                    span.title__xs Избушка рыбака
+                p.location__text Россия, Самара
+                    | пр. Кирова, 180А
+                    | +7 (499) 491-11-01
+                a(href="#!") www.fishers-house.ru
+            li.location__item
+                .location__title 
+                    span.location__title-num 2
+                    span.title__xs Рыбачок
+                p.location__text Россия, Самара
+                    | просп. Карла Маркса, 374
+                    | +7 (499) 424-35-25
+                a(href="#!") www.lovisnami.ru 
     .location__left
+        #GMap
     .more
         button.btnMain Показать еще

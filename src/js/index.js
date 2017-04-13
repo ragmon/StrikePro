@@ -1,3 +1,255 @@
+// https://tech.yandex.ru/maps/jsbox/2.1/clusterer_icon_hover
+//https://tech.yandex.ru/maps/doc/jsapi/2.0/dg/concepts/events-docpage/
+//https://tech.yandex.ru/maps/jsbox/2.1/event_reverse_geocode
+var Location = {
+    "Moscow": {
+        "id": "1", // City ID
+        "name": "Москва",
+        "center": {
+            "lat": 55.755826, // latitude (широта)
+            "lng": 37.6173,
+        },
+        "stores": [
+            {
+                "id": "1", // Store   
+                "lat": 55.679603, // latitude (широта)
+                "lng": 37.312771, // longitude (долгота)
+                "address": "Москва, пр. Луначарского, д.15"
+            },
+            {
+                "id": "2", // Store  
+                "lat": 55.761849, // latitude (широта)
+                "lng": 37.6365888, // longitude (долгота)
+                "address": "Москва, Химический пер., 12"
+            },
+            {
+                "id": "3", // Store
+                "lat": 55.6800736, // latitude (широта)
+                "lng": 37.732702, // longitude (долгота)
+                "address": "Москва, Кузнечный тупик 19/21"
+            }
+        ]
+    },
+    "Spb": {
+        "id": "2", // City ID
+        "name": "Санкт-Петербург",
+        "center": {
+            "lat": 59.9342802, // latitude (широта)
+            "lng": 30.3350986,
+        },
+        "stores": [
+            {
+                "id": "1", // Store      
+                "lat": 59.836173, // latitude (широта)
+                "lng": 30.3676546, // longitude (долгота)
+                "address": "Санкт-Петербург, Звёздная улица, 22"
+            },
+            {
+                "id": "2", // Store  
+                "lat": 59.9860228, // latitude (широта)
+                "lng": 30.3213429, // longitude (долгота)
+                "address": "Санкт-Петербург, Beloostrovskaya ul., 8"
+            }
+        ]
+    },
+    "Novosibirsk": {
+        "id": "3", // City ID
+        "name": "Новосибирск",
+        "center": {
+            "lat": 55.0083526, // latitude (широта)
+            "lng": 82.9357327,
+        },
+        "stores": [
+            {
+                "id": "1", // Store 
+                "lat": 55.045832, // latitude (широта)
+                "lng": 82.930247, // longitude (долгота)
+                "address": "Новосибирск, ул. Некрасова, 54"
+            },
+            {
+                "id": "2", // Store  
+                "lat": 54.9494949, // latitude (широта)
+                "lng": 82.8374367, // longitude (долгота)
+                "address": "Новосибирск, ул. Тульская, 527"
+            }
+        ]
+    },
+    "Kazan": {
+        "id": "4", // City ID
+        "name": "Казань",
+        "center": {
+            "lat": 55.8304307, // latitude (широта)
+            "lng": 49.0660806,
+        },
+        "stores": [
+            {
+                "id": "1", // Store  
+                "lat": 55.8362801, // latitude (широта)
+                "lng": 49.1121332, // longitude (долгота)
+                "address": "Казань, ул. Маршала Чуйкова, 11А"
+            },
+            {
+                "id": "2", // Store  
+                "lat": 55.8435833, // latitude (широта)
+                "lng": 49.094269, // longitude (долгота)
+                "address": "Казань, ул. Воровского, 67"
+            }
+        ]
+    },
+    "Samara": {
+        "id": "5", // City ID
+        "name": "Самара",
+        "center": {
+            "lat": 53.2415041, // latitude (широта)
+            "lng": 50.2212463,
+        },
+        "stores": [
+            {
+                "id": "1", // Store        
+                "lat": 53.240493, // latitude (широта)
+                "lng": 50.235174, // longitude (долгота)
+                "address": "Самара, пр. Кирова, 180А"
+            },
+            {
+                "id": "2", // Store    
+                "lat": 53.2420649, // latitude (широта)
+                "lng": 50.239387, // longitude (долгота)
+                "address": "Самара, просп. Карла Маркса, 374"
+            }
+        ]
+    }
+}
+
+
+ymaps.ready(init);
+var map;
+var markers = [];
+var marker;
+
+
+
+function init() {
+    map = new ymaps.Map("GMap", {
+        center: [55.76, 37.64],
+        zoom: 10
+    });
+    
+
+
+    markerInit(Location.Moscow);
+}
+
+function markerInit(locationOBJ) {
+    clearMarkers();
+    var city = locationOBJ
+    var store = city.stores;
+    map.setCenter([city.center.lat, city.center.lng], 10, {
+        checkZoomRange: true
+    });
+
+    for (var i = 0; i < store.length; i++) {
+
+        marker = new ymaps.Placemark([store[i].lat, store[i].lng], {
+            hintContent: store[i].address
+        });
+        map.geoObjects.add(marker);
+        marker.events.add('click', function (e) {
+            //var object = e;
+            console.log(e);
+            console.log(e.get('coords'));
+            
+        });
+        markers.push(marker);
+        
+    }
+    
+        
+    
+}
+
+
+
+$(".location__tabs li a").on("click", function (event) {
+    event.preventDefault();
+
+    var $this = $($(this));
+    var link = $this.attr("href");
+
+    if ($this.closest("li").hasClass("active")) {
+        return
+    }
+    console.log(markers);
+    $(".location__tabs li").removeClass("active");
+    $this.closest("li").addClass("active");
+    $(".location__list").removeClass("active");
+    $(link).addClass("active");
+
+    link = link.substring(1);
+
+    markerInit(Location[link]);
+
+})
+
+
+function clearMarkers() {
+    for (var i = 0; i < markers.length; i++) {
+        map.geoObjects.remove(markers[i]);
+    }
+    markers.splice(0, markers.length);
+}
+
+
+
+// google maps api
+//function initMap() {    
+//    map = new google.maps.Map(document.getElementById('GMap'));    
+//    codeAddress(Location.Moscow);
+//}
+//
+//function codeAddress(query) {
+//    clearMarkers()
+//    var counter = query.stores;
+//    
+//    map.setZoom(10);
+//    map.setCenter({
+//        lat: query.center.lat,
+//        lng: query.center.lng
+//    })    
+//    
+//    for (var i = 0; i < counter.length; i++) {
+//
+//        var pos = {
+//            lat: counter[i].lat,
+//            lng: counter[i].lng
+//        };
+//        var marker = new google.maps.Marker({
+//            position: pos,
+//            map: map,
+//            label: counter[i].id
+//        });
+//        markers.push(marker);
+//    }
+//}
+//
+//function setMapOnAll(map) {
+//    for (var i = 0; i < markers.length; i++) {
+//        markers[i].setMap(map);
+//    }
+//    markers
+//    markers.splice(0, markers.length);
+//}
+//
+//function clearMarkers() {
+//    setMapOnAll(null);
+//}
+//
+
+
+
+
+
+
+
 // Slider page product
 $(document).ready(function () {
     var elemList = $(".colorTable__item");
@@ -141,9 +393,6 @@ $(document).ready(function () {
 
 
 })
-
-
-
 
 // VIDEO POPUP
 $(document).ready(function () {
@@ -301,12 +550,6 @@ $(".tab-head-cont section a").on("click", function (event) {
     event.stopPropagation();
 })
 
-// удалить это
-// var w = screen.width;
-//   if (w < 1180) {
-//
-//}
-
 // mobile search popup
 $(".header__search--btn").on("click", function (event) {
 
@@ -330,7 +573,7 @@ $(document).on("click", function (event) {
 
 
 
-var hoverColor = "#eaeaea"
+var hoverColor = "#eaeaea";
 
 $(".location__item").on("click", function (event) {
     var itemList = $(".location__item");
@@ -459,11 +702,11 @@ $(document).ready(
 );
 
 
-
-VK.init({
-    apiId: 5978511, // ID получить тут https://vk.com/dev/Like
-    onlyWidgets: true
-});
-VK.Widgets.Like("vk_like", {
-    type: "mini" // формат кнопки
-});
+//
+//VK.init({
+//    apiId: 5978511, // ID получить тут https://vk.com/dev/Like
+//    onlyWidgets: true
+//});
+//VK.Widgets.Like("vk_like", {
+//    type: "mini" // формат кнопки
+//});

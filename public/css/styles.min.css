@@ -1056,7 +1056,10 @@ img {
       width: calc(100% - 350px); } }
 
 .location__list {
-  overflow: auto; }
+  overflow: auto;
+  display: none; }
+  .location__list.active {
+    display: block; }
 
 .location__item {
   margin-bottom: 35px;
@@ -1094,6 +1097,10 @@ img {
   @media (min-width: 768px) {
     .more {
       display: none; } }
+
+#GMap {
+  width: 100%;
+  height: 700px; }
 
 .page__blogArticl .tile {
   top: 0;
