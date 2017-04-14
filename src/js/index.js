@@ -13,20 +13,18 @@ var Location = {
             {
                 "id": 1, // Store   
                 "lat": 55.679603, // latitude (широта)
-                "lng": 37.312771, // longitude (долгота)
-                "address": "Москва, пр. Луначарского, д.15"
+                "lng": 37.312771 // longitude (долгота)                
             },
             {
                 "id": 2, // Store  
                 "lat": 55.761849, // latitude (широта)
-                "lng": 37.6365888, // longitude (долгота)
-                "address": "Москва, Химический пер., 12"
+                "lng": 37.6365888 // longitude (долгота)
+                
             },
             {
                 "id": 3, // Store
                 "lat": 55.6800736, // latitude (широта)
-                "lng": 37.732702, // longitude (долгота)
-                "address": "Москва, Кузнечный тупик 19/21"
+                "lng": 37.732702 // longitude (долгота)                
             }
         ]
     },
@@ -41,14 +39,12 @@ var Location = {
             {
                 "id": 1, // Store      
                 "lat": 59.836173, // latitude (широта)
-                "lng": 30.3676546, // longitude (долгота)
-                "address": "Санкт-Петербург, Звёздная улица, 22"
+                "lng": 30.3676546 // longitude (долгота)                
             },
             {
                 "id": 2, // Store  
                 "lat": 59.9860228, // latitude (широта)
-                "lng": 30.3213429, // longitude (долгота)
-                "address": "Санкт-Петербург, Beloostrovskaya ul., 8"
+                "lng": 30.3213429 // longitude (долгота)               
             }
         ]
     },
@@ -63,14 +59,13 @@ var Location = {
             {
                 "id": 1, // Store 
                 "lat": 55.045832, // latitude (широта)
-                "lng": 82.930247, // longitude (долгота)
-                "address": "Новосибирск, ул. Некрасова, 54"
+                "lng": 82.930247 // longitude (долгота)
+                
             },
             {
                 "id": 2, // Store  
                 "lat": 54.9494949, // latitude (широта)
-                "lng": 82.8374367, // longitude (долгота)
-                "address": "Новосибирск, ул. Тульская, 527"
+                "lng": 82.8374367 // longitude (долгота)                
             }
         ]
     },
@@ -85,14 +80,12 @@ var Location = {
             {
                 "id": 1, // Store  
                 "lat": 55.8362801, // latitude (широта)
-                "lng": 49.1121332, // longitude (долгота)
-                "address": "Казань, ул. Маршала Чуйкова, 11А"
+                "lng": 49.1121332 // longitude (долгота)                
             },
             {
                 "id": 2, // Store  
                 "lat": 55.8435833, // latitude (широта)
-                "lng": 49.094269, // longitude (долгота)
-                "address": "Казань, ул. Воровского, 67"
+                "lng": 49.094269 // longitude (долгота)                
             }
         ]
     },
@@ -107,14 +100,12 @@ var Location = {
             {
                 "id": 1, // Store        
                 "lat": 53.240493, // latitude (широта)
-                "lng": 50.235174, // longitude (долгота)
-                "address": "Самара, пр. Кирова, 180А"
+                "lng": 50.235174 // longitude (долгота)                
             },
             {
                 "id": 2, // Store    
                 "lat": 53.2420649, // latitude (широта)
-                "lng": 50.239387, // longitude (долгота)
-                "address": "Самара, просп. Карла Маркса, 374"
+                "lng": 50.239387 // longitude (долгота)                
             }
         ]
     }
