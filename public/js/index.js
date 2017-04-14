@@ -3,7 +3,7 @@
 //https://tech.yandex.ru/maps/jsbox/2.1/event_reverse_geocode
 var Location = {
     "Moscow": {
-        "id": "1", // City ID
+        "id": 1, // City ID
         "name": "Москва",
         "center": {
             "lat": 55.755826, // latitude (широта)
@@ -11,19 +11,19 @@ var Location = {
         },
         "stores": [
             {
-                "id": "1", // Store   
+                "id": 1, // Store   
                 "lat": 55.679603, // latitude (широта)
                 "lng": 37.312771, // longitude (долгота)
                 "address": "Москва, пр. Луначарского, д.15"
             },
             {
-                "id": "2", // Store  
+                "id": 2, // Store  
                 "lat": 55.761849, // latitude (широта)
                 "lng": 37.6365888, // longitude (долгота)
                 "address": "Москва, Химический пер., 12"
             },
             {
-                "id": "3", // Store
+                "id": 3, // Store
                 "lat": 55.6800736, // latitude (широта)
                 "lng": 37.732702, // longitude (долгота)
                 "address": "Москва, Кузнечный тупик 19/21"
@@ -31,7 +31,7 @@ var Location = {
         ]
     },
     "Spb": {
-        "id": "2", // City ID
+        "id": 2, // City ID
         "name": "Санкт-Петербург",
         "center": {
             "lat": 59.9342802, // latitude (широта)
@@ -39,13 +39,13 @@ var Location = {
         },
         "stores": [
             {
-                "id": "1", // Store      
+                "id": 1, // Store      
                 "lat": 59.836173, // latitude (широта)
                 "lng": 30.3676546, // longitude (долгота)
                 "address": "Санкт-Петербург, Звёздная улица, 22"
             },
             {
-                "id": "2", // Store  
+                "id": 2, // Store  
                 "lat": 59.9860228, // latitude (широта)
                 "lng": 30.3213429, // longitude (долгота)
                 "address": "Санкт-Петербург, Beloostrovskaya ul., 8"
@@ -53,7 +53,7 @@ var Location = {
         ]
     },
     "Novosibirsk": {
-        "id": "3", // City ID
+        "id": 3, // City ID
         "name": "Новосибирск",
         "center": {
             "lat": 55.0083526, // latitude (широта)
@@ -61,13 +61,13 @@ var Location = {
         },
         "stores": [
             {
-                "id": "1", // Store 
+                "id": 1, // Store 
                 "lat": 55.045832, // latitude (широта)
                 "lng": 82.930247, // longitude (долгота)
                 "address": "Новосибирск, ул. Некрасова, 54"
             },
             {
-                "id": "2", // Store  
+                "id": 2, // Store  
                 "lat": 54.9494949, // latitude (широта)
                 "lng": 82.8374367, // longitude (долгота)
                 "address": "Новосибирск, ул. Тульская, 527"
@@ -75,7 +75,7 @@ var Location = {
         ]
     },
     "Kazan": {
-        "id": "4", // City ID
+        "id": 4, // City ID
         "name": "Казань",
         "center": {
             "lat": 55.8304307, // latitude (широта)
@@ -83,13 +83,13 @@ var Location = {
         },
         "stores": [
             {
-                "id": "1", // Store  
+                "id": 1, // Store  
                 "lat": 55.8362801, // latitude (широта)
                 "lng": 49.1121332, // longitude (долгота)
                 "address": "Казань, ул. Маршала Чуйкова, 11А"
             },
             {
-                "id": "2", // Store  
+                "id": 2, // Store  
                 "lat": 55.8435833, // latitude (широта)
                 "lng": 49.094269, // longitude (долгота)
                 "address": "Казань, ул. Воровского, 67"
@@ -97,7 +97,7 @@ var Location = {
         ]
     },
     "Samara": {
-        "id": "5", // City ID
+        "id": 5, // City ID
         "name": "Самара",
         "center": {
             "lat": 53.2415041, // latitude (широта)
@@ -105,13 +105,13 @@ var Location = {
         },
         "stores": [
             {
-                "id": "1", // Store        
+                "id": 1, // Store        
                 "lat": 53.240493, // latitude (широта)
                 "lng": 50.235174, // longitude (долгота)
                 "address": "Самара, пр. Кирова, 180А"
             },
             {
-                "id": "2", // Store    
+                "id": 2, // Store    
                 "lat": 53.2420649, // latitude (широта)
                 "lng": 50.239387, // longitude (долгота)
                 "address": "Самара, просп. Карла Маркса, 374"
@@ -120,129 +120,236 @@ var Location = {
     }
 }
 
-
-ymaps.ready(init);
 var map;
-var markers = [];
-var marker;
 
+var points = [];
+var ObjectsPoints = [];
+var markersCollection;
+
+var markerStyle = {
+    iconLayout: 'default#imageWithContent',
+    iconImageHref: 'images/marker_YMAP.png',
+    iconImageSize: [36, 43],
+    iconImageOffset: [-10, -10]
+}
 
 
 function init() {
     map = new ymaps.Map("GMap", {
         center: [55.76, 37.64],
         zoom: 10
+    }, {
+        searchControlProvider: 'yandex#search'
     });
-    
-
-
     markerInit(Location.Moscow);
 }
 
+var pointsConstruct = function (lat, lng, id) {
+    this.coords = [lat, lng];
+    this.id = id;
+}
+
 function markerInit(locationOBJ) {
-    clearMarkers();
-    var city = locationOBJ
-    var store = city.stores;
+    clearMarkers(); // метод очистки коллекции маркеров
+
+    city = locationOBJ, // переданный в функцию обект
+        store = city.stores, // список городов
+        markersCollection = new ymaps.ObjectManager({
+            clusterize: false
+        }); // создаем экземпляр гео коллекции, в ней будут хранится маркеры
+    // метод выставляет центр карты и делает зум
     map.setCenter([city.center.lat, city.center.lng], 10, {
         checkZoomRange: true
     });
 
+    // заполняем массив с информацией о координатах и id маркеров
     for (var i = 0; i < store.length; i++) {
-
-        marker = new ymaps.Placemark([store[i].lat, store[i].lng], {
-            hintContent: store[i].address
-        });
-        map.geoObjects.add(marker);
-        marker.events.add('click', function (e) {
-            //var object = e;
-            console.log(e);
-            console.log(e.get('coords'));
-            
-        });
-        markers.push(marker);
-        
+        points.push(new pointsConstruct(store[i].lat, store[i].lng, store[i].id));
     }
+
+    // добавляем маркеры в гео коллекцию
+    for (var i = 0, l = points.length; i < l; i++) {
+        ObjectsPoints.push({
+            type: 'Feature',
+            id: points[i].id,
+            geometry: {
+                type: 'Point',
+                coordinates: points[i].coords
+            },
+            options: {
+                iconLayout: 'default#imageWithContent',
+                iconImageHref: 'image/marker_YMAP.png',
+                iconImageSize: [36, 43],
+                iconImageOffset: [-20, -20]
+            },
+            properties: {
+                // Контент метки.
+                iconContent: "<span class='yamap_point'>"+points[i].id+"</span"
+            }
+        });
+    }
+
+    markersCollection.add(ObjectsPoints);
+    map.geoObjects.add(markersCollection);
+
+    // Функция вызываемая при наведении на маркер
+    function onObjectEvent(e) {
+        var objectId = e.get('objectId');
+        if (e.get('type') == 'mouseenter') {
+            changeMarker(objectId, "hover")
+            LocationItemHover(objectId);
+
+        } else {
+            changeMarker(objectId)
+            LocationItemOnHover(objectId);
+        }
+    }
+    // Обработчик события наведения на маркер
+    markersCollection.objects.events.add(['mouseenter', 'mouseleave'], onObjectEvent);
     
-        
     
+}
+ymaps.ready(init);
+
+
+function clearMarkers() {
+    console.log(ObjectsPoints.length)
+
+    if (markersCollection) {
+        console.log(markersCollection)
+        markersCollection.remove(ObjectsPoints)
+        ObjectsPoints.splice(0, ObjectsPoints.length);
+        points.splice(0, points.length);
+    }
 }
 
 
+function changeMarker(objectId, status) {
+    clearMarker()
+    if (status == "hover") {
+        markersCollection.objects.setObjectOptions(objectId, {
+            iconImageHref: 'image/marker_YMAP-hover.png'
+        });
+    } else {
+        markersCollection.objects.setObjectOptions(objectId, {
+            iconImageHref: 'image/marker_YMAP.png'
+        });
+    }
+}
 
+function clearMarker() {
+    for (var i = 0; i < ObjectsPoints.length; i++)
+        markersCollection.objects.setObjectOptions(i + 1, {
+            iconImageHref: 'image/marker_YMAP.png'
+        });
+
+}
 $(".location__tabs li a").on("click", function (event) {
     event.preventDefault();
-
+    $(".location__item").removeClass("active");
     var $this = $($(this));
     var link = $this.attr("href");
-
     if ($this.closest("li").hasClass("active")) {
         return
     }
-    console.log(markers);
     $(".location__tabs li").removeClass("active");
     $this.closest("li").addClass("active");
     $(".location__list").removeClass("active");
     $(link).addClass("active");
 
     link = link.substring(1);
-
     markerInit(Location[link]);
-
 })
 
 
-function clearMarkers() {
-    for (var i = 0; i < markers.length; i++) {
-        map.geoObjects.remove(markers[i]);
+
+
+var hoverColor = "#eaeaea";
+
+
+$(".location__item").on("click", function (event) {
+    var itemList = $(".location__item");
+
+    for (var i = 0; i < itemList.length; i++) {
+        $(itemList[i]).removeClass("active");
     }
-    markers.splice(0, markers.length);
+    if ($(this).hasClass("active")) {
+        return
+    }
+    $(this).addClass("active");
+
+    var objectId = parseInt($(this).find(".location__title-num").text(), 10);
+    clearMarker();
+    changeMarker(objectId, "hover");
+
+})
+
+$(".location__item").hover(LocationItemHover, LocationItemOnHover);
+
+function LocationItemHover(id) {
+
+    if ($(this).hasClass("active")) {
+        return
+    }
+    $(".location__item.active").css({
+        "background-color": "transparent"
+    })
+    if ($(this).hasClass("location__item")) {
+        $(this).css({
+            "background-color": hoverColor
+        })
+        var objectId = parseInt($(this).find(".location__title-num").text(), 10);
+        clearMarker();
+        changeMarker(objectId, "hover");
+    }
+    if (id) {
+        var arrayIdLocationItem = [];
+        var num = $(".location__list.active").find(".location__item");
+        for (var i = 0; i < num.length; i++) {
+            if (id == i + 1) {
+                $(num[i]).css({
+                    "background-color": hoverColor
+                })
+            }
+        }
+        return
+    }
 }
 
+function LocationItemOnHover(id) {
+    if ($(this).hasClass("active")) {
+        return
+    }
+    $(".location__item.active").css({
+        "background-color": hoverColor
+    })
+    if ($(this).hasClass("location__item")) {
+        $(this).css({
+            "background-color": "transparent"
+        })
+        clearMarker();
+        var objectId = parseInt($(".location__item.active").find(".location__title-num").text(), 10);
+        clearMarker();
+        changeMarker(objectId, "hover");
+    }
+    if (id) {
+        var num = $(".location__list.active").find(".location__item");
+        for (var i = 0; i < num.length; i++) {
+            if ($(num[i]).hasClass("active")) {
+                clearMarker();
+                changeMarker(i + 1, "hover");                
+            } else if (id == i + 1) {
+                $(num[i]).css({
+                    "background-color": "transparent"
+                })
+            }
+        }
+        return
+    }
 
 
-// google maps api
-//function initMap() {    
-//    map = new google.maps.Map(document.getElementById('GMap'));    
-//    codeAddress(Location.Moscow);
-//}
-//
-//function codeAddress(query) {
-//    clearMarkers()
-//    var counter = query.stores;
-//    
-//    map.setZoom(10);
-//    map.setCenter({
-//        lat: query.center.lat,
-//        lng: query.center.lng
-//    })    
-//    
-//    for (var i = 0; i < counter.length; i++) {
-//
-//        var pos = {
-//            lat: counter[i].lat,
-//            lng: counter[i].lng
-//        };
-//        var marker = new google.maps.Marker({
-//            position: pos,
-//            map: map,
-//            label: counter[i].id
-//        });
-//        markers.push(marker);
-//    }
-//}
-//
-//function setMapOnAll(map) {
-//    for (var i = 0; i < markers.length; i++) {
-//        markers[i].setMap(map);
-//    }
-//    markers
-//    markers.splice(0, markers.length);
-//}
-//
-//function clearMarkers() {
-//    setMapOnAll(null);
-//}
-//
+}
+
 
 
 
@@ -573,44 +680,7 @@ $(document).on("click", function (event) {
 
 
 
-var hoverColor = "#eaeaea";
 
-$(".location__item").on("click", function (event) {
-    var itemList = $(".location__item");
-
-    for (var i = 0; i < itemList.length; i++) {
-        $(itemList[i]).removeClass("active");
-    }
-    if ($(this).hasClass("active")) {
-        return
-    }
-    $(this).addClass("active");
-})
-
-$(".location__item").hover(
-    function () {
-        if ($(this).hasClass("active")) {
-            return
-        }
-        $(".location__item.active").css({
-            "background-color": "transparent"
-        })
-        $(this).css({
-            "background-color": hoverColor
-        })
-    },
-    function () {
-        if ($(this).hasClass("active")) {
-            return
-        }
-        $(".location__item.active").css({
-            "background-color": hoverColor
-        })
-        $(this).css({
-            "background-color": "transparent"
-        })
-    }
-);
 
 
 // JQUERY UI Autocomplete Widget
