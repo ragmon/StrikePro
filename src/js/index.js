@@ -1,13 +1,15 @@
 // https://tech.yandex.ru/maps/jsbox/2.1/clusterer_icon_hover
 //https://tech.yandex.ru/maps/doc/jsapi/2.0/dg/concepts/events-docpage/
 //https://tech.yandex.ru/maps/jsbox/2.1/event_reverse_geocode
+
+
 var Location = {
     "Moscow": {
         "id": 1, // City ID
         "name": "Москва",
         "center": {
             "lat": 55.755826, // latitude (широта)
-            "lng": 37.6173,
+            "lng": 37.6173
         },
         "stores": [
             {
@@ -33,7 +35,7 @@ var Location = {
         "name": "Санкт-Петербург",
         "center": {
             "lat": 59.9342802, // latitude (широта)
-            "lng": 30.3350986,
+            "lng": 30.3350986
         },
         "stores": [
             {
@@ -53,7 +55,7 @@ var Location = {
         "name": "Новосибирск",
         "center": {
             "lat": 55.0083526, // latitude (широта)
-            "lng": 82.9357327,
+            "lng": 82.9357327
         },
         "stores": [
             {
@@ -74,7 +76,7 @@ var Location = {
         "name": "Казань",
         "center": {
             "lat": 55.8304307, // latitude (широта)
-            "lng": 49.0660806,
+            "lng": 49.0660806
         },
         "stores": [
             {
@@ -94,7 +96,7 @@ var Location = {
         "name": "Самара",
         "center": {
             "lat": 53.2415041, // latitude (широта)
-            "lng": 50.2212463,
+            "lng": 50.2212463
         },
         "stores": [
             {
