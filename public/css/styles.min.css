@@ -265,7 +265,6 @@ img {
     text-align: center;
     font-size: 1rem;
     font-family: "OpenSans-Light";
-    margin-bottom: 60px;
     line-height: 1.1rem; }
   .Modal__wrapper {
     max-width: 340px;
@@ -725,7 +724,6 @@ img {
 
 .ui-autocomplete {
   z-index: 100000;
-  display: block !important;
   background-color: transparent !important;
   border: none !important;
   color: #73af19; }
@@ -1133,10 +1131,10 @@ img {
   margin-bottom: 15px;
   border: none;
   border-radius: 0;
-  background-color: #73af19;
   text-align: center;
   color: #fff;
-  padding: 0; }
+  padding: 0;
+  vertical-align: top; }
   .socialBtn__wrap span {
     display: inline-block;
     vertical-align: middle;
@@ -2027,5 +2025,24 @@ img {
       background-color: #90dc1f !important; }
   .footer .copyright {
     text-align: center; }
+
+.form-inline .form-group {
+  position: relative; }
+  .form-inline .form-group label.error {
+    position: absolute;
+    left: 0;
+    top: 40px;
+    font-size: 14px;
+    color: #FF0000;
+    font-weight: normal; }
+
+.contact-form label.error {
+  position: absolute;
+  left: 15px;
+  bottom: -30px;
+  font-size: 14px;
+  color: #FF0000;
+  font-weight: normal;
+  margin: 0; }
 
 /*# sourceMappingURL=style.css.map */

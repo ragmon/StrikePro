@@ -241,22 +241,22 @@
               <p>Если у вас есть вопросы о наших продуктах или услугах, воспользуйтесь формой обратной связи. Пожалуйста, заполняйте форму обратной связи как можно подробнее, чтобы мы могли наиболее эффективно помочь вам. Благодарим за ваши отзывы и предложения.</p>
             </div>
             <div class="col-md-8 contact__form">
-              <form action="#" role="form">
+              <form action="#" role="form" class="contact-form">
                 <div class="form-group col-md-12">
                   <label for="inp_name">ФИО*</label>
-                  <input type="text" id="inp_name" class="form-control">
+                  <input type="text" name="name" class="form-control">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inp_email1">E-mail*</label>
-                  <input type="email" id="inp_email1" class="form-control">
+                  <input type="email" name="email" class="form-control">
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inp_tel">Телефон*</label>
-                  <input type="tel" id="inp_email1" class="form-control">
+                  <input type="tel" name="tel" class="form-control">
                 </div>
                 <div class="form-group col-md-12">
                   <label for="inp_tel">Cообщение*</label>
-                  <textarea rows="3" class="form-control"></textarea>
+                  <textarea rows="3" name="message" class="form-control"></textarea>
                 </div>
                 <button type="submit" class="btnMain navbar-right">ОТПРАВИТЬ</button>
               </form>
@@ -297,10 +297,20 @@
           </div>
           <div class="col-lg-3 col-md-5 col-sm-6 col-sm-pull-6">
             <div class="footer__colTitle">стань подписчиком      </div>
-            <form class="form-inline">
+            <form class="form-inline subscription-form">
               <div class="form-group form-group-noWrap">
-                <input type="email" placeholder="адрес электронной почты" class="form-control">
-                <button type="submit" class="btnMain">да                </button>
+                <input type="email" name="email" placeholder="Адрес электронной почты" class="form-control">
+                <button type="submit" class="btnMain">да </button>
+              </div>
+              <div class="popUP__wrapper js__popup">
+                <div class="Modal__wrapper js__noPropagation">
+                  <button class="close__popup js__closePopup">×</button>
+                  <div class="Modal">
+                    <div class="Modal__title">Спасибо!</div>
+                    <p class="Modal__text">На Ваш электронный адрес отправлена ссылка, с помощью которой Вы сможете подтвердить Вашу заявку.</p>
+                    <button class="btnMain js__closePopup">Закрыть</button>
+                  </div>
+                </div>
               </div>
             </form>
             <ul class="footer__socialList">
@@ -324,7 +334,8 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.flexslider-min.js"></script>
     <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="js/index.js"></script>
-    <!--script(async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyADkCM96-SZfS-PkW1zkItGKKIQH9F0IgU&callback=initMap')-->
+    <script src="js/contactForm.js"></script>
   </body>
 </html>

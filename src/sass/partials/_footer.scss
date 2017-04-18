@@ -44,11 +44,10 @@
                 top: 0;
             }
             &:hover {
-            
-                &:after{
+                &:after {
                     background-color: lighten($color3, 10%) !important;
                 }
-        }
+            }
         }
     }
     &__colTitle {
@@ -65,7 +64,7 @@
         color: #fff;
         font-size: 1rem;
         line-height: 1.211rem;
-        &:hover{
+        &:hover {
             color: $color3;
         }
     }
@@ -97,5 +96,27 @@
     }
     .copyright {
         text-align: center;
+    }
+}
+.form-inline .form-group {
+    position: relative;
+    label.error {
+        position: absolute;
+        left: 0;
+        top: 40px;
+        font-size: 14px;
+        color: #FF0000;
+        font-weight: normal;
+    }
+}
+.contact-form {
+    label.error {
+        position: absolute;
+        left: 15px;
+        bottom: -30px;
+        font-size: 14px;
+        color: #FF0000;
+        font-weight: normal;
+        margin: 0;
     }
 }

@@ -26,13 +26,14 @@
     &__wrap {
         display: inline-block;
         margin-right: 20px;
-            margin-bottom: 15px;
+        margin-bottom: 15px;
         border: none;
         border-radius: 0;
-        background-color: $color3;
+        
         text-align: center;
         color: #fff;
         padding: 0;
+        vertical-align: top;
         span {
             display: inline-block;
             vertical-align: middle;

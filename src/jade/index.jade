@@ -10,3 +10,13 @@ html
             include pages/index/main
         include partials/footer  
         include partials/script          
+        script
+            | $(window).load(function () {
+            | $('.header__slider').flexslider({
+            | animation: "slide",
+            | slideshow: true,
+            | touch: true,
+            | directionNav: false,
+            | controlNav: true
+            | });
+            | });

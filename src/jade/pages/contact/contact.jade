@@ -26,17 +26,17 @@ main.page__contact
             .col-md-4.contact__col
                 p Если у вас есть вопросы о наших продуктах или услугах, воспользуйтесь формой обратной связи. Пожалуйста, заполняйте форму обратной связи как можно подробнее, чтобы мы могли наиболее эффективно помочь вам. Благодарим за ваши отзывы и предложения.
             .col-md-8.contact__form
-                form(action="#" role="form")
+                form.contact-form(action="#" role="form")
                     .form-group.col-md-12
                         label(for="inp_name") ФИО*
-                        input(type="text" class="form-control" id="inp_name")
+                        input(type="text" class="form-control" name="name")
                     .form-group.col-md-6
                         label(for="inp_email1") E-mail*
-                        input(type="email" class="form-control" id="inp_email1")
+                        input(type="email" class="form-control" name="email")
                     .form-group.col-md-6
                         label(for="inp_tel") Телефон*
-                        input(type="tel" class="form-control" id="inp_email1")
+                        input(type="tel" class="form-control" name="tel")
                     .form-group.col-md-12
                         label(for="inp_tel") Cообщение*
-                        textarea(class="form-control" rows="3")
+                        textarea(class="form-control" rows="3" name="message")
                     button.btnMain.navbar-right(type="submit") ОТПРАВИТЬ

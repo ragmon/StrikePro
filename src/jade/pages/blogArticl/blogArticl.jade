@@ -23,19 +23,10 @@ main.page__blogArticl
         .container
             .row
                 .col-xs-12
-                    button.socialBtn__wrap
-                        span.socialBtn__icon.icon-facebook 
-                        span.socialBtn__desc Нравится
-                        span.socialBtn__num 12
-                    button.socialBtn__wrap
-                        span.socialBtn__icon.icon-youtube-play
-                        span.socialBtn__desc Посмотрели
-                        span.socialBtn__num 2
-                    button.socialBtn__wrap
-                        span.socialBtn__icon.icon-vk
-                        span.socialBtn__desc Мне нравится
-                        span.socialBtn__num 132
-                    button#vk_like.socialBtn__wrap--vk
+                    .socialBtn__wrap
+                        #vk_like.socialBtn__wrap--vk
+                    .socialBtn__wrap
+                        #ok_shareWidget.socialBtn__wrap--ok
     .container-fluid
         .row
             .tile__wrapper.col-2_4.col-md-3.col-xs-4
@@ -60,3 +51,26 @@ main.page__blogArticl
                     .tile__data 1 CЕН
                     .title__xs Международный фестиваль рыбной ловли «Ладожские шхеры 2015»
                     a(href="#").btnMain Перейти
+    script
+        | VK.init({
+        | apiId: 5978511, // ID получить тут https://vk.com/dev/Like
+        | onlyWidgets: true
+        | });
+        | VK.Widgets.Like("vk_like", {
+        | type: "button", // формат кнопки
+        | height: 30
+        | });
+        | !function (d, id, did, st, title, description, image) {
+        | var js = d.createElement("script");
+        | js.src = "https://connect.ok.ru/connect.js";
+        | js.onload = js.onreadystatechange = function () {
+        | if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
+        | if (!this.executed) {
+        | this.executed = true;
+        | setTimeout(function () {
+        | OK.CONNECT.insertShareWidget(id,did,st, title, description, image);
+        | }, 0);
+        | }
+        | }};
+        | d.documentElement.appendChild(js);
+        | }(document,"ok_shareWidget","http://alex.taran.ru",'{"sz":30,"st":"rounded","ck":1}',"","","");

@@ -36,10 +36,17 @@ footer.footer
                         a(href="#!").footer__menuLink Выставки и соревнования                  
             .col-lg-3.col-md-5.col-sm-6.col-sm-pull-6
                 .footer__colTitle стань подписчиком      
-                form.form-inline
+                form.form-inline.subscription-form
                     div.form-group.form-group-noWrap
-                        input( type="email" class="form-control" placeholder="адрес электронной почты")
-                        button.btnMain( type="submit") да                
+                        input(type="email" class="form-control" name="email" placeholder="Адрес электронной почты")
+                        button.btnMain( type="submit") да 
+                    .popUP__wrapper.js__popup
+                        .Modal__wrapper.js__noPropagation
+                            button.close__popup.js__closePopup ×
+                            .Modal
+                                .Modal__title Спасибо!
+                                p.Modal__text На Ваш электронный адрес отправлена ссылка, с помощью которой Вы сможете подтвердить Вашу заявку.
+                                button.btnMain.js__closePopup Закрыть
                 ul.footer__socialList
                     li.footer__socialItem
                         a(href="#!").footer__socialLink.icon-facebook Facebook
