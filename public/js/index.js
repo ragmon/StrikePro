@@ -1,29 +1,30 @@
 $(function () {
     function ajaxSubmitSunscribe(form) {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
         var $this = $(form);
         var data = $this.serialize();
         $.ajax({
-            'url': 'http://alex.taran.ru/subscribe',
+            'url': 'http://strike-pro.loc/subscribe',
             'type': 'post',
             'dataType': 'html',
             'data': data,
             'success': function (data, textStatus, jqXHR) {
                 console.log('Success register subscription.', data, textStatus, jqXHR);
+
+                $(".subscription-form").find(".js__popup").show()
             },
             'error': function (jqXHR, textStatus, errorThrown) {
                 console.error('Error register subscription!', jqXHR, textStatus, errorThrown);
 
-                $(".subscription-form").find(".js__popup").show()
+                alert('Возникла ошибка!');
             }
+        }).done(function () {
+            form.reset();
         });
-        e.preventDefault();
     }
-    $(".subscription-form").validate({
+    $(".subscription-form").submit(function (e) {
+        e.preventDefault();
+        return false;
+    }).validate({
         rules: {
             email: {
                 required: true,
@@ -234,125 +235,93 @@ $(document).on("click", function (event) {
 
 
 
-//
-//
-//// JQUERY UI Autocomplete Widget
-//$(document).ready(function () {
-//    var test2 = [
-//        {
-//            "title": "some title",
-//            "url": "http://INeedToSleep.com/",
-//            "image": {
-//                "data": {
-//                    "thumb": "http://lorempixel.com/...",
-//                    "original": "http://lorempixel.com/..."
-//                }
-//            }
-//		},
-//        {
-//            "title": "some title",
-//            "url": "http://INeedToSleep.com/",
-//            "image": {
-//                "data": {
-//                    "thumb": "http://lorempixel.com/...",
-//                    "original": "http://lorempixel.com/..."
-//                }
-//            }
-//		},
-//        {
-//            "title": "some title",
-//            "url": "http://INeedToSleep.com/",
-//            "image": {
-//                "data": {
-//                    "thumb": "http://lorempixel.com/...",
-//                    "original": "http://lorempixel.com/..."
-//                }
-//            }
-//		}
-//	]
-//
-//    var suggestion = [
-//        {
-//            "id": "1",
-//            "name": "Goroka",
-//            "city": "Goroka",
-//            "country": "Papua New Guinea",
-//            "iata": "GKA",
-//            "icao": "AYGA",
-//            "latitude": "-6.081689",
-//            "longitude": "145.391881",
-//            "altitude": "5282",
-//            "timezone": "10",
-//            "dst": "U",
-//            "tz": "Pacific/Port_Moresby"
-//        }
-//  ,
-//        {
-//            "id": "2",
-//            "name": "Madang",
-//            "city": "Madang",
-//            "country": "Papua New Guinea",
-//            "iata": "MAG",
-//            "icao": "AYMD",
-//            "latitude": "-5.207083",
-//            "longitude": "145.7887",
-//            "altitude": "20",
-//            "timezone": "10",
-//            "dst": "U",
-//            "tz": "Pacific/Port_Moresby"
-//        }
-//  ,
-//        {
-//            "id": "3",
-//            "name": "Mount Hagen",
-//            "city": "Mount Hagen",
-//            "country": "Papua New Guinea",
-//            "iata": "HGU",
-//            "icao": "AYMH",
-//            "latitude": "-5.826789",
-//            "longitude": "144.295861",
-//            "altitude": "5388",
-//            "timezone": "10",
-//            "dst": "U",
-//            "tz": "Pacific/Port_Moresby"
-//        }
-//  ]
-//
-//    $('.js__search').autocomplete({
-//        minLength: 1,
-//        source: function (request, response) {
-//            var data = $.grep(test2, function (value) {
-//                return value.title.substring(0, request.term.length).toLowerCase() == request.term.toLowerCase();
-//            });
-//            console.log(data)
-//            response(data);
-//        },
-//        select: function (event, ui) {
-//            $(".js__search").val(ui.item.TitleSite);
-//            var host = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '');
-//            var url = host + '/products/view/' + ui.item.Id;
-//            location.href = url;
-//            return false;
-//        }
-//    }).data("ui-autocomplete")._renderItem = function (ul, item) {
-//
-//        return $("<li></li>")
-//            .data("ui-autocomplete-item", item)
-//            .append("<a href=" + item.url + ">" + item.title + "</a>"+"<span class='ui-title'><img src=" + item.image.data.thumb + "></span><span class='ui-title'>")
-//            .appendTo(ul);
-//    };
-//
-//});
 
 
+// JQUERY UI Autocomplete Widget
+$(document).ready(function () {
+    var test2 = [
+        {
+            "title": "yandex",
+            "url": "yandex.ru",
+            "image": {
+                "data": {
+                    "thumb": "http://lorempixel.com/400/200",
+                    "original": "http://lorempixel.com/400/200"
+                }
+            }
+		},
+        {
+            "title": "google",
+            "url": "google.com",
+            "image": {
+                "data": {
+                    "thumb": "http://lorempixel.com/400/200",
+                    "original": "http://lorempixel.com/400/200"
+                }
+            }
+		},
+        {
+            "title": "some title 1",
+            "url": "http://INeedToSleep.com/",
+            "image": {
+                "data": {
+                    "thumb": null,
+                    "original": "http://lorempixel.com/400/200"
+                }
+            }
+		}
+	]
 
-//    $('.js__search').autocomplete({
-//        source: object,
-//        minLength: 3,
-//        delay: 1000
-//    })
+    $('.js__search').autocomplete({
+        minLength: 2,
+        source: function (request, response) {
+            $.ajax({
+                url: "http://localhost:3000/js/searchDB.json", // ссылка на json
+                success: function (data) { // получаем данные из json
+                    var Data = $.grep(data.data, function (value) {
+                        return value.title.substring(0, request.term.length).toLowerCase() == request.term.toLowerCase();
+                    });
+                    response(Data);
+                },
+                'error': function (jqXHR, textStatus, errorThrown) {
+                    console.error('Error register subscription!', jqXHR, textStatus, errorThrown);
+                }
+            });
+        },
+        select: function (event, ui) {
+            location.assign(ui.item.url)
+        },
+    }).data("ui-autocomplete")._renderItem = function (ul, item) {
+        if (item.image == undefined) {
+            return $("<li></li>")
+                .data("ui-autocomplete-item", item)
+                .append("<span class='autocompleteItem__title'>" +
+                    item.title +
+                    "</span>")
+                .appendTo(ul);
+        } else {
+            return $("<li></li>")
+                .data("ui-autocomplete-item", item)
+                .append("<span class='autocompleteItem__img'>" +
+                    "<img src=" + item.image.data.thumb + ">" +
+                    "</span>" +
+                    "<span class='autocompleteItem__title'>" +
+                    item.title +
+                    "</span>")
+                .appendTo(ul);
+        }
+    };
 
 
+    $('.js__search').keydown(function (event) {
+        if (event.keyCode == 13) {
+            $(".header__search").submit();
+            return false;
+        }
+    });
+
+
+});
 
 
 

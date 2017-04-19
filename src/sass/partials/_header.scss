@@ -486,6 +486,29 @@
     background-color: transparent !important;
     border: none !important; 
     color: $color3;
+    .ui-menu-item{
+        margin: 10px 0 10px 10px;
+        .autocompleteItem{
+            &__img{
+                display: inline-block;
+                vertical-align: middle;
+                max-width: 40px;
+                max-height: 40px;
+                overflow: hidden;
+                padding: 0;
+                margin-right: 10px;
+                img{
+                    display: block;
+                    max-width: 100%;
+                    max-height: 100%;
+                }
+            }
+            &__title{
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+    }
 }
 
 .ui-state-active {

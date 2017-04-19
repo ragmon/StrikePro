@@ -84,10 +84,7 @@ svg(style="display: none")
                             li
                                 a(href='/contact.html') item 3
                 button.headerNav__toggle(type='button') &#9776;
-                form.header__search
-                    // удолить это
-                    //.form-group
-                    //    input.form-control(type='search', placeholder='Search')
+                form.header__search(action="http://alex.taran.ru/search" method="get" )                    
                     button.header__search--btn.btn.icon-search(type='submit') Submit
                     .header__search--mobile
                         div.form-group.form-group-noWrap

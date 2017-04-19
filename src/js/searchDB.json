@@ -1,0 +1,28 @@
+{
+	"data" : [
+		{
+			"title" : "yandex",
+			"url" : "yandex.ru",
+			"image" : {
+				"data" : {
+					"thumb" : "http://lorempixel.com/400/200",
+					"original" : "http://lorempixel.com/400/200"
+				}
+			}
+		},
+		{
+			"title" : "google",
+			"url" : "google.com",
+			"image" : {
+				"data" : {
+					"thumb" : "http://lorempixel.com/400/200",
+					"original" : "http://lorempixel.com/400/200"
+				}
+			}
+		},
+		{
+			"title" : "vk",
+			"url" : "vk.com"
+		}
+	]
+}

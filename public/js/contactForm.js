@@ -10,7 +10,7 @@ $(function () {
                 email: true,
                 minlength: 6
             },
-            tel: {
+            telephone: {
                 required: true,
                 minlength: 10,
                 number: true
@@ -29,10 +29,10 @@ $(function () {
                 required: "Поле Email обязательно для заполнения",
                 email: "Адрес электронной почты недействителен"
             },
-            tel: {
+            telephone: {
                 required: "Поле телефон обязательно для заполнения",
                 minlength: "Минимальная длинная 10 символов",
-                number: "Номер недействителен"
+                number: "Номер должен содержать только цифры"
             },
             message: {
                 required: "Поле сообщение обязательно для заполнения",
