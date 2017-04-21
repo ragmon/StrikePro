@@ -26,7 +26,6 @@
         border: 1px solid #989898;
         color: #000000;
         font-size: 0.895rem;
-        padding: 18px 10px;
         position: relative;
         height: 41px;
         vertical-align: middle;
@@ -119,4 +118,47 @@
         font-weight: normal;
         margin: 0;
     }
+}
+
+.footer__col{
+    float: left;
+    display: none!important;
+    &:last-child{
+        display: none!important;
+    }
+    &:first-child{
+        display: none!important;
+    }
+    @media(min-width: 768px){
+        &:first-child + *{
+            width: 100%;
+            display: block!important;
+        }
+    }
+    @media(min-width: 992px){
+
+        &:first-child{
+            width: 45%;
+            display: block!important;
+        }
+        &:first-child + *{
+            width: 55%;
+            display: block!important;
+        }
+    }
+    @media(min-width: 1200px){
+        width: 33%;
+        &:last-child{
+            display: block!important;
+        }
+        &:first-child{
+            width: 33%;
+            display: block!important;
+        }
+        &:first-child + *{
+            width: 33%;
+            display: block!important;
+        }
+    }
+
 }

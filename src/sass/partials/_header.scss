@@ -51,9 +51,9 @@
     }
     &__search {
         float: right;
-        margin: 12px 0;
+        margin: 7px 0;
         @media(min-width: 1024px) {
-            margin: 0 7px 0 0;
+            margin: 0 -10px 0 0;
         }
         &--mobile {
             position: absolute;
@@ -67,7 +67,7 @@
             height: 100vh;
             display: none;
             .form-group {
-                max-width: 690px;
+                width: calc(100% - 40px);
                 height: 50px;
                 position: absolute;
                 top: -30%;
@@ -75,6 +75,9 @@
                 bottom: 0;
                 left: 20px;
                 margin: auto !important;
+                @media(min-width: 730px){
+                    width: 690px;
+                }
             }
             input[type="search"] {
                 display: inline-block !important;
@@ -193,7 +196,7 @@
             display: inline-block;
             vertical-align: middle;
             &:before {
-                font-size: 24px;
+                font-size: 34px;
             }
         }
     }
@@ -424,6 +427,7 @@
             width: 60%;
             @media(min-width: 1024px) {
                 right: 5% !important;
+                left: initial;
                 bottom: 20% !important;
                 width: 50%;
             }

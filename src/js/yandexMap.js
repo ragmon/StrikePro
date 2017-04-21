@@ -1,114 +1,5 @@
-//var Location = {
-//    "Moscow": {
-//        "id": 1, // City ID
-//        "name": "Москва",
-//        "center": {
-//            "lat": 55.755826, // latitude (широта)
-//            "lng": 37.6173
-//        },
-//        "stores": [
-//            {
-//                "id": 1, // Store   
-//                "lat": 55.679603, // latitude (широта)
-//                "lng": 37.312771 // longitude (долгота)                
-//            },
-//            {
-//                "id": 2, // Store  
-//                "lat": 55.761849, // latitude (широта)
-//                "lng": 37.6365888 // longitude (долгота)
-//
-//            },
-//            {
-//                "id": 3, // Store
-//                "lat": 55.6800736, // latitude (широта)
-//                "lng": 37.732702 // longitude (долгота)                
-//            }
-//        ]
-//    },
-//    "Spb": {
-//        "id": 2, // City ID
-//        "name": "Санкт-Петербург",
-//        "center": {
-//            "lat": 59.9342802, // latitude (широта)
-//            "lng": 30.3350986
-//        },
-//        "stores": [
-//            {
-//                "id": 1, // Store      
-//                "lat": 59.836173, // latitude (широта)
-//                "lng": 30.3676546 // longitude (долгота)                
-//            },
-//            {
-//                "id": 2, // Store  
-//                "lat": 59.9860228, // latitude (широта)
-//                "lng": 30.3213429 // longitude (долгота)               
-//            }
-//        ]
-//    },
-//    "Novosibirsk": {
-//        "id": 3, // City ID
-//        "name": "Новосибирск",
-//        "center": {
-//            "lat": 55.0083526, // latitude (широта)
-//            "lng": 82.9357327
-//        },
-//        "stores": [
-//            {
-//                "id": 1, // Store 
-//                "lat": 55.045832, // latitude (широта)
-//                "lng": 82.930247 // longitude (долгота)
-//
-//            },
-//            {
-//                "id": 2, // Store  
-//                "lat": 54.9494949, // latitude (широта)
-//                "lng": 82.8374367 // longitude (долгота)                
-//            }
-//        ]
-//    },
-//    "Kazan": {
-//        "id": 4, // City ID
-//        "name": "Казань",
-//        "center": {
-//            "lat": 55.8304307, // latitude (широта)
-//            "lng": 49.0660806
-//        },
-//        "stores": [
-//            {
-//                "id": 1, // Store  
-//                "lat": 55.8362801, // latitude (широта)
-//                "lng": 49.1121332 // longitude (долгота)                
-//            },
-//            {
-//                "id": 2, // Store  
-//                "lat": 55.8435833, // latitude (широта)
-//                "lng": 49.094269 // longitude (долгота)                
-//            }
-//        ]
-//    },
-//    "Samara": {
-//        "id": 5, // City ID
-//        "name": "Самара",
-//        "center": {
-//            "lat": 53.2415041, // latitude (широта)
-//            "lng": 50.2212463
-//        },
-//        "stores": [
-//            {
-//                "id": 1, // Store        
-//                "lat": 53.240493, // latitude (широта)
-//                "lng": 50.235174 // longitude (долгота)                
-//            },
-//            {
-//                "id": 2, // Store    
-//                "lat": 53.2420649, // latitude (широта)
-//                "lng": 50.239387 // longitude (долгота)                
-//            }
-//        ]
-//    }
-//}
 
-var Location;
+//var Location;
 // карта
 var map;
 // массив с координатами и id маркеров
@@ -119,10 +10,10 @@ var markersCollection;
 // стили для маркеров карты
 var markerStyle = {
     iconLayout: 'default#imageWithContent',
-    iconImageHref: 'images/marker_YMAP.png',
-    iconImageSize: [36, 43],
-    iconImageOffset: [-10, -10]
-}
+    iconImageHref: yandexMap_config.iconImageHref,
+    iconImageSize: yandexMap_config.iconImageSize,
+    iconImageOffset: yandexMap_config.iconImageOffset
+};
 
 // инициализация карты
 function init() {
@@ -133,13 +24,13 @@ function init() {
         searchControlProvider: 'yandex#search'
     });
     // создание маркеров, на входи принимает ссылку на обект
-    markerInit(Location.Moscow);
+    markerInit(Location[Object.keys(Location)[0]]);
 }
 // конструктор обекта с координатами и id маркеров
 var pointsConstruct = function (lat, lng, id) {
     this.coords = [lat, lng];
     this.id = id;
-}
+};
 // создание маркеров
 function markerInit(locationOBJ) {
     clearMarkers(); // метод очистки коллекции маркеров
@@ -170,7 +61,7 @@ function markerInit(locationOBJ) {
             },
             options: {
                 iconLayout: 'default#imageWithContent',
-                iconImageHref: 'image/marker_YMAP.png',
+                iconImageHref: yandexMap_config.iconImageHref,
                 iconImageSize: [36, 43],
                 iconImageOffset: [-20, -20]
             },
@@ -202,38 +93,28 @@ function markerInit(locationOBJ) {
 
 }
 
-$.ajax({
-    url: "http://localhost:3000/js/location.json", 
-    success: function (data, textStatus, jqXHR) { 
-        Location = data;
-        ymaps.ready(init);
-        console.log('Success register subscription.', data, textStatus, jqXHR);
-    },
-    'error': function (jqXHR, textStatus, errorThrown) {
-        console.error('Error register subscription!', jqXHR, textStatus, errorThrown);
-    }
-});
+
+ymaps.ready(init);
 
 
 
 function clearMarkers() {
     if (markersCollection) {
-        console.log(markersCollection)
-        markersCollection.remove(ObjectsPoints)
+        markersCollection.remove(ObjectsPoints);
         ObjectsPoints.splice(0, ObjectsPoints.length);
         points.splice(0, points.length);
     }
 }
 
 function changeMarker(objectId, status) {
-    clearMarker()
+    clearMarker();
     if (status == "hover") {
         markersCollection.objects.setObjectOptions(objectId, {
-            iconImageHref: 'image/marker_YMAP-hover.png'
+            iconImageHref: yandexMap_config.iconImageHoverHref
         });
     } else {
         markersCollection.objects.setObjectOptions(objectId, {
-            iconImageHref: 'image/marker_YMAP.png'
+            iconImageHref: yandexMap_config.iconImageHref
         });
     }
 }
@@ -241,7 +122,7 @@ function changeMarker(objectId, status) {
 function clearMarker() {
     for (var i = 0; i < ObjectsPoints.length; i++)
         markersCollection.objects.setObjectOptions(i + 1, {
-            iconImageHref: 'image/marker_YMAP.png'
+            iconImageHref: yandexMap_config.iconImageHref
         });
 
 }

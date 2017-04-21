@@ -1,9 +1,72 @@
+$(document).ready(function () {
+
+    var tile_list = $(".tile__wrapper[data-tileid]");
+
+    function toggle_tile_class(row_length, _array) {
+        for (var a = 0; a < _array.length; a++) {
+            switch (row_length) {
+                case 5:
+                    if ($(_array[a]).hasClass("col-4_8")) {
+                        $(_array[a]).toggleClass("col-4_8 col-2_4");
+                        return
+                    }
+                    break;
+                case 4:
+                    if ($(_array[a]).hasClass("col-md-6")) {
+                        $(_array[a]).toggleClass("col-md-6 col-md-3");
+                        return
+                    }
+                    break;
+                case 3:
+                    if ($(_array[a]).hasClass("col-sm-8")) {
+                        $(_array[a]).toggleClass("col-sm-8 col-sm-4");
+                        return false
+                    }
+                    break;
+            }
+        }
+    }
+
+    function tile_check() {
+        var _array = [],
+            _num = 0,
+            length = tile_list.length,
+            w = screen.width,
+            row_length;
+        if (w >= 1400) {
+            row_length = 5;
+        } else if (w >= 1024) {
+            row_length = 4;
+        } else if (w >= 768) {
+            row_length = 3;
+        } else {
+            return
+        }
+        if (w >= 768) {
+            for (var i = 0; i < length; i++) {
+                _num += $(tile_list[i]).data("tileid");
+                _array.push(tile_list[i]);
+                if (_num > row_length) {
+                    toggle_tile_class(row_length, _array);
+                    _num = 0;
+                    _array.length = 0;
+                } else if (_num == row_length) {
+                    _num = 0;
+                    _array.length = 0;
+                }
+            }
+        }
+    }
+    tile_check();
+})
+
+
 $(function () {
     function ajaxSubmitSunscribe(form) {
         var $this = $(form);
         var data = $this.serialize();
         $.ajax({
-            'url': 'http://strike-pro.loc/subscribe',
+            'url': global_config.ajaxSubmitSunscribeUrl,
             'type': 'post',
             'dataType': 'html',
             'data': data,
@@ -136,7 +199,6 @@ $(document).ready(function () {
         var rangList = $('#input_range-1 .input_range-value');
         $(rangList[0]).text($('#input_range-1').slider('values')[0] + " кг");
         $(rangList[1]).text($('#input_range-1').slider('values')[1] + " кг");
-        console.log($('#input_range-1').slider('values'))
     });
     $('#input_range-2').bind('slide', function () {
         var rangList = $('#input_range-2 .input_range-value');
@@ -156,7 +218,6 @@ $(document).ready(function () {
         $('#input_range-2 .input_range-value').text($('#input_range-2').slider('values') + " см");
         $('#input_range-1').slider('values', [0, 6])
         $('#input_range-3 .input_range-value').text($('#input_range-3').slider('values') + " метр");
-
     })
 
 })
@@ -193,7 +254,7 @@ $(document).ready(function () {
         }
     });
 });
-
+// mobile menu
 $(".headerNav__toggle").on("click", function () {
     $(this).toggleClass("active")
     if ($(this).hasClass("active")) {
@@ -205,7 +266,16 @@ $(".headerNav__toggle").on("click", function () {
     }
 
 })
+// desctop menu
+$(window).resize(function () {
+    var w = screen.width;
 
+    if (w > 1023) {
+        $("body").removeClass("nav__active");
+        $(".header__top").removeClass("nav__active");
+        $(".headerNav__toggle").removeClass("active");
+    }
+});
 
 $(".tab-head-cont section a").on("click", function (event) {
     event.stopPropagation();
@@ -239,44 +309,17 @@ $(document).on("click", function (event) {
 
 // JQUERY UI Autocomplete Widget
 $(document).ready(function () {
-    var test2 = [
-        {
-            "title": "yandex",
-            "url": "yandex.ru",
-            "image": {
-                "data": {
-                    "thumb": "http://lorempixel.com/400/200",
-                    "original": "http://lorempixel.com/400/200"
-                }
-            }
-		},
-        {
-            "title": "google",
-            "url": "google.com",
-            "image": {
-                "data": {
-                    "thumb": "http://lorempixel.com/400/200",
-                    "original": "http://lorempixel.com/400/200"
-                }
-            }
-		},
-        {
-            "title": "some title 1",
-            "url": "http://INeedToSleep.com/",
-            "image": {
-                "data": {
-                    "thumb": null,
-                    "original": "http://lorempixel.com/400/200"
-                }
-            }
-		}
-	]
 
     $('.js__search').autocomplete({
         minLength: 2,
+        delay: 1000,
         source: function (request, response) {
             $.ajax({
-                url: "http://localhost:3000/js/searchDB.json", // ссылка на json
+                url: global_config.autocompleteServerUrl, // ссылка на json
+                type : 'post',
+                data : {
+                    'q' : $('[name=q]').val()
+                },
                 success: function (data) { // получаем данные из json
                     var Data = $.grep(data.data, function (value) {
                         return value.title.substring(0, request.term.length).toLowerCase() == request.term.toLowerCase();
@@ -350,9 +393,9 @@ $(".product__zoom").on("click", function () {
 //--------------------------------------------------------------
 /* 
 
-код ниже нужен для горизонтального скрола на странице списка продуктов  для прокрутки вариация проддуктов
+ код ниже нужен для горизонтального скрола на странице списка продуктов  для прокрутки вариация проддуктов
 
-*/
+ */
 //--------------------------------------------------------------
 //--------------------------------------------------------------
 
@@ -399,32 +442,4 @@ $(document).ready(
         })
 
     }
-
-
 );
-
-
-
-//VK.init({
-//    apiId: 5978511, // ID получить тут https://vk.com/dev/Like
-//    onlyWidgets: true
-//});
-//VK.Widgets.Like("vk_like", {
-//    type: "button", // формат кнопки
-//    height: 30
-//});
-//
-//!function (d, id, did, st, title, description, image) {
-//  var js = d.createElement("script");
-//  js.src = "https://connect.ok.ru/connect.js";
-//  js.onload = js.onreadystatechange = function () {
-//  if (!this.readyState || this.readyState == "loaded" || this.readyState == "complete") {
-//    if (!this.executed) {
-//      this.executed = true;
-//      setTimeout(function () {
-//        OK.CONNECT.insertShareWidget(id,did,st, title, description, image);
-//      }, 0);
-//    }
-//  }};
-//  d.documentElement.appendChild(js);
-//}(document,"ok_shareWidget","http://alex.taran.ru",'{"sz":30,"st":"rounded","ck":1}',"","","");
