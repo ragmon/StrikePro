@@ -1,25 +1,38 @@
+
+
+$(".movwDown").on("click", function (event) {
+    event.preventDefault();
+    var id  = $(this).attr('href'),
+        top = $(id).offset().top - $(".header").innerHeight();
+    $('body,html').animate({scrollTop: top}, 300);
+});
+
 $(document).ready(function () {
 
     var tile_list = $(".tile__wrapper[data-tileid]");
-
+    var _num_row = 0;
+    var num_col = 0;
     function toggle_tile_class(row_length, _array) {
         for (var a = 0; a < _array.length; a++) {
             switch (row_length) {
                 case 5:
                     if ($(_array[a]).hasClass("col-4_8")) {
                         $(_array[a]).toggleClass("col-4_8 col-2_4");
+                        _num_row += 1;
                         return
                     }
                     break;
                 case 4:
                     if ($(_array[a]).hasClass("col-md-6")) {
                         $(_array[a]).toggleClass("col-md-6 col-md-3");
+                        _num_row += 1;
                         return
                     }
                     break;
                 case 3:
                     if ($(_array[a]).hasClass("col-sm-8")) {
                         $(_array[a]).toggleClass("col-sm-8 col-sm-4");
+                        _num_row += 1;
                         return false
                     }
                     break;
@@ -45,19 +58,64 @@ $(document).ready(function () {
         if (w >= 768) {
             for (var i = 0; i < length; i++) {
                 _num += $(tile_list[i]).data("tileid");
+                num_col += _num;
                 _array.push(tile_list[i]);
                 if (_num > row_length) {
                     toggle_tile_class(row_length, _array);
                     _num = 0;
                     _array.length = 0;
                 } else if (_num == row_length) {
+                    _num_row += 1;
                     _num = 0;
                     _array.length = 0;
                 }
             }
         }
+        setTimeout(addGhosteTile(), 1000);
     }
-    tile_check();
+    if(tile_list.length != 0){
+        tile_check();
+    }
+
+
+    function addGhosteTile() {
+        var tile_list = $(".tile__wrapper[data-tileid]");
+        var num__row = 0;
+        var windowWidth = screen.width,
+            length = tile_list.length,
+            max_width = $(".tile-list").width(),
+            numCol = 0,
+            col_width = 0;
+        var num_row = 0;
+
+        for(var i = 0; i < length; i++){
+            col_width += $(tile_list[i]).outerWidth();
+            if(col_width == max_width){
+                col_width = 0;
+                num_row += 1;
+            }
+        }
+
+        if(col_width != 0){
+            var d = Math.round((max_width - col_width) / $(".col-sm-4").outerWidth());
+            var col_cap_array = [];
+            for (var key in tile_cap_list) {
+                col_cap_array.push(tile_cap_list[key])
+            }
+            for(var t = 0; t < d; t++){
+                var tile_list = $(".tile__wrapper[data-tileid]");
+                $("ul.row").append(col_cap_array[Math.floor(Math.random() * ((col_cap_array.length - 1) - 0 + 1)) + 0]);
+            }
+        }
+    }
+
+    // $(window).resize(function () {
+    //     var w = screen.width;
+    //     if (w >= 768) {
+    //         tile_check();
+    //     }
+    // });
+
 })
 
 
@@ -66,7 +124,7 @@ $(function () {
         var $this = $(form);
         var data = $this.serialize();
         $.ajax({
-            'url': global_config.ajaxSubmitSunscribeUrl,
+            'url': ajax_url.ajaxSubmitSunscribeUrl,
             'type': 'post',
             'dataType': 'html',
             'data': data,
@@ -78,7 +136,7 @@ $(function () {
             'error': function (jqXHR, textStatus, errorThrown) {
                 console.error('Error register subscription!', jqXHR, textStatus, errorThrown);
 
-                alert('Возникла ошибка!');
+                $(".subscription-form").find(".js__popup--error").show()
             }
         }).done(function () {
             form.reset();
@@ -111,6 +169,7 @@ $(function () {
 
 $(document).on("click", function (event) {
     if ($(event.target).closest(".js__closePopup").length == 1) {
+        $(".js__popUP__video").detach();
         $(event.target).closest(".js__popup").hide();
         $("body").css({
             "overflow": "inherit"
@@ -120,6 +179,8 @@ $(document).on("click", function (event) {
         event.stopPropagation();
         return
     } else if ($(event.target).closest(".js__popup").length == 1) {
+
+        $(".js__popUP__video").detach();
         event.stopPropagation();
         $(event.target).closest(".js__popup").hide();
         $("body").css({
@@ -138,7 +199,7 @@ $(document).ready(function () {
         event.preventDefault();
         var link = $(this).attr('href');
         var popUp_content = '<iframe width="100%" height="100%" src="' + link + '" frameborder="0" allowfullscreen></iframe>';
-        var popUp = '<div class="popUP__wrapper js__popup active"><div class="popUP__video js__noPropagation"> <button class="close__popup js__closePopup">&#215;</button>' + popUp_content + '</div></div>';
+        var popUp = '<div class="popUP__wrapper js__popUP__video js__popup active"><div class="popUP__video js__noPropagation"> <button class="close__popup js__closePopup">&#215;</button>' + popUp_content + '</div></div>';
         $("body").css({
             "overflow": "hidden"
         });
@@ -265,6 +326,8 @@ $(".headerNav__toggle").on("click", function () {
         $("body").removeClass("nav__active");
     }
 
+//
+
 })
 // desctop menu
 $(window).resize(function () {
@@ -301,7 +364,18 @@ $(document).on("click", function (event) {
     }
 })
 
+$(document).keyup(function(eventObject){
+    if(eventObject.which == 27){
+        $(".header__search--mobile").hide();
+        $(".js__popup").hide();
 
+        $(".js__popUP__video").detach();
+        $("body").css({
+            "overflow": "inherit"
+        });
+    }
+
+});
 
 
 
@@ -315,7 +389,7 @@ $(document).ready(function () {
         delay: 1000,
         source: function (request, response) {
             $.ajax({
-                url: global_config.autocompleteServerUrl, // ссылка на json
+                url: ajax_url.autocompleteServerUrl, // ссылка на json
                 type : 'post',
                 data : {
                     'q' : $('[name=q]').val()

@@ -19,14 +19,13 @@
     }
     &__logo {
         float: left;
-        margin-left: -15px;
         font-size: 0;
         line-height: 0;
         background-color: #fff;
         position: relative;
         z-index: 1;
         padding: 10px 20px;
-        margin-right: 50px;
+        margin-right: 35px;
         height: 60px;
         @media(min-width: 1024px) {
             height: 80px;
@@ -52,8 +51,8 @@
     &__search {
         float: right;
         margin: 7px 0;
-        @media(min-width: 1024px) {
-            margin: 0 -10px 0 0;
+        @media(min-width: 1024px){
+            margin: 17px 0;
         }
         &--mobile {
             position: absolute;
@@ -293,13 +292,17 @@
     }
 }
 #catalog__tabs {
-    width: 700px;
+    width: 100%;
     padding-left: 0;
+    @media(min-width: 1024px){
+        width: 700px;
+    }
     section {
         ul {
             @media(min-width: 1024px) {
-                float: left;
+                display: inline-block;
                 width: 23%;
+                vertical-align: top;
             }
             li {
                 &.tile__wrapper {
@@ -318,6 +321,11 @@
                 }
                 & > a {
                     color: $color3;
+                    white-space: normal;
+                    display: inline-block;
+                    width: 100%;
+                    overflow: hidden;
+                    word-wrap: break-word;
                 }
             }
         }
@@ -373,7 +381,7 @@
 .accordion-tabs li.tab-head-cont section {
     padding: 10px 1.618em;
     display: none;
-    overflow: hidden;
+    overflow: auto;
     width: 100%;
 }
 @media screen and (min-width: 1024px) {
@@ -402,7 +410,9 @@
     .accordion-tabs li.tab-head-cont section {
         float: left;
         left: 0;
-        padding: 0.75em 20px;
+        padding: 0;
+        margin: 0.75em 20px;
+        white-space: nowrap;
     }
 }
 .header__slider {
@@ -410,6 +420,18 @@
     overflow: hidden;
     position: relative;
     display: none;
+    .movwDown{
+        position: absolute;
+        z-index: 1;
+        bottom: 50px;
+        right: 50px;
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDIxLjgyNSAyMS44MjUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIxLjgyNSAyMS44MjU7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4Ij4KPHBhdGggZD0iTTE2Ljc5MSwxMy4yNTRjMC40NDQtMC40NDQsMS4xNDMtMC40NDQsMS41ODcsMGMwLjQyOSwwLjQ0NCwwLjQyOSwxLjE0MywwLDEuNTg3bC02LjY1LDYuNjUxICBjLTAuMjA2LDAuMjA2LTAuNDkyLDAuMzMzLTAuODA5LDAuMzMzYy0wLjMxNywwLTAuNjAzLTAuMTI3LTAuODEtMC4zMzNsLTYuNjUtNi42NTFjLTAuNDQ0LTAuNDQ0LTAuNDQ0LTEuMTQzLDAtMS41ODcgIHMxLjE0My0wLjQ0NCwxLjU4NywwbDQuNzQ2LDQuNzYyVjEuMTExQzkuNzkxLDAuNDkyLDEwLjI5OSwwLDEwLjkxOCwwYzAuNjE5LDAsMS4xMTEsMC40OTIsMS4xMTEsMS4xMTF2MTYuOTA0TDE2Ljc5MSwxMy4yNTR6IiBmaWxsPSIjRkZGRkZGIi8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=)
+    }
     @media(min-width: 768px) {
         display: block;
     }

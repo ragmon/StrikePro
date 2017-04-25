@@ -240,11 +240,11 @@
               </div>
             </div>
           </li>
-        </ul>
+        </ul><a href="#mainContent" class="movwDown"></a>
       </div>
-      <main class="mainContent mainContent__index">
+      <main id="mainContent" class="mainContent mainContent__index">
         <div class="container-fluid">
-          <ul class="row">
+          <ul class="row tile-list">
             <li data-tileid="2" class="tile__wrapper col-4_8 col-md-6 col-sm-8 col-xs-12"><a class="tile product product__new"><img src="/image/productImg-4.png" alt="">
                 <div class="product__text">Challenger X Deep Diver</div>
                 <div class="product__marker"></div></a></li>
@@ -374,6 +374,16 @@
                   </div>
                 </div>
               </div>
+              <div class="popUP__wrapper js__popup js__popup--error">
+                <div class="Modal__wrapper js__noPropagation">
+                  <button class="close__popup js__closePopup">×</button>
+                  <div class="Modal">
+                    <div class="Modal__title">Ошибка!</div>
+                    <p class="Modal__text">Ошибка при отправке запроса. Попробуйте повторить запрос позже.</p>
+                    <button class="btnMain js__closePopup">Закрыть</button>
+                  </div>
+                </div>
+              </div>
             </form>
             <ul class="footer__socialList">
               <li class="footer__socialItem"><a href="#!" class="footer__socialLink icon-facebook">Facebook</a></li>
@@ -396,29 +406,40 @@
           ajaxSubmitSunscribeUrl: 'http://strike-pro.loc/subscribe',
           autocompleteServerUrl: "http://alex.taran.ru/search/auto_complete"
       }
+      
       window.yandexMap_config = {
           iconImageHref: 'image/marker_YMAP.png',
           iconImageHoverHref: 'image/marker_YMAP-hover.png',
           iconImageSize: [36, 43],
           iconImageOffset: [-10, -10]
       }
+      
+    </script>
+    <script>
+      tile_cap_list = {
+          facebook: '<li data-tileid="1" class="tile__wrapper col-2_4 col-md-3 col-sm-4 col-xs-6"><a href="#!" class="tile social"><div class="title__sm">присоединяйтесь к нам</div><div class="social__text">Подписались 754 человека</div><div class="social__icon icon-facebook"></div></a></li>',
+          vk: '<li data-tileid="1" class="tile__wrapper col-2_4 col-md-3 col-sm-4 col-xs-6"><a href="#!" class="tile social"><div class="title__sm">присоединяйтесь к нам</div><div class="social__text">Подписались 754 человека</div><div class="social__icon icon-vk"></div></a></li>'
+      
+      }
+      
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.flexslider-min.js"></script>
     <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="http://code.vostrel.cz/jquery.reel.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="js/index.js"></script>
     <script>
       $(window).load(function () {
-        $('.header__slider').flexslider({
-          animation: "slide",
-          slideshow: true,
-          touch: true,
-          directionNav: false,
-          controlNav: true
-        });
+      $('.header__slider').flexslider({
+      animation: "slide",
+      slideshow: true,
+      touch: true,
+      directionNav: false,
+      controlNav: true
+      });
       });
     </script>
   </body>

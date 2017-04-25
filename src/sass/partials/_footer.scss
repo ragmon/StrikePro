@@ -1,14 +1,15 @@
 .footer {
-    margin-top: -339px;
-    padding: 60px 3% 50px;
+    margin-top: -268px;
+    padding: 30px 3%;
     background-color: $color2;
     color: #fff;
     @media(min-width: 768px) {
-        padding: 60px 7% 50px;
-        margin-top: -381px;
+        padding: 30px 15%;
+        margin-top: -289px;
     }
     @media(min-width: 1400px) {
-        padding: 60px 5% 50px;
+        padding: 30px 10%;
+        margin-top: -307px;
     }
     @media(min-width: 992px) {
         .col-sm-pull-6 {
@@ -50,19 +51,19 @@
         }
     }
     &__colTitle {
-        font-size: 1.211rem;
+        font-size: 1rem;
         line-height: 27px;
         font-family: "OpenSans-Italic";
         text-transform: uppercase;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
     }
     &__menuItem {
-        margin-bottom: 10px;
+        //margin-bottom: 10px;
     }
     &__menuLink {
         color: #fff;
-        font-size: 1rem;
-        line-height: 1.211rem;
+        font-size: 0.8rem;
+        line-height: 1rem;
         &:hover {
             color: $color3;
         }

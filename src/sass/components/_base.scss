@@ -99,11 +99,14 @@ img {
     }
     &:after {
         content: "";
-        min-height: 339px;
+        min-height: 268px;
         width: 100%;
         display: block;
         @media(min-width: 768px) {
-            min-height: 381px;
+            min-height: 289px;
+        }
+        @media(min-width: 1400px) {
+            min-height: 307px;
         }
     }
 }

@@ -125,7 +125,7 @@
                 @media(max-width: 767px) {
                     position: absolute;
                     top: 90px;
-                    right: -10px;
+                    right: 0px;
                     left: inherit;
                 }
             }
@@ -198,6 +198,11 @@
                 width: 80%;
                 height: 100%;
                 margin: 0 auto;
+                #image-reel{
+                    display: none;
+                    width: auto;
+                    height: auto;
+                }
                 img{
                     max-height: 100%;
                 }

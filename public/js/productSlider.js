@@ -99,9 +99,16 @@ $(document).ready(function () {
         }
     })
 
+    $(".js-btn3D").on("click", function () {
+        $(".product__stand .img_2d").hide();
+        $("#image-reel").show()
+    })
+
     $(".product__sliderImg ul li a").on('click', function (event) {
         event.preventDefault();
-        $(".product__stand img").attr("src", $(this).attr("href"));
+        $("#image-reel").hide();
+        $(".product__stand .img_2d").show()
+        $(".product__stand .img_2d").attr("src", $(this).attr("href"));
     })
 
     $(window).resize(function () {
