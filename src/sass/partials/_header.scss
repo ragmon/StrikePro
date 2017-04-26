@@ -295,7 +295,7 @@
     width: 100%;
     padding-left: 0;
     @media(min-width: 1024px){
-        width: 700px;
+        width: 740px;
     }
     section {
         ul {
@@ -333,6 +333,7 @@
 }
 .container-tab {
     margin: auto;
+    overflow: auto;
 }
 .headerNav__toggle {
     background-color: transparent;
@@ -381,13 +382,13 @@
 .accordion-tabs li.tab-head-cont section {
     padding: 10px 1.618em;
     display: none;
-    overflow: auto;
     width: 100%;
 }
 @media screen and (min-width: 1024px) {
     .accordion-tabs {
         border: none;
         position: relative;
+        white-space: nowrap;
     }
     .accordion-tabs li.tab-head-cont {
         display: inline;

@@ -562,7 +562,7 @@ img {
   padding-left: 0; }
   @media (min-width: 1024px) {
     #catalog__tabs {
-      width: 700px; } }
+      width: 740px; } }
   @media (min-width: 1024px) {
     #catalog__tabs section ul {
       display: inline-block;
@@ -589,7 +589,8 @@ img {
     word-wrap: break-word; }
 
 .container-tab {
-  margin: auto; }
+  margin: auto;
+  overflow: auto; }
 
 .headerNav__toggle {
   background-color: transparent;
@@ -633,13 +634,13 @@ img {
 .accordion-tabs li.tab-head-cont section {
   padding: 10px 1.618em;
   display: none;
-  overflow: auto;
   width: 100%; }
 
 @media screen and (min-width: 1024px) {
   .accordion-tabs {
     border: none;
-    position: relative; }
+    position: relative;
+    white-space: nowrap; }
   .accordion-tabs li.tab-head-cont {
     display: inline; }
   .accordion-tabs li.tab-head-cont:last-child a {
