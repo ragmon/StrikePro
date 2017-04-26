@@ -97,7 +97,7 @@ $(document).ready(function () {
         }
 
         if(col_width != 0){
-            var d = Math.round((max_width - col_width) / $(".col-sm-4").outerWidth());
+            var d = Math.round((max_width - col_width) / $(".tile__wrapper[data-tileid]" ).outerWidth());
             var col_cap_array = [];
             for (var key in tile_cap_list) {
                 col_cap_array.push(tile_cap_list[key])
