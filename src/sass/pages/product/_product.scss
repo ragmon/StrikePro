@@ -277,7 +277,7 @@
     &--img {
         height: 360px;
         margin-bottom: 20px;
-        overflow: hidden;
+        overflow: auto;
         position: relative;
         text-align: center;
         img {
@@ -415,6 +415,7 @@
                 transition: all .2s ease-in-out;
                 position: absolute;
                 font-size: 0;
+                width: 100%;
                 white-space: nowrap;
             }
             &__item {
@@ -428,10 +429,21 @@
             }
             &__link {
                 display: block;
+                position: relative;
+                overflow: hidden;
+                height: 37px;
+                width: 100%;
                 img {
                     display: block;
-                    width: 100%;
+                    width: inherit;
+                    min-width: 100%;
                     height: auto;
+                    position: absolute;
+                    max-width: 150%;
+                    max-height: 150%;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%,-50%);
                 }
             }
         }

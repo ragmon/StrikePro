@@ -475,15 +475,108 @@ $(".product__zoom").on("click", function () {
 
 $(document).ready(
     function () {
+
+        var scrollSetting = {
+            parentCategoryBlock : "",
+            parentCategoryBlockWidth : "",
+            childrenCategoryBlock : "",
+            childrenCategoryBlockWidth : "",
+            maxPos: 0,
+            currentPos: 0,
+            scrollSpeed : 15
+        }
+
+        function initHscrool() {
+            scrollSetting.parentCategoryBlock = $(".container-tab");
+            scrollSetting.parentCategoryBlockWidth = $(scrollSetting.parentCategoryBlock).width();
+            scrollSetting.childrenCategoryBlock = $(".accordion-tabs");
+            scrollSetting.childrenCategoryBlockWidth = $(scrollSetting.childrenCategoryBlock).width();
+            scrollSetting.maxPos = scrollSetting.childrenCategoryBlockWidth - scrollSetting.parentCategoryBlockWidth;
+            scrollSetting.currentPos = parseInt($(scrollSetting.childrenCategoryBlock).css("left"), 10);
+        }
+
+        function HScrollCategory(e) {
+            var scrollTo = null;
+            var scrollDir = 0;
+            if (e.type === 'mousewheel') {
+                scrollTo = (e.originalEvent.wheelDelta * -1);
+                scrollDir = scrollTo;
+            }
+            else if (e.type === 'DOMMouseScroll') {
+                scrollTo = 40 * e.originalEvent.detail;
+                scrollDir = scrollTo;
+            }
+            if (scrollTo) {
+                e.preventDefault();
+                $(this).scrollTop(scrollTo + $(this).scrollTop());
+            }
+
+            if(scrollDir > 0){
+                console.log("down");
+                if(scrollSetting.currentPos < scrollSetting.maxPos){
+                    scrollSetting.currentPos +=scrollSetting.scrollSpeed;
+                } else {
+                    return
+                }
+                if(scrollSetting.currentPos >= scrollSetting.maxPos){
+                    $(scrollSetting.childrenCategoryBlock).css({"left" : "-"+scrollSetting.maxPos+"px"});
+                    return
+                }
+                $(scrollSetting.childrenCategoryBlock).css({"left" : "-"+scrollSetting.currentPos+"px"})
+            } else if(scrollDir < 0){
+                console.log("up");
+                if(scrollSetting.currentPos > 0){
+                    scrollSetting.currentPos -=scrollSetting.scrollSpeed;
+                } else {
+                    return
+                }
+                if(scrollSetting.currentPos <= 0){
+                    $(scrollSetting.childrenCategoryBlock).css({"left" : "0px"});
+                    return
+                }
+                $(scrollSetting.childrenCategoryBlock).css({"left" : "-"+scrollSetting.currentPos+"px"})
+            }
+        }
+
+        $(".headerNav__item").hover(
+            function(){
+                // пришел
+                var w = screen.width;
+                if(w >= 1024){
+                    initHscrool();
+                    $(scrollSetting.parentCategoryBlock).bind('mousewheel DOMMouseScroll', HScrollCategory);
+                }
+
+            },
+            function(){
+                // ушел
+                var w = screen.width;
+                if(w >= 1024) {
+                    $(scrollSetting.parentCategoryBlock).unbind('mousewheel DOMMouseScroll', HScrollCategory);
+                    $(".accordion-tabs").css({"left": "0px"});
+                }
+            });
+
+
+
+
+
+
+
         $(".productVariation__wrap").niceScroll({
             touchbehavior: true,
             cursorcolor: "transparent",
             cursorborder: "0px solid transparent"
         });
-        $("#catalog__tabs").niceScroll({
-            touchbehavior: true,
-            nicescroll: true
+
+        $(window).resize(function () {
+            var w = screen.width;
+
+            if (w > 1024) {
+
+            }
         });
+
 
         // проверяет есть ли у карточки с товаром ссылки на вариации
         // если есть добавит градиент если общая ширина ссылок больше ширины контейнера
