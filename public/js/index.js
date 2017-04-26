@@ -480,6 +480,10 @@ $(document).ready(
             cursorcolor: "transparent",
             cursorborder: "0px solid transparent"
         });
+        $("#catalog__tabs").niceScroll({
+            touchbehavior: true,
+            nicescroll: true
+        });
 
         // проверяет есть ли у карточки с товаром ссылки на вариации
         // если есть добавит градиент если общая ширина ссылок больше ширины контейнера

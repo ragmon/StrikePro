@@ -589,8 +589,7 @@ img {
     word-wrap: break-word; }
 
 .container-tab {
-  margin: auto;
-  overflow: auto; }
+  margin: auto; }
 
 .headerNav__toggle {
   background-color: transparent;
