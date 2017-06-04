@@ -275,28 +275,20 @@
 }
 .colorTable__gallery {
     &--img {
-        height: 360px;
         margin-bottom: 20px;
-        overflow: auto;
+        overflow: hidden;
         position: relative;
-        text-align: center;
+        height: calc(100% - 30px);
         img {
-            display: inline-block;
-            width: auto;
-            height: auto;
-            vertical-align: middle;
-        }
-        &:before {
-            content: "";
-            width: 0;
+            display: block;
             height: 100%;
-            display: inline-block;
-            vertical-align: middle;
+            width: auto;
+            margin: 0 auto;
         }
     }
     &--wrapper {
         display: none;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         bottom: 0;
@@ -307,8 +299,10 @@
         z-index: 1000000;
     }
     &--popup {
-        width: 740px;
-        height: 570px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
         background-color: #fff;
         position: absolute;
         top: 0;
@@ -316,15 +310,110 @@
         left: 0;
         margin: auto;
         z-index: 1111;
-        padding: 35px;
+        padding: 35px 35px 0 35px;
+    }
+
+    &--content{
+        width: calc(100% - 150px);
+        height: auto;
+        flex-grow: 1;
+    }
+    &--characteristics{
+        margin-bottom: 30px;
+        .characteristics{
+            &__list{
+
+            }
+            &__item{
+                display: inline-block;
+                margin-right: 10px;
+            }
+            &__title{
+                position: relative;
+                color: #fff;
+                padding: 3px 10px;
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    background-color: #73af19;
+                    transform: skew(-15deg);
+                    z-index: -1;
+                }
+            }
+            &__desc{
+                position: relative;
+                padding: 3px 10px;
+                &:after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    background-color: #ececec;
+                    transform: skew(-15deg);
+                    z-index: -1;
+                }
+            }
+        }
+    }
+
+    &--variation{
+        width: 200px;
+        padding:  15px;
+        .variation{
+            &__list{
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            &__item{
+                margin-top: 15px;
+                margin-bottom: 15px;
+                flex-grow: 1;
+                position: relative;
+                overflow: hidden;
+                cursor: pointer;
+                border:2px solid transparent;
+                transition: all .225s;
+                img{
+                    display: block;
+                    width: inherit;
+                    min-width: 100%;
+                    height: auto;
+                    position: absolute;
+                    max-width: 150%;
+                    max-height: 150%;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                &:hover{
+                    border-color: #73af19;
+                }
+
+            }
+        }
+    }
+
+    &--top{
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
     }
     &--bottom {
-        height: 100px;
+        height:  auto;
         width: 100%;
         position: relative;
     }
     &--control {
-        position: relative;
         margin: auto;
         button {
             border: none;
@@ -332,7 +421,6 @@
             position: absolute;
             width: 50px;
             height: 45px;
-            top: -73px;
             z-index: 1;
             background-color: transparent;
             svg {
@@ -346,9 +434,9 @@
             }
         }
         .left {
-            float: left;
-            left: -10px;
-            bottom: 0;
+            left: 0;
+            top: 50%;
+            transform: translate(-50%,-50%);
             svg {
                 transform: rotate(90deg);
             }
@@ -367,9 +455,9 @@
             }
         }
         .right {
-            float: right;
-            right: -10px;
-            bottom: 0;
+            right: 0;
+            top: 50%;
+            transform: translate(50%,-50%);
             svg {
                 transform: rotate(-90deg);
             }
@@ -389,6 +477,7 @@
         }
     }
     &--title {
+        display: none;
         &__name {
             font-size: 26px;
             color: $color3;
@@ -404,10 +493,10 @@
     &--slider {
         overflow: hidden;
         position: relative;
-        width: 590px;
-        height: 100px;
+        width: 95%;
+        height: 135px;
         margin: 0 auto;
-        padding: 30px 0;
+        padding: 15px 0;
         .slider {
             &__wrap {
                 transition: all .2s ease-in-out;
@@ -429,7 +518,7 @@
                 display: block;
                 position: relative;
                 overflow: hidden;
-                height: 37px;
+                height: 100px;
                 width: 100%;
                 img {
                     display: block;

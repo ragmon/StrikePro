@@ -16,10 +16,18 @@ $(document).ready(function () {
 
         widthStep = $('.colorTable__gallery--slider').outerWidth() / 6;
         maxStep = (elemList.length * widthStep) - (widthStep * 6);
-
+        console.log(maxStep);
         $(".colorTable__gallery--title__name").text($(".product__title h1").text());
+
+        $(".slider__item").on("click", function (event) {
+            event.preventDefault();
+            $(".colorTable__gallery--img img").attr("src", $(this).find("img").attr("src"));
+            $(".colorTable__gallery--title__model").text($(this).find("img").attr("alt"));
+
+        });
+
     }
-    init();
+
 
     $(".left").on("click", function () {
 
@@ -42,10 +50,11 @@ $(document).ready(function () {
         });
     })
     $(".right").on("click", function () {
+        console.log();
         if (elemList.length <= 6) {
             return
         }
-        if (currentPosition == maxStep) {
+        if (Math.round(currentPosition) == maxStep) {
             currentPosition = maxStep;
             $(slideContainer).css({
                 "transform": "translateX(-" + currentPosition + "px)"
@@ -58,14 +67,7 @@ $(document).ready(function () {
         });
     })
 
-    $(".slider__item").on("click", function (event) {
-            event.preventDefault();
 
-
-            $(".colorTable__gallery--img img").attr("src", $(this).find("img").attr("src"));
-            $(".colorTable__gallery--title__model").text($(this).find("img").attr("alt"));
-
-        })
         // open popup
     $(elemList).on("click", function (event) {
         var windowSize = window.innerWidth;
@@ -75,19 +77,11 @@ $(document).ready(function () {
 
             $(".colorTable__gallery--wrapper").show();
 
-            $(".colorTable__gallery--popup").css({
-                "top": $(".colorTable__wrapper").offset().top + "px"
-            });
             $("body").css({
                 "overflow": "hidden"
             });
-            var scroll_el = $(".colorTable__wrapper");
-            if ($(scroll_el).length != 0) {
-                $('html, body').animate({
-                    scrollTop: $(scroll_el).offset().top - 80
-                }, 500);
-            }
-            return false;
+
+            return init();
             if ($(this).index() >= (elemList.length - 5)) {
                 currentPosition = widthStep * ($(this).index() - 5);
             } else {

@@ -116,11 +116,36 @@ main.page__product
     .colorTable__gallery--popup.js__noPropagation
         button.close__popup.js__closePopup &#215;
         .colorTable__gallery--top
-            .colorTable__gallery--img
-                img(src="/image/color-4.png", alt="")
-            .colorTable__gallery--title
-                span.colorTable__gallery--title__name 
-                span.colorTable__gallery--title__model 
+            .colorTable__gallery--content
+                .colorTable__gallery--characteristics
+                    ul.characteristics__list
+                        li.characteristics__item
+                            span.characteristics__title Модель:
+                            span.characteristics__desc Aquamax Shad 50
+                        li.characteristics__item
+                            span.characteristics__title Артикул:
+                            span.characteristics__desc 9924-595
+                        li.characteristics__item
+                            span.characteristics__title Код:
+                            span.characteristics__desc JL-128F#GC01S
+                        li.characteristics__item
+                            span.characteristics__title Цвет:
+                            span.characteristics__desc GC01S
+                .colorTable__gallery--img
+                    img(src="/image/color-4.png", alt="")
+                .colorTable__gallery--title
+                    span.colorTable__gallery--title__name
+                    span.colorTable__gallery--title__model
+            .colorTable__gallery--variation
+                ul.variation__list
+                    li.variation__item
+                        img(src="http://lorempixel.com/400/200/", alt="" )
+                    li.variation__item
+                        img(src="http://lorempixel.com/400/200/", alt="" )
+                    li.variation__item
+                        img(src="http://lorempixel.com/400/200/", alt="" )
+                    li.variation__item
+                        img(src="http://lorempixel.com/400/200/", alt="" )
         .colorTable__gallery--bottom
             .colorTable__gallery--slider
                 ul.slider__wrap
