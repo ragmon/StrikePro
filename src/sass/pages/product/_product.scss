@@ -328,8 +328,6 @@
         margin: auto;
         button {
             border: none;
-            height: 45px;
-            width: 30px;
             color: #fff;
             position: absolute;
             width: 50px;
@@ -490,6 +488,12 @@
     margin: auto;
     background-color: #fff;
     padding: 30px;
+
+    @media(min-width: 1024px){
+        max-width: 900px;
+        max-height: 540px;
+    }
+
     .close__popup {
         top: 8px;
         right: 8px;

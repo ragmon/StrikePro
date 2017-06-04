@@ -231,3 +231,5 @@ function LocationItemOnHover(id) {
 
 
 }
+
+//# sourceMappingURL=yandexMap.js.map

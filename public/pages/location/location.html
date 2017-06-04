@@ -1,0 +1,242 @@
+
+<main class="page__aboutCompany">
+  <div class="breadcrumb__wrap">
+    <ol class="breadcrumb">
+      <li><a href="#!">Каталог</a></li>
+      <li class="active"><a href="#!">Где купить</a></li>
+    </ol>
+  </div>
+  <div class="container">
+    <div class="title__xs">Выберите город</div>
+    <ul class="nav nav-tabs location__tabs">
+      <li class="active"><a href="#Moscow" data-tabID="1">Москва</a></li>
+      <li><a href="#Spb" data-tabID="2">Санкт-Петербург</a></li>
+      <li><a href="#Novosibirsk" data-tabID="3">Новосибирск	</a></li>
+      <li><a href="#Kazan" data-tabID="4">Казань	</a></li>
+      <li><a href="#Samara" data-tabID="5">Самара	</a></li>
+    </ul>
+  </div>
+  <div class="location__wrapper">
+    <div class="tab-content">
+      <div class="clearfix">
+        <div class="location__right">
+          <ul id="Moscow" class="location__list active">
+            <li class="location__item">
+              <div class="location__title"> <span class="location__title-num">1</span><span class="title__xs">Избушка рыбака</span></div>
+              <p class="location__text">
+                Россия, Москва
+                пр. Луначарского, д.15, корп. 1
+                +7 (499) 491-11-01
+              </p><a href="#!">www.fishers-house.ru</a>
+            </li>
+            <li class="location__item">
+              <div class="location__title"> <span class="location__title-num">2</span><span class="title__xs">Рыбачок</span></div>
+              <p class="location__text">
+                Россия, Москва
+                Химический пер., 12
+                +7 (499) 424-35-25
+              </p><a href="#!">www.lovisnami.ru</a>
+            </li>
+            <li class="location__item">
+              <div class="location__title"> <span class="location__title-num">3</span><span class="title__xs">Мечта Рыболова</span></div>
+              <p class="location__text">
+                Россия, Москва
+                Кузнечный пер., 19/21
+                +7 (499) 764-49-15
+              </p>
+            </li>
+          </ul>
+          <ul id="Spb" class="location__list">
+            <li class="location__item">
+              <div class="location__title"> <span class="location__title-num">1</span><span class="title__xs">Избушка рыбака</span></div>
+              <p class="location__text">
+                Россия, Санкт-Петербург
+                Звёздная улица, 22
+                +7 (499) 491-11-01
+              </p><a href="#!">www.fishers-house.ru</a>
+            </li>
+            <li class="location__item">
+              <div class="location__title"> <span class="location__title-num">2</span><span class="title__xs">Рыбачок</span></div>
+              <p class="location__text">
+                Россия, Санкт-Петербург
+                Beloostrovskaya ul., 8
+                +7 (499) 424-35-25
+              </p><a href="#!">www.lovisnami.ru</a>
+            </li>
+          </ul>
+          <ul id="Novosibirsk" class="location__list">
+            <li class="location__item">
+              <div class="location__title"> <span class="location__title-num">1</span><span class="title__xs">Избушка рыбака</span></div>
+              <p class="location__text">
+                Россия, Новосибирск
+                ул. Некрасова, 54
+                +7 (499) 491-11-01
+              </p><a href="#!">www.fishers-house.ru</a>
+            </li>
+            <li class="location__item">
+              <div class="location__title"> <span class="location__title-num">2</span><span class="title__xs">Рыбачок</span></div>
+              <p class="location__text">
+                Россия, Новосибирск
+                ул. Тульская, 527
+                +7 (499) 424-35-25
+              </p><a href="#!">www.lovisnami.ru </a>
+            </li>
+          </ul>
+          <ul id="Kazan" class="location__list">
+            <li class="location__item">
+              <div class="location__title"> <span class="location__title-num">1</span><span class="title__xs">Избушка рыбака</span></div>
+              <p class="location__text">
+                Россия, Казань
+                ул. Маршала Чуйкова, 11А
+                +7 (499) 491-11-01
+              </p><a href="#!">www.fishers-house.ru</a>
+            </li>
+            <li class="location__item">
+              <div class="location__title"> <span class="location__title-num">2</span><span class="title__xs">Рыбачок</span></div>
+              <p class="location__text">
+                Россия, Казань
+                ул. Воровского, 67
+                +7 (499) 424-35-25
+              </p><a href="#!">www.lovisnami.ru </a>
+            </li>
+          </ul>
+          <ul id="Samara" class="location__list">
+            <li class="location__item">
+              <div class="location__title"> <span class="location__title-num">1</span><span class="title__xs">Избушка рыбака</span></div>
+              <p class="location__text">
+                Россия, Самара
+                пр. Кирова, 180А
+                +7 (499) 491-11-01
+              </p><a href="#!">www.fishers-house.ru</a>
+            </li>
+            <li class="location__item">
+              <div class="location__title"> <span class="location__title-num">2</span><span class="title__xs">Рыбачок</span></div>
+              <p class="location__text">
+                Россия, Самара
+                просп. Карла Маркса, 374
+                +7 (499) 424-35-25
+              </p><a href="#!">www.lovisnami.ru </a>
+            </li>
+          </ul>
+        </div>
+        <div class="location__left">
+          <div id="GMap"></div>
+        </div>
+        <div class="more">
+          <button class="btnMain">Показать еще</button>
+        </div>
+      </div>
+      <script>
+        window.Location = {
+            "Moscow": {
+                "id": 1, // City ID
+                "name": "Москва",
+                "center": {
+                    "lat": 55.755826, // latitude (широта)
+                    "lng": 37.6173
+                },
+                "stores": [
+                    {
+                        "id": 1, // Store
+                        "lat": 55.679603, // latitude (широта)
+                        "lng": 37.312771 // longitude (долгота)
+                    },
+                    {
+                        "id": 2, // Store
+                        "lat": 55.761849, // latitude (широта)
+                        "lng": 37.6365888 // longitude (долгота)
+        
+                    },
+                    {
+                        "id": 3, // Store
+                        "lat": 55.6800736, // latitude (широта)
+                        "lng": 37.732702 // longitude (долгота)
+                    }
+                ]
+            },
+            "Spb": {
+                "id": 2, // City ID
+                "name": "Санкт-Петербург",
+                "center": {
+                    "lat": 59.9342802, // latitude (широта)
+                    "lng": 30.3350986
+                },
+                "stores": [
+                    {
+                        "id": 1, // Store
+                        "lat": 59.836173, // latitude (широта)
+                        "lng": 30.3676546 // longitude (долгота)
+                    },
+                    {
+                        "id": 2, // Store
+                        "lat": 59.9860228, // latitude (широта)
+                        "lng": 30.3213429 // longitude (долгота)
+                    }
+                ]
+            },
+            "Novosibirsk": {
+                "id": 3, // City ID
+                "name": "Новосибирск",
+                "center": {
+                    "lat": 55.0083526, // latitude (широта)
+                    "lng": 82.9357327
+                },
+                "stores": [
+                    {
+                        "id": 1, // Store
+                        "lat": 55.045832, // latitude (широта)
+                        "lng": 82.930247 // longitude (долгота)
+        
+                    },
+                    {
+                        "id": 2, // Store
+                        "lat": 54.9494949, // latitude (широта)
+                        "lng": 82.8374367 // longitude (долгота)
+                    }
+                ]
+            },
+            "Kazan": {
+                "id": 4, // City ID
+                "name": "Казань",
+                "center": {
+                    "lat": 55.8304307, // latitude (широта)
+                    "lng": 49.0660806
+                },
+                "stores": [
+                    {
+                        "id": 1, // Store
+                        "lat": 55.8362801, // latitude (широта)
+                        "lng": 49.1121332 // longitude (долгота)
+                    },
+                    {
+                        "id": 2, // Store
+                        "lat": 55.8435833, // latitude (широта)
+                        "lng": 49.094269 // longitude (долгота)
+                    }
+                ]
+            },
+            "Samara": {
+                "id": 5, // City ID
+                "name": "Самара",
+                "center": {
+                    "lat": 53.2415041, // latitude (широта)
+                    "lng": 50.2212463
+                },
+                "stores": [
+                    {
+                        "id": 1, // Store
+                        "lat": 53.240493, // latitude (широта)
+                        "lng": 50.235174 // longitude (долгота)
+                    },
+                    {
+                        "id": 2, // Store
+                        "lat": 53.2420649, // latitude (широта)
+                        "lng": 50.239387 // longitude (долгота)
+                    }
+                ]
+            }
+        }
+      </script>
+    </div>
+  </div>
+</main>

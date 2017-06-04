@@ -1,89 +1,92 @@
-// npm instal --seve-dev gulpjs/gulp#4.0
-// export PATH=./node_modules/.bin:$PATH
-
-//////////////////////////////////////////////////
-//
-// Включаем задачи
-//
-/////////////////////////////////////////////////
-
-var gulp = require('gulp'), // ВИНОВНИК ТОРЖЕСТВА 
-    sass = require('gulp-sass'), // КОМПИЛЯЦИЯ SASS В CSS
-    browserSync = require('browser-sync').create(),
-    autoprefixer = require('gulp-autoprefixer'), // ДОБАВЛЕНИЕ ПРЕФИКСОВ
+var gulp = require('gulp'),
+    // browserSync = require('browser-sync').create(),
+    smaps = require('gulp-sourcemaps'),
+    sass = require('gulp-sass'),
+    jade = require('gulp-jade'),
+    del = require('del'),
     plumber = require('gulp-plumber'),
     debug = require('gulp-debug'),
-    del = require('del'), // УДОЛЕНИЕ ФАЙЛОВ И ДИРРЕКТОРИЙ
-    rename = require('gulp-rename'), // ПЕРЕИМЕННОВЫВАЕТ ФАЙЛЫ
-    smaps = require('gulp-sourcemaps'), // КАРТА СТИЛЕЙ
     notify = require('gulp-notify'),
-    jade = require('gulp-jade'), // КОМПИЛЯЦИЯ JADE  
-    newer = require('gulp-newer'),
-    concat = require('gulp-concat'), // КОНКАТЕНАЦИЯ ФАЙЛОВ
-    uglify = require('gulp-uglify'), // СЖАТИЕ Java Script  
-    gulpif = require('gulp-if'),
-    data = require('gulp-data'),
+    rename = require('gulp-rename'),
     cssnano = require('gulp-cssnano'),
-    wiredep = require('wiredep').srteam;
+    concat = require('gulp-concat'),
+    newer = require('gulp-newer');
 
+var browserSync = require('browser-sync');
+var reload      = browserSync.reload;
 
-// меняет режим сборки: 
-// NODE_ENV=production gulp ... - продакшн версия. 
-// gulp ... - режим разработки
-const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
-//////////////////////////////////////////////////
-//
-// Задачи для CSS/Sass
-//
-/////////////////////////////////////////////////
+var path_build = {
+    "build" : "public",
+    "html" : "public/",
+    "js" : "public/js",
+    "css" : "public/css/",
+    "fonts" : "public/fonts/"
+};
+var path_src = {
+    "src" : "src/",
+    "html" : 'src/jade/**/*.jade',
+    "js" : "src/js/*.js",
+    "scss" : "src/sass/**/*.scss",
+    "fonts" : "src/fonts/",
+    "watch" : "src/**/*.*"
+};
+
+gulp.task('clean', function() {
+    return del(path_build.build);
+});
+
 gulp.task('sass', function () {
-    return gulp.src('src/sass/*.scss')
+    return gulp.src(path_src.scss)
         .pipe(plumber({
             errorHandler: notify.onError(function (err) {
                 return {
-                    title: 'Styles',
+                    title: 'Sass',
                     message: err.message
                 }
             })
         }))
-        .pipe(gulpif(isDevelopment, smaps.init()))
+        .pipe(smaps.init())
         .pipe(sass().on('error', sass.logError))
-        //        .pipe(cssnano())
-        .pipe(gulpif(isDevelopment, smaps.write("./")))
+        .pipe(smaps.write("./"))
         .pipe(rename('styles.min.css'))
-        .pipe(gulp.dest('public/css'));
+        .pipe(gulp.dest(path_build.css))
+        .pipe(reload({stream:true}));
 });
-//////////////////////////////////////////////////
-//
-// Задачи для Jade
-//
-/////////////////////////////////////////////////
-gulp.task('jade', function () {
-    return gulp.src('src/jade/*.jade')
+
+gulp.task('html', function() {
+    return gulp.src(path_src.html)
+        .pipe(plumber({
+            errorHandler: notify.onError(function (err) {
+                return {
+                    title: 'html:all',
+                    message: err.message
+                }
+            })
+        }))
         .pipe(jade({
             pretty: true
         }))
-        .pipe(gulp.dest('public'));
-});
-//////////////////////////////////////////////////
-//
-// Задачи для JavaScript
-//
-/////////////////////////////////////////////////
-gulp.task('scripts', function () {
-    return gulp.src('src/js/*.js')
-        //        .pipe(concat("all.js"))
-        //        .pipe(uglify())
-        //        .pipe(rename('script.min.js'))
-        .pipe(gulp.dest('public/js'));
+        .pipe(debug({ title: 'html:' }))
+        .pipe(gulp.dest(path_build.build))
+        .pipe(reload({stream:true}));
 });
 
+gulp.task('js', function () {
+    return gulp.src(path_src.js)
+        .pipe(plumber({
+            errorHandler: notify.onError(function (err) {
+                return {
+                    title: 'Javascript',
+                    message: err.message
+                }
+            })
+        }))
+        .pipe(smaps.init())
+        .pipe(smaps.write("./"))
+        .pipe(rename({dirname: ''}))
+        .pipe(gulp.dest(path_build.js));
+});
 
-//////////////////////////////////////////////////
-//
-// Перемещений изображений и шрифтов в папку сборки
-//
-/////////////////////////////////////////////////
 gulp.task('assets', function () {
     return gulp.src('src/assets/**')
         .pipe(newer('public'))
@@ -93,61 +96,25 @@ gulp.task('assets', function () {
         .pipe(gulp.dest('public'));
 })
 
-//////////////////////////////////////////////////
-//
-// СЖАТИЕ КАРТИНОК
-//
-/////////////////////////////////////////////////
-gulp.task('images', function (cb) {
-    gulp.src(['src/assets/**/*.png', 'src/assets/**/*.jpg', 'src/assets/**/*.gif', 'src/assets/**/*.jpeg'])
-        .pipe(image_opt({
-            optimizationLevel: 9,
-            progressive: true,
-            interlaced: true
-        })).pipe(gulp.dest('public/images')).on('end', cb).on('error', cb);
+gulp.task('watch', function () {
+    gulp.watch(path_src.scss, gulp.series('sass'));
+    gulp.watch(path_src.html, gulp.series('html'));
+    gulp.watch(path_src.js, gulp.series('js'));
+    gulp.watch('src/assets/**', gulp.series('assets'));
 });
 
-//////////////////////////////////////////////////
-//
-// Удоление дирректории со сборкой
-//
-/////////////////////////////////////////////////
-gulp.task('clean', function () {
-    return del("public");
-})
+gulp.task('browserSync', function() {
+    browserSync({
+        server: {
+            baseDir: "./"+path_build.build
+        },
+        port: 8080,
+        open: true,
+        notify: false
+    });
+});
 
 
-gulp.task('watch', function () {
-    gulp.watch('src/sass/**/*.scss', gulp.series('sass'));
-    gulp.watch('src/assets/**/*.*', gulp.series('assets'));
-    gulp.watch('src/jade/**/*.jade', gulp.series('jade'));
-    gulp.watch('src/jade/data/data.json', gulp.series('jade'));
-    //    gulp.watch(['src/jade/data/data.json'], restart);
-    gulp.watch('src/js/*.js', gulp.series('scripts'));
-})
+gulp.task('build', gulp.series('clean','sass','assets','js','html'));
 
-
-//////////////////////////////////////////////////
-//
-// Задача сборки проекта
-//
-/////////////////////////////////////////////////
-gulp.task('build', gulp.series('clean', gulp.parallel('sass', 'scripts', 'jade', 'assets')));
-//////////////////////////////////////////////////
-//
-// Задачи Browser-Sync
-//
-/////////////////////////////////////////////////
-gulp.task('serv', function () {
-        browserSync.init({
-            server: 'public',
-            index: "aboutCompany.html"
-        });
-        browserSync.watch('public/**/*.*').on('change', browserSync.reload);
-    })
-    //////////////////////////////////////////////////
-    //
-    // Задача по умолчанию
-    //
-    /////////////////////////////////////////////////
-gulp.task('default', gulp.series('build', gulp.parallel('watch', 'serv')))
+gulp.task('default', gulp.series('build', gulp.parallel('watch', 'browserSync')));

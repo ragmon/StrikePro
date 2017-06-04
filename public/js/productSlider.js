@@ -121,3 +121,5 @@ $(document).ready(function () {
     });
 
 });
+
+//# sourceMappingURL=productSlider.js.map
