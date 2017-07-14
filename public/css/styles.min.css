@@ -1694,6 +1694,7 @@ img {
         margin-bottom: 60px;
         text-align: center; }
     .page__product .colorTable__item {
+      position: relative;
       text-align: center;
       display: inline-block;
       vertical-align: top;
@@ -1806,7 +1807,6 @@ img {
   .colorTable__gallery--variation .variation__item {
     margin-top: 15px;
     margin-bottom: 15px;
-    flex-grow: 1;
     position: relative;
     overflow: hidden;
     cursor: pointer;
@@ -1815,14 +1815,9 @@ img {
     .colorTable__gallery--variation .variation__item img {
       display: block;
       width: inherit;
-      min-width: 100%;
       height: auto;
-      position: absolute;
-      max-width: 150%;
-      max-height: 150%;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%); }
+      max-width: 100%;
+      max-height: 100%; }
     .colorTable__gallery--variation .variation__item:hover {
       border-color: #73af19; }
 
@@ -2022,6 +2017,42 @@ img {
   margin: auto;
   cursor: pointer;
   z-index: 4; }
+
+.colorTable__item svg {
+  position: relative;
+  top: -3px;
+  width: 15px;
+  height: 8px; }
+
+.colorTable__item .flex-prev {
+  transform: rotate(90deg);
+  left: 10px;
+  width: 16px;
+  height: 11px; }
+  .colorTable__item .flex-prev:before {
+    content: none !important; }
+  .colorTable__item .flex-prev svg {
+    position: relative;
+    top: -3px;
+    width: 15px;
+    height: 8px; }
+  .colorTable__item .flex-prev .caret__arrow {
+    stroke: #000; }
+
+.colorTable__item .flex-next {
+  transform: rotate(-90deg);
+  right: 10px;
+  width: 16px;
+  height: 11px; }
+  .colorTable__item .flex-next:before {
+    content: none !important; }
+  .colorTable__item .flex-next svg {
+    position: relative;
+    top: -3px;
+    width: 15px;
+    height: 8px; }
+  .colorTable__item .flex-next .caret__arrow {
+    stroke: #000; }
 
 .page__searchingResults .prompt {
   margin-top: 15px;
