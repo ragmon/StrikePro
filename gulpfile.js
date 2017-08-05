@@ -94,7 +94,7 @@ gulp.task('assets', function () {
             title: "assets"
         }))
         .pipe(gulp.dest('public'));
-})
+});
 
 gulp.task('watch', function () {
     gulp.watch(path_src.scss, gulp.series('sass'));

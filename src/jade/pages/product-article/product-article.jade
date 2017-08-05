@@ -41,10 +41,11 @@ main.page__product
                 span код товара: EG-124B #SM37F    
     .container-fluid.product__desc
         .row
-            .tile__text.tile__wrapper.bg--dark
+            .tile__text.bg--dark
                 p Предлагаем вашему вниманию плавающие воблеры Beakster STRIKE PRO® длиной 7,9 и 11 см. В отличие от других приманок, используется язык особой формы, напоминающий загнутый лепесток или ноготь, что придает приманке наиболее привлекательную игру и рыскающий стиль. 
-
-    .container-fluid
+            .col-xs-12
+                include product_table
+    .container-fluid // Новая страница. Обнавленная галерея
         .row
             a(href="https://www.youtube.com/embed/-uzkjrEnI84").tile__wrapper.col-xs-12.tile__wrapper--big
                 .tile
