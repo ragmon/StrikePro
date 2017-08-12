@@ -272,6 +272,23 @@
             font-size: 1rem;
             line-height: 40px;
         }
+
+
+        &._desctop {
+            display: none;
+            @media(min-width: 768px) {
+                display: block;
+            }
+        }
+
+        &._mobile {
+            display: block;
+
+            @media(min-width: 768px) {
+                display: none;
+            }
+        }
+
     }
 }
 .colorTable__gallery {
@@ -279,7 +296,7 @@
         margin-bottom: 20px;
         overflow: hidden;
         position: relative;
-        height: calc(100% - 30px);
+        height: calc(100% - 150px);
         img {
             display: block;
             height: 100%;
@@ -481,18 +498,11 @@
         }
     }
     &--title {
-        display: none;
-        &__name {
-            font-size: 26px;
-            color: $color3;
-            font-family: "OpenSans-Italic";
-            text-transform: uppercase;
-            margin-right: 15px;
-        }
-        &__model {
-            font-size: 19px;
-            text-transform: uppercase;
-        }
+        font-size: 26px;
+        color: $color3;
+        font-family: "OpenSans-Italic";
+        text-transform: uppercase;
+        margin-right: 15px;
     }
     &--slider {
         overflow: hidden;

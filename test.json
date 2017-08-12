@@ -1,0 +1,46 @@
+[
+  {
+    "smallIMG": "image/product/5.jpg",
+    "bigIMG": "image/product/5.jpg",
+    "data": [
+      {
+        "title": "Модель",
+        "data": "Какие то данные5125"
+      },
+      {
+        "title": "Артикуль",
+        "data": "124120967990"
+      },
+      {
+        "title": "Код",
+        "data": "JL-128Ftet"
+      },
+      {
+        "title": "Цвет",
+        "data": "#000FFF"
+      }
+    ]
+  },
+  {
+    "smallIMG": "image/product/6.jpg",
+    "bigIMG": "image/product/6.jpg",
+    "data": [
+      {
+        "title": "Модель",
+        "data": "Какие w35"
+      },
+      {
+        "title": "Артиsssкуль",
+        "data": "009gss90"
+      },
+      {
+        "title": "Кsdод",
+        "data": "JL-128dF"
+      },
+      {
+        "title": "Цвет",
+        "data": "#FFFdgF"
+      }
+    ]
+  }
+]

@@ -1713,12 +1713,22 @@ img {
     .page__product .colorTable span {
       font-size: 1rem;
       line-height: 40px; }
+    .page__product .colorTable._desctop {
+      display: none; }
+      @media (min-width: 768px) {
+        .page__product .colorTable._desctop {
+          display: block; } }
+    .page__product .colorTable._mobile {
+      display: block; }
+      @media (min-width: 768px) {
+        .page__product .colorTable._mobile {
+          display: none; } }
 
 .colorTable__gallery--img {
   margin-bottom: 20px;
   overflow: hidden;
   position: relative;
-  height: calc(100% - 30px); }
+  height: calc(100% - 150px); }
   .colorTable__gallery--img img {
     display: block;
     height: 100%;
@@ -1886,16 +1896,11 @@ img {
       z-index: -1; }
 
 .colorTable__gallery--title {
-  display: none; }
-  .colorTable__gallery--title__name {
-    font-size: 26px;
-    color: #73af19;
-    font-family: "OpenSans-Italic";
-    text-transform: uppercase;
-    margin-right: 15px; }
-  .colorTable__gallery--title__model {
-    font-size: 19px;
-    text-transform: uppercase; }
+  font-size: 26px;
+  color: #73af19;
+  font-family: "OpenSans-Italic";
+  text-transform: uppercase;
+  margin-right: 15px; }
 
 .colorTable__gallery--slider {
   overflow: hidden;
