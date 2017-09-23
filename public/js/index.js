@@ -35,7 +35,7 @@ $(document).ready(function () {
             if (top < $(tile_array[i]).position().top) {
                 top = $(tile_array[i]).position().top;
                 elem_newarray = $(tile_array).filter(function (index) {
-                    return $(this).position().top == top;
+                    return $(this).position().top === top;
                 });
                 for (var a = 0; a < $(elem_newarray).length; a++) {
                     row_width += $(elem_newarray[a]).innerWidth();
@@ -104,7 +104,9 @@ $(document).ready(function () {
                                 }
                             } else if (elemListLength === 2){
                                 console.log("колличество элементов в строке равно 2");
-                                $(tile_cap_list.vk).insertAfter(elemList[elemListLength - 1]);
+                                if(window.location.pathname === "/") {
+                                    $(tile_cap_list.vk).insertAfter(elemList[elemListLength - 1]);
+                                }
                                 for(var i = 0; i < elemListLength; i++){
                                     if($(elemList[i]).hasClass("col-2_4")){
                                         $(elemList[i]).toggleClass("col-2_4 col-4_8");
@@ -114,7 +116,9 @@ $(document).ready(function () {
                             break;
                         case 2:
                             console.log("колличество элементов в строке равно 3");
-                             $(tile_cap_list.vk).insertBefore(elemList[elemListLength - 1]);
+                            if(window.location.pathname === "/") {
+                                $(tile_cap_list.vk).insertBefore(elemList[elemListLength - 1]);
+                            }
                              for(var i = 0; i < elemListLength; i++){
                                 if($(elemList[i]).hasClass("col-2_4")){
                                     $(elemList[i]).toggleClass("col-2_4 col-4_8");
@@ -123,7 +127,9 @@ $(document).ready(function () {
                             break;
                         case 1:
                             console.log("колличество элементов в строке равно 4");
-                            $(tile_cap_list.vk).insertBefore(elemList[elemListLength - 1]);
+                            if(window.location.pathname === "/") {
+                                $(tile_cap_list.vk).insertBefore(elemList[elemListLength - 1]);
+                            }
                             break;
                     }
 
@@ -607,12 +613,12 @@ $(".product__zoom").on("click", function () {
 
     $("body").css({
         "overflow": "hidden"
-    })
+    });
 
     $(".popUP__productImg").css({
         "width": $(this).closest(".product__stand").find("img").width() + "px",
         "height": $(this).closest(".product__stand").find("img").height() + "px"
-    })
+    });
 
     $(".popUP__productImg").find("img").attr("src", link);
     $(".popUP__productImg").closest(".popUP__wrapper").show();
