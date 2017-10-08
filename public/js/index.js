@@ -74,10 +74,10 @@ $(document).ready(function () {
                     switch (raznica) {
                         case 4:
                             console.log("колличество элементов в строке равно 1 == col-2_4");
-                            while (statusWhile === true){
+                            while (statusWhile === true) {
                                 var prevRowElemList = tile_row_array[tile_row_array.length - count].elem_list;
-                                for(var i = 0; i < prevRowElemList.length; i++){
-                                    if($(prevRowElemList[i]).hasClass("col-4_8")){
+                                for (var i = 0; i < prevRowElemList.length; i++) {
+                                    if ($(prevRowElemList[i]).hasClass("col-4_8")) {
                                         $(prevRowElemList[i]).toggleClass("col-4_8 col-2_4");
                                         statusWhile = false;
                                         return
@@ -87,14 +87,14 @@ $(document).ready(function () {
                             }
                             break;
                         case 3:
-                            if(elemListLength === 1){
+                            if (elemListLength === 1) {
                                 console.log("колличество элементов в строке равно 1 == col-4_8");
                                 // элемент последней строи сжимаем до  ячейки
                                 $(elemList[0]).toggleClass("col-4_8 col-2_4");
-                                while (statusWhile === true){
+                                while (statusWhile === true) {
                                     var prevRowElemList = tile_row_array[tile_row_array.length - count].elem_list;
-                                    for(var i = 0; i < prevRowElemList.length; i++){
-                                        if($(prevRowElemList[i]).hasClass("col-4_8")){
+                                    for (var i = 0; i < prevRowElemList.length; i++) {
+                                        if ($(prevRowElemList[i]).hasClass("col-4_8")) {
                                             $(prevRowElemList[i]).toggleClass("col-4_8 col-2_4");
                                             statusWhile = false;
                                             return
@@ -102,13 +102,13 @@ $(document).ready(function () {
                                     }
                                     count++;
                                 }
-                            } else if (elemListLength === 2){
+                            } else if (elemListLength === 2) {
                                 console.log("колличество элементов в строке равно 2");
-                                if(window.location.pathname === "/") {
+                                if (window.location.pathname === "/") {
                                     $(tile_cap_list.vk).insertAfter(elemList[elemListLength - 1]);
                                 }
-                                for(var i = 0; i < elemListLength; i++){
-                                    if($(elemList[i]).hasClass("col-2_4")){
+                                for (var i = 0; i < elemListLength; i++) {
+                                    if ($(elemList[i]).hasClass("col-2_4")) {
                                         $(elemList[i]).toggleClass("col-2_4 col-4_8");
                                     }
                                 }
@@ -116,18 +116,18 @@ $(document).ready(function () {
                             break;
                         case 2:
                             console.log("колличество элементов в строке равно 3");
-                            if(window.location.pathname === "/") {
+                            if (window.location.pathname === "/") {
                                 $(tile_cap_list.vk).insertBefore(elemList[elemListLength - 1]);
                             }
-                             for(var i = 0; i < elemListLength; i++){
-                                if($(elemList[i]).hasClass("col-2_4")){
+                            for (var i = 0; i < elemListLength; i++) {
+                                if ($(elemList[i]).hasClass("col-2_4")) {
                                     $(elemList[i]).toggleClass("col-2_4 col-4_8");
                                 }
-                             }
+                            }
                             break;
                         case 1:
                             console.log("колличество элементов в строке равно 4");
-                            if(window.location.pathname === "/") {
+                            if (window.location.pathname === "/") {
                                 $(tile_cap_list.vk).insertBefore(elemList[elemListLength - 1]);
                             }
                             break;
@@ -138,10 +138,10 @@ $(document).ready(function () {
                     switch (raznica) {
                         case 3:
                             console.log("Элементов в строке 1");
-                            while (statusWhile === true){
+                            while (statusWhile === true) {
                                 var prevRowElemList = tile_row_array[tile_row_array.length - count].elem_list;
-                                for(var i = 0; i < prevRowElemList.length; i++){
-                                    if($(prevRowElemList[i]).hasClass("col-md-6")){
+                                for (var i = 0; i < prevRowElemList.length; i++) {
+                                    if ($(prevRowElemList[i]).hasClass("col-md-6")) {
                                         $(prevRowElemList[i]).toggleClass("col-md-6 col-md-3");
                                         statusWhile = false;
                                         return
@@ -152,14 +152,14 @@ $(document).ready(function () {
                             break;
                         case 2:
                             console.log("колличество элементов в строке равно 3");
-                            if(elemListLength === 1){
+                            if (elemListLength === 1) {
                                 console.log("колличество элементов в строке равно 1 == равен двум");
                                 // элемент последней строи сжимаем до  ячейки
                                 $(elemList[0]).toggleClass("col-md-6 col-md-3");
-                                while (statusWhile === true){
+                                while (statusWhile === true) {
                                     var prevRowElemList = tile_row_array[tile_row_array.length - count].elem_list;
-                                    for(var i = 0; i < prevRowElemList.length; i++){
-                                        if($(prevRowElemList[i]).hasClass("col-md-6")){
+                                    for (var i = 0; i < prevRowElemList.length; i++) {
+                                        if ($(prevRowElemList[i]).hasClass("col-md-6")) {
                                             $(prevRowElemList[i]).toggleClass("col-md-6 col-md-3");
                                             statusWhile = false;
                                             return
@@ -167,10 +167,10 @@ $(document).ready(function () {
                                     }
                                     count++;
                                 }
-                            } else if (elemListLength === 2){
+                            } else if (elemListLength === 2) {
                                 console.log("колличество элементов в строке равно 2");
-                                for(var i = 0; i < elemListLength; i++){
-                                    if($(elemList[i]).hasClass("col-md-3")){
+                                for (var i = 0; i < elemListLength; i++) {
+                                    if ($(elemList[i]).hasClass("col-md-3")) {
                                         $(elemList[i]).toggleClass("col-md-3 col-md-6");
                                     }
                                 }
@@ -462,28 +462,6 @@ $(".productList__filtrBlock--close").on("click", function (event) {
 })
 
 
-// tabs in category header
-$("#catalog__tabs").on("click", function (event) {
-    event.stopPropagation();
-})
-$(document).ready(function () {
-    $('.accordion-tabs').children('li').first().children('a').addClass('is-active').next().addClass('is-open').show();
-    $('.accordion-tabs').on('click', 'li > a', function (event) {
-        if (!$(this).hasClass('is-active')) {
-            event.preventDefault();
-            $('.accordion-tabs .is-open').removeClass('is-open').hide();
-            $(this).next().toggleClass('is-open').toggle();
-            $('.accordion-tabs').find('.is-active').removeClass('is-active');
-            $(this).addClass('is-active');
-        } else if ($(this).hasClass('is-active')) {
-            event.preventDefault();
-            $(this).removeClass('is-active');
-            $(this).next().toggleClass('is-open').toggle();
-        } else {
-            event.preventDefault();
-        }
-    });
-});
 // mobile menu
 $(".headerNav__toggle").on("click", function () {
     $(this).toggleClass("active")
@@ -495,9 +473,31 @@ $(".headerNav__toggle").on("click", function () {
         $("body").removeClass("nav__active");
     }
 
-//
+});
+
+$(".custom-menu__wrapper").hover(
+    function () {
+        console.log("on");
+        $("body").css({"overflow": "hidden"})
+    },
+    function () {
+        console.log("off");
+        $("body").css({"overflow": "auto"})
+    });
+$('.custom-menu__toggle').on('click', function () {
+    var w = screen.width;
+    console.log('click');
+    if (w <= 992) {
+        if ($(this).hasClass('active')) {
+            $(this).removeClass('active');
+        } else {
+            $('.custom-menu__toggle').removeClass('active');
+            $(this).addClass('active');
+        }
+    }
 
 })
+
 // desctop menu
 $(window).resize(function () {
     var w = screen.width;
@@ -509,9 +509,6 @@ $(window).resize(function () {
     }
 });
 
-$(".tab-head-cont section a").on("click", function (event) {
-    event.stopPropagation();
-})
 
 // mobile search popup
 $(".header__search--btn").on("click", function (event) {

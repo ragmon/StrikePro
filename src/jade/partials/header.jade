@@ -26,35 +26,20 @@ svg(style="display: none")
                                 a(href='/aboutCompany.html') Сертификаты
                             li
                                 a(href='/aboutCompany.html') Работа у нас
-                    li.headerNav__item
+                    li.headerNav__item.custom-menu__btn
                         a.headerNav__link(href='#') Каталог
                             span.caret
                                 svg
                                     use.caret__arrow(xlink:href="#svg_arrow")  
-                        ul.dropdown__menu#catalog__tabs
-                            li.container-tab
-                                ul.accordion-tabs
-                                    li.tab-head-cont
-                                        a(href='#!') Воблеры 
-                                        include tabs1
-                                    li.tab-head-cont
-                                        a(href='#!') Аксессуары
-                                        include tabs2
-                                    li.tab-head-cont
-                                        a(href='#!') Балансиры
-                                        include tabs3
-                                    li.tab-head-cont
-                                        a(href='#!') Блесны
-                                        include tabs4
-                                    li.tab-head-cont
-                                        a(href='#!') Балансиры
-                                        include tabs3
-                                    li.tab-head-cont
-                                        a(href='#!') Блесны
-                                        include tabs3
-                                    li.tab-head-cont
-                                        a(href='#!') Блесны
-                                        include tabs2
+                        .dropdown__menu.custom-menu__wrapper
+                            .custom-menu__container.clearfix
+                                .container
+                                    - var n = 0;
+                                    while n < 9
+                                        .custom-menu__col.col-md-3
+                                            .title__xs.custom-menu__toggle  Заголовок
+                                            include tabs1
+                                        - n++
                     li.headerNav__item
                         a.headerNav__link(href='#!') Где купить
                             span.caret

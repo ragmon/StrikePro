@@ -291,57 +291,61 @@
         }
     }
 }
-#catalog__tabs {
-    width: 100%;
-    padding-left: 0;
-    @media(min-width: 1024px){
-        width: 740px;
-    }
-    section {
-        ul {
-            @media(min-width: 1024px) {
-                display: inline-block;
-                width: 23%;
-                max-width: 180px;
-                vertical-align: top;
-            }
-            li {
-                &.tile__wrapper {
-                    width: 200px;
-                    height: 200px;
-                    float: left;
-                    min-height: inherit;
-                    display: none;
-                    a {
-                        min-height: inherit;
-                        height: inherit;
-                    }
-                    @media(min-width: 1024px) {
-                        display: block;
-                    }
-                }
-                & > a {
-                    color: $color3;
-                    white-space: normal;
-                    display: inline-block;
-                    width: 100%;
-                    overflow: hidden;
-                    word-wrap: break-word;
-                }
-            }
-        }
-    }
-}
-.container-tab {
-    margin: auto;
+
+
+.custom-menu {
+  &__btn{
+    position: static;
+  }
+  &__wrapper {
+    left: 0;
+    right: 0;
+    top: 70px !important;
     overflow: auto;
-    @media(min-width: 1024px){
-        height: 335px;
-        overflow: hidden;
-        position: relative;
-        left: 15px;
+    @media(min-width: 992px) {
+      height: calc(100vh - 70px);
+      width: 100%;
     }
+    @media(max-width: 992px) {
+      .container {
+        width: auto;
+        padding: 0;
+      }
+    }
+  }
+  &__container {
+    .title__xs {
+      margin-bottom: 20px;
+    }
+  }
+  &__col {
+    margin-bottom: 20px;
+    @media(max-width: 992px) {
+      width: 100%;
+      ul {
+        display: none;
+        overflow: hidden;
+      }
+      .custom-menu__toggle.active {
+        &+ul {
+          display: block;
+        }
+      }
+    }
+    @media(min-width: 992px) {
+      border-right: 1px solid #3d3d3d;
+      &:nth-child(4n) {
+        border: none;
+      }
+    }
+  }
 }
+
+
+
+
+
+
 .headerNav__toggle {
     background-color: transparent;
     border: none;
@@ -356,77 +360,12 @@
     }
 }
 
-/* TABS */
 
-.accordion-tabs {
-    @media(min-width: 1024px){
-        position: absolute !important;
-    }
-}
-.accordion-tabs:before,
-.accordion-tabs:after {
-    content: " ";
-    display: table;
-}
-.accordion-tabs:after {
-    clear: both;
-}
-.accordion-tabs li {
-    list-style: none;
-}
-.accordion-tabs li.tab-head-cont:first-child a {}
-.accordion-tabs li.tab-head-cont:last-child a {}
-.accordion-tabs li.tab-head-cont > a {
-    font-family: "OpenSans-Bold";
-    display: block;
-    padding: 0 20px;
-}
-.accordion-tabs li.tab-head-cont a:hover {
-    color: #000000;
-}
-.accordion-tabs li.tab-head-cont a:focus {
-    outline: none;
-}
-.accordion-tabs li.tab-head-cont a.is-active {
-    color: $color3;
-}
-.accordion-tabs li.tab-head-cont section {
-    padding: 10px 1.618em;
-    display: none;
-    width: 100%;
-}
-@media screen and (min-width: 1024px) {
-    .accordion-tabs {
-        border: none;
-        position: relative;
-        white-space: nowrap;
-    }
-    .accordion-tabs li.tab-head-cont {
-        display: inline;
-    }
-    .accordion-tabs li.tab-head-cont:last-child a {
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-    .accordion-tabs li.tab-head-cont > a {
-        display: inline-block;
-        vertical-align: baseline;
-        zoom: 1;
-        *display: inline;
-        *vertical-align: auto;
-        padding: 15px 20px;
-    }
-    .accordion-tabs li.tab-head-cont a.is-active {
-        margin-bottom: -1px;
-    }
-    .accordion-tabs li.tab-head-cont section {
-        float: left;
-        left: 0;
-        padding: 0;
-        margin: 0.75em 20px;
-        white-space: nowrap;
-    }
-}
+
+
+
+
+
 .header__slider {
     max-height: calc(100vh - 80px);
     overflow: hidden;
