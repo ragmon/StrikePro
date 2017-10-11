@@ -214,7 +214,11 @@ $(document).ready(function () {
         $(".right").on("click", rightMove);
 
         for (var i = 0; i < articles.length; i++) {
-            colorTableItem.push(colorTableItemRender(articles[i].id, articles[i].logo.thumb, articles[i].name));
+            if(articles[i].logo) {
+                colorTableItem.push(colorTableItemRender(articles[i].id, articles[i].logo.thumb, articles[i].name));
+            } else {
+                colorTableItem.push(colorTableItemRender(articles[i].id, '/image/no_image.svg', articles[i].name));
+            }
         }
         $(colorTable).append(colorTableItem);
         $('.colorTable._mobile').append(colorTableItem);
