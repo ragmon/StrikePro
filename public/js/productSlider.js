@@ -22,9 +22,9 @@ $(document).ready(function () {
 
     function colorTableItemRender(id, image, title) {
         return ('<div class="colorTable__item" id="' + id + '">' +
-        '<img src="' + image + '" alt="">' +
-        '<span>' + title + '</span>' +
-        '</div>')
+            '<img src="' + image + '" alt="">' +
+            '<span>' + title + '</span>' +
+            '</div>')
     }
 
     function descriptionRender(array) {
@@ -50,7 +50,7 @@ $(document).ready(function () {
         var photos = [];
         for (var i = 0; i < array.length; i++) {
             var photo = '<li class="variation__item">' +
-                '<img id="' + array[i].id + '" src="' + array[i].thumb + '" alt="">' +
+                '<img id="' + array[i].id + '" src="' + array[i].thumb_url + '" alt="">' +
                 '</li>';
             photos.push(photo);
             if (i === 0) {
@@ -139,7 +139,7 @@ $(document).ready(function () {
         (slideContainer).empty();
         $(galleryPhotoList).empty();
         for (var i = 0; i < articles.length; i++) {
-            sliderItem.push(sliderItemRender(articles[i].logo.thumb, articles[i].id))
+            sliderItem.push(sliderItemRender(articles[i].logo.thumb_url, articles[i].id))
         }
         $(slideContainer).append(sliderItem);
 
@@ -200,33 +200,37 @@ $(document).ready(function () {
     function initGalleryMainPhoto(id) {
         for (var i = 0; i < currentPhoto.length; i++) {
             if (currentPhoto[i].id === parseInt(id)) {
-                $(galleryMainPhoto).attr('src', currentPhoto[i].original);
+                $(galleryMainPhoto).attr('src', currentPhoto[i].original_url);
                 $(galleryMainTitle).text(currentPhoto[i].title);
             }
         }
     }
 
     function init() {
-        var windowSize = window.innerWidth;
-        $(colorTable).empty();
-        $(colorTable).after("<div class='colorTable _mobile'></div>");
-        $(".left").on("click", leftMove);
-        $(".right").on("click", rightMove);
+        try {
+            var windowSize = window.innerWidth;
+            $(colorTable).empty();
+            $(colorTable).after("<div class='colorTable _mobile'></div>");
+            $(".left").on("click", leftMove);
+            $(".right").on("click", rightMove);
 
-        for (var i = 0; i < articles.length; i++) {
-            if(articles[i].logo) {
-                colorTableItem.push(colorTableItemRender(articles[i].id, articles[i].logo.thumb, articles[i].name));
-            } else {
-                colorTableItem.push(colorTableItemRender(articles[i].id, '/image/no_image.svg', articles[i].name));
+            for (var i = 0; i < articles.length; i++) {
+                if (articles[i].logo) {
+                    colorTableItem.push(colorTableItemRender(articles[i].id, articles[i].logo.thumb_url, articles[i].name));
+                } else {
+                    colorTableItem.push(colorTableItemRender(articles[i].id, 'http://cdn.strikepro.ru/default_group.png', articles[i].name));
+                }
             }
-        }
-        $(colorTable).append(colorTableItem);
-        $('.colorTable._mobile').append(colorTableItem);
-        $('.colorTable._desctop .colorTable__item').on('click', initGallery);
-        if (windowSize >= 768) {
+            $(colorTable).append(colorTableItem);
+            $('.colorTable._mobile').append(colorTableItem);
+            $('.colorTable._desctop .colorTable__item').on('click', initGallery);
+            if (windowSize >= 768) {
 
-        } else {
-            colorTable_item_slider();
+            } else {
+                colorTable_item_slider();
+            }
+        } catch (err) {
+            throw new Error(err);
         }
     }
 
@@ -251,7 +255,7 @@ $(document).ready(function () {
                     img = document.createElement('img'),
                     span = document.createElement('span');
                 $(span).text(photos[a].title);
-                $(img).attr('src', photos[a].original);
+                $(img).attr('src', photos[a].original_url);
                 $(li).append(img);
                 $(li).append(span);
                 slides.push(li)
@@ -284,7 +288,11 @@ $(document).ready(function () {
         }
     }
 
-    init();
+    try {
+        init();
+    } catch (err) {
+        console.log(err)
+    }
 
     $(window).resize(function () {
         var windowSize = window.innerWidth;
@@ -308,13 +316,20 @@ $(document).ready(function () {
         $(".product__stand .img_2d").hide();
         $("#image-reel").show()
     });
-
+    $(".product__sliderImg ul li a").on('click', function (event) {
+        var img2D =  $(".product__stand .img_2d");
+        event.preventDefault();
+        $("#image-reel").hide();
+        $(img2D).show();
+        $(img2D).attr("src", $(this).attr("href"));
+    });
     $(window).resize(function () {
-        var k = 500 / 304;
-        var w = screen.width;
+        var k = 500 / 304,
+            productStand = $('.product__stand'),
+            w = screen.width;
 
         if (w < 500) {
-            $('.product__stand').height($('.product__stand').width() / k);
+            $(productStand).height($(productStand).width() / k);
         }
     });
 

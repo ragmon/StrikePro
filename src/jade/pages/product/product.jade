@@ -4,18 +4,23 @@ main.page__product
         .product
             .product__title
                 h1 Supersonic
-                span Challenger X            
-            .product__stand
-                .product__stand--img
-                    img.img_2d(src="/image/product.png", alt="")
-                    img(src="http://test.vostrel.net/jquery.reel/example/object-movie-non-looping-sequence/green/1.png" width="100%" height="100%"
-                    class="reel"
-                    id="image"
-                    data-images="http://test.vostrel.net/jquery.reel/example/object-movie-non-looping-sequence/green/#.png"
-                    data-frames="6"
-                    data-loops="false"
-                    data-speed="0.5"
-                    data-revolution="100")
+                span Challenger X
+            .product__row
+                .product__stand
+                    .product__stand--img
+                        img.img_2d(src="http://lorempixel.com/800/600/", alt="")
+                        img(src="http://test.vostrel.net/jquery.reel/example/object-movie-non-looping-sequence/green/1.png" width="100%" height="100%"
+                        class="reel"
+                        id="image"
+                        data-images="http://test.vostrel.net/jquery.reel/example/object-movie-non-looping-sequence/green/#.png"
+                        data-frames="6"
+                        data-loops="false"
+                        data-speed="0.5"
+                        data-revolution="100")
+                //.product__action
+                //    a(href="#!").btnMain хочу купить
+                //    span артикул: 1258-001
+                //    span код товара: EG-124B #SM37F
             .product__rightSidebar
                 .product__sliderImg
                     ul
@@ -35,10 +40,7 @@ main.page__product
                             a(href="http://lorempixel.com/640/480/?11261")
                                 img(src="http://lorempixel.com/640/480/?11261", alt="smallImg")
                 button.btnMain.js-btn3D 3D
-            .product__action
-                a(href="#!").btnMain хочу купить
-                span артикул: 1258-001
-                span код товара: EG-124B #SM37F    
+
     .container-fluid.product__desc
         .row
             .tile__wrapper.col-md-6

@@ -38,26 +38,21 @@
     }
     &__wrapper {
         position: relative;
-        min-height: 50vw;
         height: auto;
         display: block;
+
+        &:before{
+          content: '';
+          padding-top: 100%;
+          float: left;
+        }
+
         @media(max-width: 560px) {
             width: 100% !important;
             float: none !important;
-            min-height: 280px !important;
         }
-        @media(min-width: 768px) {
-            min-height: 33vw;
-        }
-        @media(min-width: 1024px) {
-            min-height: 25vw;
-        }
-        @media(min-width: 1200px) {
-            min-height: 24vw;
-        }
-        @media(min-width: 1400px) {
-            min-height: calc(20vw - 22px);
-        }
+
+
         &--big {
             height: 41vw;
         }

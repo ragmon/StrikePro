@@ -361,6 +361,8 @@ $(document).ready(function () {
 
     $(".js__videoPopup").on("click", function (event) {
         event.preventDefault();
+        var k = 1280 / 720;
+        var w = screen.width;
         var link = $(this).attr('href');
         var popUp_content = '<iframe width="100%" height="100%" src="' + link + '" frameborder="0" allowfullscreen></iframe>';
         var popUp = '<div class="popUP__wrapper js__popUP__video js__popup active"><div class="popUP__video js__noPropagation"> <button class="close__popup js__closePopup">&#215;</button>' + popUp_content + '</div></div>';
@@ -369,21 +371,25 @@ $(document).ready(function () {
         });
         $("body").append(popUp);
 
+
         $(".popUP__wrapper").css({"height": window.innerHeight + "px"});
+        $('.popUP__video').css({"height": w * 0.7 / k, "width": w * 0.7});
 
     })
 
 
     $(window).resize(function () {
-        var k = 700 / 420;
+        var k = 1280 / 720;
         var w = screen.width;
 
         $(".popUP__wrapper").css({"height": window.innerHeight + "px"});
-        $('.popUP__video').css({"height": window.innerHeight + "px"});
         $('.header__search--mobile').css({"height": window.innerHeight + "px"});
-
+        console.log(w);
         if (w < 700) {
+            $('.popUP__video').css({"width": "100%" });
             $('.popUP__video').height($('.popUP__video').width() / k);
+        } else {
+            $('.popUP__video').css({"height": w * 0.8 / k, "width": w * 0.8});
         }
     });
 
