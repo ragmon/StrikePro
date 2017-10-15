@@ -1595,12 +1595,12 @@ img {
       line-height: 40px; }
     .page__product .colorTable._desctop {
       display: none; }
-      @media (min-width: 768px) {
+      @media (min-width: 992px) {
         .page__product .colorTable._desctop {
           display: block; } }
     .page__product .colorTable._mobile {
       display: block; }
-      @media (min-width: 768px) {
+      @media (min-width: 992px) {
         .page__product .colorTable._mobile {
           display: none; } }
 
@@ -1650,10 +1650,28 @@ img {
   margin-bottom: 20px; }
   .colorTable__gallery--characteristics .characteristics__item {
     display: inline-block;
-    margin-right: 10px;
-    margin-bottom: 10px; }
+    margin-right: 3px;
+    margin-bottom: 3px;
+    font-size: 10px;
+    line-height: 10px; }
     .colorTable__gallery--characteristics .characteristics__item:first-child {
-      margin-left: 10px; }
+      margin-left: 3px; }
+    @media (min-width: 992px) {
+      .colorTable__gallery--characteristics .characteristics__item {
+        font-size: 10px;
+        line-height: 10px;
+        margin-right: 5px;
+        margin-bottom: 5px; }
+        .colorTable__gallery--characteristics .characteristics__item:first-child {
+          margin-left: 5px; } }
+    @media (min-width: 1920px) {
+      .colorTable__gallery--characteristics .characteristics__item {
+        font-size: 16px;
+        line-height: 16px;
+        margin-right: 10px;
+        margin-bottom: 10px; }
+        .colorTable__gallery--characteristics .characteristics__item:first-child {
+          margin-left: 10px; } }
   .colorTable__gallery--characteristics .characteristics__title {
     position: relative;
     color: #fff;

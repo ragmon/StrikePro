@@ -266,7 +266,7 @@
 
     &._desctop {
       display: none;
-      @media(min-width: 768px) {
+      @media(min-width: 992px) {
         display: block;
       }
     }
@@ -274,7 +274,7 @@
     &._mobile {
       display: block;
 
-      @media(min-width: 768px) {
+      @media(min-width: 992px) {
         display: none;
       }
     }
@@ -335,10 +335,30 @@
       }
       &__item {
         display: inline-block;
-        margin-right: 10px;
-        margin-bottom: 10px;
+        margin-right: 3px;
+        margin-bottom: 3px;
+        font-size: 10px;
+        line-height: 10px;
         &:first-child {
-          margin-left: 10px;
+          margin-left: 3px;
+        }
+        @media(min-width:992px) {
+          font-size: 10px;
+          line-height: 10px;
+          margin-right: 5px;
+          margin-bottom: 5px;
+          &:first-child {
+            margin-left: 5px;
+          }
+        }
+        @media(min-width:1920px) {
+          font-size: 16px;
+          line-height: 16px;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          &:first-child {
+            margin-left: 10px;
+          }
         }
       }
       &__title {
