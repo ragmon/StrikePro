@@ -721,6 +721,34 @@ img {
   font-weight: normal;
   color: #fff; }
 
+.header-page__wrap {
+  background-color: #f7f7f7;
+  padding: 10px 0;
+  margin-bottom: 50px; }
+  @media (min-width: 1325px) {
+    .header-page__wrap {
+      padding: 10px 80px; } }
+
+.header-page__container {
+  margin-bottom: 0;
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px; }
+  @media (min-width: 768px) {
+    .header-page__container {
+      width: 750px; } }
+  @media (min-width: 992px) {
+    .header-page__container {
+      width: 970px; } }
+  @media (min-width: 1200px) {
+    .header-page__container {
+      width: 1170px; } }
+  @media (min-width: 1325px) {
+    .header-page__container {
+      width: auto; } }
+
 .breadcrumb {
   margin-bottom: 0;
   background-color: transparent;
@@ -738,13 +766,6 @@ img {
   @media (min-width: 1325px) {
     .breadcrumb {
       width: auto; } }
-  .breadcrumb__wrap {
-    background-color: #f7f7f7;
-    padding: 11px 0px;
-    margin-bottom: 50px; }
-    @media (min-width: 1325px) {
-      .breadcrumb__wrap {
-        padding: 11px 80px; } }
   .breadcrumb li.active a {
     color: #73af19; }
   .breadcrumb li.active:before {
@@ -807,8 +828,8 @@ img {
       .tile__wrapper {
         width: 100% !important;
         float: none !important; } }
-    .tile__wrapper--big {
-      height: 41vw; }
+    .tile__wrapper--big:before {
+      padding-top: 50%; }
   .tile img {
     display: block;
     width: inherit;
@@ -1206,8 +1227,7 @@ img {
   padding-top: 35px;
   padding-bottom: 35px; }
   .productList__titleBlock .title__lg {
-    margin-bottom: 35px;
-    margin-left: -15px; }
+    margin-bottom: 35px; }
 
 .productList__filtrBlock {
   overflow: hidden;
@@ -1461,6 +1481,9 @@ img {
     .page__product .product__title span {
       font-size: 1.105rem;
       font-weight: bold; }
+    @media (min-width: 768px) {
+      .page__product .product__video-section {
+        width: 80%; } }
     .page__product .product__rightSidebar {
       width: 288px;
       padding: 10px 0;
@@ -1843,11 +1866,11 @@ img {
   border: none;
   color: #000;
   position: absolute;
-  top: 8px;
+  top: 10px;
   right: 8px;
   line-height: 15px;
   padding: 0;
-  font-size: 30px; }
+  font-size: 40px; }
 
 .popUP__wrapper {
   display: none;

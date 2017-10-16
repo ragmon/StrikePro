@@ -10,13 +10,9 @@ main.page__product
                     .product__stand--img
                         img.img_2d(src="http://lorempixel.com/800/600/", alt="")
                         img(src="http://test.vostrel.net/jquery.reel/example/object-movie-non-looping-sequence/green/1.png" width="100%" height="100%"
-                        class="reel"
-                        id="image"
-                        data-images="http://test.vostrel.net/jquery.reel/example/object-movie-non-looping-sequence/green/#.png"
-                        data-frames="6"
-                        data-loops="false"
-                        data-speed="0.5"
-                        data-revolution="100")
+                        id="reel-image"
+                        style="display: none !important"
+                        )
                 //.product__action
                 //    a(href="#!").btnMain хочу купить
                 //    span артикул: 1258-001
@@ -43,17 +39,17 @@ main.page__product
 
     .container-fluid.product__desc
         .row
-            .tile__wrapper.col-md-6
+            .tile__wrapper.tile__wrapper--big.col-md-6
                 a(href="https://www.youtube.com/embed/-uzkjrEnI84").tile.js__videoPopup
                     img(src="http://lorempixel.com/640/480/?97378", alt="")
                     .video__control
                         .video__control--icon.icon-youtube-play
                         .video__control--text посмотреть видео
-            .col-md-6.tile__text.tile__wrapper.bg--dark
+            .col-md-6.tile__text.bg--dark
                 p Предлагаем вашему вниманию плавающие воблеры Beakster STRIKE PRO® длиной 7,9 и 11 см. В отличие от других приманок, используется язык особой формы, напоминающий загнутый лепесток или ноготь, что придает приманке наиболее привлекательную игру и рыскающий стиль. 
             .col-xs-12
                 include product_table
-    .container-fluid
+    .container-fluid.product__video-section
         .row
             a(href="https://www.youtube.com/embed/-uzkjrEnI84").tile__wrapper.col-xs-12.tile__wrapper--big
                 .tile

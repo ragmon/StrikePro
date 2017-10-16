@@ -48,24 +48,28 @@ $(document).ready(function () {
 
     function gelleryPhotoRender(array) {
         var photos = [];
-        for (var i = 0; i < array.length; i++) {
-            var photo = '<li class="variation__item">' +
-                '<img id="' + array[i].id + '" src="' + array[i].thumb_url + '" alt="">' +
-                '</li>';
-            photos.push(photo);
-            if (i === 0) {
-                initGalleryMainPhoto(array[i].id);
+        if(array.length > 1) {
+            for (var i = 0; i < array.length; i++) {
+                var photo = '<li class="variation__item">' +
+                    '<img id="' + array[i].id + '" src="' + array[i].thumb_url + '" alt="">' +
+                    '</li>';
+                photos.push(photo);
+                if (i === 0) {
+                    initGalleryMainPhoto(array[i].id);
+                }
             }
-        }
-        $(galleryPhotoList).append(photos);
-        $('.colorTable__gallery--variation').addClass('active');
+            $(galleryPhotoList).append(photos);
+            $('.colorTable__gallery--variation').addClass('active');
 
-        $('.variation__item img').on('click', function () {
-            initGalleryMainPhoto($(this).attr('id'));
-            $(galleryMainPhoto).css({
-                'transform': 'none'
+            $('.variation__item img').on('click', function () {
+                initGalleryMainPhoto($(this).attr('id'));
+                $(galleryMainPhoto).css({
+                    'transform': 'none'
+                })
             })
-        })
+        } else {
+            return null;
+        }
     }
 
     // функции движения слайдера
@@ -158,6 +162,7 @@ $(document).ready(function () {
         });
 
         $(".slider__item").each(function (index, element) {
+
             if (parseInt($(element).attr('id')) === parseInt($(event).attr('id'))) {
                 $(element).addClass('active');
                 if (index + 1 > 6) {
@@ -172,7 +177,8 @@ $(document).ready(function () {
         initDescription($(event).attr('id'));
         initPhotos($(event).attr('id'));
 
-        $(".slider__item").on('click', function () {
+        $(".slider__item").on('click', function (e) {
+            e.preventDefault();
             initDescription($(this).attr('id'));
             initPhotos($(this).attr('id'));
             $(".slider__item").removeClass('active');
@@ -197,8 +203,8 @@ $(document).ready(function () {
         $(galleryPhotoList).empty();
         for (var i = 0; i < articles.length; i++) {
             if (articles[i].id === parseInt(id)) {
-                currentPhoto = articles[i].photos;
-                gelleryPhotoRender(articles[i].photos);
+                currentPhoto = articles[i].head_images;
+                gelleryPhotoRender(articles[i].head_images);
             }
         }
     }
@@ -246,7 +252,7 @@ $(document).ready(function () {
         for (var i = 0; i < colorTableItemMobileLength; i++) {
             var slides = [];
             var classNav = ".custom-navigation-" + i + " a";
-            var photos = articles[i].photos,
+            var photos = articles[i].head_images,
                 photosLength = photos.length;
 
             if (photosLength === 1) continue;
@@ -319,15 +325,27 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $(".js-btn3D").on("click", function () {
+        var img3D = $('#reel-image');
+        $(img3D).reel({
+            loops: true,
+            speed: 0.5,
+            frames: 6,
+            revolution: 100,
+            images: "http://test.vostrel.net/jquery.reel/example/object-movie-non-looping-sequence/green/#.png"
+        });
+
         $(".product__stand .img_2d").hide();
-        $("#image-reel").show()
+        $('#reel-image-reel').show();
+        $(img3D).show()
     });
     $(".product__sliderImg ul li a").on('click', function (event) {
         var img2D = $(".product__stand .img_2d");
+        var img3D = $('#reel-image');
         event.preventDefault();
-        $("#image-reel").hide();
         $(img2D).show();
         $(img2D).attr("src", $(this).attr("href"));
+        $(img3D).hide();
+        $('#reel-image-reel').hide();
     });
     $(window).resize(function () {
         var k = 500 / 304,

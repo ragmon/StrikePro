@@ -191,89 +191,82 @@
         </div>
       </header>
       <main class="page__productList">
-        <div class="breadcrumb__wrap">
+        <div class="header-page__wrap">
           <ol class="breadcrumb">
             <li><a href="#!">Каталог</a></li>
-            <li><a href="#!">Воблеры </a></li>
+            <li><a href="#!">Воблеры</a></li>
             <li class="active"><a href="#!">Challenger X</a></li>
           </ol>
+          <div class="header-page__container productList__titleBlock">
+            <h1 class="title__lg">Challenger X</h1>
+            <p>Предлагаем вашему вниманию плавающие воблеры Beakster длиной 7,9 и 11 см. В отличие от других приманок, используется язык особой формы, напоминающий загнутый лепесток или ноготь, что придает приманке наиболее привлекательную игру и рыскающий стиль.</p>
+          </div>
+          <div class="header-page__container">
+            <form id="filtrProduct" action="#!">
+              <div class="clearfix productList__filtrBlock">
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <div class="title__xs">Рыбак</div>
+                    <div class="form-group">
+                      <div class="filtr__radio--wrapper">
+                        <input type="radio" name="skill" id="skill1" checked>
+                        <label for="skill1">Новичок</label>
+                      </div>
+                      <div class="filtr__radio--wrapper">
+                        <input type="radio" name="skill" id="skill2">
+                        <label for="skill2">Опытный</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-8 col-sm-6">
+                    <div class="title__xs">Версия</div>
+                    <div class="form-group">
+                      <div class="filtr__radio--wrapper">
+                        <input type="radio" name="version" id="version1" checked>
+                        <label for="version1">Новичок</label>
+                      </div>
+                      <div class="filtr__radio--wrapper">
+                        <input type="radio" name="version" id="version2">
+                        <label for="version2">Опытный</label>
+                      </div>
+                      <div class="filtr__radio--wrapper">
+                        <input type="radio" name="version" id="version3">
+                        <label for="version3">Опытный</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                    <div class="title__xs">Нагрузка</div>
+                    <div class="form-group">
+                      <div id="input_range-1" class="input__range"></div>
+                      <div id="input_range-1_value"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-md-offset-1 col-sm-6">
+                    <div class="title__xs">Длина</div>
+                    <div class="form-group">
+                      <div id="input_range-2" class="input__range"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-md-offset-1 col-sm-6">
+                    <div class="title__xs">Заглубление</div>
+                    <div class="form-group">
+                      <div id="input_range-3" class="input__range"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container productList__filtrBlock--control">
+                <div class="row">
+                  <button class="productList__filtrBlock--close active"><span>❮</span></button>
+                  <button type="reset" class="productList__filtrBlock--reset">сбросить фильтр</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
-        <div class="productList__titleBlock">
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12">
-                <h1 class="title__lg">Challenger X</h1>
-              </div>
-              <div class="col-xs-12">
-                <p>Предлагаем вашему вниманию плавающие воблеры Beakster длиной 7,9 и 11 см. В отличие от других приманок, используется язык особой формы, напоминающий загнутый лепесток или ноготь, что придает приманке наиболее привлекательную игру и рыскающий стиль. </p>
-              </div>
-            </div>
-          </div>
-          <!-- https://refreshless.com/nouislider/-->
-        </div>
-        <form id="filtrProduct" action="#!">
-          <div class="container productList__filtrBlock">       
-            <div class="row">
-              <div class="col-md-3 col-sm-6">
-                <div class="title__xs">Рыбак</div>
-                <div class="form-group">
-                  <div class="filtr__radio--wrapper">
-                    <input type="radio" name="skill" id="skill1" checked>
-                    <label for="skill1">Новичок</label>
-                  </div>
-                  <div class="filtr__radio--wrapper">
-                    <input type="radio" name="skill" id="skill2">
-                    <label for="skill2">Опытный</label>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-8 col-sm-6">
-                <div class="title__xs">Версия</div>
-                <div class="form-group">
-                  <div class="filtr__radio--wrapper">
-                    <input type="radio" name="version" id="version1" checked>
-                    <label for="version1">Новичок</label>
-                  </div>
-                  <div class="filtr__radio--wrapper">
-                    <input type="radio" name="version" id="version2">
-                    <label for="version2">Опытный</label>
-                  </div>
-                  <div class="filtr__radio--wrapper">
-                    <input type="radio" name="version" id="version3">
-                    <label for="version3">Опытный</label>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-3 col-sm-6">
-                <div class="title__xs">Нагрузка</div>
-                <div class="form-group">
-                  <div id="input_range-1" class="input__range"></div>
-                  <div id="input_range-1_value"></div>
-                </div>
-              </div>
-              <div class="col-md-3 col-md-offset-1 col-sm-6">
-                <div class="title__xs">Длина</div>
-                <div class="form-group">
-                  <div id="input_range-2" class="input__range"></div>
-                </div>
-              </div>
-              <div class="col-md-3 col-md-offset-1 col-sm-6">
-                <div class="title__xs">Заглубление</div>
-                <div class="form-group">
-                  <div id="input_range-3" class="input__range"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="container productList__filtrBlock--control">
-            <div class="row">
-              <button class="productList__filtrBlock--close active"> <span>❮</span></button>
-              <button type="reset" class="productList__filtrBlock--reset">сбросить фильтр</button>
-            </div>
-          </div>
-        </form>
         <div class="container-fluid">
           <ul class="row">
             <li class="tile__wrapper col-4_8 col-md-6"><a href="#!" class="tile product product__new bgElem"><img src="/image/productImg-4.png" alt="">

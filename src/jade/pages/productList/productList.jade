@@ -1,56 +1,59 @@
 main.page__productList
-    include breadcrumb   
-    .productList__titleBlock
-        .container
-            .row
-                .col-xs-12
-                    h1.title__lg Challenger X
-                .col-xs-12
-                    p Предлагаем вашему вниманию плавающие воблеры Beakster длиной 7,9 и 11 см. В отличие от других приманок, используется язык особой формы, напоминающий загнутый лепесток или ноготь, что придает приманке наиболее привлекательную игру и рыскающий стиль. 
-        // https://refreshless.com/nouislider/
-    form#filtrProduct(action="#!")
-        .container.productList__filtrBlock        
-            .row
-                .col-md-3.col-sm-6
-                    .title__xs Рыбак
-                    .form-group
-                        .filtr__radio--wrapper
-                            input(type="radio", name="skill", id="skill1" checked)
-                            label(for="skill1") Новичок
-                        .filtr__radio--wrapper
-                            input(type="radio", name="skill", id="skill2")
-                            label(for="skill2") Опытный
-                .col-md-8.col-sm-6
-                    .title__xs Версия
-                    .form-group
-                        .filtr__radio--wrapper
-                            input(type="radio", name="version", id="version1" checked)
-                            label(for="version1") Новичок
-                        .filtr__radio--wrapper
-                            input(type="radio", name="version", id="version2")
-                            label(for="version2") Опытный
-                        .filtr__radio--wrapper
-                            input(type="radio", name="version", id="version3")
-                            label(for="version3") Опытный
-            .row
-                .col-md-3.col-sm-6
-                    .title__xs Нагрузка
-                    .form-group
-                        #input_range-1.input__range
-                        #input_range-1_value
-                .col-md-3.col-md-offset-1.col-sm-6
-                    .title__xs Длина
-                    .form-group
-                        #input_range-2.input__range
-                .col-md-3.col-md-offset-1.col-sm-6
-                    .title__xs Заглубление
-                    .form-group
-                        #input_range-3.input__range
-        .container.productList__filtrBlock--control
-            .row
-                button.productList__filtrBlock--close.active 
-                    span ❮
-                button(type="reset", class="productList__filtrBlock--reset") сбросить фильтр
+    .header-page__wrap
+        ol.breadcrumb
+            li
+                a(href="#!") Каталог
+            li
+                a(href="#!") Воблеры
+            li.active
+                a(href="#!") Challenger X
+        .header-page__container.productList__titleBlock
+            h1.title__lg Challenger X
+            p Предлагаем вашему вниманию плавающие воблеры Beakster длиной 7,9 и 11 см. В отличие от других приманок, используется язык особой формы, напоминающий загнутый лепесток или ноготь, что придает приманке наиболее привлекательную игру и рыскающий стиль.
+        .header-page__container
+            form#filtrProduct(action="#!")
+                .clearfix.productList__filtrBlock
+                    .row
+                        .col-md-3.col-sm-6
+                            .title__xs Рыбак
+                            .form-group
+                                .filtr__radio--wrapper
+                                    input(type="radio", name="skill", id="skill1" checked)
+                                    label(for="skill1") Новичок
+                                .filtr__radio--wrapper
+                                    input(type="radio", name="skill", id="skill2")
+                                    label(for="skill2") Опытный
+                        .col-md-8.col-sm-6
+                            .title__xs Версия
+                            .form-group
+                                .filtr__radio--wrapper
+                                    input(type="radio", name="version", id="version1" checked)
+                                    label(for="version1") Новичок
+                                .filtr__radio--wrapper
+                                    input(type="radio", name="version", id="version2")
+                                    label(for="version2") Опытный
+                                .filtr__radio--wrapper
+                                    input(type="radio", name="version", id="version3")
+                                    label(for="version3") Опытный
+                    .row
+                        .col-md-3.col-sm-6
+                            .title__xs Нагрузка
+                            .form-group
+                                #input_range-1.input__range
+                                #input_range-1_value
+                        .col-md-3.col-md-offset-1.col-sm-6
+                            .title__xs Длина
+                            .form-group
+                                #input_range-2.input__range
+                        .col-md-3.col-md-offset-1.col-sm-6
+                            .title__xs Заглубление
+                            .form-group
+                                #input_range-3.input__range
+                .container.productList__filtrBlock--control
+                    .row
+                        button.productList__filtrBlock--close.active
+                            span ❮
+                        button(type="reset", class="productList__filtrBlock--reset") сбросить фильтр
     .container-fluid
         ul.row
             li.tile__wrapper.col-4_8.col-md-6

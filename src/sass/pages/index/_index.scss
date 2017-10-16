@@ -54,7 +54,9 @@
 
 
         &--big {
-            height: 41vw;
+          &:before{
+            padding-top: 50%;
+          }
         }
     }
     img {
