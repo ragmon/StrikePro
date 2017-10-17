@@ -560,15 +560,13 @@ $(document).ready(function () {
         source: function (request, response) {
             $.ajax({
                 url: ajax_url.autocompleteServerUrl, // ссылка на json
-                type: 'post',
+                type: 'get',
                 data: {
                     'q': $('[name=q]').val()
                 },
                 success: function (data) { // получаем данные из json
-                    var Data = $.grep(data.data, function (value) {
-                        return value.title.substring(0, request.term.length).toLowerCase() == request.term.toLowerCase();
-                    });
-                    response(Data);
+
+                    response(data.data);
                 },
                 'error': function (jqXHR, textStatus, errorThrown) {
                     console.error('Error register subscription!', jqXHR, textStatus, errorThrown);
@@ -579,7 +577,7 @@ $(document).ready(function () {
             location.assign(ui.item.url)
         },
     }).data("ui-autocomplete")._renderItem = function (ul, item) {
-        if (item.image == undefined) {
+        if (item.image === undefined) {
             return $("<li></li>")
                 .data("ui-autocomplete-item", item)
                 .append("<span class='autocompleteItem__title'>" +
@@ -766,10 +764,8 @@ $(document).ready(
             event.preventDefault();
             var href = $(this).attr('href');
             var video_content = '<iframe width="100%" height="100%" src="' + href + '" frameborder="0" allowfullscreen></iframe>';
-            $(this).empty()
+            $(this).empty();
             $(this).append(video_content);
-
-
         })
 
     }
