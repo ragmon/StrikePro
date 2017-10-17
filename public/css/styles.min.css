@@ -200,6 +200,9 @@ img {
     float: left;
     width: 20%; } }
 
+.col-4_8:before {
+  padding-top: 50%; }
+
 @media (min-width: 1400px) {
   .col-4_8 {
     float: left;

@@ -154,6 +154,9 @@ img {
 }
 // 4 из 10
 .col-4_8 {
+  &:before {
+    padding-top: 50%;
+  }
     @media(min-width: 1400px) {
         float: left;
         width: 40%;
