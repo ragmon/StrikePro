@@ -87,7 +87,7 @@ $(document).ready(function () {
                     if (array[i].id === parseInt($(this).attr('id'))) {
 
                         $(galleryMainPhoto).attr('src', array[i].original_url);
-                        if(array[i].title) {
+                        if (array[i].title) {
                             $(galleryMainTitle).text(array[i].title);
                         }
                     }
@@ -304,9 +304,10 @@ $(document).ready(function () {
         for (var i = 0; i < colorTableItemMobileLength; i++) {
             var slides = [];
             var classNav = ".custom-navigation-" + i + " a";
-            var photos = articles[i].head_images,
-                photosLength = photos.length;
-
+            var photos = articles[i].head_images;
+            console.log(photos);
+            var photosLength = photos ? photos.length : 1;
+            console.log(photosLength);
             if (photosLength === 1) continue;
 
             var sliderWrap = document.createElement('div'),
@@ -398,6 +399,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $(".js-btn3D").on("click", function () {
+        console.log('click')
         var img3D = $('#reel-image');
         $(img3D).reel({
             loops: true,
@@ -407,12 +409,14 @@ $(document).ready(function () {
             images: "http://test.vostrel.net/jquery.reel/example/object-movie-non-looping-sequence/green/#.png"
         });
 
-        $(".product__stand .img_2d").hide();
+        $(".img_2d").hide();
         $('#reel-image-reel').show();
         $(img3D).show()
     });
     $(".product__sliderImg ul li a").on('click', function (event) {
-        var img2D = $(".product__stand .img_2d");
+        console.log('click')
+
+        var img2D = $(".img_2d");
         var img3D = $('#reel-image');
         event.preventDefault();
         $(img2D).show();
@@ -440,7 +444,7 @@ $(document).ready(function () {
         HeaderProductMenuList = [];
 
     function renderMenuItem(link, content) {
-        return ('<li class="headerNav__item"><a href="#' + link + '" class="headerNav__link">' + content + '</a></li>')
+        return ('<li class="header-product__item"><a href="#' + link + '" class="header-product__link">' + content + '</a></li>')
     }
 
     function init() {
@@ -460,18 +464,17 @@ $(document).ready(function () {
     }
 
 
-
     init();
 
     function initAncorHeaderProduct() {
-        $('.header-product__nav .headerNav__item').on("click","a", function (event) {
+        $('.header-product__nav .headerNav__item').on("click", "a", function (event) {
             //отменяем стандартную обработку нажатия по ссылке
             event.preventDefault();
             $('.header-product__nav .headerNav__item').each(function (index, element) {
                 $(element).removeClass('active');
             });
             //забираем идентификатор бока с атрибута href
-            var id  = $(this).attr('href'),
+            var id = $(this).attr('href'),
 
                 //узнаем высоту от начала страницы до блока на который ссылается якорь
                 top = $(id).offset().top;
@@ -486,7 +489,7 @@ $(document).ready(function () {
 
         $(SectionTitleList).each(function (index, element) {
 
-            if ($(element).offset().top - 200 < window.scrollY ) {
+            if ($(element).offset().top - 200 < window.scrollY) {
                 $(list).each(function (index, element) {
                     $(element).removeClass('active');
                 });
@@ -496,14 +499,16 @@ $(document).ready(function () {
     }
 
     function HeaderProductToggle() {
-        if ($(".img_2d").offset().top + $(".img_2d").height() / 3 < window.scrollY) {
+        if (screen.width > 1023) {
+            if ($(".img_2d").offset().top + $(".img_2d").height() / 3 < window.scrollY) {
 
-            $('.header__top').css({top: '-100px'});
-            $('.header-product').css({top: '0'});
-        } else {
-            $('.header__top').css({top: '0'});
-            $('.header-product').css({top: '-100px'});
+                $('.header__top').css({top: '-150px'});
+                $('.header-product').css({top: '0'});
+            } else {
+                $('.header__top').css({top: '0'});
+                $('.header-product').css({top: '-150px'});
 
+            }
         }
     }
 
@@ -547,9 +552,9 @@ $(document).ready(function () {
     function init() {
         productDescriptionHeight = $(productDescription).innerHeight();
 
-        var prevElemHeight = $(productDescription).prev('.col-md-6').innerHeight();
+        var prevElemHeight = $(productDescription).innerWidth() / 2;
 
-        if(prevElemHeight > productDescriptionHeight) {
+        if (prevElemHeight > productDescriptionHeight) {
             $(this).outerHeight('auto');
             $(this).removeClass('product-desc__disable');
             return
@@ -558,7 +563,7 @@ $(document).ready(function () {
         $(productDescription).addClass('product-desc__disable');
         $(productDescription).innerHeight(prevElemHeight);
         $(productDescription).on('click', function () {
-            if($(this).hasClass('product-desc__disable')) {
+            if ($(this).hasClass('product-desc__disable')) {
                 $(this).outerHeight('auto');
                 $(this).removeClass('product-desc__disable')
             } else {
@@ -574,5 +579,6 @@ $(document).ready(function () {
         init();
     })
 });
+
 
 //# sourceMappingURL=productSlider.js.map
