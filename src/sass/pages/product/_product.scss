@@ -1,5 +1,11 @@
 .page__product {
   position: relative;
+  h4.title__xs{
+    margin: 20px auto;
+    @media(min-width: 768px) {
+      margin: 40px auto;
+    }
+  }
   .tile__text {
     padding: 30px 15px;
     @media(min-width: 768px) {
@@ -8,6 +14,61 @@
   }
   .product {
     position: relative;
+    &__title {
+      span {
+
+      }
+    }
+
+    &__desc {
+      .tile__text {
+        overflow: hidden;
+        position: relative;
+        transition: all .225s;
+
+        &:before{
+          content: 'Подробнее';
+          text-align: center;
+          position: absolute;
+          bottom: 20px;
+          left: 0;
+          right: 0;
+          z-index:4;
+          opacity: 0;
+          transition: all .225s;
+
+        }
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 3;
+          height: 100%;
+          background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 50%);
+          opacity: 0;
+          transition: all .225s;
+
+        }
+        &:hover{
+          &:before{
+            color: #73af19;
+          }
+        }
+
+        &.product-desc__disable{
+          cursor: pointer;
+          &:before,&:after{
+            opacity: 1;
+            transition: all .225s;
+          }
+        }
+
+      }
+
+    }
 
     &__wrapper {
       padding: 0 5% 50px;
@@ -58,16 +119,18 @@
     }
     &__title {
       h1 {
-        font-size: 3.158rem;
+        font-size: 3rem;
         text-transform: uppercase;
         color: $color3;
         font-family: "OpenSans-Italic";
-        margin-bottom: 30px;
+        margin-bottom: 1rem;
       }
       span {
-        font-size: 1.105rem;
+        font-size: 1rem;
         font-weight: bold;
+        opacity: 0.3;
       }
+
     }
 
     &__video-section {
@@ -124,7 +187,7 @@
         padding: 10px;
         right: 0;
         top: 50%;
-        transform: translate(0%,-50%);
+        transform: translate(0%, -50%);
         width: 93px;
       }
       .btnMain {
@@ -164,7 +227,6 @@
           a {
             display: block;
             width: 80px;
-            max-height: 80px;
             margin-right: 10px;
             background-color: #fff;
 
@@ -185,7 +247,7 @@
       margin: 60px auto 0;
       @media(min-width: 768px) {
         position: relative;
-        width: 50%;
+        width: 65%;
         margin: 60px auto 30px;
         padding-left: 15px;
         padding-right: 15px;
@@ -223,7 +285,7 @@
       vertical-align: middle;
       white-space: normal;
       margin-right: 5%;
-      font-size: 1rem;
+      font-size: 0.8rem;
       font-weight: bold;
     }
     &__desc {
@@ -231,7 +293,8 @@
       display: inline-block;
       vertical-align: middle;
       white-space: normal;
-      font-size: 1rem;
+      font-size: 0.8rem;
+
     }
   }
   .colorTable {
@@ -294,7 +357,7 @@
     margin-bottom: 20px;
     overflow: hidden;
     position: relative;
-    height: calc(100% - 150px);
+    height: calc(100% - 220px);
     img {
       display: block;
       height: 100%;
@@ -327,6 +390,11 @@
     margin: auto;
     z-index: 1111;
     padding: 35px 35px 0 35px;
+    .close__popup {
+      font-size: 60px;
+      top: 25px;
+      right: 20px;
+    }
   }
 
   &--content {
@@ -349,7 +417,7 @@
         &:first-child {
           margin-left: 3px;
         }
-        @media(min-width:992px) {
+        @media(min-width: 992px) {
           font-size: 10px;
           line-height: 10px;
           margin-right: 5px;
@@ -358,7 +426,7 @@
             margin-left: 5px;
           }
         }
-        @media(min-width:1920px) {
+        @media(min-width: 1920px) {
           font-size: 16px;
           line-height: 16px;
           margin-right: 10px;
@@ -406,20 +474,21 @@
 
   &--variation {
     width: 200px;
-    padding: 15px;
+    margin-top: 35px;
+    padding: 0 0 15px 15px;
     display: none;
+    overflow: auto;
     &.active {
       display: block;
     }
     .variation {
       &__list {
-        height: 100%;
+        min-height: 100%;
         flex-direction: column;
         display: flex;
 
       }
       &__item {
-        margin-top: 15px;
         margin-bottom: 15px;
         position: relative;
         overflow: hidden;
@@ -526,7 +595,7 @@
     overflow: hidden;
     position: relative;
     width: 95%;
-    height: 135px;
+    height: 160px;
     margin: 0 auto;
     padding: 15px 0;
     .slider {
@@ -542,6 +611,11 @@
         display: inline-block;
         padding: 0 10px;
         border: 2px solid transparent;
+        &-title {
+          display: block;
+          text-align: center;
+          font-size: 14px;
+        }
         &.active {
           border: 2px solid $color3;
         }

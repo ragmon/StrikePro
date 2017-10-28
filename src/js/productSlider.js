@@ -20,7 +20,13 @@ $(document).ready(function () {
 
     // функции генераторы разметки
 
-    function colorTableItemRender(id, image, title) {
+    function colorTableItemRender(id, image, data) {
+        var title = '';
+        for (var i = 0; i < data.features.length; i++) {
+            if (data.features[i].title === 'Код цвета') {
+                title = data.features[i].pivot.value
+            }
+        }
         return ('<div class="colorTable__item" id="' + id + '">' +
             '<img src="' + image + '" alt="">' +
             '<span>' + title + '</span>' +
@@ -40,29 +46,54 @@ $(document).ready(function () {
         $(characteristicsList).append(features);
     }
 
-    function sliderItemRender(image, id) {
+    function sliderItemRender(image, id, data) {
+        var title = '';
+        for (var i = 0; i < data.features.length; i++) {
+            if (data.features[i].title === 'Код цвета') {
+                title = data.features[i].pivot.value
+            }
+        }
         return (
-            '<li  class="slider__item" id="' + id + '"> <a href="#!"  class="slider__link" ><img src="' + image + '" /></a> </li>'
+            '<li  class="slider__item" id="' + id + '"> <a href="#!"  class="slider__link" ><img src="' + image + '" /></a><span class="slider__item-title">' + title + '</span> </li>'
         )
     }
 
-    function gelleryPhotoRender(array) {
+    function gelleryPhotoRender(Array) {
         var photos = [];
-        if(array.length > 1) {
+        var array = Array;
+
+        if (array === undefined) {
+            console.log(array);
+            // initGalleryMainPhoto(array[i].id);
+            return null;
+        }
+        if (array.length > 1) {
             for (var i = 0; i < array.length; i++) {
                 var photo = '<li class="variation__item">' +
                     '<img id="' + array[i].id + '" src="' + array[i].thumb_url + '" alt="">' +
                     '</li>';
                 photos.push(photo);
-                if (i === 0) {
-                    initGalleryMainPhoto(array[i].id);
-                }
+                // if (i === 0) {
+                //     initGalleryMainPhoto(array[i].id);
+                // }
             }
             $(galleryPhotoList).append(photos);
             $('.colorTable__gallery--variation').addClass('active');
 
             $('.variation__item img').on('click', function () {
-                initGalleryMainPhoto($(this).attr('id'));
+                // initGalleryMainPhoto($(this).attr('id'));
+
+                for (var i = 0; i < array.length; i++) {
+                    if (array[i].id === parseInt($(this).attr('id'))) {
+
+                        $(galleryMainPhoto).attr('src', array[i].original_url);
+                        if(array[i].title) {
+                            $(galleryMainTitle).text(array[i].title);
+                        }
+                    }
+                }
+
+
                 $(galleryMainPhoto).css({
                     'transform': 'none'
                 })
@@ -74,7 +105,9 @@ $(document).ready(function () {
 
     // функции движения слайдера
 
-    function leftMove() {
+    function leftMove(event) {
+        console.log(event.type);
+        var step = event.type === 'click' ? 6 : 1;
         if (sliderItem.length <= 6) {
             return
         }
@@ -88,13 +121,22 @@ $(document).ready(function () {
             return;
         }
 
-        currentPosition -= widthStep;
+        currentPosition -= parseFloat(widthStep * step);
+        if (currentPosition <= 0) {
+            currentPosition = 0;
+            $(slideContainer).css({
+                "transform": "translateX(-" + currentPosition + "px)"
+            });
+
+            return;
+        }
         $(slideContainer).css({
             "transform": "translateX(-" + currentPosition + "px)"
         });
     }
 
-    function rightMove() {
+    function rightMove(event) {
+        var step = event.type === 'click' ? 6 : 1;
         if (sliderItem.length <= 6) {
             return
         }
@@ -105,7 +147,14 @@ $(document).ready(function () {
             });
             return;
         }
-        currentPosition += parseFloat(widthStep);
+        currentPosition += parseFloat(widthStep * step);
+        if (Math.round(parseFloat(currentPosition)) >= Math.round(parseFloat(maxStep))) {
+            currentPosition = parseFloat(maxStep);
+            $(slideContainer).css({
+                "transform": "translateX(-" + currentPosition + "px)"
+            });
+            return;
+        }
         $(slideContainer).css({
             "transform": "translateX(-" + currentPosition + "px)"
         });
@@ -138,17 +187,16 @@ $(document).ready(function () {
     }
 
     function initSlider(event) {
-
+        console.log(event);
         sliderItem = [];
         (slideContainer).empty();
         $(galleryPhotoList).empty();
         for (var i = 0; i < articles.length; i++) {
             console.log(articles[i]);
-            if(articles[i].logo) {
-                sliderItem.push(sliderItemRender(articles[i].logo.thumb_url, articles[i].id))
+            if (articles[i].logo) {
+                sliderItem.push(sliderItemRender(articles[i].logo.thumb_url, articles[i].id, articles[i]))
             } else {
-                sliderItem.push(sliderItemRender('http://cdn.strikepro.ru/default_group.png', articles[i].id))
-
+                sliderItem.push(sliderItemRender('http://cdn.strikepro.ru/default_group.png', articles[i].id, articles[i]))
             }
         }
         $(slideContainer).append(sliderItem);
@@ -160,6 +208,7 @@ $(document).ready(function () {
         $(slideContainer).css({
             "transform": "translateX(-" + currentPosition + "px)"
         });
+
 
         $(".slider__item").each(function (index, element) {
 
@@ -199,21 +248,24 @@ $(document).ready(function () {
     }
 
     function initPhotos(id) {
-        currentPhoto = [];
         $(galleryPhotoList).empty();
         for (var i = 0; i < articles.length; i++) {
             if (articles[i].id === parseInt(id)) {
-                currentPhoto = articles[i].head_images;
+                console.log(articles[i]);
+                initGalleryMainPhoto(articles[i].id);
                 gelleryPhotoRender(articles[i].head_images);
             }
         }
     }
 
     function initGalleryMainPhoto(id) {
-        for (var i = 0; i < currentPhoto.length; i++) {
-            if (currentPhoto[i].id === parseInt(id)) {
-                $(galleryMainPhoto).attr('src', currentPhoto[i].original_url);
-                $(galleryMainTitle).text(currentPhoto[i].title);
+        console.log(id);
+        console.log(currentPhoto);
+        for (var i = 0; i < articles.length; i++) {
+            if (articles[i].id === parseInt(id)) {
+
+                $(galleryMainPhoto).attr('src', articles[i].logo.original_url);
+                $(galleryMainTitle).text(articles[i].fullname);
             }
         }
     }
@@ -228,9 +280,9 @@ $(document).ready(function () {
 
             for (var i = 0; i < articles.length; i++) {
                 if (articles[i].logo) {
-                    colorTableItem.push(colorTableItemRender(articles[i].id, articles[i].logo.thumb_url ? articles[i].logo.thumb_url : 'http://cdn.strikepro.ru/default_group.png', articles[i].name));
+                    colorTableItem.push(colorTableItemRender(articles[i].id, articles[i].logo.thumb_url ? articles[i].logo.thumb_url : 'http://cdn.strikepro.ru/default_group.png', articles[i]));
                 } else {
-                    colorTableItem.push(colorTableItemRender(articles[i].id, 'http://cdn.strikepro.ru/default_group.png', articles[i].name));
+                    colorTableItem.push(colorTableItemRender(articles[i].id, 'http://cdn.strikepro.ru/default_group.png', articles[i]));
                 }
             }
             $(colorTable).append(colorTableItem);
@@ -300,6 +352,27 @@ $(document).ready(function () {
         }
     }
 
+
+    addEventListener("keydown", function (event) {
+        var active = $('.colorTable__gallery--wrapper').css('display');
+        if (active === 'block') {
+
+            if (event.which === 37) { //left
+                leftMove(event);
+            }
+            if (event.which === 39) { // right
+                rightMove(event);
+            }
+            if (event.which === 38) { // top
+                $('.colorTable__gallery--variation').scrollTop($('.colorTable__gallery--variation').scrollTop() - 10);
+            }
+            if (event.which === 40) { // bottom
+                $('.colorTable__gallery--variation').scrollTop($('.colorTable__gallery--variation').scrollTop() + 10);
+            }
+        }
+    });
+
+
     try {
         init();
     } catch (err) {
@@ -357,7 +430,151 @@ $(document).ready(function () {
         }
     });
 
+
+    //TODO: ШАПКА СТРАНИЦЫ ПРОДУКТА
+    var HeaderProductWrapper = $('.header-product'),
+        HeaderProductTitle = $('.header-product__title'),
+        HeaderProductImage = $('.header-product__image img'),
+        HeaderProductNav = $('.header-product__nav'),
+        SectionTitleList = $('h4.title__xs'),
+        HeaderProductMenuList = [];
+
+    function renderMenuItem(link, content) {
+        return ('<li class="headerNav__item"><a href="#' + link + '" class="headerNav__link">' + content + '</a></li>')
+    }
+
+    function init() {
+        $(SectionTitleList).each(function (index, element) {
+            var id = 'product-section-id-' + index,
+                content = $(element).text();
+            $(element).attr("id", id);
+            HeaderProductMenuList.push(renderMenuItem(id, content));
+        });
+        $(HeaderProductNav).append(HeaderProductMenuList);
+        $(HeaderProductImage).attr('src', $('.product__stand--img .img_2d').attr('src'));
+        $(HeaderProductTitle).text($('.product__title h1').text());
+
+        //TODO: Инициализация обработчика скрола
+        initScroll(window);
+        initAncorHeaderProduct();
+    }
+
+
+
+    init();
+
+    function initAncorHeaderProduct() {
+        $('.header-product__nav .headerNav__item').on("click","a", function (event) {
+            //отменяем стандартную обработку нажатия по ссылке
+            event.preventDefault();
+            $('.header-product__nav .headerNav__item').each(function (index, element) {
+                $(element).removeClass('active');
+            });
+            //забираем идентификатор бока с атрибута href
+            var id  = $(this).attr('href'),
+
+                //узнаем высоту от начала страницы до блока на который ссылается якорь
+                top = $(id).offset().top;
+            $(this).closest('.headerNav__item').addClass('active');
+            //анимируем переход на расстояние - top за 1500 мс
+            $('body,html').animate({scrollTop: top}, 225);
+        });
+    }
+
+    function HeaderProductMenuToggle() {
+        var list = $('.header-product__nav .headerNav__item');
+
+        $(SectionTitleList).each(function (index, element) {
+
+            if ($(element).offset().top - 200 < window.scrollY ) {
+                $(list).each(function (index, element) {
+                    $(element).removeClass('active');
+                });
+                $(list[index]).addClass('active')
+            }
+        });
+    }
+
+    function HeaderProductToggle() {
+        if ($(".img_2d").offset().top + $(".img_2d").height() / 3 < window.scrollY) {
+
+            $('.header__top').css({top: '-100px'});
+            $('.header-product').css({top: '0'});
+        } else {
+            $('.header__top').css({top: '0'});
+            $('.header-product').css({top: '-100px'});
+
+        }
+    }
+
+    // $(".img_2d").offset()
+
+    function initScroll(elem) {
+        if (elem.addEventListener) {
+            if ('onwheel' in document) {
+                // IE9+, FF17+, Ch31+
+                elem.addEventListener("wheel", onWheel);
+            } else if ('onmousewheel' in document) {
+                // устаревший вариант события
+                elem.addEventListener("mousewheel", onWheel);
+            } else {
+                // Firefox < 17
+                elem.addEventListener("MozMousePixelScroll", onWheel);
+            }
+        } else { // IE8-
+            elem.attachEvent("onmousewheel", onWheel);
+        }
+
+        function onWheel(e) {
+            e = e || window.event;
+
+            // wheelDelta не дает возможность узнать количество пикселей
+            var delta = e.deltaY || e.detail || e.wheelDelta;
+
+            HeaderProductToggle();
+            HeaderProductMenuToggle();
+        }
+    }
+
 });
+
+
+$(document).ready(function () {
+
+    var productDescription = $('.js-product-description');
+    var productDescriptionHeight = '';
+
+    function init() {
+        productDescriptionHeight = $(productDescription).innerHeight();
+
+        var prevElemHeight = $(productDescription).prev('.col-md-6').innerHeight();
+
+        if(prevElemHeight > productDescriptionHeight) {
+            $(this).outerHeight('auto');
+            $(this).removeClass('product-desc__disable');
+            return
+        }
+
+        $(productDescription).addClass('product-desc__disable');
+        $(productDescription).innerHeight(prevElemHeight);
+        $(productDescription).on('click', function () {
+            if($(this).hasClass('product-desc__disable')) {
+                $(this).outerHeight('auto');
+                $(this).removeClass('product-desc__disable')
+            } else {
+                // $(this).outerHeight(prevElemHeight);
+                // $(this).addClass('product-desc__disable')
+            }
+
+        })
+    }
+
+    init();
+    $(window).resize(function () {
+        init();
+    })
+});
+
 
 
 window.articles = [
@@ -396,8 +613,47 @@ window.articles = [
             "thumb_url": "http://cdn.strikepro.ru/article/1250042_0_headimage_thumbnail.jpg",
             "original_url": "http://cdn.strikepro.ru/article/1250042_0_headimage.jpg"
         },
-        "photos": [],
-        "features": [{
+        "head_images": [
+            {
+                "id": 1,
+                "thumb_url":'http://via.placeholder.com/350x150?text=id_1',
+                "original_url":'http://via.placeholder.com/1350x1150?text=id_1',
+            },{
+                "id": 2,
+                "thumb_url":'http://via.placeholder.com/350x150?text=id_2',
+                "original_url":'http://via.placeholder.com/1350x1150?text=id_2',
+            },{
+                "id": 3,
+                "thumb_url":'http://via.placeholder.com/350x150?text=id_3',
+                "original_url":'http://via.placeholder.com/1350x1150?text=id_3',
+            },{
+                "id": 4,
+                "thumb_url":'http://via.placeholder.com/350x150?text=id_4',
+                "original_url":'http://via.placeholder.com/1350x1150?text=id_4',
+            },{
+                "id": 5,
+                "thumb_url":'http://via.placeholder.com/350x150?text=id_5',
+                "original_url":'http://via.placeholder.com/1350x1150?text=id_5',
+            },{
+                "id": 6,
+                "thumb_url":'http://via.placeholder.com/350x150?text=id_6',
+                "original_url":'http://via.placeholder.com/1350x1150?text=id_6',
+            },{
+                "id": 7,
+                "thumb_url":'http://via.placeholder.com/350x150?text=id_7',
+                "original_url":'http://via.placeholder.com/1350x1150?text=id_7',
+            },{
+                "id": 8,
+                "thumb_url":'http://via.placeholder.com/350x150?text=id_8',
+                "original_url":'http://via.placeholder.com/1350x1150?text=id_8',
+            },{
+                "id": 9,
+                "thumb_url":'http://via.placeholder.com/350x150?text=id_9',
+                "original_url":'http://via.placeholder.com/1350x1150?text=id_9',
+            }
+        ],
+        "features": [
+            {
             "id": 14,
             "title": "Продажи Онлайн",
             "measurement": "",

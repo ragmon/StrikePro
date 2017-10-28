@@ -37,79 +37,11 @@ main.page__product
                                 img(src="http://lorempixel.com/640/480/?11261", alt="smallImg")
                 button.btnMain.js-btn3D 3D
 
-    .container-fluid.product__desc
-        .row
-            .tile__wrapper.tile__wrapper--big.col-md-6
-                a(href="https://www.youtube.com/embed/-uzkjrEnI84").tile.js__videoPopup
-                    img(src="http://lorempixel.com/640/480/?97378", alt="")
-                    .video__control
-                        .video__control--icon.icon-youtube-play
-                        .video__control--text посмотреть видео
-            .col-md-6.tile__text.bg--dark
-                p Предлагаем вашему вниманию плавающие воблеры Beakster STRIKE PRO® длиной 7,9 и 11 см. В отличие от других приманок, используется язык особой формы, напоминающий загнутый лепесток или ноготь, что придает приманке наиболее привлекательную игру и рыскающий стиль. 
-            .col-xs-12
-                include product_table
-    .container-fluid.product__video-section
-        .row
-            a(href="https://www.youtube.com/embed/-uzkjrEnI84").tile__wrapper.col-xs-12.tile__wrapper--big
-                .tile
-                    img(src="http://lorempixel.com/640/480/?97378", alt="")
-                    .video__control
-                        .video__control--icon.icon-youtube-play
-                        .video__control--text посмотреть видео  
-        .row
-            li.tile__wrapper.col-2_4.col-sm-3.col-xs-12
-                a(href="https://www.youtube.com/embed/-uzkjrEnI84").tile.js__videoPopup
-                    img(src="http://lorempixel.com/640/480/?97378", alt="")
-                    .video__control
-                        .video__control--icon.icon-youtube-play
-                        .video__control--text посмотреть видео
-            li.tile__wrapper.col-2_4.col-sm-3.col-xs-12
-                a(href="https://www.youtube.com/embed/-uzkjrEnI84").tile.js__videoPopup
-                    img(src="http://lorempixel.com/640/480/?97378", alt="")
-                    .video__control
-                        .video__control--icon.icon-youtube-play
-                        .video__control--text посмотреть видео
-            li.tile__wrapper.col-2_4.col-sm-3.col-xs-12
-                a(href="https://www.youtube.com/embed/-uzkjrEnI84").tile.js__videoPopup
-                    img(src="http://lorempixel.com/640/480/?97378", alt="")
-                    .video__control
-                        .video__control--icon.icon-youtube-play
-                        .video__control--text посмотреть видео
-            li.tile__wrapper.col-2_4.col-sm-3.col-xs-12
-                a(href="https://www.youtube.com/embed/-uzkjrEnI84").tile.js__videoPopup
-                    img(src="http://lorempixel.com/640/480/?97378", alt="")
-                    .video__control
-                        .video__control--icon.icon-youtube-play
-                        .video__control--text посмотреть видео
-            li.tile__wrapper.col-2_4.col-sm-3.col-xs-12
-                a(href="https://www.youtube.com/embed/-uzkjrEnI84").tile.js__videoPopup
-                    img(src="http://lorempixel.com/640/480/?97378", alt="")
-                    .video__control
-                        .video__control--icon.icon-youtube-play
-                        .video__control--text посмотреть видео
-            li.tile__wrapper.col-2_4.col-sm-3.col-xs-12
-                a(href="https://www.youtube.com/embed/-uzkjrEnI84").tile.js__videoPopup
-                    img(src="http://lorempixel.com/640/480/?97378", alt="")
-                    .video__control
-                        .video__control--icon.icon-youtube-play
-                        .video__control--text посмотреть видео
-            li.tile__wrapper.col-2_4.col-sm-3.col-xs-12
-                a(href="https://www.youtube.com/embed/-uzkjrEnI84").tile.js__videoPopup
-                    img(src="http://lorempixel.com/640/480/?97378", alt="")
-                    .video__control
-                        .video__control--icon.icon-youtube-play
-                        .video__control--text посмотреть видео
-            li.tile__wrapper.col-2_4.col-sm-3.col-xs-12
-                a(href="https://www.youtube.com/embed/-uzkjrEnI84").tile.js__videoPopup
-                    img(src="http://lorempixel.com/640/480/?97378", alt="")
-                    .video__control
-                        .video__control--icon.icon-youtube-play
-                        .video__control--text посмотреть видео
-    .container-fluid
-        .row
-            .col-xs-12
-                include color_table
+    include product-description
+    include product_table
+    include product-video
+    include color_table
+
 .colorTable__gallery--wrapper.js__popup
     .colorTable__gallery--popup.js__noPropagation
         button.close__popup.js__closePopup &#215;
