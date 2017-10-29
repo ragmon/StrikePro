@@ -249,18 +249,9 @@
     position: relative;
     display: inline-block;
     &:hover, &.active {
-      .headerNav__link {
+      .header-product__link {
         background-color: #fff;
         color: $color1;
-      }
-      .dropdown__menu {
-        display: block;
-      }
-      svg {
-        transform: rotate(180deg);
-      }
-      .caret__arrow {
-        stroke: rgb(0, 0, 0) !important;
       }
     }
   }

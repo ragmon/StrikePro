@@ -500,7 +500,7 @@ $(document).ready(function () {
 
     function HeaderProductToggle() {
         if (screen.width > 1023) {
-            if ($(".img_2d").offset().top + $(".img_2d").height() / 3 < window.scrollY) {
+            if ($(".img_2d").offset().top < window.scrollY) {
 
                 $('.header__top').css({top: '-150px'});
                 $('.header-product').css({top: '0'});

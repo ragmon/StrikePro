@@ -361,6 +361,8 @@ $(document).ready(function () {
 
     $(".js__videoPopup").on("click", function (event) {
         event.preventDefault();
+        event.stopPropagation();
+        console.log('closk')
         var k = 1280 / 720;
         var w = screen.width;
         var link = $(this).attr('href');
