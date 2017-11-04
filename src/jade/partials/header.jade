@@ -32,14 +32,13 @@ svg(style="display: none")
                                 svg
                                     use.caret__arrow(xlink:href="#svg_arrow")  
                         .dropdown__menu.custom-menu__wrapper
-                            .custom-menu__container.clearfix
-                                .container
-                                    - var n = 0;
-                                    while n < 9
-                                        .custom-menu__col.col-md-3
-                                            .title__xs.custom-menu__toggle  Заголовок
-                                            include tabs1
-                                        - n++
+                            .custom-menu__container.container-fluid
+                                - var n = 0;
+                                while n < 9
+                                    .custom-menu__col
+                                        .title__xs.custom-menu__toggle  Заголовок
+                                        include tabs1
+                                    - n++
                     li.headerNav__item
                         a.headerNav__link(href='#!') Где купить
                             span.caret

@@ -259,7 +259,7 @@ $(document).ready(function () {
                     toggle_tile_class(row_length, _array);
                     _num = 0;
                     _array.length = 0;
-                } else if (_num == row_length) {
+                } else if (_num === row_length) {
                     _num_row += 1;
                     _num = 0;
                     _array.length = 0;
@@ -274,7 +274,7 @@ $(document).ready(function () {
     // });
 
 
-    if (tile_list.length != 0) {
+    if (tile_list.length !== 0 && location.pathname === '/') {
         tile_check();
     }
 })

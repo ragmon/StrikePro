@@ -385,6 +385,19 @@
     .title__xs {
       margin-bottom: 20px;
     }
+    @media(min-width: 1024px) {
+      column-count: 3;
+    }
+    @media(min-width: 1170px) {
+      column-count: 4;
+    }
+    @media(min-width: 1440px) {
+      column-count: 5;
+    }
+    @media(min-width: 1920px) {
+      column-count: 6;
+    }
+
   }
   &__col {
     margin-bottom: 20px;
@@ -401,10 +414,15 @@
       }
     }
     @media(min-width: 1024px) {
-      border-right: 1px solid #3d3d3d;
-      &:nth-child(4n) {
-        border: none;
+      width: 90%;
+      margin-bottom: 2rem;
+      display: inline-block;
+
+      a {
+        font-size: 14px;
+        line-height: 12px;
       }
+
     }
   }
 }

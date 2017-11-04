@@ -1,0 +1,37 @@
+main.page__product      
+    .product__wrapper
+        include breadcrumb 
+        .product
+            .product__title
+                h1 Supersonic
+                span Challenger X
+            .product__row
+                .product__stand
+                    .product__stand--img
+                        img.img_2d(src="http://lorempixel.com/800/600/", alt="")
+                //.product__action
+                //    a(href="#!").btnMain хочу купить
+                //    span артикул: 1258-001
+                //    span код товара: EG-124B #SM37F
+            .product__rightSidebar
+                .product__sliderImg
+                    ul
+                        li
+                            a(href="http://lorempixel.com/640/480/?11261")
+                                img(src="http://lorempixel.com/640/480/?11261", alt="smallImg")
+                        li
+                            a(href="http://lorempixel.com/640/480/?11261")
+                                img(src="http://lorempixel.com/640/480/?11261", alt="smallImg")
+                        li
+                            a(href="http://lorempixel.com/640/480/?11261")
+                                img(src="http://lorempixel.com/640/480/?11261", alt="smallImg")
+                        li
+                            a(href="http://lorempixel.com/640/480/?11261")
+                                img(src="http://lorempixel.com/640/480/?11261", alt="smallImg")
+                        li
+                            a(href="http://lorempixel.com/640/480/?11261")
+                                img(src="http://lorempixel.com/640/480/?11261", alt="smallImg")
+                button.btnMain.js-btn3D 3D
+
+    include product-description
+    include product-video

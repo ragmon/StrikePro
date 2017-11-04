@@ -1,7 +1,7 @@
 main.page__product      
     .product__wrapper
         include breadcrumb 
-        .product
+        .product#main-image
             .product__title
                 h1 Supersonic
                 span Challenger X
@@ -37,7 +37,7 @@ main.page__product
                                 img(src="http://lorempixel.com/640/480/?11261", alt="smallImg")
                 button.btnMain.js-btn3D 3D
 
-    include product-description
+    include ../product-1/product-description
     include product_table
     include product-video
     include color_table
