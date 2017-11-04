@@ -201,7 +201,7 @@ img {
     width: 20%; } }
 
 .col-4_8:before {
-  padding-top: 50%; }
+  padding-top: 50% !important; }
 
 @media (min-width: 1400px) {
   .col-4_8 {
