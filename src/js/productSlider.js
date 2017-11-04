@@ -445,10 +445,12 @@ $(document).ready(function () {
         HeaderProductMenuList = [];
 
     function renderMenuItem(link, content) {
-        return ('<li class="header-product__item"><a href="#' + link + '" class="header-product__link">' + content + '</a></li>')
+        return ('<li class="header-product__item"><a href="'+location.pathname+'#' + link + '" class="header-product__link">' + content + '</a></li>')
     }
 
     function init() {
+        $(HeaderProductNav).empty();
+        HeaderProductMenuList.push(renderMenuItem('main-image', 'Изображение'));
         $(SectionTitleList).each(function (index, element) {
             var id = 'product-section-id-' + index,
                 content = $(element).text();
@@ -468,10 +470,10 @@ $(document).ready(function () {
     init();
 
     function initAncorHeaderProduct() {
-        $('.header-product__nav .headerNav__item').on("click", "a", function (event) {
+        $('.header-product__nav .header-product__item').on("click", "a", function (event) {
             //отменяем стандартную обработку нажатия по ссылке
             event.preventDefault();
-            $('.header-product__nav .headerNav__item').each(function (index, element) {
+            $('.header-product__nav .header-product__item').each(function (index, element) {
                 $(element).removeClass('active');
             });
             //забираем идентификатор бока с атрибута href
@@ -479,14 +481,14 @@ $(document).ready(function () {
 
                 //узнаем высоту от начала страницы до блока на который ссылается якорь
                 top = $(id).offset().top;
-            $(this).closest('.headerNav__item').addClass('active');
+            $(this).closest('.header-product__item').addClass('active');
             //анимируем переход на расстояние - top за 1500 мс
             $('body,html').animate({scrollTop: top}, 225);
         });
     }
 
     function HeaderProductMenuToggle() {
-        var list = $('.header-product__nav .headerNav__item');
+        var list = $('.header-product__nav .header-product__item');
 
         $(SectionTitleList).each(function (index, element) {
 
