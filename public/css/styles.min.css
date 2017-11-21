@@ -320,7 +320,7 @@ img {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 11111; }
+  z-index: 111; }
   .header .container-fluid {
     padding-left: 15px;
     padding-right: 15px; }
@@ -491,7 +491,7 @@ img {
   top: -150px;
   left: 0;
   right: 0;
-  z-index: 11112;
+  z-index: 112;
   background-color: #73af19;
   transition: all .225s; }
   @media (max-width: 1023px) {
@@ -2138,6 +2138,86 @@ img {
   font-size: 1.2rem;
   color: #73af19;
   word-break: break-all; }
+
+.product-gallery_wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 960px;
+  width: 100%;
+  margin-bottom: 100px; }
+  @media (min-width: 768px) {
+    .product-gallery_wrapper {
+      padding-right: 15px;
+      padding-left: 15px; } }
+
+.product-gallery_list {
+  font-size: 0; }
+
+.product-gallery_item {
+  position: relative;
+  display: inline-block;
+  margin: 2px;
+  width: calc(100% / 3 - 4px);
+  vertical-align: top;
+  overflow: hidden; }
+  .product-gallery_item:before {
+    content: '';
+    padding-top: 100%;
+    float: left; }
+  @media (min-width: 768px) {
+    .product-gallery_item {
+      margin: 10px;
+      width: calc(100% / 3 - 20px); } }
+
+.product-gallery_link {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+.product-gallery_img {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%; }
+
+.product-gallery_title {
+  line-height: 26px;
+  font-size: 1rem;
+  text-align: center; }
+
+.product-gallery_arrow {
+  position: absolute;
+  top: 50%;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  border: none;
+  display: none; }
+  @media (min-width: 768px) {
+    .product-gallery_arrow {
+      display: block; } }
+  .product-gallery_arrow svg {
+    position: relative;
+    top: -3px;
+    width: 15px;
+    height: 8px; }
+  .product-gallery_arrow .arrow {
+    stroke: #fafafa; }
+  .product-gallery_arrow-left {
+    left: 0;
+    transform: translateY(-50%) rotate(90deg) scale(2); }
+  .product-gallery_arrow-right {
+    right: 0;
+    transform: translateY(-50%) rotate(-90deg) scale(2); }
+
+.mfp-container {
+  overflow: hidden; }
 
 .page__searchingResults .prompt {
   margin-top: 15px;

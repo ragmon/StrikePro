@@ -1,0 +1,10 @@
+.product-gallery_wrapper
+    h4.title__xs.text-center Галерея
+    .product-gallery_list
+        - var n = 0;
+            while n < 7
+                li.product-gallery_item
+                    a.product-gallery_link(title="Картинка" href="https://dummyimage.com/800x400/000/fff")
+                        img.product-gallery_img(src="http://via.placeholder.com/350x250")
+                - n++
+
