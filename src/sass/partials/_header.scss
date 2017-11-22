@@ -210,7 +210,7 @@
   z-index: 112;
   background-color: #73af19;
   transition: all .225s;
-  $fsize: 0.9rem;
+  $fsize: 0.8rem;
   box-shadow: 0 3px 5px -3px rgba(0,0,0,0.5);
   @media(max-width: 1023px) {
     display: none !important;
@@ -259,7 +259,7 @@
   }
   &__link {
     color: #fff;
-    padding: 15px 20px;
+    padding: 15px 10px;
     text-transform: uppercase;
     height: 60px;
     display: block;

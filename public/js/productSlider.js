@@ -68,7 +68,6 @@ $(document).ready(function () {
         var array = Array;
 
         if (array === undefined) {
-            console.log(array);
             // initGalleryMainPhoto(array[i].id);
             return null;
         }
@@ -110,7 +109,6 @@ $(document).ready(function () {
 
     // TODO: движение слайдера влево
     function leftMove(event) {
-        console.log(event.type);
         var step = event.type === 'click' ? 6 : 1;
         if (sliderItem.length <= 6) {
             return
@@ -264,7 +262,6 @@ $(document).ready(function () {
         $(galleryPhotoList).empty();
         for (var i = 0; i < articles.length; i++) {
             if (articles[i].id === parseInt(id)) {
-                console.log(articles[i]);
                 initGalleryMainPhoto(articles[i].id);
                 gelleryPhotoRender(articles[i].head_images);
             }
@@ -295,7 +292,6 @@ $(document).ready(function () {
                     colorTableItem.push(colorTableItemRender(articles[i].id, 'http://cdn.strikepro.ru/default_group.png', articles[i]));
                 }
             }
-            console.log('colorTableItem', colorTableItem);
             $(colorTable).append(colorTableItem);
             $('.colorTable._mobile').append(colorTableItem);
             $('.colorTable._desctop .colorTable__item').on('click', initGallery);
@@ -545,66 +541,7 @@ $(document).ready(function () {
 });
 
 
-$(document).ready(function () {
 
-    var productDescription = $('.js-product-description');
-    var productDescriptionHeight = '';
-
-    function init() {
-        productDescriptionHeight = $(productDescription).innerHeight();
-        var prevElemHeight;
-
-        if ($(productDescription).find('.tile__wrapper').length === 0) {
-            if (screen.width >= 992) {
-                prevElemHeight = $(productDescription).innerWidth() / 6;
-            } else if (screen.width >= 768) {
-                prevElemHeight = $(productDescription).innerWidth() / 4;
-            } else if (screen.width >= 500 && screen.width < 768) {
-                prevElemHeight = $(productDescription).innerWidth() / 2
-            } else if (screen.width >= 320 && screen.width < 500) {
-                prevElemHeight = $(productDescription).innerWidth();
-            } else {
-                $(this).outerHeight('auto');
-                $(this).removeClass('product-desc__disable');
-                return
-            }
-        } else if (screen.width >= 992) {
-            prevElemHeight = $(productDescription).innerWidth() / 4;
-        } else if (screen.width >= 768) {
-            prevElemHeight = $(productDescription).innerWidth() / 1.5;
-        } else if (screen.width >= 320 && screen.width < 500) {
-            prevElemHeight = $(productDescription).innerWidth() * 2;
-        } else {
-            $(this).outerHeight('auto');
-            $(this).removeClass('product-desc__disable');
-            return
-        }
-
-        if (prevElemHeight > productDescriptionHeight) {
-            $(this).outerHeight('auto');
-            $(this).removeClass('product-desc__disable');
-            return
-        }
-
-        $(productDescription).addClass('product-desc__disable');
-        $(productDescription).innerHeight(prevElemHeight);
-        $(productDescription).on('click', function () {
-            if ($(this).hasClass('product-desc__disable')) {
-                $(this).outerHeight('auto');
-                $(this).removeClass('product-desc__disable')
-            } else {
-                // $(this).outerHeight(prevElemHeight);
-                // $(this).addClass('product-desc__disable')
-            }
-
-        })
-    }
-
-    init();
-    $(window).resize(function () {
-        init();
-    })
-});
 
 
 //TODO: Gallery

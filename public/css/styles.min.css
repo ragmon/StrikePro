@@ -534,7 +534,7 @@ img {
     vertical-align: middle;
     color: #fff;
     font-style: italic;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     max-width: 25rem;
     line-height: 1.2rem;
     padding-left: 1.3rem;
@@ -546,7 +546,7 @@ img {
     overflow: inherit;
     padding: 0 !important; }
     .header-product__nav .headerNav__link {
-      font-size: 0.9rem; }
+      font-size: 0.8rem; }
   .header-product__item {
     position: relative;
     display: inline-block; }
@@ -555,12 +555,12 @@ img {
       color: #3d3d3d; }
   .header-product__link {
     color: #fff;
-    padding: 15px 20px;
+    padding: 15px 10px;
     text-transform: uppercase;
     height: 60px;
     display: block;
     font-family: "OpenSans-Italic";
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     line-height: 30px; }
 
 .headerNav__list {
@@ -1549,50 +1549,21 @@ img {
         padding: 60px 50px; } }
   .page__product .product {
     position: relative; }
-    .page__product .product__desc .js-product-description {
-      position: relative;
-      overflow: hidden; }
-      .page__product .product__desc .js-product-description:before {
-        content: 'Подробнее';
-        text-align: center;
-        position: absolute;
-        bottom: 20px;
-        left: 0;
-        right: 0;
-        z-index: 4;
-        opacity: 0;
-        transition: all .225s; }
-      .page__product .product__desc .js-product-description:after {
-        content: '';
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 3;
-        height: 100%;
-        background-image: linear-gradient(to top, white 0%, rgba(255, 255, 255, 0) 30%);
-        opacity: 0;
-        transition: all .225s; }
-      .page__product .product__desc .js-product-description:hover:before {
-        color: #73af19; }
-      .page__product .product__desc .js-product-description.product-desc__disable {
-        cursor: pointer; }
-        .page__product .product__desc .js-product-description.product-desc__disable:before, .page__product .product__desc .js-product-description.product-desc__disable:after {
-          opacity: 1;
-          transition: all .225s; }
     .page__product .product__desc .tile__wrapper {
       margin-bottom: 30px; }
       @media (min-width: 992px) {
         .page__product .product__desc .tile__wrapper {
           margin-right: 60px; } }
     .page__product .product__desc .tile__text {
-      display: inline;
+      display: block;
       text-align: left;
       padding: 0;
       overflow: hidden;
       position: relative;
       transition: all .225s; }
+      @media (min-width: 992px) {
+        .page__product .product__desc .tile__text {
+          display: inline; } }
     .page__product .product__wrapper {
       padding: 0 5% 50px;
       background-color: #f7f7f7;
@@ -2169,6 +2140,37 @@ img {
   font-size: 1.2rem;
   color: #73af19;
   word-break: break-all; }
+
+.readmore {
+  position: relative;
+  overflow: hidden; }
+  .readmore_text {
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    transition: all .225s; }
+  .readmore_btn {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    height: 100px;
+    background-image: linear-gradient(to top, white 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: all .225s;
+    cursor: pointer; }
+    .readmore_btn:hover .readmore_text {
+      color: #73af19; }
+  .readmore_disable {
+    cursor: pointer; }
+    .readmore_disable .readmore_btn {
+      opacity: 1;
+      transition: all .225s; }
 
 .product-gallery_wrapper {
   margin-right: auto;

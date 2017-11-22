@@ -25,49 +25,7 @@
     }
 
     &__desc {
-      .js-product-description {
-        position: relative;
-        overflow: hidden;
-        &:before {
-          content: 'Подробнее';
-          text-align: center;
-          position: absolute;
-          bottom: 20px;
-          left: 0;
-          right: 0;
-          z-index: 4;
-          opacity: 0;
-          transition: all .225s;
 
-        }
-        &:after {
-          content: '';
-          display: block;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          z-index: 3;
-          height: 100%;
-          background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 30%);
-          opacity: 0;
-          transition: all .225s;
-
-        }
-        &:hover {
-          &:before {
-            color: #73af19;
-          }
-        }
-
-        &.product-desc__disable {
-          cursor: pointer;
-          &:before, &:after {
-            opacity: 1;
-            transition: all .225s;
-          }
-        }
-      }
       .tile__wrapper {
         margin-bottom: 30px;
         @media(min-width: 992px) {
@@ -75,13 +33,15 @@
         }
       }
       .tile__text {
-        display: inline;
+        display: block;
         text-align: left;
         padding: 0;
         overflow: hidden;
         position: relative;
         transition: all .225s;
-
+        @media(min-width: 992px){
+          display: inline;
+        }
       }
 
     }
@@ -819,5 +779,48 @@
     font-size: 1.2rem;
     color:$color3;
     word-break: break-all;
+  }
+}
+
+
+.readmore {
+  position: relative;
+  overflow: hidden;
+  &_text {
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    transition: all .225s;
+
+  }
+  &_btn {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    height: 100px;
+    background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0;
+    transition: all .225s;
+    cursor: pointer;
+    &:hover {
+      .readmore_text {
+        color: #73af19;
+      }
+    }
+  }
+
+
+  &_disable {
+    cursor: pointer;
+    .readmore_btn{
+      opacity: 1;
+      transition: all .225s;
+    }
   }
 }
