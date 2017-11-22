@@ -243,7 +243,7 @@ $(document).ready(function () {
         initDescription(id);
         initPhotos(id);
         $(".slider__item").removeClass('active');
-        $('[id = '+id+']').addClass('active');
+        $('[id = ' + id + ']').addClass('active');
 
         $(galleryMainPhoto).css({
             'transform': 'none'
@@ -295,7 +295,7 @@ $(document).ready(function () {
                     colorTableItem.push(colorTableItemRender(articles[i].id, 'http://cdn.strikepro.ru/default_group.png', articles[i]));
                 }
             }
-            console.log('colorTableItem',colorTableItem);
+            console.log('colorTableItem', colorTableItem);
             $(colorTable).append(colorTableItem);
             $('.colorTable._mobile').append(colorTableItem);
             $('.colorTable._desctop .colorTable__item').on('click', initGallery);
@@ -407,6 +407,8 @@ $(document).ready(function () {
 
 });
 
+// http://webcareer.ru/menyaem-aktivnyj-punkt-menyu-pri-prokrutke-stranicy.html
+// http://jsfiddle.net/mekwall/up4nu/
 
 $(document).ready(function () {
     $(".js-btn3D").on("click", function () {
@@ -454,10 +456,56 @@ $(document).ready(function () {
         SectionTitleList = $('h4.title__xs'),
         HeaderProductMenuList = [];
 
-    function renderMenuItem(link, content) {
-        return ('<li class="header-product__item"><a href="' + location.pathname + '#' + link + '" class="header-product__link">' + content + '</a></li>')
+    function toggleMenuLink() {
+        var lastId,
+            topMenu = $('.header-product__nav'),
+            topMenuHeight = $(topMenu).outerHeight() + 15,
+            // All list items
+            menuItems = $(topMenu).find("a"),
+            // Anchors corresponding to menu items
+            scrollItems = $(menuItems).map(function () {
+                var item = $(this.hash);
+                if (item.length) {
+                    return item;
+                }
+            });
+
+// Bind click handler to menu items
+// so we can get a fancy scroll animation
+        $(menuItems).click(function (e) {
+            var href = $(this.hash);
+            offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
+            $('html, body').stop().animate({
+                scrollTop: offsetTop
+            }, 300);
+            e.preventDefault();
+        });
+
+// Bind to scroll
+        $(window).scroll(function () {
+            // Get container scroll position
+            var fromTop = $(this).scrollTop() + topMenuHeight;
+            // Get id of current scroll item
+            var cur = $(scrollItems).map(function () {
+                if ($(this).offset().top < fromTop)
+                    return this;
+            });
+            // Get the id of the current element
+            cur = cur[cur.length - 1];
+
+            var id = cur && cur.length ? cur[0].id : "";
+            if (lastId !== id) {
+                lastId = id;
+                $(menuItems).parent().removeClass("active");
+                $("[href='#" + lastId + "']").parent('.header-product__item').addClass("active");
+            }
+            HeaderProductToggle();
+        });
     }
 
+    function renderMenuItem(link, content) {
+        return ('<li class="header-product__item"><a href="#' + link + '" class="header-product__link">' + content + '</a></li>')
+    }
 
     function init() {
         $(HeaderProductNav).empty();
@@ -473,88 +521,12 @@ $(document).ready(function () {
         $(HeaderProductTitle).text($('.product__title h1').text());
 
         //TODO: Инициализация обработчика скрола
-        initScroll(window);
-        initAncorHeaderProduct();
+        toggleMenuLink()
+
     }
 
 
     init();
-
-    function initAncorHeaderProduct() {
-        $('a[href*="#"]')
-        // Remove links that don't actually link to anything
-            .not('[href="#"]')
-            .not('[href="#0"]')
-            .click(function (event) {
-                // On-page links
-                if (
-                    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-                    &&
-                    location.hostname == this.hostname
-                ) {
-                    // Figure out element to scroll to
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                    // Does a scroll target exist?
-                    if (target.length) {
-                        // Only prevent default if animation is actually gonna happen
-                        event.preventDefault();
-
-                        $('.header-product__nav .header-product__item').each(function (index, element) {
-                            $(element).removeClass('active');
-                        });
-                        $(this).closest('.header-product__item').addClass('active');
-
-                        $('html, body').animate({
-                            scrollTop: target.offset().top
-                        }, 1000, function () {
-                            // Callback after animation
-                            // Must change focus!
-                            var $target = $(target);
-                            $target.focus();
-                            if ($target.is(":focus")) { // Checking if the target was focused
-                                return false;
-                            } else {
-                                $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-                                $target.focus(); // Set focus again
-                            }
-                            ;
-                        });
-                    }
-                }
-            });
-        //
-        // $('.header-product__link').click(function(e) {
-        //     //отменяем стандартную обработку нажатия по ссылке
-        //     e.preventDefault();
-
-        //     console.log($(this).attr('href'));
-        //     //забираем идентификатор бока с атрибута href
-        //     var id = $(this).attr('href').substring($(this).attr('href').indexOf('#'));
-        //     console.log(id);
-        //
-        //     //узнаем высоту от начала страницы до блока на который ссылается якорь
-        //         top = $(id).offset().top;
-        //
-        //     $(this).closest('.header-product__item').addClass('active');
-        //     //анимируем переход на расстояние - top за 1500 мс
-        //     $('body,html').animate({scrollTop: top}, 225);
-        // });
-    }
-
-    function HeaderProductMenuToggle() {
-        var list = $('.header-product__nav .header-product__item');
-
-        $(SectionTitleList).each(function (index, element) {
-
-            if ($(element).offset().top - 200 < window.scrollY) {
-                $(list).each(function (index, element) {
-                    $(element).removeClass('active');
-                });
-                $(list[index]).addClass('active')
-            }
-        });
-    }
 
     function HeaderProductToggle() {
         if (screen.width > 1023) {
@@ -567,35 +539,6 @@ $(document).ready(function () {
                 $('.header-product').css({top: '-150px'});
 
             }
-        }
-    }
-
-    // $(".img_2d").offset()
-
-    function initScroll(elem) {
-        if (elem.addEventListener) {
-            if ('onwheel' in document) {
-                // IE9+, FF17+, Ch31+
-                elem.addEventListener("wheel", onWheel);
-            } else if ('onmousewheel' in document) {
-                // устаревший вариант события
-                elem.addEventListener("mousewheel", onWheel);
-            } else {
-                // Firefox < 17
-                elem.addEventListener("MozMousePixelScroll", onWheel);
-            }
-        } else { // IE8-
-            elem.attachEvent("onmousewheel", onWheel);
-        }
-
-        function onWheel(e) {
-            e = e || window.event;
-
-            // wheelDelta не дает возможность узнать количество пикселей
-            var delta = e.deltaY || e.detail || e.wheelDelta;
-
-            HeaderProductToggle();
-            HeaderProductMenuToggle();
         }
     }
 
@@ -663,8 +606,9 @@ $(document).ready(function () {
     })
 });
 
+
 //TODO: Gallery
-$(document).ready(function() {
+$(document).ready(function () {
     $('.product-gallery_list').magnificPopup({
         delegate: 'li a',
         type: 'image',
@@ -675,17 +619,17 @@ $(document).ready(function() {
             arrowMarkup: '<button title="%title%" type="button" class="product-gallery_arrow product-gallery_arrow-%dir%"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg_arrow" class="arrow"></use></svg></button>', // markup of an arrow button
             tCounter: '%curr% из %total%',
             navigateByImgClick: true,
-            preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+            preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
         },
         image: {
-            titleSrc: function(item) {
+            titleSrc: function (item) {
                 return item.el.attr('title');
             }
         },
         zoom: {
             enabled: true,
             duration: 200, // don't foget to change the duration also in CSS
-            opener: function(element) {
+            opener: function (element) {
                 return element.find('img');
             }
         }

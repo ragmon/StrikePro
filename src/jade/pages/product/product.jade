@@ -8,7 +8,7 @@ main.page__product
             .product__row
                 .product__stand
                     .product__stand--img
-                        img.img_2d(src="http://lorempixel.com/800/600/", alt="")
+                        img.img_2d(src="https://dummyimage.com/800x400/000/fff", alt="")
                         img(src="http://test.vostrel.net/jquery.reel/example/object-movie-non-looping-sequence/green/1.png" width="100%" height="100%"
                         id="reel-image"
                         style="display: none !important"
@@ -20,21 +20,14 @@ main.page__product
             .product__rightSidebar
                 .product__sliderImg
                     ul
-                        li
-                            a(href="http://lorempixel.com/640/480/?11261")
-                                img(src="http://lorempixel.com/640/480/?11261", alt="smallImg")
-                        li
-                            a(href="http://lorempixel.com/640/480/?11261")
-                                img(src="http://lorempixel.com/640/480/?11261", alt="smallImg")
-                        li
-                            a(href="http://lorempixel.com/640/480/?11261")
-                                img(src="http://lorempixel.com/640/480/?11261", alt="smallImg")
-                        li
-                            a(href="http://lorempixel.com/640/480/?11261")
-                                img(src="http://lorempixel.com/640/480/?11261", alt="smallImg")
-                        li
-                            a(href="http://lorempixel.com/640/480/?11261")
-                                img(src="http://lorempixel.com/640/480/?11261", alt="smallImg")
+                        - var n = 0;
+                            while n < 5
+                                li
+                                    a(href="https://dummyimage.com/800x400/000/fff")
+                                        img(src="https://dummyimage.com/800x400/000/fff", alt="smallImg")
+                                - n++
+
+
                 button.btnMain.js-btn3D 3D
 
     include ../product-1/product-description
@@ -42,6 +35,7 @@ main.page__product
     include product-video
     include color_table
     include product-gallery
+a#moveup.moveup-arrow(href='')
 
 .colorTable__gallery--wrapper.js__popup
     .colorTable__gallery--popup.js__noPropagation

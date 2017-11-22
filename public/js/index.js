@@ -773,4 +773,15 @@ $(document).ready(
     }
 );
 
+
+(function($) {
+    $(function() {
+
+        $('#moveup').click(function() {
+            $('html, body').animate({scrollTop: 0},500);
+            return false;
+        })
+
+    })
+})(jQuery)
 //# sourceMappingURL=index.js.map
