@@ -436,10 +436,12 @@ $(document).ready(function () {
     $(window).resize(function () {
         var k = 500 / 304,
             productStand = $('.product__stand'),
-            w = screen.width;
+            w = $(document).width();
 
         if (w < 500) {
             $(productStand).height($(productStand).width() / k);
+        } else {
+            $(productStand).height('auto');
         }
     });
 
@@ -553,7 +555,7 @@ $(document).ready(function () {
         mainClass: 'mfp-img-mobile',
         gallery: {
             enabled: true,
-            arrowMarkup: '<button title="%title%" type="button" class="product-gallery_arrow product-gallery_arrow-%dir%"><svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg_arrow" class="arrow"></use></svg></button>', // markup of an arrow button
+            arrowMarkup: '<button title="%title%" type="button" onclick="event.stopPropagation()" class="product-gallery_arrow mfp-arrow mfp-arrow-%dir% mfp-prevent-close product-gallery_arrow-%dir%"><svg ><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg_arrow" class="arrow"></use></svg></button>', // markup of an arrow button
             tCounter: '%curr% из %total%',
             navigateByImgClick: true,
             preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
@@ -571,6 +573,7 @@ $(document).ready(function () {
             }
         }
     });
+
 });
 
 window.articles = [{

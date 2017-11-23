@@ -2,21 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3e2ae88-6440-4438-956d-16449aba9594" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/js/readmore.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/styles.min.css" afterPath="$PROJECT_DIR$/public/css/styles.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/productSlider.js" afterPath="$PROJECT_DIR$/public/js/productSlider.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/productSlider.js.map" afterPath="$PROJECT_DIR$/public/js/productSlider.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/readmore.js" afterPath="$PROJECT_DIR$/public/js/readmore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/readmore.js.map" afterPath="$PROJECT_DIR$/public/js/readmore.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/pages/product-1/product-description.html" afterPath="$PROJECT_DIR$/public/pages/product-1/product-description.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/pages/product-1/product.html" afterPath="$PROJECT_DIR$/public/pages/product-1/product.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/pages/product/product.html" afterPath="$PROJECT_DIR$/public/pages/product/product.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/pages/productList/productList.html" afterPath="$PROJECT_DIR$/public/pages/productList/productList.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/product.html" afterPath="$PROJECT_DIR$/public/product.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/productList.html" afterPath="$PROJECT_DIR$/public/productList.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/product_1.html" afterPath="$PROJECT_DIR$/public/product_1.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jade/pages/product-1/product-description.jade" afterPath="$PROJECT_DIR$/src/jade/pages/product-1/product-description.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jade/product.jade" afterPath="$PROJECT_DIR$/src/jade/product.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jade/pages/productList/productList.jade" afterPath="$PROJECT_DIR$/src/jade/pages/productList/productList.jade" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jade/productList.jade" afterPath="$PROJECT_DIR$/src/jade/productList.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/productSlider.js" afterPath="$PROJECT_DIR$/src/js/productSlider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sass/pages/product/_product.scss" afterPath="$PROJECT_DIR$/src/sass/pages/product/_product.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sass/partials/_header.scss" afterPath="$PROJECT_DIR$/src/sass/partials/_header.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/readmore.js" afterPath="$PROJECT_DIR$/src/js/readmore.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,8 +32,8 @@
       <file leaf-file-name="product-description.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jade/pages/product-1/product-description.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
+            <state relative-caret-position="170">
+              <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -40,8 +42,8 @@
       <file leaf-file-name="_product.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sass/pages/product/_product.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+            <state relative-caret-position="288">
+              <caret line="785" column="0" lean-forward="false" selection-start-line="785" selection-start-column="0" selection-end-line="785" selection-end-column="10" />
               <folding>
                 <element signature="e#6791#12555#0" expanded="false" />
                 <element signature="e#12571#12741#0" expanded="false" />
@@ -51,27 +53,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readmore.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="productSlider.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/js/productSlider.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="39">
+              <caret line="557" column="98" lean-forward="false" selection-start-line="557" selection-start-column="98" selection-end-line="557" selection-end-column="98" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readmore.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/readmore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="11" column="60" lean-forward="false" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
+            <state relative-caret-position="169">
+              <caret line="59" column="153" lean-forward="false" selection-start-line="59" selection-start-column="153" selection-end-line="59" selection-end-column="153" />
               <folding>
-                <element signature="e#3129#3352#0" expanded="false" />
-                <element signature="e#3379#3602#0" expanded="false" />
-                <marker date="1511382642404" expanded="true" signature="1074:1085" ph="..." />
-                <marker date="1511382642404" expanded="true" signature="1646:1692" ph="..." />
-                <marker date="1511382642404" expanded="true" signature="2806:2831" ph="..." />
+                <element signature="e#2615#2646#0" expanded="false" />
+                <element signature="e#2652#2689#0" expanded="false" />
+                <element signature="e#3768#3991#0" expanded="false" />
+                <element signature="e#4018#4241#0" expanded="false" />
+                <marker date="1511458201474" expanded="true" signature="1080:1091" ph="..." />
+                <marker date="1511458201474" expanded="true" signature="2252:2262" ph="..." />
+                <marker date="1511458201474" expanded="true" signature="3445:3470" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_header.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sass/partials/_header.scss">
+      <file leaf-file-name="productList.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jade/productList.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="212" column="17" lean-forward="false" selection-start-line="212" selection-start-column="17" selection-end-line="212" selection-end-column="17" />
+            <state relative-caret-position="136">
+              <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="productList.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jade/pages/productList/productList.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -91,7 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sliderItemRender</find>
       <find>maxStep</find>
       <find>des</find>
       <find>galleryPhotoList</find>
@@ -121,6 +144,7 @@
       <find>js-readmore</find>
       <find>.product-desc__disable</find>
       <find>.tile__text</find>
+      <find>product__stand</find>
     </findStrings>
     <dirStrings>
       <dir>F:\Development\WebDev\job\StrikePro\StrikePro\js</dir>
@@ -210,13 +234,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/product-article.html" />
         <option value="$PROJECT_DIR$/src/jade/pages/contact/breadcrumb.jade" />
         <option value="$PROJECT_DIR$/src/sass/pages/productList/_productList.scss" />
         <option value="$PROJECT_DIR$/src/jade/pages/product/breadcrumb.jade" />
         <option value="$PROJECT_DIR$/src/jade/pages/productList/breadcrumb.jade" />
-        <option value="$PROJECT_DIR$/src/jade/pages/productList/productList.jade" />
         <option value="$PROJECT_DIR$/src/sass/partials/_breadcrumb.scss" />
         <option value="$PROJECT_DIR$/src/jade/pages/blog/breadcrumb.jade" />
         <option value="$PROJECT_DIR$/src/jade/pages/aboutCompany/breadcrumb.jade" />
@@ -256,11 +278,13 @@
         <option value="$PROJECT_DIR$/src/sass/components/_base.scss" />
         <option value="$USER_HOME$/Desktop/woocommerce-FlexSlider-0d95828/demo/thumbnail-slider.html" />
         <option value="$PROJECT_DIR$/src/jade/product.jade" />
-        <option value="$PROJECT_DIR$/src/js/productSlider.js" />
         <option value="$PROJECT_DIR$/src/sass/pages/product/_product.scss" />
         <option value="$PROJECT_DIR$/src/sass/partials/_header.scss" />
+        <option value="$PROJECT_DIR$/src/jade/productList.jade" />
         <option value="$PROJECT_DIR$/src/jade/pages/product-1/product-description.jade" />
+        <option value="$PROJECT_DIR$/src/jade/pages/productList/productList.jade" />
         <option value="$PROJECT_DIR$/src/js/readmore.js" />
+        <option value="$PROJECT_DIR$/src/js/productSlider.js" />
       </list>
     </option>
   </component>
@@ -309,6 +333,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -316,56 +341,10 @@
               <item name="StrikePro" type="b2602c69:ProjectViewProjectNode" />
               <item name="StrikePro" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="StrikePro" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StrikePro" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="StrikePro" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StrikePro" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="jade" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="StrikePro" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StrikePro" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="StrikePro" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StrikePro" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sass" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="StrikePro" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StrikePro" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sass" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="StrikePro" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StrikePro" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sass" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="product" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="StrikePro" type="b2602c69:ProjectViewProjectNode" />
-              <item name="StrikePro" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="sass" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="partials" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -600,12 +579,14 @@
       <workItem from="1511243987712" duration="181000" />
       <workItem from="1511275349850" duration="14805000" />
       <workItem from="1511328944230" duration="236000" />
-      <workItem from="1511363166879" duration="15315000" />
+      <workItem from="1511363166879" duration="15403000" />
+      <workItem from="1511416928455" duration="597000" />
+      <workItem from="1511454743558" duration="5413000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="321789000" />
+    <option name="totallyTimeSpent" value="327887000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -618,20 +599,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18051359" sideWeight="0.25976562" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20574887" sideWeight="0.7402344" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14447807" sideWeight="0.7402344" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293944" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18494272" sideWeight="0.515885" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14285715" sideWeight="0.4975" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.62286687" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14285715" sideWeight="0.4975" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2693997" sideWeight="0.4669739" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45008183" sideWeight="0.48411497" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45008183" sideWeight="0.48411497" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -695,27 +675,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/productList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="200" column="33" lean-forward="false" selection-start-line="200" selection-start-column="23" selection-end-line="200" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jade/pages/productList/productList.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/components/_variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/product.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -947,6 +906,86 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/js/jquery.changeActiveNav.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="40" column="21" lean-forward="false" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jade/pages/product/product-gallery.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="87" lean-forward="false" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jade/pages/product/product-video.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="63" lean-forward="false" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/pages/product/_product-gallery.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="78" column="5" lean-forward="true" selection-start-line="70" selection-start-column="3" selection-end-line="78" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/components/_base.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="221" column="18" lean-forward="true" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="765" column="35" lean-forward="false" selection-start-line="765" selection-start-column="35" selection-end-line="765" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/woocommerce-FlexSlider-0d95828/demo/thumbnail-slider.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jade/pages/product/product.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/partials/_header.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3604">
+          <caret line="212" column="17" lean-forward="false" selection-start-line="212" selection-start-column="17" selection-end-line="212" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jade/partials/script.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jade/product.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="41" lean-forward="true" selection-start-line="20" selection-start-column="41" selection-end-line="21" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gulpfileold.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -957,121 +996,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/assets/js/jquery.changeActiveNav.min.js">
+    <entry file="file://$PROJECT_DIR$/src/jade/pages/product-1/product-description.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="40" column="21" lean-forward="false" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="21" />
+        <state relative-caret-position="170">
+          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jade/pages/product/product-gallery.jade">
+    <entry file="file://$PROJECT_DIR$/src/jade/productList.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="87" lean-forward="false" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="87" />
+        <state relative-caret-position="136">
+          <caret line="8" column="45" lean-forward="false" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jade/pages/product/product-video.jade">
+    <entry file="file://$PROJECT_DIR$/src/jade/pages/productList/productList.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="63" lean-forward="false" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
+        <state relative-caret-position="187">
+          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/pages/product/_product-gallery.scss">
+    <entry file="file://$PROJECT_DIR$/src/js/readmore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="78" column="5" lean-forward="true" selection-start-line="70" selection-start-column="3" selection-end-line="78" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/components/_base.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="221" column="18" lean-forward="true" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="18" />
+        <state relative-caret-position="169">
+          <caret line="59" column="153" lean-forward="false" selection-start-line="59" selection-start-column="153" selection-end-line="59" selection-end-column="153" />
           <folding>
-            <element signature="e#3722#4633#2" expanded="false" />
+            <element signature="e#2615#2646#0" expanded="false" />
+            <element signature="e#2652#2689#0" expanded="false" />
+            <element signature="e#3768#3991#0" expanded="false" />
+            <element signature="e#4018#4241#0" expanded="false" />
+            <marker date="1511458201474" expanded="true" signature="1080:1091" ph="..." />
+            <marker date="1511458201474" expanded="true" signature="2252:2262" ph="..." />
+            <marker date="1511458201474" expanded="true" signature="3445:3470" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jade/product.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="31" lean-forward="false" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/productSlider.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="294" column="0" lean-forward="false" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
-          <folding>
-            <element signature="e#743#1147#0" expanded="false" />
-            <element signature="e#1254#1830#0" expanded="false" />
-            <element signature="e#1926#2360#0" expanded="false" />
-            <element signature="e#2472#3750#0" expanded="false" />
-            <element signature="e#3852#4590#0" expanded="false" />
-            <element signature="e#4660#5539#0" expanded="false" />
-            <element signature="e#5603#6402#0" expanded="false" />
-            <element signature="e#6486#8081#0" expanded="false" />
-            <element signature="e#8167#8406#0" expanded="false" />
-            <element signature="e#8502#8693#0" expanded="false" />
-            <element signature="e#8777#9063#0" expanded="false" />
-            <element signature="e#9157#9371#0" expanded="false" />
-            <element signature="e#10568#12725#0" expanded="false" />
-            <element signature="e#12777#13603#0" expanded="false" />
-            <element signature="e#14344#18755#0" expanded="false" />
-            <element signature="e#14389#14804#0" expanded="false" />
-            <element signature="e#14873#15154#0" expanded="false" />
-            <element signature="e#15190#15402#0" expanded="false" />
-            <element signature="e#15783#17430#0" expanded="false" />
-            <element signature="e#16686#17422#0" expanded="false" />
-            <element signature="e#17475#17612#0" expanded="false" />
-            <element signature="e#18381#18752#0" expanded="false" />
-            <element signature="e#18809#19854#0" expanded="false" />
-            <element signature="e#19877#28719#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="765" column="35" lean-forward="false" selection-start-line="765" selection-start-column="35" selection-end-line="765" selection-end-column="35" />
-          <folding>
-            <element signature="e#12428#13977#0" expanded="false" />
-            <element signature="e#14023#14762#0" expanded="false" />
-            <marker date="1511366999423" expanded="true" signature="15362:15368" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/woocommerce-FlexSlider-0d95828/demo/thumbnail-slider.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jade/pages/product/product.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="32" column="37" lean-forward="true" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sass/pages/product/_product.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="40" column="30" lean-forward="false" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+        <state relative-caret-position="288">
+          <caret line="785" column="0" lean-forward="false" selection-start-line="785" selection-start-column="0" selection-end-line="785" selection-end-column="10" />
           <folding>
             <element signature="e#6791#12555#0" expanded="false" />
             <element signature="e#12571#12741#0" expanded="false" />
@@ -1080,33 +1048,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/partials/_header.scss">
+    <entry file="file://$PROJECT_DIR$/src/js/productSlider.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="212" column="17" lean-forward="false" selection-start-line="212" selection-start-column="17" selection-end-line="212" selection-end-column="17" />
+        <state relative-caret-position="39">
+          <caret line="557" column="98" lean-forward="false" selection-start-line="557" selection-start-column="98" selection-end-line="557" selection-end-column="98" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jade/pages/product-1/product-description.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/readmore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="60" lean-forward="false" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="60" />
-          <folding>
-            <element signature="e#3129#3352#0" expanded="false" />
-            <element signature="e#3379#3602#0" expanded="false" />
-            <marker date="1511382642404" expanded="true" signature="1074:1085" ph="..." />
-            <marker date="1511382642404" expanded="true" signature="1646:1692" ph="..." />
-            <marker date="1511382642404" expanded="true" signature="2806:2831" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
