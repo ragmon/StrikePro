@@ -3,22 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e3e2ae88-6440-4438-956d-16449aba9594" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/productSlider.js" afterPath="$PROJECT_DIR$/public/js/productSlider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/productSlider.js.map" afterPath="$PROJECT_DIR$/public/js/productSlider.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/readmore.js" afterPath="$PROJECT_DIR$/public/js/readmore.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/readmore.js.map" afterPath="$PROJECT_DIR$/public/js/readmore.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/pages/product-1/product-description.html" afterPath="$PROJECT_DIR$/public/pages/product-1/product-description.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/pages/product-1/product.html" afterPath="$PROJECT_DIR$/public/pages/product-1/product.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/pages/product/product.html" afterPath="$PROJECT_DIR$/public/pages/product/product.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/pages/productList/productList.html" afterPath="$PROJECT_DIR$/public/pages/productList/productList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/product.html" afterPath="$PROJECT_DIR$/public/product.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/productList.html" afterPath="$PROJECT_DIR$/public/productList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/product_1.html" afterPath="$PROJECT_DIR$/public/product_1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jade/pages/product-1/product-description.jade" afterPath="$PROJECT_DIR$/src/jade/pages/product-1/product-description.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jade/pages/productList/productList.jade" afterPath="$PROJECT_DIR$/src/jade/pages/productList/productList.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jade/productList.jade" afterPath="$PROJECT_DIR$/src/jade/productList.jade" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/productSlider.js" afterPath="$PROJECT_DIR$/src/js/productSlider.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/readmore.js" afterPath="$PROJECT_DIR$/src/js/readmore.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,8 +41,8 @@
       <file leaf-file-name="productSlider.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/js/productSlider.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="39">
-              <caret line="557" column="98" lean-forward="false" selection-start-line="557" selection-start-column="98" selection-end-line="557" selection-end-column="98" />
+            <state relative-caret-position="444">
+              <caret line="577" column="0" lean-forward="true" selection-start-line="577" selection-start-column="0" selection-end-line="577" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -341,6 +326,11 @@
               <item name="StrikePro" type="b2602c69:ProjectViewProjectNode" />
               <item name="StrikePro" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="StrikePro" type="b2602c69:ProjectViewProjectNode" />
+              <item name="StrikePro" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -581,12 +571,12 @@
       <workItem from="1511328944230" duration="236000" />
       <workItem from="1511363166879" duration="15403000" />
       <workItem from="1511416928455" duration="597000" />
-      <workItem from="1511454743558" duration="5413000" />
+      <workItem from="1511454743558" duration="6675000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="327887000" />
+    <option name="totallyTimeSpent" value="329149000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -599,9 +589,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18051359" sideWeight="0.25976562" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14447807" sideWeight="0.7402344" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22919819" sideWeight="0.7402344" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293944" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18494272" sideWeight="0.515885" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -609,7 +600,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14285715" sideWeight="0.4975" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2693997" sideWeight="0.4669739" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45008183" sideWeight="0.48411497" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45008183" sideWeight="0.48411497" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1050,8 +1041,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/productSlider.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="557" column="98" lean-forward="false" selection-start-line="557" selection-start-column="98" selection-end-line="557" selection-end-column="98" />
+        <state relative-caret-position="444">
+          <caret line="577" column="0" lean-forward="true" selection-start-line="577" selection-start-column="0" selection-end-line="577" selection-end-column="0" />
           <folding />
         </state>
       </provider>
