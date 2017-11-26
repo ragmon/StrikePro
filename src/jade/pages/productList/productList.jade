@@ -81,27 +81,19 @@ main.page__productList
                                 
                     .product__marker
             li.tile__wrapper.col-2_4.col-md-3.col-sm-4
-                a(href="#!").tile.product.product__new
+                .tile.product.product__new
                     img(src="/image/productImg-1.png", alt="")
                     // этот блок с названием товара и его вариациями
                     .product__footer
                         .product__text Challenger X Deep Diver
-                        // тут хранятся вариации
-                        .productVariation__wrap
-                            ul.productVariation__list
-                                li
-                                    .btnMain x23
-                                li
-                                    .btnMain x23
-                                li
-                                    .btnMain x23
-                                li
-                                    .btnMain x23
-                                li
-                                    .btnMain x23
-                                li
-                                    .btnMain x23
                     .product__marker
+                ul.tile__product-group-list
+                    - var n = 0;
+                        while n < 10
+                            li.tile__product-group-item
+                                a.tile__product-group-link Challenger X Deep Diver
+                            - n++
+
             li.tile__wrapper.col-2_4.col-md-3.col-sm-4
                 a(href="#!").tile.product
                     img(src="http://lorempixel.com/640/640/", alt="")
