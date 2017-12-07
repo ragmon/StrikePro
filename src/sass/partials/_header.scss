@@ -407,7 +407,7 @@
   }
   &__col {
     margin-bottom: 20px;
-    @media(max-width: 1024px) {
+    @media(max-width: 1023px) {
       width: 100%;
       ul {
         display: none;
@@ -415,6 +415,7 @@
       }
       .custom-menu__toggle.active {
         & + ul {
+
           display: block;
         }
       }
@@ -425,8 +426,15 @@
       display: inline-block;
 
       a {
+        display: block;
+        padding-left: 5px;
+        margin-bottom: 10px;
         font-size: 14px;
-        line-height: 12px;
+        line-height: 24px;
+        border-left: 2px solid rgba(61, 61, 61, 0.1);
+        &:hover {
+          border-color: rgba(115, 175, 25, 0.5);
+        }
       }
 
     }
@@ -434,7 +442,16 @@
 }
 
 .item-more {
-  color: #73af19 !important;
+  position: sticky;
+  border: none !important;
+  text-align: center;
+  margin-left: 5px;
+  cursor: pointer;
+  @extend .btnMain;
+
+  &:hover {
+    border-color: transparent;
+  }
 }
 
 .headerNav__toggle {

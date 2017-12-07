@@ -18,9 +18,9 @@ $(document).ready(function () {
         });
         console.log(childHeight,childWidth);
         if (childHeight.length < 2 && childWidth.length < 2) {
-            if($(productDescription).children('.tile__text').outerHeight() < 300) return
+            if($(productDescription).children('.tile__text').outerHeight() < 200) return
             $(productDescription).css({
-                height: '300px'
+                height: '200px'
             })
                 .addClass('readmore_disable');
             if ($(productDescription).children('.readmore_btn').length === 0) {
@@ -73,18 +73,18 @@ $(document).ready(function () {
             $('.readmore_btn').css({width: '100%'});
             $(productDescription).css({height: 'auto'});
 
-            $(productDescription).addClass('readmore_disable').children('.tile__text').css({height: '250px'})
+            $(productDescription).addClass('readmore_disable').children('.tile__text').css({height: '200px'})
         }
     });
 
     function readMoreInitMobile() {
         if($(productDescription).hasClass('active')) return;
-        if($(productDescription).children('.tile__text').outerHeight() < 250) return
+        if($(productDescription).children('.tile__text').outerHeight() < 200) return
 
         $(productDescription)
             .addClass('readmore_disable')
             .children('.tile__text')
-            .css({height: '250px'})
+            .css({height: '200px'})
             .append('<div style="width: 100%; height: 70px" class="readmore_btn"><div class="readmore_text">Подробнее</div></div>');
         $('.readmore_btn').click(function () {
             $(productDescription).removeClass('readmore_disable').addClass('active').children('.tile__text').css({height: 'auto'});
@@ -115,3 +115,5 @@ $(document).ready(function () {
     }
 
 });
+
+

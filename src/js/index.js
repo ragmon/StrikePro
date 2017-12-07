@@ -483,19 +483,18 @@ $(".headerNav__toggle").on("click", function () {
 
 });
 
-$(".custom-menu__wrapper").hover(
-    function () {
-        console.log("on");
-        $("body").css({"overflow": "hidden"})
-    },
-    function () {
-        console.log("off");
-        $("body").css({"overflow": "auto"})
-    });
+// $(".custom-menu__wrapper").hover(
+//     function () {
+//         console.log("on");
+//         $("body").css({"overflow": "hidden"})
+//     },
+//     function () {
+//         console.log("off");
+//         $("body").css({"overflow": "auto"})
+//     });
 $('.custom-menu__toggle').on('click', function () {
-    var w = screen.width;
     console.log('click');
-    if (w <= 992) {
+    if (window.outerWidth < 1024) {
         if ($(this).hasClass('active')) {
             $(this).removeClass('active');
         } else {
@@ -723,11 +722,7 @@ $(document).ready(
             });
 
 
-        $(".productVariation__wrap").niceScroll({
-            touchbehavior: true,
-            cursorcolor: "transparent",
-            cursorborder: "0px solid transparent"
-        });
+
 
         $(window).resize(function () {
             var w = screen.width;
@@ -738,25 +733,7 @@ $(document).ready(
         });
 
 
-        // проверяет есть ли у карточки с товаром ссылки на вариации
-        // если есть добавит градиент если общая ширина ссылок больше ширины контейнера
-        function addGradientBlock() {
-            var blockList = $(".productVariation__wrap");
-            for (var i = 0; i < blockList.length; i++) {
-                var elements = $(blockList[i]).find("li");
-                var itemWidth = $(elements[0]).width() * $(elements).length;
 
-                if ($(elements).length != 0 && $(blockList[i]).width() < itemWidth) {
-                    if ($(blockList[i]).find(".gradientBlock").length == 1) continue
-                    $(blockList[i]).append("<div class='gradientBlock'></div>");
-
-                } else {
-                    $(blockList[i]).find(".gradientBlock").remove()
-                }
-
-            }
-        };
-        addGradientBlock();
 
         $(window).resize(function () {
             addGradientBlock()

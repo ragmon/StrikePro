@@ -28,11 +28,11 @@ $(document).ready(function () {
             }
         }
         return ('<div class="colorTable__item" id="' + id + '">' +
-            '<div class="colorTable__img">'+
+            '<div class="colorTable__img">' +
             '<img src="' + image + '" alt="">' +
-            '<div class="colorTable__marker colorTable__marker--ultraviolet"></div>'+
-            '<div class="colorTable__marker colorTable__marker--luminous"></div>'+
-            '</div>'+
+            '<div class="colorTable__marker colorTable__marker--ultraviolet"></div>' +
+            '<div class="colorTable__marker colorTable__marker--luminous"></div>' +
+            '</div>' +
             '<span>' + title + '</span>' +
             '</div>')
     }
@@ -65,8 +65,8 @@ $(document).ready(function () {
             '<li  class="slider__item" id="' + id + '"> ' +
             '<a href="#!"  class="slider__link" >' +
             '<img src="' + image + '" />' +
-            '<div class="colorTable__marker colorTable__marker--ultraviolet"></div>'+
-            '<div class="colorTable__marker colorTable__marker--luminous"></div>'+
+            '<div class="colorTable__marker colorTable__marker--ultraviolet"></div>' +
+            '<div class="colorTable__marker colorTable__marker--luminous"></div>' +
             '</a>' +
             '<span class="slider__item-title">' + title + '</span> ' +
             '</li>'
@@ -375,12 +375,17 @@ $(document).ready(function () {
         if (active === 'block') {
 
             if (event.which === 37) { //left
-                leftMove(event);
-                onActivePhoto($($('.slider__item.active').prev()).attr('id'))
+                if ($('.slider__item.active').prev().length) {
+                    leftMove(event);
+                    onActivePhoto($($('.slider__item.active').prev()).attr('id'))
+                }
             }
             if (event.which === 39) { // right
-                rightMove(event);
-                onActivePhoto($($('.slider__item.active').next()).attr('id'))
+                if ($('.slider__item.active').next().length) {
+
+                    rightMove(event);
+                    onActivePhoto($($('.slider__item.active').next()).attr('id'))
+                }
             }
             if (event.which === 38) { // top
                 $('.colorTable__gallery--variation').scrollTop($('.colorTable__gallery--variation').scrollTop() - 10);
@@ -637,210 +642,210 @@ window.articles = [
         }],
         "features": [
             {
-            "id": 16,
-            "title": "Продажи Онлайн",
-            "measurement": "",
-            "description": "",
-            "is_filter": "0",
-            "value_type": "bool",
-            "is_visible": "1",
-            "1C_key": "34fe49b1-de34-11e6-83a8-e06995684273",
-            "created_at": "2017-10-29 21:58:50",
-            "updated_at": "2017-10-29 21:58:50",
-            "pivot": {"group_article_id": "1257989", "feature_id": "16", "value": "Да"}
-        }, {
-            "id": 21,
-            "title": "Страна производителя",
-            "measurement": "",
-            "description": "",
-            "is_filter": "0",
-            "value_type": "string",
-            "is_visible": "1",
-            "1C_key": "a3030031-2a2d-11e6-95fb-e06995684273",
-            "created_at": "2017-10-29 21:58:51",
-            "updated_at": "2017-10-29 21:58:51",
-            "pivot": {"group_article_id": "1257989", "feature_id": "21", "value": "ТАЙВАНЬ"}
-        }, {
-            "id": 22,
-            "title": "Сезонность",
-            "measurement": "",
-            "description": "",
-            "is_filter": "0",
-            "value_type": "string",
-            "is_visible": "1",
-            "1C_key": "55348334-2a2e-11e6-95fb-e06995684273",
-            "created_at": "2017-10-29 21:58:51",
-            "updated_at": "2017-10-29 21:58:51",
-            "pivot": {"group_article_id": "1257989", "feature_id": "22", "value": "Лето"}
-        }, {
-            "id": 23,
-            "title": "Вид упаковки",
-            "measurement": "",
-            "description": "",
-            "is_filter": "0",
-            "value_type": "string",
-            "is_visible": "1",
-            "1C_key": "703c4371-2a2e-11e6-95fb-e06995684273",
-            "created_at": "2017-10-29 21:58:51",
-            "updated_at": "2017-10-29 21:58:51",
-            "pivot": {"group_article_id": "1257989", "feature_id": "23", "value": "Блистер"}
-        }, {
-            "id": 29,
-            "title": "Код модели",
-            "measurement": "",
-            "description": "",
-            "is_filter": "0",
-            "value_type": "string",
-            "is_visible": "1",
-            "1C_key": "dcd92f88-2a33-11e6-95fb-e06995684273",
-            "created_at": "2017-10-29 21:58:51",
-            "updated_at": "2017-11-08 17:00:18",
-            "pivot": {"group_article_id": "1257989", "feature_id": "29", "value": "EG-078"}
-        }, {
-            "id": 30,
-            "title": "Название модели",
-            "measurement": "",
-            "description": "",
-            "is_filter": "0",
-            "value_type": "string",
-            "is_visible": "1",
-            "1C_key": "fac53bba-2a33-11e6-95fb-e06995684273",
-            "created_at": "2017-10-29 21:58:51",
-            "updated_at": "2017-10-29 21:58:51",
-            "pivot": {"group_article_id": "1257989", "feature_id": "30", "value": "Big Bandit Sinking"}
-        }, {
-            "id": 31,
-            "title": "Вес",
-            "measurement": "гр",
-            "description": "",
-            "is_filter": "1",
-            "value_type": "float",
-            "is_visible": "1",
-            "1C_key": "a79e0780-2a34-11e6-95fb-e06995684273",
-            "created_at": "2017-10-29 21:58:51",
-            "updated_at": "2017-11-08 17:00:18",
-            "pivot": {"group_article_id": "1257989", "feature_id": "31", "value": "98"}
-        }, {
-            "id": 36,
-            "title": "Максимальное заглубление",
-            "measurement": "м",
-            "description": "",
-            "is_filter": "1",
-            "value_type": "float",
-            "is_visible": "1",
-            "1C_key": "07722d47-2a35-11e6-95fb-e06995684273",
-            "created_at": "2017-10-29 21:58:52",
-            "updated_at": "2017-11-08 17:00:18",
-            "pivot": {"group_article_id": "1257989", "feature_id": "36", "value": "3"}
-        }, {
-            "id": 37,
-            "title": "Минимальное заглубление",
-            "measurement": "м",
-            "description": "",
-            "is_filter": "1",
-            "value_type": "float",
-            "is_visible": "1",
-            "1C_key": "165d91ff-2a35-11e6-95fb-e06995684273",
-            "created_at": "2017-10-29 21:58:52",
-            "updated_at": "2017-11-08 17:00:18",
-            "pivot": {"group_article_id": "1257989", "feature_id": "37", "value": "1"}
-        }, {
-            "id": 39,
-            "title": "Количество крючков",
-            "measurement": "",
-            "description": "",
-            "is_filter": "1",
-            "value_type": "int",
-            "is_visible": "1",
-            "1C_key": "55807399-2a35-11e6-95fb-e06995684273",
-            "created_at": "2017-10-29 21:58:52",
-            "updated_at": "2017-10-29 21:58:52",
-            "pivot": {"group_article_id": "1257989", "feature_id": "39", "value": "2"}
-        }, {
-            "id": 45,
-            "title": "Нагрузка",
-            "measurement": "кг",
-            "description": "",
-            "is_filter": "1",
-            "value_type": "float",
-            "is_visible": "1",
-            "1C_key": "cf1c3be7-2a35-11e6-95fb-e06995684273",
-            "created_at": "2017-10-29 21:58:52",
-            "updated_at": "2017-11-08 17:00:18",
-            "pivot": {"group_article_id": "1257989", "feature_id": "45", "value": "44"}
-        }, {
-            "id": 48,
-            "title": "Плавучесть (Экшн)",
-            "measurement": "",
-            "description": "",
-            "is_filter": "1",
-            "value_type": "string",
-            "is_visible": "1",
-            "1C_key": "17fffeeb-2a36-11e6-95fb-e06995684273",
-            "created_at": "2017-10-29 21:58:52",
-            "updated_at": "2017-10-29 21:58:52",
-            "pivot": {"group_article_id": "1257989", "feature_id": "48", "value": "Тонущий"}
-        }, {
-            "id": 50,
-            "title": "Производитель крючка",
-            "measurement": "",
-            "description": "",
-            "is_filter": "1",
-            "value_type": "string",
-            "is_visible": "1",
-            "1C_key": "54ddeead-2a36-11e6-95fb-e06995684273",
-            "created_at": "2017-10-29 21:58:53",
-            "updated_at": "2017-10-29 21:58:53",
-            "pivot": {"group_article_id": "1257989", "feature_id": "50", "value": "OH"}
-        }, {
-            "id": 51,
-            "title": "Длина (мм)",
-            "measurement": "мм",
-            "description": "",
-            "is_filter": "1",
-            "value_type": "int",
-            "is_visible": "1",
-            "1C_key": "7124a74e-2a36-11e6-95fb-e06995684273",
-            "created_at": "2017-10-29 21:58:53",
-            "updated_at": "2017-10-29 21:58:53",
-            "pivot": {"group_article_id": "1257989", "feature_id": "51", "value": "195"}
-        }, {
-            "id": 57,
-            "title": "Тип крючка",
-            "measurement": "",
-            "description": "",
-            "is_filter": "1",
-            "value_type": "string",
-            "is_visible": "1",
-            "1C_key": "db30d563-2a36-11e6-95fb-e06995684273",
-            "created_at": "2017-10-29 21:58:53",
-            "updated_at": "2017-10-29 21:58:53",
-            "pivot": {"group_article_id": "1257989", "feature_id": "57", "value": "Тройник"}
-        }, {
-            "id": 60,
-            "title": "Код цвета",
-            "measurement": "",
-            "description": "",
-            "is_filter": "1",
-            "value_type": "string",
-            "is_visible": "1",
-            "1C_key": "50b9c2da-2a39-11e6-95fb-e06995684273",
-            "created_at": "2017-10-29 21:58:53",
-            "updated_at": "2017-10-29 21:58:53",
-            "pivot": {"group_article_id": "1257989", "feature_id": "60", "value": "A70-713"}
-        }, {
-            "id": 66,
-            "title": "По форме тела",
-            "measurement": "",
-            "description": "",
-            "is_filter": "1",
-            "value_type": "string",
-            "is_visible": "1",
-            "1C_key": "c5e5cca1-e02f-11e6-a6c0-e06995684273",
-            "created_at": "2017-10-29 21:58:54",
-            "updated_at": "2017-10-30 21:03:23",
-            "pivot": {"group_article_id": "1257989", "feature_id": "66", "value": "Джеркбейт"}
-        }]
+                "id": 16,
+                "title": "Продажи Онлайн",
+                "measurement": "",
+                "description": "",
+                "is_filter": "0",
+                "value_type": "bool",
+                "is_visible": "1",
+                "1C_key": "34fe49b1-de34-11e6-83a8-e06995684273",
+                "created_at": "2017-10-29 21:58:50",
+                "updated_at": "2017-10-29 21:58:50",
+                "pivot": {"group_article_id": "1257989", "feature_id": "16", "value": "Да"}
+            }, {
+                "id": 21,
+                "title": "Страна производителя",
+                "measurement": "",
+                "description": "",
+                "is_filter": "0",
+                "value_type": "string",
+                "is_visible": "1",
+                "1C_key": "a3030031-2a2d-11e6-95fb-e06995684273",
+                "created_at": "2017-10-29 21:58:51",
+                "updated_at": "2017-10-29 21:58:51",
+                "pivot": {"group_article_id": "1257989", "feature_id": "21", "value": "ТАЙВАНЬ"}
+            }, {
+                "id": 22,
+                "title": "Сезонность",
+                "measurement": "",
+                "description": "",
+                "is_filter": "0",
+                "value_type": "string",
+                "is_visible": "1",
+                "1C_key": "55348334-2a2e-11e6-95fb-e06995684273",
+                "created_at": "2017-10-29 21:58:51",
+                "updated_at": "2017-10-29 21:58:51",
+                "pivot": {"group_article_id": "1257989", "feature_id": "22", "value": "Лето"}
+            }, {
+                "id": 23,
+                "title": "Вид упаковки",
+                "measurement": "",
+                "description": "",
+                "is_filter": "0",
+                "value_type": "string",
+                "is_visible": "1",
+                "1C_key": "703c4371-2a2e-11e6-95fb-e06995684273",
+                "created_at": "2017-10-29 21:58:51",
+                "updated_at": "2017-10-29 21:58:51",
+                "pivot": {"group_article_id": "1257989", "feature_id": "23", "value": "Блистер"}
+            }, {
+                "id": 29,
+                "title": "Код модели",
+                "measurement": "",
+                "description": "",
+                "is_filter": "0",
+                "value_type": "string",
+                "is_visible": "1",
+                "1C_key": "dcd92f88-2a33-11e6-95fb-e06995684273",
+                "created_at": "2017-10-29 21:58:51",
+                "updated_at": "2017-11-08 17:00:18",
+                "pivot": {"group_article_id": "1257989", "feature_id": "29", "value": "EG-078"}
+            }, {
+                "id": 30,
+                "title": "Название модели",
+                "measurement": "",
+                "description": "",
+                "is_filter": "0",
+                "value_type": "string",
+                "is_visible": "1",
+                "1C_key": "fac53bba-2a33-11e6-95fb-e06995684273",
+                "created_at": "2017-10-29 21:58:51",
+                "updated_at": "2017-10-29 21:58:51",
+                "pivot": {"group_article_id": "1257989", "feature_id": "30", "value": "Big Bandit Sinking"}
+            }, {
+                "id": 31,
+                "title": "Вес",
+                "measurement": "гр",
+                "description": "",
+                "is_filter": "1",
+                "value_type": "float",
+                "is_visible": "1",
+                "1C_key": "a79e0780-2a34-11e6-95fb-e06995684273",
+                "created_at": "2017-10-29 21:58:51",
+                "updated_at": "2017-11-08 17:00:18",
+                "pivot": {"group_article_id": "1257989", "feature_id": "31", "value": "98"}
+            }, {
+                "id": 36,
+                "title": "Максимальное заглубление",
+                "measurement": "м",
+                "description": "",
+                "is_filter": "1",
+                "value_type": "float",
+                "is_visible": "1",
+                "1C_key": "07722d47-2a35-11e6-95fb-e06995684273",
+                "created_at": "2017-10-29 21:58:52",
+                "updated_at": "2017-11-08 17:00:18",
+                "pivot": {"group_article_id": "1257989", "feature_id": "36", "value": "3"}
+            }, {
+                "id": 37,
+                "title": "Минимальное заглубление",
+                "measurement": "м",
+                "description": "",
+                "is_filter": "1",
+                "value_type": "float",
+                "is_visible": "1",
+                "1C_key": "165d91ff-2a35-11e6-95fb-e06995684273",
+                "created_at": "2017-10-29 21:58:52",
+                "updated_at": "2017-11-08 17:00:18",
+                "pivot": {"group_article_id": "1257989", "feature_id": "37", "value": "1"}
+            }, {
+                "id": 39,
+                "title": "Количество крючков",
+                "measurement": "",
+                "description": "",
+                "is_filter": "1",
+                "value_type": "int",
+                "is_visible": "1",
+                "1C_key": "55807399-2a35-11e6-95fb-e06995684273",
+                "created_at": "2017-10-29 21:58:52",
+                "updated_at": "2017-10-29 21:58:52",
+                "pivot": {"group_article_id": "1257989", "feature_id": "39", "value": "2"}
+            }, {
+                "id": 45,
+                "title": "Нагрузка",
+                "measurement": "кг",
+                "description": "",
+                "is_filter": "1",
+                "value_type": "float",
+                "is_visible": "1",
+                "1C_key": "cf1c3be7-2a35-11e6-95fb-e06995684273",
+                "created_at": "2017-10-29 21:58:52",
+                "updated_at": "2017-11-08 17:00:18",
+                "pivot": {"group_article_id": "1257989", "feature_id": "45", "value": "44"}
+            }, {
+                "id": 48,
+                "title": "Плавучесть (Экшн)",
+                "measurement": "",
+                "description": "",
+                "is_filter": "1",
+                "value_type": "string",
+                "is_visible": "1",
+                "1C_key": "17fffeeb-2a36-11e6-95fb-e06995684273",
+                "created_at": "2017-10-29 21:58:52",
+                "updated_at": "2017-10-29 21:58:52",
+                "pivot": {"group_article_id": "1257989", "feature_id": "48", "value": "Тонущий"}
+            }, {
+                "id": 50,
+                "title": "Производитель крючка",
+                "measurement": "",
+                "description": "",
+                "is_filter": "1",
+                "value_type": "string",
+                "is_visible": "1",
+                "1C_key": "54ddeead-2a36-11e6-95fb-e06995684273",
+                "created_at": "2017-10-29 21:58:53",
+                "updated_at": "2017-10-29 21:58:53",
+                "pivot": {"group_article_id": "1257989", "feature_id": "50", "value": "OH"}
+            }, {
+                "id": 51,
+                "title": "Длина (мм)",
+                "measurement": "мм",
+                "description": "",
+                "is_filter": "1",
+                "value_type": "int",
+                "is_visible": "1",
+                "1C_key": "7124a74e-2a36-11e6-95fb-e06995684273",
+                "created_at": "2017-10-29 21:58:53",
+                "updated_at": "2017-10-29 21:58:53",
+                "pivot": {"group_article_id": "1257989", "feature_id": "51", "value": "195"}
+            }, {
+                "id": 57,
+                "title": "Тип крючка",
+                "measurement": "",
+                "description": "",
+                "is_filter": "1",
+                "value_type": "string",
+                "is_visible": "1",
+                "1C_key": "db30d563-2a36-11e6-95fb-e06995684273",
+                "created_at": "2017-10-29 21:58:53",
+                "updated_at": "2017-10-29 21:58:53",
+                "pivot": {"group_article_id": "1257989", "feature_id": "57", "value": "Тройник"}
+            }, {
+                "id": 60,
+                "title": "Код цвета",
+                "measurement": "",
+                "description": "",
+                "is_filter": "1",
+                "value_type": "string",
+                "is_visible": "1",
+                "1C_key": "50b9c2da-2a39-11e6-95fb-e06995684273",
+                "created_at": "2017-10-29 21:58:53",
+                "updated_at": "2017-10-29 21:58:53",
+                "pivot": {"group_article_id": "1257989", "feature_id": "60", "value": "A70-713"}
+            }, {
+                "id": 66,
+                "title": "По форме тела",
+                "measurement": "",
+                "description": "",
+                "is_filter": "1",
+                "value_type": "string",
+                "is_visible": "1",
+                "1C_key": "c5e5cca1-e02f-11e6-a6c0-e06995684273",
+                "created_at": "2017-10-29 21:58:54",
+                "updated_at": "2017-10-30 21:03:23",
+                "pivot": {"group_article_id": "1257989", "feature_id": "66", "value": "Джеркбейт"}
+            }]
     }, {
         "id": 1257991,
         "group_id": "1154",
