@@ -4,7 +4,7 @@ $(document).ready(function () {
     var readMoreBtn = null;
     var readMoreBtnWrapper = null;
     var currentLineHeight = parseInt($(readMoreWrapper).css('line-height'));
-    var currentHeight = parseInt($(readMoreWrapper).css('height'));
+    var currentHeight = parseInt($('.js-readmore .tile__text').css('height'));
 
     function initToggleDescription() {
 
@@ -27,9 +27,16 @@ $(document).ready(function () {
     }
 
     function superToggleDescription() {
+        console.log('superToggleDescription');
         var height = parseInt($(readMoreWrapper).css('width')) / 4;
         if (currentHeight > height) {
-            console.log('superToggleDescription');
+
+            if ($(document).width() >= 992) {
+                addReadmoreBtn('50%', superToggleDescriptionHandler, 'readmore_btn-wrap--white');
+            } else {
+                addReadmoreBtn('100%', superToggleDescriptionHandler, 'readmore_btn-wrap--white');
+            }
+
             if ($(document).width() >= 992) {
                 console.log(height);
                 $(readMoreBtnWrapper).css({width: '50%'});
@@ -101,25 +108,24 @@ $(document).ready(function () {
             addReadmoreBtn('100%', toggleDescriptionHandler, '');
             initToggleDescription();
         } else if ($(readMoreWrapper).children().length === 2) {
-            if ($(document).width() >= 992) {
-                addReadmoreBtn('50%', superToggleDescriptionHandler, 'readmore_btn-wrap--white');
-            } else {
-                addReadmoreBtn('100%', superToggleDescriptionHandler, 'readmore_btn-wrap--white');
-            }
+
             superToggleDescription();
             responsiveInit()
         }
     }
 
     function addReadmoreBtn(btnWidth, clickHandler, wrapperMode) {
+
         var btn = '<div style="width: ' + btnWidth + '" class="readmore_btn-wrap ' + wrapperMode + '">\n' +
             '              <btn class="readmore_btn js-readmore_btn item-more">Подробнее</btn>\n' +
             '            </div>';
 
-        $(readMoreWrapper).append(btn);
-        readMoreBtn = $('.js-readmore_btn');
-        readMoreBtnWrapper = $('.readmore_btn-wrap');
-        $(readMoreBtn).on('click', clickHandler);
+        if($(readMoreWrapper).find('.readmore_btn-wrap').length === 0){
+            $(readMoreWrapper).append(btn);
+            readMoreBtn = $('.js-readmore_btn');
+            readMoreBtnWrapper = $('.readmore_btn-wrap');
+            $(readMoreBtn).on('click', clickHandler);
+        }
     }
 
     function getMin(arr) {

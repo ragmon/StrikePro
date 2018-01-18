@@ -734,10 +734,10 @@ $(document).ready(
 
 
 
-
-        $(window).resize(function () {
-            addGradientBlock()
-        });
+        //
+        // $(window).resize(function () {
+        //     addGradientBlock()
+        // });
 
         $(".tile__wrapper--big").on("click", function (event) {
             event.preventDefault();
