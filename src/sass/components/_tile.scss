@@ -82,7 +82,10 @@
     position: relative;
     height: auto;
     display: block;
-    overflow: hidden;
+    float: left;
+    @media(min-width: 768px){
+      overflow: hidden;
+    }
     &:before{
       content: '';
       padding-top: 100%;
@@ -91,7 +94,7 @@
 
     @media(max-width: 560px) {
       width: 100% !important;
-      float: none !important;
+      //float: none !important;
     }
 
 

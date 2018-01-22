@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e3e2ae88-6440-4438-956d-16449aba9594" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/index.js" afterPath="$PROJECT_DIR$/public/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/index.js.map" afterPath="$PROJECT_DIR$/public/js/index.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/index.js" afterPath="$PROJECT_DIR$/src/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/readmore.js" afterPath="$PROJECT_DIR$/src/js/readmore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/styles.min.css" afterPath="$PROJECT_DIR$/public/css/styles.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sass/components/_tile.scss" afterPath="$PROJECT_DIR$/src/sass/components/_tile.scss" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,66 +15,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="gulpfileold.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gulpfileold.js">
+      <file leaf-file-name="_base.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sass/components/_base.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="1" column="40" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readmore.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/js/readmore.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="49" lean-forward="false" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+            <state relative-caret-position="2321">
+              <caret line="220" column="14" lean-forward="false" selection-start-line="220" selection-start-column="14" selection-end-line="220" selection-end-column="14" />
               <folding>
-                <element signature="e#2096#2948#0" expanded="false" />
-                <element signature="e#2980#3212#0" expanded="false" />
-                <element signature="e#3250#3976#0" expanded="false" />
-                <marker date="1515925175675" expanded="true" signature="4423:4430" ph="..." />
+                <element signature="e#3310#4741#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jade/product.jade">
+      <file leaf-file-name="_index.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sass/pages/index/_index.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jade/pages/product/product.jade">
+      <file leaf-file-name="_tile.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sass/components/_tile.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="39" lean-forward="false" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="product-description.jade" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/jade/pages/product-1/product-description.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="10" column="1998" lean-forward="false" selection-start-line="10" selection-start-column="1998" selection-end-line="10" selection-end-column="1998" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_readmore.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sass/pages/product/_readmore.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+            <state relative-caret-position="175">
+              <caret line="84" column="16" lean-forward="false" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -262,7 +227,6 @@
         <option value="$PROJECT_DIR$/public/product.html" />
         <option value="$PROJECT_DIR$/public/productList.html" />
         <option value="$PROJECT_DIR$/src/sass/partials/_header.scss" />
-        <option value="$PROJECT_DIR$/src/sass/components/_tile.scss" />
         <option value="$PROJECT_DIR$/src/sass/pages/product/_article-color-table.scss" />
         <option value="$PROJECT_DIR$/src/js/productSlider.js" />
         <option value="$PROJECT_DIR$/src/jade/pages/productList/productList.jade" />
@@ -273,6 +237,7 @@
         <option value="$PROJECT_DIR$/src/js/index.js" />
         <option value="$PROJECT_DIR$/src/js/readmore.js" />
         <option value="$PROJECT_DIR$/src/jade/pages/product-1/product-description.jade" />
+        <option value="$PROJECT_DIR$/src/sass/components/_tile.scss" />
       </list>
     </option>
   </component>
@@ -301,10 +266,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-19" />
+    <option name="y" value="-21" />
+    <option name="width" value="1364" />
+    <option name="height" value="726" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -321,7 +286,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -329,11 +294,44 @@
               <item name="catalog.frontend" type="b2602c69:ProjectViewProjectNode" />
               <item name="catalog.frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="catalog.frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="catalog.frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="catalog.frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="catalog.frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sass" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="catalog.frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="catalog.frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sass" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="components" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="catalog.frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="catalog.frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sass" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="catalog.frontend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="catalog.frontend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sass" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="pages" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="index" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -592,12 +590,15 @@
       <workItem from="1515828570548" duration="711000" />
       <workItem from="1515924355972" duration="1512000" />
       <workItem from="1515930943335" duration="158000" />
-      <workItem from="1516285191046" duration="661000" />
+      <workItem from="1516285191046" duration="779000" />
+      <workItem from="1516313858554" duration="7000" />
+      <workItem from="1516468081580" duration="300000" />
+      <workItem from="1516637283746" duration="1239000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="378022000" />
+    <option name="totallyTimeSpent" value="379686000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -610,9 +611,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18051359" sideWeight="0.25976562" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22390318" sideWeight="0.7402344" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21104388" sideWeight="0.7402344" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293944" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18494272" sideWeight="0.515885" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -820,21 +822,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/components/_base.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="221" column="18" lean-forward="true" selection-start-line="221" selection-start-column="18" selection-end-line="221" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/woocommerce-FlexSlider-0d95828/demo/thumbnail-slider.html" />
-    <entry file="file://$PROJECT_DIR$/src/sass/pages/index/_index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sass/style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -895,13 +883,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10047">
           <caret line="591" column="18" lean-forward="false" selection-start-line="591" selection-start-column="18" selection-end-line="591" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/components/_tile.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="23" column="15" lean-forward="false" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -973,14 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/pages/product/_readmore.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/readmore.js" />
     <entry file="file://$PROJECT_DIR$/src/jade/productList.jade">
       <provider selected="true" editor-type-id="text-editor">
@@ -1011,17 +984,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfileold.js">
+    <entry file="file://$PROJECT_DIR$/src/jade/pages/product-1/product-description.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="1" column="40" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="40" />
+        <state relative-caret-position="17">
+          <caret line="10" column="1998" lean-forward="false" selection-start-line="10" selection-start-column="1998" selection-end-line="10" selection-end-column="1998" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jade/pages/product/product.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
+        <state relative-caret-position="17">
           <caret line="32" column="39" lean-forward="false" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
           <folding />
         </state>
@@ -1029,8 +1002,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jade/product.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="202">
           <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/pages/product/_readmore.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1048,10 +1029,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/jade/pages/product-1/product-description.jade">
+    <entry file="file://$PROJECT_DIR$/gulpfileold.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="10" column="1998" lean-forward="false" selection-start-line="10" selection-start-column="1998" selection-end-line="10" selection-end-column="1998" />
+        <state relative-caret-position="102">
+          <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/components/_base.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2321">
+          <caret line="220" column="14" lean-forward="false" selection-start-line="220" selection-start-column="14" selection-end-line="220" selection-end-column="14" />
+          <folding>
+            <element signature="e#3310#4741#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/pages/index/_index.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/components/_tile.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="84" column="16" lean-forward="false" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
           <folding />
         </state>
       </provider>
