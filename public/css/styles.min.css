@@ -569,14 +569,17 @@ img {
       opacity: 0.8;
       transition: all .125s; }
       .tile-video_control-icon:before {
+        transition: all .225s;
         font-size: 4rem;
         color: #fff; }
     .tile-video_control-text {
       color: #fff; }
   .tile-video:hover .tile-video_control-icon {
     opacity: 1; }
+    .tile-video:hover .tile-video_control-icon:before {
+      color: #ff0000; }
   .tile-video:hover .tile-video_control-text {
-    color: #fff; }
+    color: #ffffff; }
   .tile-video:after {
     content: '';
     display: block;

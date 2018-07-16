@@ -258,6 +258,7 @@ $tile_padding: 0.7rem;
       opacity: 0.8;
       transition: all .125s;
       &:before {
+        transition: all .225s;
         font-size: 4rem;
         color: #fff;
       }
@@ -269,9 +270,12 @@ $tile_padding: 0.7rem;
   &:hover {
     #{$this}_control-icon {
       opacity: 1;
+      &:before {
+        color: #ff0000;
+      }
     }
     #{$this}_control-text {
-      color: #fff;
+      color: #ffffff;
     }
   }
   @include tileBackDrop($this);
