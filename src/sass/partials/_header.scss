@@ -305,7 +305,7 @@
       @media(min-width: 1024px) {
         position: absolute;
         top: 45px;
-        padding: 15px 30px 15px 20px;
+        padding: 15px 20px;
         min-width: 220px;
         box-shadow: 0 5px 5px -3px rgba(0,0,0,0.5);
       }
@@ -374,8 +374,8 @@
     top: 70px !important;
     overflow: auto;
     @media(min-width: 1024px) {
-      height: calc(80vh - 70px);
-      min-width: calc(960px - 10%)!important;
+      max-height: calc(80vh - 70px);
+      //min-width: calc(960px - 10%)!important;
       width: 80% !important;
       margin: 0 auto;
       box-shadow: 0 5px 5px -3px rgba(0,0,0,0.5);
@@ -388,26 +388,20 @@
     }
   }
   &__container {
+    padding: 0 !important;
     .title__xs {
       margin-bottom: 20px;
     }
     @media(min-width: 1024px) {
       column-count: 3;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      height: 100vw;
+      column-gap: 32px;
     }
-    @media(min-width: 1170px) {
-      column-count: 4;
-    }
+    //@media(min-width: 1170px) {
+    //  column-count: 4;
+    //}
     @media(min-width: 1440px) {
       column-count: 5;
     }
-    @media(min-width: 1920px) {
-      column-count: 6;
-    }
-
   }
   &__col {
     margin-bottom: 20px;
@@ -415,7 +409,7 @@
       width: 100%;
       ul {
         display: none;
-        overflow: hidden;
+        //overflow: hidden;
       }
       .custom-menu__toggle.active {
         & + ul {
@@ -423,43 +417,50 @@
         }
       }
     }
-    @media(min-width: 1024px) {
-      width: 33.3333333%;
-      margin-bottom: 2rem;
-      display: inline-block;
-
-      a {
-        display: block;
-        padding-left: 5px;
-        margin-bottom: 10px;
-        font-size: 14px;
-        line-height: 24px;
-        border-left: 2px solid rgba(61, 61, 61, 0.1);
-        &:hover {
-          border-color: rgba(115, 175, 25, 0.5);
-        }
+    a {
+      display: block;
+      padding-left: 5px;
+      margin-bottom: 10px;
+      font-size: 14px;
+      line-height: 24px;
+      border-left: 2px solid rgba(61, 61, 61, 0.1);
+      &:hover {
+        border-color: rgba(115, 175, 25, 0.5);
       }
+    }
+    @media(min-width: 1024px) {
+      //width: 33.3333333%;
+      margin-bottom: 2rem;
+      //display: inline-block;
+      break-inside: avoid;
+
 
     }
-    @media(min-width: 1170px) {
-      width: 25%;
-    }
-    @media(min-width: 1440px) {
-      width: 20%;
-    }
-    @media(min-width: 1920px) {
-      width: 16.666666666666668%;
-    }
+    //@media(min-width: 1170px) {
+    //  width: 25%;
+    //}
+    //@media(min-width: 1440px) {
+    //  width: 20%;
+    //}
+    //@media(min-width: 1920px) {
+    //  width: 16.666666666666668%;
+    //}
   }
+
+  &__toggle {
+    cursor: pointer;
+  }
+
 }
 
 .item-more {
+
   position: sticky;
   border: none !important;
   text-align: center;
   margin-left: 5px;
   cursor: pointer;
-  @extend .btnMain;
+  @extend .button-base;
 
   &:hover {
     border-color: transparent;
@@ -543,7 +544,7 @@
           line-height: 2.632rem;
           width: 70%;
         }
-        .btnMain {
+        .button-base {
           margin-top: 10px;
           @media(min-width: 1024px) {
             font-size: 1.316rem;

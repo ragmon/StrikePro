@@ -1,3 +1,9 @@
+include ../../uikit/tile/tile-product
+include ../../uikit/tile/tile-news
+include ../../uikit/tile/tile-social
+include ../../uikit/tile/tile-gallery
+include ../../uikit/tile/tile-video
+include ../../uikit/tile/tile-blog
 main.page__productList
     .header-page__wrap
         ol.breadcrumb
@@ -59,92 +65,122 @@ main.page__productList
                             span ❮
                         button(type="reset", class="productList__filtrBlock--reset") сбросить фильтр
     .container-fluid
-        ul.row
-            li.tile__wrapper.col-4_8.col-md-6
-                a(href="#!").tile.product.product__new.bgElem
-                    img(src="/image/productImg-4.png", alt="")
-                    .product__footer
-                        .product__text Challenger X Deep Diver
-                                                        
-                    .product__marker
-            li.tile__wrapper.col-2_4.col-md-3.col-sm-4
-                .tile.product.product__new
-                    img(src="/image/productImg-1.png", alt="")
-                    // этот блок с названием товара и его вариациями
-                    .product__footer
-                        .product__text Challenger X Deep Diver
-                    .product__marker
-                ul.tile__product-group-list
-                    - var n = 0;
-                        while n < 10
-                            li.tile__product-group-item
-                                a.tile__product-group-link Challenger X Deep Diver
-                            - n++
+        .row
+            .tile.tile--double(class=' col-4_8 col-lg-3 col-md-4 col-sm-6 ' data-tileid='2')
+                .tile_content
+                    a.tile-product(title="Jer-O Minnow")
+                        span.tile-product_marker
+                        .tile-product_image-wrapper
+                            img.tile-product_image(src="http://cdn.strikepro.ru/article/0000750_0_headimage_thumbnail.png")
+                        .tile-product_title
+                            | Jer-O Minnow
+                    ul.tile-product_group_list
+                        li.tile-product_group_item
+                            a.tile-product_group_link
+                                |Flex Phantom 90
+                        li.tile-product_group_item
+                            a.tile-product_group_link
+                                |Flex Phantom 90
+                        li.tile-product_group_item
+                            a.tile-product_group_link
+                                |Flex Phantom 90
+                        li.tile-product_group_item
+                            a.tile-product_group_link
+                                |Flex Phantom 90
 
-            li.tile__wrapper.col-2_4.col-md-3.col-sm-4
-                a(href="#!").tile.product
-                    img(src="http://lorempixel.com/640/640/", alt="")
-                    .product__text Challenger X Deep Diver
-                    .product__marker
-            li.tile__wrapper.col-2_4.col-md-3.col-sm-4
-                a(href="#!").tile.product
-                    img(src="http://lorempixel.com/640/640/", alt="")
-                    .product__text Challenger X Deep Diver
-                    .product__marker
-            li.tile__wrapper.col-2_4.col-md-3.col-sm-4
-                a(href="#!").tile.product.bgElem
-                    img(src="http://lorempixel.com/640/640/", alt="")
-                    .product__text Challenger X Deep Diver
-                    .product__marker
-            li.tile__wrapper.col-2_4.col-md-3.col-sm-4
-                a(href="#!").tile.product.product__new
-                    img(src="http://lorempixel.com/640/640/", alt="")
-                    .product__footer
-                        .product__text Challenger X Deep Diver
-                        // тут хранятся вариации
-                        .productVariation__wrap
-                            ul.productVariation__list
-                                li
-                                    .btnMain x23
-                                li
-                                    .btnMain x23
-                                li
-                                    .btnMain x23                                
-                    .product__marker
-            li.tile__wrapper.col-2_4.col-md-3.col-sm-4
-                a(href="#!").tile.product
-                    img(src="http://lorempixel.com/640/640/", alt="")
-                    .product__footer
-                        .product__text Challenger X Deep Diver
-                        // тут хранятся вариации
-                        .productVariation__wrap
-                            ul.productVariation__list
-                                li
-                                    .btnMain x23
-                                li
-                                    .btnMain x23
-                                li
-                                    .btnMain x23 
-                                li
-                                    .btnMain x23
-                    .product__marker
-            li.tile__wrapper.col-2_4.col-md-3.col-sm-4
-                a(href="#!").tile.product
-                    img(src="http://lorempixel.com/640/640/", alt="")
-                    .product__text Challenger X Deep Diver
-                    .product__marker
-            li.tile__wrapper.col-2_4.col-md-3.col-sm-4
-                a(href="#!").tile.product.bgElem
-                    img(src="http://lorempixel.com/640/640/", alt="")
-                    .product__text Challenger X Deep Diver
-                    .product__marker
-            li.tile__wrapper.col-2_4.col-md-3.col-sm-4
-                a(href="#!").tile.product
-                    img(src="/image/productImg-1.png", alt="")
-                    .product__text Challenger X Deep Diver
-                    .product__marker
-            li.tile__wrapper.col-2_4.col-md-3.col-sm-4
-                a(href="#!").tile.product
-                    img(src="/image/productImg-3.png", alt="")
-                    .product__text Challenger X Deep Diver
-                    .product__marker
+            +tileProduct('col-2_4 col-lg-3 col-md-4 col-sm-6 ', 1)
+            +tileProduct('col-2_4 col-lg-3 col-md-4 col-sm-6 ', 1)
+            +tileProduct('col-2_4 col-lg-3 col-md-4 col-sm-6 ', 1)
+            +tileProduct('col-2_4 col-lg-3 col-md-4 col-sm-6 ', 1)
+            +tileProduct('col-2_4 col-lg-3 col-md-4 col-sm-6 ', 1)
+            +tileProduct('col-2_4 col-lg-3 col-md-4 col-sm-6 ', 1)
+            +tileProduct('col-2_4 col-lg-3 col-md-4 col-sm-6 ', 1)
+            +tileProduct('col-2_4 col-lg-3 col-md-4 col-sm-6 ', 1)
+            +tileProduct('col-2_4 col-lg-3 col-md-4 col-sm-6 ', 1)
+            +tileProduct('col-2_4 col-lg-3 col-md-4 col-sm-6 ', 1)
+            +tileProduct('col-2_4 col-lg-3 col-md-4 col-sm-6 ', 1)
+            +tileProduct('col-2_4 col-lg-3 col-md-4 col-sm-6 ', 1)
+            +tileProduct('col-2_4 col-lg-3 col-md-4 col-sm-6 ', 1)
+
+            //
+            //li.tile__wrapper.col-2_4.col-md-3.col-sm-4
+            //    .tile.product.product__new
+            //        img(src="/image/productImg-1.png", alt="")
+            //        // этот блок с названием товара и его вариациями
+            //        .product__footer
+            //            .product__text Challenger X Deep Diver
+            //        .product__marker
+            //    ul.tile__product-group-list
+            //        - var n = 0;
+            //            while n < 10
+            //                li.tile__product-group-item
+            //                    a.tile__product-group-link Challenger X Deep Diver
+            //                - n++
+            //
+            //li.tile__wrapper.col-2_4.col-md-3.col-sm-4
+            //    a(href="#!").tile.product
+            //        img(src="http://lorempixel.com/640/640/", alt="")
+            //        .product__text Challenger X Deep Diver
+            //        .product__marker
+            //li.tile__wrapper.col-2_4.col-md-3.col-sm-4
+            //    a(href="#!").tile.product
+            //        img(src="http://lorempixel.com/640/640/", alt="")
+            //        .product__text Challenger X Deep Diver
+            //        .product__marker
+            //li.tile__wrapper.col-2_4.col-md-3.col-sm-4
+            //    a(href="#!").tile.product.bgElem
+            //        img(src="http://lorempixel.com/640/640/", alt="")
+            //        .product__text Challenger X Deep Diver
+            //        .product__marker
+            //li.tile__wrapper.col-2_4.col-md-3.col-sm-4
+            //    a(href="#!").tile.product.product__new
+            //        img(src="http://lorempixel.com/640/640/", alt="")
+            //        .product__footer
+            //            .product__text Challenger X Deep Diver
+            //            // тут хранятся вариации
+            //            .productVariation__wrap
+            //                ul.productVariation__list
+            //                    li
+            //                        .button-base x23
+            //                    li
+            //                        .button-base x23
+            //                    li
+            //                        .button-base x23
+            //        .product__marker
+            //li.tile__wrapper.col-2_4.col-md-3.col-sm-4
+            //    a(href="#!").tile.product
+            //        img(src="http://lorempixel.com/640/640/", alt="")
+            //        .product__footer
+            //            .product__text Challenger X Deep Diver
+            //            // тут хранятся вариации
+            //            .productVariation__wrap
+            //                ul.productVariation__list
+            //                    li
+            //                        .button-base x23
+            //                    li
+            //                        .button-base x23
+            //                    li
+            //                        .button-base x23
+            //                    li
+            //                        .button-base x23
+            //        .product__marker
+            //li.tile__wrapper.col-2_4.col-md-3.col-sm-4
+            //    a(href="#!").tile.product
+            //        img(src="http://lorempixel.com/640/640/", alt="")
+            //        .product__text Challenger X Deep Diver
+            //        .product__marker
+            //li.tile__wrapper.col-2_4.col-md-3.col-sm-4
+            //    a(href="#!").tile.product.bgElem
+            //        img(src="http://lorempixel.com/640/640/", alt="")
+            //        .product__text Challenger X Deep Diver
+            //        .product__marker
+            //li.tile__wrapper.col-2_4.col-md-3.col-sm-4
+            //    a(href="#!").tile.product
+            //        img(src="/image/productImg-1.png", alt="")
+            //        .product__text Challenger X Deep Diver
+            //        .product__marker
+            //li.tile__wrapper.col-2_4.col-md-3.col-sm-4
+            //    a(href="#!").tile.product
+            //        img(src="/image/productImg-3.png", alt="")
+            //        .product__text Challenger X Deep Diver
+            //        .product__marker

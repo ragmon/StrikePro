@@ -1,0 +1,72 @@
+footer.footer
+    .container-fluid
+        .row.footer__top
+            .col-lg-9.col-md-8.col-sm-6.col-sm-push-6
+                .footer__col
+                    .footer__colTitle о компании
+                    ul.footer__menuList
+                        li.footer__menuItem
+                            a(href="#!").footer__menuLink История бренда
+                        li.footer__menuItem
+                            a(href="#!").footer__menuLink Дружба с магазинами
+                        li.footer__menuItem
+                            a(href="#!").footer__menuLink Галерея
+                        li.footer__menuItem
+                            a(href="#!").footer__menuLink Партнеры
+                .footer__col
+                    .footer__colTitle каталог продукции
+                    ul.footer__menuList
+                        li.footer__menuItem
+                            a(href="#!").footer__menuLink Балансиры STRIKE PRO
+                        li.footer__menuItem
+                            a(href="#!").footer__menuLink Блесны STRIKE PRO
+                        li.footer__menuItem
+                            a(href="#!").footer__menuLink Воблеры SKAGIT DESIGNS
+                        li.footer__menuItem
+                            a(href="#!").footer__menuLink Воблеры STRIKE PRO
+                        li.footer__menuItem
+                            a(href="#!").footer__menuLink Где купить?
+                .footer__col
+                    .footer__colTitle Медиа
+                    ul.footer__menuList
+                        li.footer__menuItem
+                            a(href="#!").footer__menuLink Блог
+                        li.footer__menuItem
+                            a(href="#!").footer__menuLink СМИ о нас
+                        li.footer__menuItem
+                            a(href="#!").footer__menuLink Выставки и соревнования
+            .col-lg-3.col-md-4.col-sm-6.col-sm-pull-6
+                .footer__colTitle стань подписчиком      
+                form.form-inline.subscription-form
+                    div.form-group.form-group-noWrap
+                        input(type="email" class="form-control" name="email" placeholder="Адрес электронной почты")
+                        button.button-base( type="submit") да
+                    .popUP__wrapper.js__popup
+                        .Modal__wrapper.js__noPropagation
+                            button.close__popup.js__closePopup ×
+                            .Modal
+                                .Modal__title Спасибо!
+                                p.Modal__text На Ваш электронный адрес отправлена ссылка, с помощью которой Вы сможете подтвердить Вашу заявку.
+                                button.button-base.js__closePopup Закрыть
+                    .popUP__wrapper.js__popup--error
+                        .Modal__wrapper.js__noPropagation
+                            button.close__popup.js__closePopup ×
+                            .Modal
+                                .Modal__title Ошибка!
+                                p.Modal__text Ошибка при отправке запроса. Попробуйте повторить запрос позже.
+                                button.button-base.js__closePopup Закрыть
+                ul.footer__socialList
+                    li.footer__socialItem
+                        a(href="#!").footer__socialLink.icon-facebook Facebook
+                    li.footer__socialItem
+                        a(href="#!").footer__socialLink.icon-rocket Дружба с магазинами 
+                    li.footer__socialItem
+                        a(href="#!").footer__socialLink.icon-youtube-play youtube
+                    li.footer__socialItem
+                        a(href="#!").footer__socialLink.icon-vk vk
+                    li.footer__socialItem
+                        a(href="#!").footer__socialLink.icon-instagram instagram
+        .row.footer__bottom
+            .col-xs-12
+                p.copyright
+                    | STRIKE PRO Россия, Все права защищены

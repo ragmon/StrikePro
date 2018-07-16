@@ -4,7 +4,7 @@
     background-color: $color2;
     color: #fff;
     @media(min-width: 768px) {
-        padding: 30px 10%;
+        padding: 30px 5%;
         margin-top: -289px;
     }
     @media(min-width: 1400px) {
@@ -20,7 +20,34 @@
     }
     &__top {
         padding-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @media(min-width: 1024px) {
+            flex-wrap: nowrap;
+        }
     }
+
+    &__col{
+        order: 2;
+        margin-bottom: 30px;
+        width: 100%;
+        @media(min-width: 768px) {
+            width: 50%;
+
+        }
+        @media(min-width: 1024px) {
+            width: 25%;
+            margin-bottom: 0;
+        }
+        &:last-child{
+            order: 1;
+            @media(min-width: 1024px) {
+                order: 2;
+            }
+        }
+    }
+
     input {
         border-radius: 0;
         border: 1px solid #989898;
@@ -37,7 +64,7 @@
     }
     .form-group-noWrap {
         white-space: nowrap;
-        .btnMain {
+        .button-base {
             left: -11px;
             &:active {
                 top: 0;
@@ -120,45 +147,47 @@
     }
 }
 
-.footer__col{
-    float: left;
-    display: none!important;
-    &:last-child{
-        display: none!important;
-    }
-    &:first-child{
-        display: none!important;
-    }
-    @media(min-width: 768px){
-        &:first-child + *{
-            width: 100%;
-            display: block!important;
-        }
-    }
-    @media(min-width: 992px){
 
-        &:first-child{
-            width: 45%;
-            display: block!important;
-        }
-        &:first-child + *{
-            width: 55%;
-            display: block!important;
-        }
-    }
-    @media(min-width: 1200px){
-        width: 33%;
-        &:last-child{
-            display: block!important;
-        }
-        &:first-child{
-            width: 33%;
-            display: block!important;
-        }
-        &:first-child + *{
-            width: 33%;
-            display: block!important;
-        }
-    }
 
-}
+//.footer__col{
+//    float: left;
+//    display: none!important;
+//    &:last-child{
+//        display: none!important;
+//    }
+//    &:first-child{
+//        display: none!important;
+//    }
+//    @media(min-width: 768px){
+//        &:first-child + *{
+//            width: 100%;
+//            display: block!important;
+//        }
+//    }
+//    @media(min-width: 992px){
+//
+//        &:first-child{
+//            width: 45%;
+//            display: block!important;
+//        }
+//        &:first-child + *{
+//            width: 55%;
+//            display: block!important;
+//        }
+//    }
+//    @media(min-width: 1200px){
+//        width: 33%;
+//        &:last-child{
+//            display: block!important;
+//        }
+//        &:first-child{
+//            width: 33%;
+//            display: block!important;
+//        }
+//        &:first-child + *{
+//            width: 33%;
+//            display: block!important;
+//        }
+//    }
+//
+//}

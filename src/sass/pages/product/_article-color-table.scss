@@ -23,6 +23,7 @@
     width: 100%;
     padding-left: 20px;
     padding-right: 20px;
+    border: 2px solid transparent;
     @media(min-width: 425px) {
       width: 50%;
     }
@@ -31,6 +32,9 @@
     }
     @media(min-width: 1024px) {
       width: 16.6666667%;
+    }
+    &:hover {
+      border-color: #73af19;
     }
   }
 

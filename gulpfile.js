@@ -11,7 +11,7 @@ var gulp = require('gulp'),
     cssnano = require('gulp-cssnano'),
     concat = require('gulp-concat'),
     newer = require('gulp-newer');
-
+//npm install -D gulp-sourcemaps gulp-sass gulp-jade del gulp-plumber gulp-debug gulp-notify gulp-rename gulp-cssnano gulp-concat gulp-newer browser-sync
 var browserSync = require('browser-sync');
 var reload      = browserSync.reload;
 

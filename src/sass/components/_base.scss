@@ -48,10 +48,28 @@ body {
   &.nav__active {
     left: -270px;
     overflow: hidden;
-    &:after {
-      z-index: 1000;
-      background-color: rgba(0, 0, 0, 0.4);
-    }
+    //&:after {
+    //  z-index: 1000;
+    //  background-color: rgba(0, 0, 0, 0.4);
+    //}
+  }
+}
+
+.nav-backdrop {
+  position: fixed;
+  //display: none;
+  width: 100vw;
+  height:100vh;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0);
+  left: 0;
+  top: 0;
+  transition: all .2s ease-in-out;
+  &.active{
+    display: block;
+    left: -270px;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
   }
 }
 
@@ -60,6 +78,7 @@ a {
   color: $color3;
   &:hover {
     text-decoration: none !important;
+    color: $color3;
   }
 }
 
@@ -181,7 +200,7 @@ img {
   }
 }
 
-.btnMain {
+.button-base {
   line-height: 43px;
   text-transform: uppercase;
   font-size: 18px;

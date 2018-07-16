@@ -27,9 +27,12 @@
     &__desc {
 
       .tile__wrapper {
+        float: none;
         margin-bottom: 30px;
         @media(min-width: 992px) {
+          width: calc(50% - 60px);
           margin-right: 60px;
+          float: left;
         }
       }
       .tile__text {
@@ -132,7 +135,7 @@
     //    width: 25%;
     //    right: 50%;
     //  }
-    //  .btnMain {
+    //  .button-base {
     //    display: block;
     //    font-size: 1.316rem;
     //    font-family: "OpenSans-Italic";
@@ -166,7 +169,7 @@
         transform: translate(0%, -50%);
         width: 93px;
       }
-      .btnMain {
+      .button-base {
         margin-top: 10px;
         margin-right: auto;
         margin-left: auto;
