@@ -7,18 +7,43 @@ $(".movwDown").on("click", function (event) {
 
 $(function () {
     var defaultImage = 'http://cdn.strikepro.ru/default_group.png';
+    var Body = $("body");
+    var characteristicsList = $('.characteristics__list');
+    var GalleryWrap = $('.colorTable__gallery--wrapper');
+    var gallerySliderWrap = $('.colorTable__gallery--slider');
+    var galleryPhotoList = $('.variation__list');
+    var GalleryMainPhoto = $('.colorTable__gallery--img');
 
     var colorTable = $('.colorTable');
     var colorTableItem = [];
-
+    var sliderItem = [];
+    var currentPhoto = [];
     var GlideSlides = $('.glide__slides');
     var GlideSlidesList = [];
 
+    var IndexCurrentSlide = 0;
+    var $panzoom;
     var GlideSlider = new Glide('.glide', {
-        startAt: 0,
+        startAt: IndexCurrentSlide,
         perView: 6,
-        type: 'carousel'
+        type: 'slider',
+        breakpoints: {
+            1920: {
+                perView: 6
+            },
+            1600: {
+                perView: 5
+            },
+            1024: {
+                perView: 4
+            },
+            768: {
+                perView: 3
+            },
+        }
     });
+
+    var GlideInit = false;
 
 
     /** @desc рендер списка вариантов артикла, принимает на вход массив */
@@ -50,6 +75,63 @@ $(function () {
             '</div>')
     }
 
+    /** @desc рендер списка характеристик, принимает на вход массив */
+    function descriptionRender(array) {
+        var features = [];
+        $(characteristicsList).empty();
+        for (var i = 0; i < array.length; i++) {
+            if (parseInt(array[i].is_visible) === 1) {
+                var feature = '<li class="characteristics__item">' +
+                    '<span class="characteristics__title">' + array[i].title + '</span>' +
+                    '<span class="characteristics__desc">' + array[i].pivot.value + '</span>' +
+                    '</li>';
+                features.push(feature);
+            }
+        }
+        $(characteristicsList).append(features);
+    }
+
+    /** @desc инициализация списка харктеристик по id артикла */
+    function initDescription(id) {
+        for (var i = 0; i < articles.length; i++) {
+            if (articles[i].id === parseInt(id)) {
+                console.log(id);
+                console.log(articles[i].features);
+                descriptionRender(articles[i].features);
+            }
+        }
+    }
+
+    /** @desc рендер списка артиклей в слайдере */
+    function sliderItemRender(image, id, data, index) {
+        console.log(index);
+        var title = '';
+        var ultraviolet = false;
+        var luminous = false;
+        for (var i = 0; i < data.features.length; i++) {
+            if (data.features[i].title === 'Код цвета') {
+                title = data.features[i].pivot.value
+            }
+            if (data.features[i].title === "Светящийся") {
+                console.log("Светящийся", data.features[i].pivot.value === 'Да');
+                luminous = data.features[i].pivot.value === 'Да';
+            }
+            if (data.features[i].title === "Ультрафиолет") {
+                ultraviolet = data.features[i].pivot.value === 'Да';
+            }
+        }
+        return (
+            '<li data-key="'+index+'" class="slider__item glide__slide" id="' + id + '"> ' +
+            '<a href="#!"  class="slider__link" >' +
+            '<img src="' + image + '" />' +
+            (ultraviolet ? '<div class="colorTable__marker colorTable__marker--ultraviolet"></div>' : '') +
+            (luminous ? '<div class="colorTable__marker colorTable__marker--luminous"></div>' : '') +
+            '</a>' +
+            '<span class="slider__item-title">' + title + '</span> ' +
+            '</li>'
+        )
+    }
+
     function CreateArticlesTable() {
         try {
             var windowSize = window.innerWidth;
@@ -65,9 +147,7 @@ $(function () {
             }
             $(colorTable).append(colorTableItem);
 
-            $('.colorTable .colorTable__item').on('click', function () {
-                GlideSlider.go('=' + $('.colorTable__item').index(this))
-            });
+            $('.colorTable .colorTable__item').on('click', initGallery);
 
             console.log(colorTableItem);
         } catch (err) {
@@ -75,37 +155,217 @@ $(function () {
         }
     }
 
+
+    /** @desc смена главного изображения по id артикла */
+    function initGalleryMainPhoto(id) {
+        var ultraviolet = false;
+        var luminous = false;
+        for (var i = 0; i < articles.length; i++) {
+            if (articles[i].id === parseInt(id)) {
+                for (var a = 0; a < articles[i].features.length; a++) {
+                    if (articles[i].features[a].title === "Светящийся") {
+                        console.log("Светящийся", articles[i].features[a].pivot.value === 'Да');
+                        luminous = articles[i].features[a].pivot.value === 'Да';
+                    }
+                    if (articles[i].features[a].title === "Ультрафиолет") {
+                        ultraviolet = articles[i].features[a].pivot.value === 'Да';
+                    }
+                }
+                $(GalleryMainPhoto).empty();
+                console.log('articles[i]: ', articles[i]);
+                if (articles[i].logo) {
+
+                    $(GalleryMainPhoto).append('<img src="' + articles[i].logo.original_url + '" alt="">');
+
+                } else {
+                    $(GalleryMainPhoto).append('<img src="' + defaultImage + '" alt="">');
+
+                }
+
+                if (luminous) {
+                    $(GalleryMainPhoto).append('<div class="colorTable__gallery__marker colorTable__gallery__marker--luminous"></div>');
+                }
+                if (ultraviolet) {
+                    $(GalleryMainPhoto).append('<div class="colorTable__gallery__marker colorTable__gallery__marker--ultraviolet"></div>');
+                }
+            }
+        }
+    }
+
+    /** @desc рендер списка вариантов артикла, принимает на вход массив */
+    function gelleryPhotoRender(Array) {
+        var photos = [];
+        var array = Array;
+
+        if (array === undefined) {
+            // initGalleryMainPhoto(array[i].id);
+            return null;
+        }
+        if (array.length > 1) {
+            for (var i = 0; i < array.length; i++) {
+                var photo = '<li class="variation__item">' +
+                    '<img id="' + array[i].id + '" src="' + array[i].thumb_url + '" alt="">' +
+                    '</li>';
+                photos.push(photo);
+                // if (i === 0) {
+                //     initGalleryMainPhoto(array[i].id);
+                // }
+            }
+            $(galleryPhotoList).append(photos);
+            $('.colorTable__gallery--variation').addClass('active');
+
+            $('.variation__item img').on('click', function () {
+                initGalleryMainPhoto($(this).attr('id'));
+
+                $(GalleryMainPhoto).css({
+                    'transform': 'none'
+                })
+                // for (var i = 0; i < array.length; i++) {
+                //     if (array[i].id === parseInt($(this).attr('id'))) {
+                //         console.log('--',array)
+                //         $(galleryMainPhoto).empty();
+                //
+                //         $(galleryMainPhoto).attr('src', array[i].original_url);
+                //
+                //     }
+                // }
+
+
+            })
+        } else {
+            return null;
+        }
+    }
+
+    /** @desc смена главного изображения по id артикла*/
+    function initPhotos(id) {
+        $(galleryPhotoList).empty();
+        for (var i = 0; i < articles.length; i++) {
+            if (articles[i].id === parseInt(id)) {
+                initGalleryMainPhoto(articles[i].id);
+                console.log(articles[i]);
+                gelleryPhotoRender(articles[i].head_images);
+            }
+        }
+    }
+
+    function initGallery() {
+        var windowSize = window.innerWidth;
+        if (windowSize >= 768) {
+            $(GalleryWrap).show();
+            $(Body).css({
+                "overflow": "hidden"
+            });
+
+
+
+            if (!GlideInit) {
+
+                GlideSlider.mount();
+                GlideInit = true;
+
+                GlideSlider.on('run', function(event) {
+                    console.log('run: ',event);
+                    switch(event.direction){
+                        case('>'):{
+                            if(IndexCurrentSlide === $('.glide__slides')["0"].children.length - 1){
+                                IndexCurrentSlide = 0;
+                            } else {
+                                IndexCurrentSlide += 1;
+                            }
+                            onActivePhoto($($('.glide__slides')["0"].children[IndexCurrentSlide]).attr('id'));
+                            break
+                        }
+                        case('<'):{
+                            if(IndexCurrentSlide === 0){
+                                IndexCurrentSlide = $('.glide__slides')["0"].children.length - 1;
+                            } else {
+                                IndexCurrentSlide -= 1;
+                            }
+                            onActivePhoto($($('.glide__slides')["0"].children[IndexCurrentSlide]).attr('id'));
+
+                            break
+                        }
+                    }
+                })
+
+                $(".slider__item").on('click', function () {
+                    IndexCurrentSlide = $('.slider__item').index(this);
+                    GlideSlider.go('=' + IndexCurrentSlide);
+                    onActivePhoto($(this).attr('id'));
+                });
+
+            }
+            IndexCurrentSlide = $('.colorTable__item').index(this);
+            GlideSlider.go('=' + IndexCurrentSlide);
+
+
+
+            return initSlider(this);
+        }
+        return false;
+    }
+
+    /** @desc инициализация слайдера */
+    function initSlider(event) {
+        sliderItem = [];
+        console.log($(event));
+        initDescription($(event).attr('id'));
+        initPhotos($(event).attr('id'));
+        PanZoomInit();
+    }
+    /** @desc активация элемента списка по id артикла */
+    function onActivePhoto(id) {
+        initDescription(id);
+        initPhotos(id);
+
+        $(GalleryMainPhoto).css({
+            'transform': 'none'
+        });
+        PanZoomInit();
+    }
+
     function CreateSliderItems() {
         try {
             var windowSize = window.innerWidth;
-            $(GlideSlides).empty();
+            if (windowSize >= 768) {
+                $(GlideSlides).empty();
 
-            // .glide__slide
-            for (var i = 0; i < articles.length; i++) {
-                if (articles[i].logo) {
-                    GlideSlidesList.push(colorTableItemRender(articles[i].id, articles[i].logo.thumb_url ? articles[i].logo.thumb_url : defaultImage, articles[i], 'glide__slide'));
-                } else {
-                    GlideSlidesList.push(colorTableItemRender(articles[i].id, defaultImage, articles[i], 'glide__slide'));
+                for (var i = 0; i < articles.length; i++) {
+                    if (articles[i].logo) {
+                        GlideSlidesList.push(sliderItemRender(articles[i].logo.thumb_url, articles[i].id, articles[i],i))
+                    } else {
+                        GlideSlidesList.push(sliderItemRender(defaultImage, articles[i].id, articles[i],i))
+                    }
                 }
-            }
-            $(GlideSlides).append(GlideSlidesList);
-            GlideSlider.mount();
+                $(GlideSlides).append(GlideSlidesList);
 
+            }
         } catch (err) {
             throw new Error(err);
         }
 
     }
 
-    $('#glide__unmount').on('click', function () {
-        GlideSlider.destroy();
-    })
+    function PanZoomInit(){
+        $panzoom = $(GalleryMainPhoto).find('img').panzoom();
+        $panzoom.parent().on('mousewheel.focal', function (e) {
+            e.preventDefault();
+            var delta = e.delta || e.originalEvent.wheelDelta;
+            var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+            $panzoom.panzoom('zoom', zoomOut, {
+                increment: 0.1,
+                animate: false,
+                focal: e,
+                minScale: 1
+            });
+        });
+    }
+
 
     CreateArticlesTable();
 
     CreateSliderItems();
-    // GlideSlider.mount();
-
 
 });
 

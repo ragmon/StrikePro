@@ -16,15 +16,15 @@ br
 
 btn#glide__unmount
     | unmount glideslider
-.glide(style="width: auto")
-    .glide__track(data-glide-el="track")
-        ul.glide__slides
-
-    .glide__arrows(data-glide-el="controls[nav]")
-        btn.glide__arrow.glide__arrow--left(data-glide-dir="<")
-            | prev
-        btn.glide__arrow.glide__arrow--right(data-glide-dir=">")
-            | next
+//.glide(style="width: auto")
+//    .glide__track(data-glide-el="track")
+//        ul.glide__slides
+//
+//    .glide__arrows(data-glide-el="controls[nav]")
+//        btn.glide__arrow.glide__arrow--left(data-glide-dir="<")
+//            | prev
+//        btn.glide__arrow.glide__arrow--right(data-glide-dir=">")
+//            | next
 
 .colorTable__gallery--wrapper.js__popup
     .colorTable__gallery--popup.js__noPropagation
@@ -33,33 +33,25 @@ btn#glide__unmount
             .colorTable__gallery--content
                 .colorTable__gallery--characteristics
                     ul.characteristics__list
-                        li.characteristics__item
-                            span.characteristics__title Модель:
-                            span.characteristics__desc Aquamax Shad 50
+
                 .colorTable__gallery--img
                     img(src="", alt="")
                 .colorTable__gallery--title
             .colorTable__gallery--variation
                 ul.variation__list
-                    li.variation__item
-                        img(src="", alt="" )
-                    li.variation__item
-                        img(src="", alt="" )
-                    li.variation__item
-                        img(src="", alt="" )
-                    li.variation__item
-                        img(src="", alt="" )
-        .colorTable__gallery--bottom
-            .colorTable__gallery--slider
-                ul.slider__wrap
 
-            .colorTable__gallery--control
-                button.left
-                    svg
-                        use.caret__arrow(xlink:href="#svg_arrow")
-                button.right
-                    svg
-                        use.caret__arrow(xlink:href="#svg_arrow")
+        .colorTable__gallery--bottom
+            .glide.colorTable__gallery--slider(style="width: auto")
+                .glide__track(data-glide-el="track")
+                    ul.glide__slides
+
+                .glide__arrows(data-glide-el="controls[nav]")
+                    btn.glide__arrow.glide__arrow--left(data-glide-dir="<")
+                        | prev
+                    btn.glide__arrow.glide__arrow--right(data-glide-dir=">")
+                        | next
+
+
 
 
 

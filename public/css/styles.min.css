@@ -2179,7 +2179,7 @@ img {
       display: block;
       text-align: center;
       font-size: 14px; }
-    .colorTable__gallery--slider .slider__item.active {
+    .colorTable__gallery--slider .slider__item.glide__slide--active {
       border: 2px solid #73af19; }
   .colorTable__gallery--slider .slider__link {
     display: block;

@@ -211,13 +211,41 @@
         <div class="colorTable _desctop"></div>
       </div>
       <btn id="glide__unmount">unmount glideslider</btn>
-      <div style="width: auto" class="glide">
-        <div data-glide-el="track" class="glide__track">
-          <ul class="glide__slides"></ul>
-        </div>
-        <div data-glide-el="controls[nav]" class="glide__arrows">
-          <btn data-glide-dir="&lt;" class="glide__arrow glide__arrow--left">prev</btn>
-          <btn data-glide-dir="&gt;" class="glide__arrow glide__arrow--right">next</btn>
+      <!--.glide(style="width: auto")-->
+      <!--    .glide__track(data-glide-el="track")-->
+      <!--        ul.glide__slides-->
+      <!---->
+      <!--    .glide__arrows(data-glide-el="controls[nav]")-->
+      <!--        btn.glide__arrow.glide__arrow--left(data-glide-dir="<")-->
+      <!--            | prev-->
+      <!--        btn.glide__arrow.glide__arrow--right(data-glide-dir=">")-->
+      <!--            | next-->
+      <div class="colorTable__gallery--wrapper js__popup">
+        <div class="colorTable__gallery--popup js__noPropagation">
+          <button class="close__popup js__closePopup">&#215;</button>
+          <div class="colorTable__gallery--top">
+            <div class="colorTable__gallery--content">
+              <div class="colorTable__gallery--characteristics">
+                <ul class="characteristics__list"></ul>
+              </div>
+              <div class="colorTable__gallery--img"><img src="" alt=""></div>
+              <div class="colorTable__gallery--title"></div>
+            </div>
+            <div class="colorTable__gallery--variation">
+              <ul class="variation__list"></ul>
+            </div>
+          </div>
+          <div class="colorTable__gallery--bottom">
+            <div style="width: auto" class="glide colorTable__gallery--slider">
+              <div data-glide-el="track" class="glide__track">
+                <ul class="glide__slides"></ul>
+              </div>
+              <div data-glide-el="controls[nav]" class="glide__arrows">
+                <btn data-glide-dir="&lt;" class="glide__arrow glide__arrow--left">prev</btn>
+                <btn data-glide-dir="&gt;" class="glide__arrow glide__arrow--right">next</btn>
+              </div>
+            </div>
+          </div>
         </div>
         <!--h2  Карточка продукта - квадрат-->
         <!--br-->
@@ -378,6 +406,7 @@
     <script src="http://code.vostrel.cz/jquery.reel.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/jquery.panzoom.min.js"></script>
     <!--script(src='js/productSlider.js')-->
   </body>
 </html>
