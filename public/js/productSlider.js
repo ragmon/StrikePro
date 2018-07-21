@@ -358,6 +358,11 @@ $(document).ready(function () {
             $(colorTable).append(colorTableItem);
             $('.colorTable._mobile').append(colorTableItem);
             $('.colorTable._desctop .colorTable__item').on('click', initGallery);
+
+
+
+
+
             if (windowSize >= 768) {
 
             } else {
@@ -646,8 +651,8 @@ $(document).ready(function () {
 
 });
 
-
-var articles = [{
+var articles = [
+    {
     "id": 1253518,
     "group_id": "1051",
     "new": "0",
@@ -4981,7 +4986,9 @@ var articles = [{
         "is_filter": "0",
         "value_type": "string",
         "is_visible": "0",
-        "1C_key": "dcd92f88-2a33-11e6-95fb-e06995684273",
+
+
+            "1C_key": "dcd92f88-2a33-11e6-95fb-e06995684273",
         "created_at": "2017-10-07 19:21:58",
         "updated_at": "2017-12-11 15:22:32",
         "pivot": {"group_article_id": "1256190", "feature_id": "27", "value": "IF-013"}

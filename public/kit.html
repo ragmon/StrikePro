@@ -9,6 +9,9 @@
     <link href="css/jquery-ui.min.css" rel="stylesheet">
     <link href="css/flexslider.css" rel="stylesheet">
     <link href="css/styles.min.css" rel="stylesheet">
+    <link href="css/glide.core.css" rel="stylesheet">
+    <link href="css/glide.theme.css" rel="stylesheet">
+    <script type="text/javascript" src="js/glide.js"></script>
     <script type="text/javascript" src="//vk.com/js/api/openapi.js?144"></script>
     <script type="text/javascript" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
     <!--if lt IE 9
@@ -204,109 +207,70 @@
           </ul>
         </div>
       </header><br><br><br>
-      <div class="container">
-        <h2> Карточка продукта - квадрат</h2><br>
-              <div class="tile">
-                <div class="tile_content"><a title="Jer-O Minnow" class="tile-product"><span class="tile-product_marker"></span>
-                    <div class="tile-product_image-wrapper"><img src="http://cdn.strikepro.ru/article/0000750_0_headimage_thumbnail.png" class="tile-product_image"></div>
-                    <div class="tile-product_title">Jer-O Minnow</div></a></div>
-              </div><br>
-        <h2> Карточка продукта - прямоугольник</h2><br>
-              <div class="tile tile--double">
-                <div class="tile_content"><a title="Jer-O Minnow" class="tile-product"><span class="tile-product_marker"></span>
-                    <div class="tile-product_image-wrapper"><img src="http://cdn.strikepro.ru/article/0000750_0_headimage_thumbnail.png" class="tile-product_image"></div>
-                    <div class="tile-product_title">Jer-O Minnow</div></a></div>
-              </div><br>
-        <h2> Карточка новости - квадрат</h2><br>
-              <div class="tile">
-                <div class="tile_content">
-                  <div class="tile-news">
-                    <div class="tile-news_date">22/01</div>
-                    <div class="tile-news_title">Lorem ipsum dolor sit amet.</div><a class="button-base">подробнее</a>
-                  </div>
-                </div>
-              </div><br>
-        <h2> Карточка новости - прямоугольник</h2><br>
-              <div class="tile tile--double">
-                <div class="tile_content">
-                  <div class="tile-news">
-                    <div class="tile-news_date">22/01</div>
-                    <div class="tile-news_title">Lorem ipsum dolor sit amet.</div><a class="button-base">подробнее</a>
-                  </div>
-                </div>
-              </div><br>
-        <h2> Карточка соцсети - квадрат</h2><br>
-              <div class="tile">
-                <div class="tile_content">
-                  <div class="tile-social">
-                    <div class="tile-social_title">присоединяйтесь к намsfasa</div>
-                    <div class="tile-social_content">Подписались 754 человека</div>
-                    <div class="tile-social_icon icon-facebook"></div>
-                  </div>
-                </div>
-              </div><br>
-        <h2> Карточка соцсети - прямоугольник</h2><br>
-              <div class="tile tile--double">
-                <div class="tile_content">
-                  <div class="tile-social">
-                    <div class="tile-social_title">присоединяйтесь к намsfasa</div>
-                    <div class="tile-social_content">Подписались 754 человека</div>
-                    <div class="tile-social_icon icon-facebook"></div>
-                  </div>
-                </div>
-              </div><br>
-        <h2> Карточка галерея - квадрат</h2><br>
-              <div class="tile">
-                <div class="tile_content"><a title="Jer-O Minnow" class="tile-gallery">
-                    <div class="tile-gallery_image-wrapper"><img src="https://picsum.photos/300/300" class="tile-gallery_image"></div>
-                    <div class="tile-gallery_title">22 фотографии</div></a></div>
-              </div><br>
-        <h2> Карточка галерея - прямоугольник</h2><br>
-              <div class="tile tile--double">
-                <div class="tile_content"><a title="Jer-O Minnow" class="tile-gallery">
-                    <div class="tile-gallery_image-wrapper"><img src="https://picsum.photos/300/300" class="tile-gallery_image"></div>
-                    <div class="tile-gallery_title">22 фотографии</div></a></div>
-              </div><br>
-        <h2> Карточка видео - квадрат</h2><br>
-              <div class="tile">
-                <div class="tile_content"><a title="Jer-O Minnow" href="https://www.youtube.com/embed/-uzkjrEnI84" class="tile-video js__videoPopup">
-                    <div class="tile-video_image-wrapper"><img src="https://picsum.photos/300/300" class="tile-video_image"></div>
-                    <div class="tile-video_control">
-                      <div class="tile-video_control-icon icon-youtube-play"></div>
-                      <div class="tile-video_control-text"></div>
-                    </div></a></div>
-              </div><br>
-        <h2> Карточка видео - прямоугольник</h2><br>
-              <div class="tile tile--double">
-                <div class="tile_content"><a title="Jer-O Minnow" href="https://www.youtube.com/embed/-uzkjrEnI84" class="tile-video js__videoPopup">
-                    <div class="tile-video_image-wrapper"><img src="https://picsum.photos/300/300" class="tile-video_image"></div>
-                    <div class="tile-video_control">
-                      <div class="tile-video_control-icon icon-youtube-play"></div>
-                      <div class="tile-video_control-text"></div>
-                    </div></a></div>
-              </div><br>
-        <h2> Карточка блог - квадрат</h2><br>
-              <div class="tile">
-                <div class="tile_content"><a title="Jer-O Minnow" class="tile-blog">
-                    <div class="tile-blog_content">
-                      История торговой марки STRIKE PRO®
-                      скромно началась в 1973 году на острове Тайвань. В то
-                      время компания была производителем блесен под патронажем известных американских и
-                      шведских фирм. Менялись технологии, накапливался опыт, увеличивались объемы, и к концу
-                      80-х  годов компания уже являлась...
-                    </div></a></div>
-              </div><br>
-        <h2> Карточка блог - прямоугольник</h2><br>
-              <div class="tile tile--double">
-                <div class="tile_content"><a title="Jer-O Minnow" class="tile-blog">
-                    <div class="tile-blog_content">
-                      История торговой марки STRIKE PRO®
-                      скромно началась в 1973 году на острове Тайвань. В то
-                      время компания была производителем блесен под патронажем известных американских и
-                      шведских фирм. Менялись технологии, накапливался опыт, увеличивались объемы, и к концу
-                      80-х  годов компания уже являлась...
-                    </div></a></div>
-              </div>
+      <div class="container"><br><br><br><br>
+        <div class="colorTable _desctop"></div>
+      </div>
+      <btn id="glide__unmount">unmount glideslider</btn>
+      <div style="width: auto" class="glide">
+        <div data-glide-el="track" class="glide__track">
+          <ul class="glide__slides"></ul>
+        </div>
+        <div data-glide-el="controls[nav]" class="glide__arrows">
+          <btn data-glide-dir="&lt;" class="glide__arrow glide__arrow--left">prev</btn>
+          <btn data-glide-dir="&gt;" class="glide__arrow glide__arrow--right">next</btn>
+        </div>
+        <!--h2  Карточка продукта - квадрат-->
+        <!--br-->
+        <!--+tileProduct()-->
+        <!--br-->
+        <!--h2  Карточка продукта - прямоугольник-->
+        <!--br-->
+        <!--+tileProduct('tile--double')-->
+        <!--br-->
+        <!--h2  Карточка новости - квадрат-->
+        <!--br-->
+        <!--+tileNews()-->
+        <!--br-->
+        <!--h2  Карточка новости - прямоугольник-->
+        <!--br-->
+        <!--+tileNews('tile--double')-->
+        <!--br-->
+        <!--h2  Карточка соцсети - квадрат-->
+        <!--br-->
+        <!--+tileSocial()-->
+        <!--br-->
+        <!--h2  Карточка соцсети - прямоугольник-->
+        <!--br-->
+        <!--+tileSocial('tile--double')-->
+        <!--br-->
+        <!--h2  Карточка галерея - квадрат-->
+        <!--br-->
+        <!--+tileGallery()-->
+        <!--br-->
+        <!--h2  Карточка галерея - прямоугольник-->
+        <!--br-->
+        <!--+tileGallery('tile--double')-->
+        <!--br-->
+        <!--h2  Карточка видео - квадрат-->
+        <!--br-->
+        <!--+tileVideo()-->
+        <!--br-->
+        <!--h2  Карточка видео - прямоугольник-->
+        <!--br-->
+        <!--+tileVideo('tile--double')-->
+        <!--br-->
+        <!--h2  Карточка блог - квадрат-->
+        <!--br-->
+        <!--+tileBlog()-->
+        <!--br-->
+        <!--h2  Карточка блог - прямоугольник-->
+        <!--br-->
+        <!--+tileBlog('tile--double')-->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
+        <!---->
       </div>
     </div>
     <footer class="footer">
@@ -414,6 +378,6 @@
     <script src="http://code.vostrel.cz/jquery.reel.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/yandexMap.js"></script>
+    <!--script(src='js/productSlider.js')-->
   </body>
 </html>

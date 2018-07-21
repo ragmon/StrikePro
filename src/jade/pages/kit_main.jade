@@ -8,55 +8,110 @@ br
 br
 br
 .container
-    h2  Карточка продукта - квадрат
     br
-    +tileProduct()
     br
-    h2  Карточка продукта - прямоугольник
     br
-    +tileProduct('tile--double')
     br
-    h2  Карточка новости - квадрат
-    br
-    +tileNews()
-    br
-    h2  Карточка новости - прямоугольник
-    br
-    +tileNews('tile--double')
-    br
-    h2  Карточка соцсети - квадрат
-    br
-    +tileSocial()
-    br
-    h2  Карточка соцсети - прямоугольник
-    br
-    +tileSocial('tile--double')
-    br
-    h2  Карточка галерея - квадрат
-    br
-    +tileGallery()
-    br
-    h2  Карточка галерея - прямоугольник
-    br
-    +tileGallery('tile--double')
-    br
-    h2  Карточка видео - квадрат
-    br
-    +tileVideo()
-    br
-    h2  Карточка видео - прямоугольник
-    br
-    +tileVideo('tile--double')
-    br
-    h2  Карточка блог - квадрат
-    br
-    +tileBlog()
-    br
-    h2  Карточка блог - прямоугольник
-    br
-    +tileBlog('tile--double')
+    .colorTable._desctop
+
+btn#glide__unmount
+    | unmount glideslider
+.glide(style="width: auto")
+    .glide__track(data-glide-el="track")
+        ul.glide__slides
+
+    .glide__arrows(data-glide-el="controls[nav]")
+        btn.glide__arrow.glide__arrow--left(data-glide-dir="<")
+            | prev
+        btn.glide__arrow.glide__arrow--right(data-glide-dir=">")
+            | next
+
+.colorTable__gallery--wrapper.js__popup
+    .colorTable__gallery--popup.js__noPropagation
+        button.close__popup.js__closePopup &#215;
+        .colorTable__gallery--top
+            .colorTable__gallery--content
+                .colorTable__gallery--characteristics
+                    ul.characteristics__list
+                        li.characteristics__item
+                            span.characteristics__title Модель:
+                            span.characteristics__desc Aquamax Shad 50
+                .colorTable__gallery--img
+                    img(src="", alt="")
+                .colorTable__gallery--title
+            .colorTable__gallery--variation
+                ul.variation__list
+                    li.variation__item
+                        img(src="", alt="" )
+                    li.variation__item
+                        img(src="", alt="" )
+                    li.variation__item
+                        img(src="", alt="" )
+                    li.variation__item
+                        img(src="", alt="" )
+        .colorTable__gallery--bottom
+            .colorTable__gallery--slider
+                ul.slider__wrap
+
+            .colorTable__gallery--control
+                button.left
+                    svg
+                        use.caret__arrow(xlink:href="#svg_arrow")
+                button.right
+                    svg
+                        use.caret__arrow(xlink:href="#svg_arrow")
 
 
 
-
-
+    //h2  Карточка продукта - квадрат
+    //br
+    //+tileProduct()
+    //br
+    //h2  Карточка продукта - прямоугольник
+    //br
+    //+tileProduct('tile--double')
+    //br
+    //h2  Карточка новости - квадрат
+    //br
+    //+tileNews()
+    //br
+    //h2  Карточка новости - прямоугольник
+    //br
+    //+tileNews('tile--double')
+    //br
+    //h2  Карточка соцсети - квадрат
+    //br
+    //+tileSocial()
+    //br
+    //h2  Карточка соцсети - прямоугольник
+    //br
+    //+tileSocial('tile--double')
+    //br
+    //h2  Карточка галерея - квадрат
+    //br
+    //+tileGallery()
+    //br
+    //h2  Карточка галерея - прямоугольник
+    //br
+    //+tileGallery('tile--double')
+    //br
+    //h2  Карточка видео - квадрат
+    //br
+    //+tileVideo()
+    //br
+    //h2  Карточка видео - прямоугольник
+    //br
+    //+tileVideo('tile--double')
+    //br
+    //h2  Карточка блог - квадрат
+    //br
+    //+tileBlog()
+    //br
+    //h2  Карточка блог - прямоугольник
+    //br
+    //+tileBlog('tile--double')
+    //
+    //
+    //
+    //
+    //
