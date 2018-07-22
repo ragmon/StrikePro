@@ -1,155 +1,55 @@
 $(document).ready(function () {
 
-    var readMoreWrapper = $('.js-readmore');
-    var readMoreBtn = null;
-    var readMoreBtnWrapper = null;
-    var currentLineHeight = parseInt($(readMoreWrapper).css('line-height'));
-    var currentHeight = parseInt($('.js-readmore .tile__text').css('height'));
-
-    function initToggleDescription() {
-
-        if (currentHeight > (currentLineHeight * 4)) {
-            $(readMoreWrapper).css({height: (currentLineHeight * 4) + 'px'})
-        } else {
-            $(readMoreWrapper).css({height: 'auto'})
-        }
-    }
+    var $readmoreWrapper = $('.readmore-wrapper');
+    var $readmoreContent = $('.readmore-content');
+    var $readmoreButtonWrapper = $('.readmore-button_wrapper');
+    var $readmoreButton = $('.readmore-button');
 
 
-    function toggleDescriptionHandler() {
-        if ($(readMoreWrapper).hasClass('readmore_close')) {
-            $(readMoreBtn).text('Свернуть');
-            $(readMoreWrapper).removeClass('readmore_close').addClass('readmore_open').css({height: 'auto'})
-        } else {
-            $(readMoreBtn).text('Подробнее');
-            $(readMoreWrapper).removeClass('readmore_open').addClass('readmore_close').css({height: (currentLineHeight * 4) + 'px'})
-        }
-    }
-
-    function superToggleDescription() {
-        console.log('superToggleDescription');
-        var height = parseInt($(readMoreWrapper).css('width')) / 4;
-        if (currentHeight > height) {
-
-            if ($(document).width() >= 992) {
-                addReadmoreBtn('50%', superToggleDescriptionHandler, 'readmore_btn-wrap--white');
+    function CloseReadMoreContent() {
+        var MinHeight = ($($readmoreWrapper).width() / 4).toFixed();
+        console.log(MinHeight);
+        if ($($readmoreWrapper).height() > MinHeight) {
+            if (window.innerWidth >= 768) {
+                $($readmoreContent).height(MinHeight);
             } else {
-                addReadmoreBtn('100%', superToggleDescriptionHandler, 'readmore_btn-wrap--white');
+                $($readmoreContent).height(200);
             }
+            $($readmoreContent).css('display', 'block');
+            if ($($readmoreButtonWrapper).hasClass('hidden')) {
+                $($readmoreButtonWrapper).removeClass('hidden');
+            }
+        } else if(!$($readmoreButtonWrapper).hasClass('readmore-button_wrapper--close')){
+            $($readmoreButtonWrapper).addClass('hidden');
+        }
+    }
 
-            if ($(document).width() >= 992) {
-                console.log(height);
-                $(readMoreBtnWrapper).css({width: '50%'});
-                $(readMoreWrapper).addClass('readmore_close').css({height: height + 'px'});
-            } else {
-                $(readMoreBtnWrapper).css({width: '100%'});
-                $(readMoreWrapper).addClass('readmore_close').css({height: (getHeightDescription() + currentLineHeight * 4) + 'px'});
-            }
+    function OpenReadMoreContent() {
+        $($readmoreContent).css('height', 'auto');
+        $($readmoreContent).css('display', 'inline');
+    }
+
+    CloseReadMoreContent();
+    $($readmoreButtonWrapper).addClass('readmore-button_wrapper--close');
+
+    $($readmoreButton).on('click', $.debounce(300, true, function (e) {
+        if ($($readmoreButtonWrapper).hasClass('readmore-button_wrapper--close')) {
+            OpenReadMoreContent();
+            $($readmoreButtonWrapper).removeClass('readmore-button_wrapper--close');
+            $($readmoreButton).text('СВЕРНУТЬ');
         } else {
-            $(readMoreWrapper).css({height: 'auto'})
-        }
-    }
+            CloseReadMoreContent();
+            $($readmoreButtonWrapper).addClass('readmore-button_wrapper--close');
+            $($readmoreButton).text('ПОДРОБНЕЕ');
 
-    function superToggleDescriptionHandler() {
-        if ($(readMoreWrapper).hasClass('readmore_close')) {
-            $(readMoreBtn).text('Свернуть');
-            $(readMoreBtnWrapper).css({width: '100%'});
-            $(readMoreWrapper).removeClass('readmore_close').addClass('readmore_open').css({height: 'auto'})
-        } else {
-            $(readMoreBtn).text('Подробнее');
-            $(readMoreWrapper).removeClass('readmore_open').addClass('readmore_close');
-            if ($(document).width() >= 992) {
-                $(readMoreBtnWrapper).css({width: '50%'});
-                $(readMoreWrapper).css({height: (parseInt($(readMoreWrapper).css('width')) / 4) + 'px'});
-            } else {
-                $(readMoreBtnWrapper).css({width: '100%'});
-                $(readMoreWrapper).css({height: (getHeightDescription() + currentLineHeight * 6) + 'px'});
+        }
+    }));
+
+    $(window)
+        .resize($.debounce(300, false, function (e) {
+            if ($('.readmore-button_wrapper').hasClass('readmore-button_wrapper--close')) {
+                CloseReadMoreContent();
             }
-        }
-    }
-
-    function responsiveInit() {
-        window.addEventListener('resize', function () {
-            console.log('resize');
-            if ($(readMoreWrapper).hasClass('readmore_close')) {
-                superToggleDescription();
-            }
-        });
-
-    }
-
-    function getHeightDescription() {
-        var childHeight = [],
-            childWidth = [];
-
-        $(readMoreWrapper).children().each(function (indx, element) {
-            if (!$(element).hasClass('readmore_btn-wrap')) {
-                childHeight.push($(element).outerHeight());
-                childWidth.push($(element).outerWidth());
-            }
-        });
-
-        var minHeight = getMin(childHeight),
-            minWidth = getMin(childWidth),
-            maxHeight = getMax(childHeight),
-            maxWidth = getMax(childWidth);
-
-        console.log('minHeight:', minHeight);
-        console.log('minWidth:', minWidth);
-        console.log('maxHeight:', maxHeight);
-        console.log('maxWidth:', maxWidth);
-        return minHeight;
-    }
-
-    init();
-
-    function init() {
-        if ($(readMoreWrapper).children().length === 1) {
-            addReadmoreBtn('100%', toggleDescriptionHandler, '');
-            initToggleDescription();
-        } else if ($(readMoreWrapper).children().length === 2) {
-
-            superToggleDescription();
-            responsiveInit()
-        }
-    }
-
-    function addReadmoreBtn(btnWidth, clickHandler, wrapperMode) {
-
-        var btn = '<div style="width: ' + btnWidth + '" class="readmore_btn-wrap ' + wrapperMode + '">\n' +
-            '              <btn class="readmore_btn js-readmore_btn item-more">Подробнее</btn>\n' +
-            '            </div>';
-
-        if($(readMoreWrapper).find('.readmore_btn-wrap').length === 0){
-            $(readMoreWrapper).append(btn);
-            readMoreBtn = $('.js-readmore_btn');
-            readMoreBtnWrapper = $('.readmore_btn-wrap');
-            $(readMoreBtn).on('click', clickHandler);
-        }
-    }
-
-    function getMin(arr) {
-        var arrLen = arr.length,
-            minEl = arr[0];
-        for (var i = 0; i < arrLen; i++) {
-            if (minEl > arr[i]) {
-                minEl = arr[i];
-            }
-        }
-        return minEl;
-    }
-
-    function getMax(arr) {
-        var arrLen = arr.length,
-            maxEl = arr[0];
-        for (var i = 0; i < arrLen; i++) {
-            if (maxEl < arr[i]) {
-                maxEl = arr[i];
-            }
-        }
-        return maxEl;
-    }
+        }));
 
 });
-
-

@@ -2238,6 +2238,11 @@ img {
   .colorTable__item .flex-next .caret__arrow {
     stroke: #000; }
 
+/**
+.readmore-wrapper
+.readmore-content
+
+*/
 .readmore {
   position: relative; }
   .readmore_text {
@@ -2248,28 +2253,47 @@ img {
     right: 0;
     z-index: 4;
     transition: all .225s; }
-  .readmore_btn-wrap {
+  .readmore-content {
+    overflow: hidden; }
+  .readmore-wrapper {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    .readmore-wrapper .tile {
+      margin-bottom: 30px; }
+      @media (min-width: 992px) {
+        .readmore-wrapper .tile {
+          margin-right: 60px;
+          margin-bottom: 0; } }
+  .readmore-button {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 0);
+    line-height: 30px; }
+    .readmore-button:active {
+      top: 50% !important; }
+  .readmore-button_wrapper {
     content: '';
     display: block;
     position: absolute;
-    bottom: 0;
     right: 0;
+    bottom: -50px;
     z-index: 3;
     width: 100%;
     height: 100px;
     background-image: linear-gradient(to top, rgba(247, 247, 247, 0) 0%, rgba(247, 247, 247, 0) 100%);
     transition: all .225s;
     cursor: pointer; }
-    .readmore_btn-wrap--white {
+    .readmore-button_wrapper--white {
       background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%); }
-  .readmore_btn {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, 0);
-    line-height: 30px; }
-    .readmore_btn:active {
-      top: 50% !important; }
+    .readmore-button_wrapper--close {
+      bottom: 0;
+      background-image: linear-gradient(to top, #f7f7f7 0%, rgba(247, 247, 247, 0) 100%);
+      transition: all .225s; }
+      .readmore-button_wrapper--close--white {
+        background-image: linear-gradient(to top, white 0%, rgba(255, 255, 255, 0) 100%); }
   .readmore_close {
     cursor: pointer;
     overflow: hidden; }
