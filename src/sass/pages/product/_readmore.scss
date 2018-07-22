@@ -1,9 +1,3 @@
-/**
-.readmore-wrapper
-.readmore-content
-
-*/
-
 
 .readmore {
   $this: &;
@@ -27,9 +21,6 @@
 
     padding-left: 15px;
     padding-right: 15px;
-    //@media(min-width: 992px) {
-    //  padding: 0;
-    //}
     .tile {
       margin-bottom: 30px;
       @media(min-width: 992px) {
@@ -75,22 +66,4 @@
     }
   }
 
-  &_close {
-    cursor: pointer;
-    overflow: hidden;
-
-    #{$this}_btn-wrap {
-      background-image: linear-gradient(to top, rgba(247, 247, 247, 1) 0%, rgba(247, 247, 247, 0) 100%);
-      transition: all .225s;
-      &--white {
-        background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-      }
-    }
-  }
-  &_open {
-    cursor: pointer;
-    #{$this}_btn-wrap {
-      bottom: -50px;
-    }
-  }
 }

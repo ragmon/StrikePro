@@ -2,38 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3e2ae88-6440-4438-956d-16449aba9594" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/js/jquery.ba-throttle-debounce.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/aboutCompany.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/aboutCompany.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/blogArticl.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/blogArticl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/contact.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/styles.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/styles.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/readmore.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/readmore.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/readmore.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/readmore.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/kit.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/kit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/location.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/location.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/product-3/product-description.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/product-3/product-description.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/product-3/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/product-3/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/pages/productList/productList.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/pages/productList/productList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/partials/script.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/partials/script.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/popUp_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/popUp_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product-article.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/product-article.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/productList.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/productList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product_1.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/product_1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/product_2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product_3.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/product_3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/product_4.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/product_4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/searchingResults.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/searchingResults.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/slider.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/slider.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jade/pages/product-3/product-description.jade" beforeDir="false" afterPath="$PROJECT_DIR$/src/jade/pages/product-3/product-description.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jade/pages/product-3/product.jade" beforeDir="false" afterPath="$PROJECT_DIR$/src/jade/pages/product-3/product.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jade/pages/productList/productList.jade" beforeDir="false" afterPath="$PROJECT_DIR$/src/jade/pages/productList/productList.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jade/partials/script.jade" beforeDir="false" afterPath="$PROJECT_DIR$/src/jade/partials/script.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jade/product_3.jade" beforeDir="false" afterPath="$PROJECT_DIR$/src/jade/product_3.jade" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/js/readmore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/readmore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/productSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/productSlider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/productSlider.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/productSlider.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/js/productSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/js/productSlider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sass/pages/product/_product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/pages/product/_product.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sass/pages/product/_readmore.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/pages/product/_readmore.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,15 +19,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="product_3.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jade/product_3.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="script.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jade/partials/script.jade">
           <provider selected="true" editor-type-id="text-editor">
@@ -63,10 +28,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readmore.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="readmore.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/readmore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
+            <state relative-caret-position="170">
               <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
             </state>
           </provider>
@@ -81,10 +46,34 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/js/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="388" selection-start-line="388" selection-end-line="388" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="productSlider.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/js/productSlider.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="55">
+              <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
+              <folding>
+                <element signature="e#611#978#0" />
+                <element signature="e#1151#2285#0" />
+                <element signature="e#2396#2972#0" />
+                <element signature="e#3072#3347#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="productList.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jade/pages/productList/productList.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="544">
               <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
             </state>
           </provider>
@@ -93,7 +82,7 @@
       <file leaf-file-name="product.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jade/pages/product-3/product.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
+            <state relative-caret-position="357">
               <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
             </state>
           </provider>
@@ -102,21 +91,23 @@
       <file leaf-file-name="product-description.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/jade/pages/product-3/product-description.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+            <state relative-caret-position="272">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_readmore.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sass/pages/product/_readmore.scss">
+      <file leaf-file-name="_product.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sass/pages/product/_product.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+            <state relative-caret-position="359">
+              <caret line="203" column="21" selection-start-line="203" selection-start-column="21" selection-end-line="203" selection-end-column="21" />
               <folding>
-                <element signature="e#302#312#0" />
-                <element signature="e#221#647#0" />
-                <element signature="e#833#1178#0" />
+                <element signature="e#393#870#0" />
+                <element signature="e#887#1963#0" />
+                <element signature="e#1977#2252#0" />
+                <element signature="e#2275#2343#0" />
+                <element signature="e#4191#4329#0" />
               </folding>
             </state>
           </provider>
@@ -136,8 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>product-gallery_list</find>
-      <find>product</find>
       <find>js-product-description</find>
       <find>__desc</find>
       <find>btnMain</find>
@@ -166,6 +155,8 @@
       <find>_mobile</find>
       <find>left</find>
       <find>slider-</find>
+      <find>product__stand</find>
+      <find>.page__product .product__sliderImg ul</find>
     </findStrings>
     <replaceStrings>
       <replace>250</replace>
@@ -180,10 +171,10 @@
       <dir>D:\Development\WebDev\job\StrikePro\StrikePro\src\jade</dir>
       <dir>D:\Development\WebDev\job\alex.taran.project\catalog\catalog.frontend\src\sass\pages</dir>
       <dir>D:\Development\WebDev\job\alex.taran.project\catalog\catalog.frontend\public</dir>
-      <dir>D:\Development\WebDev\job\alex.taran.project\catalog\catalog.frontend\src\js</dir>
       <dir>D:\Development\WebDev\job\alex.taran.project\catalog\catalog.frontend\src\sass</dir>
       <dir>D:\Development\WebDev\job\alex.taran.project\catalog\catalog.frontend\src\jade</dir>
       <dir>D:\Development\WebDev\job\alex.taran.project\catalog\catalog.frontend\src</dir>
+      <dir>D:\Development\WebDev\job\alex.taran.project\catalog\catalog.frontend\src\js</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -285,7 +276,6 @@
         <option value="$PROJECT_DIR$/src/jade/partials/footer.jade" />
         <option value="$PROJECT_DIR$/src/sass/partials/_footer.scss" />
         <option value="$PROJECT_DIR$/src/jade/pages/product/product.jade" />
-        <option value="$PROJECT_DIR$/src/sass/pages/product/_product.scss" />
         <option value="$PROJECT_DIR$/src/jade/partials/product-description.jade" />
         <option value="$PROJECT_DIR$/src/js/tileFilter.js" />
         <option value="$PROJECT_DIR$/src/jade/uikit/tile/tile-product.jade" />
@@ -304,19 +294,20 @@
         <option value="$PROJECT_DIR$/src/jade/pages/product-3/colorTableGallery.jade" />
         <option value="$PROJECT_DIR$/src/jade/pages/kit_main.jade" />
         <option value="$PROJECT_DIR$/src/jade/kit.jade" />
-        <option value="$PROJECT_DIR$/src/js/index.js" />
         <option value="$PROJECT_DIR$/src/js/articlesMock.js" />
         <option value="$PROJECT_DIR$/src/jade/pages/product-3/color_table.jade" />
-        <option value="$PROJECT_DIR$/src/js/productSlider.js" />
         <option value="$PROJECT_DIR$/src/sass/pages/product/_article-color-table.scss" />
         <option value="$PROJECT_DIR$/src/jade/product_3.jade" />
         <option value="$PROJECT_DIR$/src/jade/pages/product-3/product.jade" />
         <option value="$PROJECT_DIR$/src/assets/js/jquery.ba-throttle-debounce.min.js" />
         <option value="$PROJECT_DIR$/src/jade/partials/script.jade" />
-        <option value="$PROJECT_DIR$/src/sass/pages/product/_readmore.scss" />
         <option value="$PROJECT_DIR$/src/jade/pages/productList/productList.jade" />
-        <option value="$PROJECT_DIR$/src/jade/pages/product-3/product-description.jade" />
         <option value="$PROJECT_DIR$/src/js/readmore.js" />
+        <option value="$PROJECT_DIR$/src/sass/pages/product/_readmore.scss" />
+        <option value="$PROJECT_DIR$/src/js/index.js" />
+        <option value="$PROJECT_DIR$/src/jade/pages/product-3/product-description.jade" />
+        <option value="$PROJECT_DIR$/src/sass/pages/product/_product.scss" />
+        <option value="$PROJECT_DIR$/src/js/productSlider.js" />
       </list>
     </option>
   </component>
@@ -354,7 +345,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -386,27 +376,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catalog.frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catalog.frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jade" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catalog.frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catalog.frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jade" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="catalog.frontend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="catalog.frontend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jade" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="product-3" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="catalog.frontend" type="b2602c69:ProjectViewProjectNode" />
@@ -453,6 +422,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -728,12 +698,13 @@
       <workItem from="1531764632738" duration="5006000" />
       <workItem from="1531773018110" duration="28000" />
       <workItem from="1532167279355" duration="20867000" />
-      <workItem from="1532213268074" duration="17934000" />
+      <workItem from="1532213268074" duration="19833000" />
+      <workItem from="1532266784927" duration="3464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="453844000" />
+    <option name="totallyTimeSpent" value="459207000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -746,47 +717,46 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Gulp" order="2" sideWeight="0.25976562" side_tool="true" weight="0.18051359" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7402344" visible="true" weight="0.17386723" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3293944" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.515885" side_tool="true" weight="0.18494272" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.62286687" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4975" weight="0.14285715" />
       <window_info id="npm" order="2" sideWeight="0.4669739" side_tool="true" weight="0.2693997" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.48411497" visible="true" weight="0.24692738" />
+      <window_info id="Gulp" order="2" sideWeight="0.25976562" side_tool="true" weight="0.18051359" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7402344" visible="true" weight="0.17386723" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.48411497" visible="true" weight="0.24692738" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="7" weight="0.32899868" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Command Line Tools Console" order="7" weight="0.32899868" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
       <window_info id="Gulp" order="3" sideWeight="0.25976562" side_tool="true" weight="0.18051359" />
       <window_info id="npm" order="2" sideWeight="0.4669739" side_tool="true" weight="0.2693997" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4975" weight="0.14285715" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7402344" visible="true" weight="0.24205749" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3293944" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.62286687" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="8" weight="0.32899868" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.48411497" visible="true" weight="0.2618658" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.515885" side_tool="true" weight="0.18494272" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.62286687" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -822,12 +792,11 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/js/productSlider.js</url>
-          <line>557</line>
+          <line>558</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/js/index.js</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
@@ -895,13 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/pages/product/_product.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1005,15 +967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="256" column="21" lean-forward="true" selection-start-line="256" selection-start-column="21" selection-end-line="256" selection-end-column="21" />
-          <folding>
-            <element signature="e#529#882#0" />
-            <element signature="e#1362#1513#0" />
-            <element signature="e#1525#1567#0" />
-            <element signature="e#1579#1847#0" />
-            <element signature="e#1860#2214#0" />
-            <element signature="e#2107#2210#0" />
-            <element signature="e#2224#2260#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1025,13 +978,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/css/glide.core.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#7#73#0" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1061,18 +1008,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/pages/product/_product-gallery.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1091" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/assets/js/glide.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5032">
           <caret line="300" column="4" selection-start-line="300" selection-start-column="4" selection-end-line="300" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1097,43 +1036,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/js/articlesMock.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="310">
           <caret line="6771" column="60" lean-forward="true" selection-start-line="6771" selection-start-column="60" selection-end-line="6771" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/js/productSlider.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="347" column="38" selection-start-line="347" selection-start-column="38" selection-end-line="347" selection-end-column="38" />
-          <folding>
-            <element signature="e#611#978#0" />
-            <element signature="e#1151#2285#0" />
-            <element signature="e#2396#2972#0" />
-            <element signature="e#3072#3347#0" />
-            <element signature="e#3454#4672#0" />
-            <element signature="e#4709#5498#0" />
-            <element signature="e#5597#7110#0" />
-            <element signature="e#7226#8085#0" />
-            <element signature="e#8172#8500#0" />
-            <element signature="e#8529#10472#0" />
-            <element signature="e#10545#10718#0" />
-            <element signature="e#10807#10969#0" />
-            <element signature="e#11004#11694#0" />
-            <element signature="e#11722#12218#0" />
-            <element signature="e#13482#15639#0" />
-            <element signature="e#17437#21921#0" />
-            <element signature="e#21972#23264#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1148,11 +1054,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="467">
           <caret line="280" column="31" selection-start-line="280" selection-start-column="31" selection-end-line="280" selection-end-column="31" />
-          <folding>
-            <element signature="e#281961#282280#0" />
-            <element signature="e#282389#283897#0" />
-            <element signature="e#283914#284618#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1174,9 +1075,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="345" selection-start-line="8" selection-start-column="345" selection-end-line="8" selection-end-column="345" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1194,43 +1092,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sass/pages/product/_readmore.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-          <folding>
-            <element signature="e#302#312#0" />
-            <element signature="e#221#647#0" />
-            <element signature="e#833#1178#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/jade/pages/product-3/product.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
+        <state relative-caret-position="357">
           <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/jade/pages/productList/productList.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="544">
           <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/jade/pages/product-3/product-description.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/readmore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
+        <state relative-caret-position="170">
           <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="388" selection-start-line="388" selection-end-line="388" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/pages/product/_readmore.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jade/pages/product-3/product-description.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/pages/product/_product-gallery.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1091" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sass/pages/product/_product.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="203" column="21" selection-start-line="203" selection-start-column="21" selection-end-line="203" selection-end-column="21" />
+          <folding>
+            <element signature="e#393#870#0" />
+            <element signature="e#887#1963#0" />
+            <element signature="e#1977#2252#0" />
+            <element signature="e#2275#2343#0" />
+            <element signature="e#4191#4329#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/js/productSlider.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
+          <folding>
+            <element signature="e#611#978#0" />
+            <element signature="e#1151#2285#0" />
+            <element signature="e#2396#2972#0" />
+            <element signature="e#3072#3347#0" />
+          </folding>
         </state>
       </provider>
     </entry>

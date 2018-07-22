@@ -355,7 +355,8 @@ $(document).ready(function () {
             var classNav = ".custom-navigation-" + i + " a";
             var photos = articles[i].head_images;
             var photosLength = photos.length;
-            if (!photosLength) continue;
+            console.log('articles[i]',articles[i]);
+            if (photosLength < 2) continue;
 
             var sliderWrap = document.createElement('div'),
                 sliderList = document.createElement('ul');
@@ -444,17 +445,17 @@ $(document).ready(function () {
         $(img3D).hide();
         $('#reel-image-reel').hide();
     });
-    $(window).resize(function () {
-        var k = 500 / 304,
-            productStand = $('.product__stand'),
-            w = $(document).width();
-
-        if (w < 500) {
-            $(productStand).height($(productStand).width() / k);
-        } else {
-            $(productStand).height('auto');
-        }
-    });
+    // $(window).resize(function () {
+    //     var k = 500 / 304,
+    //         productStand = $('.product__stand'),
+    //         w = $(document).width();
+    //
+    //     if (w < 500) {
+    //         $(productStand).height($(productStand).width() / k);
+    //     } else {
+    //         $(productStand).height('auto');
+    //     }
+    // });
 
 
     /** @desc ШАПКА СТРАНИЦЫ ПРОДУКТА */

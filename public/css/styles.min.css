@@ -1708,12 +1708,13 @@ img {
             right: 0px;
             left: inherit; } }
     .page__product .product__sliderImg {
+      position: relative;
       padding-top: 30px; }
       @media (min-width: 768px) {
         .page__product .product__sliderImg {
-          padding-top: 0px; } }
+          padding-top: 0; } }
       .page__product .product__sliderImg ul {
-        height: 80px;
+        height: 85px;
         overflow: auto;
         width: 288px;
         position: relative;
@@ -1722,7 +1723,7 @@ img {
         white-space: nowrap; }
         @media (min-width: 768px) {
           .page__product .product__sliderImg ul {
-            height: 270px;
+            height: 320px;
             width: 100px; } }
         .page__product .product__sliderImg ul li {
           display: inline-block; }
@@ -1731,7 +1732,7 @@ img {
               display: block; } }
           .page__product .product__sliderImg ul li a {
             display: block;
-            width: 80px;
+            width: 73px;
             margin-right: 10px;
             background-color: #fff; }
             @media (min-width: 768px) {
@@ -2238,11 +2239,6 @@ img {
   .colorTable__item .flex-next .caret__arrow {
     stroke: #000; }
 
-/**
-.readmore-wrapper
-.readmore-content
-
-*/
 .readmore {
   position: relative; }
   .readmore_text {
@@ -2294,18 +2290,6 @@ img {
       transition: all .225s; }
       .readmore-button_wrapper--close--white {
         background-image: linear-gradient(to top, white 0%, rgba(255, 255, 255, 0) 100%); }
-  .readmore_close {
-    cursor: pointer;
-    overflow: hidden; }
-    .readmore_close .readmore_btn-wrap {
-      background-image: linear-gradient(to top, #f7f7f7 0%, rgba(247, 247, 247, 0) 100%);
-      transition: all .225s; }
-      .readmore_close .readmore_btn-wrap--white {
-        background-image: linear-gradient(to top, white 0%, rgba(255, 255, 255, 0) 100%); }
-  .readmore_open {
-    cursor: pointer; }
-    .readmore_open .readmore_btn-wrap {
-      bottom: -50px; }
 
 .product-gallery_wrapper {
   margin-right: auto;
