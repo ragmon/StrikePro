@@ -278,6 +278,7 @@
     flex-grow: 1;
     display: flex;
     justify-content: space-between;
+    height: calc(100vh - 220px );
   }
   &--bottom {
     height: auto;
@@ -293,7 +294,8 @@
       width: 50px;
       height: 45px;
       z-index: 1;
-      background-color: transparent;
+      box-shadow: none;
+      background-color: transparent !important;
       svg {
         position: relative;
         top: -3px;
@@ -355,12 +357,15 @@
     margin-right: 15px;
   }
   &--slider {
-    overflow: hidden;
+    //overflow: hidden;
     position: relative;
-    width: 95%;
     height: 160px;
     margin: 0 auto;
     padding: 15px 0;
+    .glide__track{
+      width: 95% !important;
+      margin: 0 auto;
+    }
     .slider {
       &__wrap {
         transition: all .2s ease-in-out;

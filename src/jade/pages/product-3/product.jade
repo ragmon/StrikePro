@@ -41,41 +41,9 @@ main.page__product
     include product_table
     include product-video
     include color_table
+include colorTableGallery
 
-.colorTable__gallery--wrapper.js__popup
-    .colorTable__gallery--popup.js__noPropagation
-        button.close__popup.js__closePopup &#215;
-        .colorTable__gallery--top
-            .colorTable__gallery--content
-                .colorTable__gallery--characteristics
-                    ul.characteristics__list
-                        li.characteristics__item
-                            span.characteristics__title Модель:
-                            span.characteristics__desc Aquamax Shad 50
-                .colorTable__gallery--img
-                    img(src="", alt="")
-                .colorTable__gallery--title
-            .colorTable__gallery--variation
-                ul.variation__list
-                    li.variation__item
-                        img(src="", alt="" )
-                    li.variation__item
-                        img(src="", alt="" )
-                    li.variation__item
-                        img(src="", alt="" )
-                    li.variation__item
-                        img(src="", alt="" )
-        .colorTable__gallery--bottom
-            .colorTable__gallery--slider
-                ul.slider__wrap
-                    
-            .colorTable__gallery--control
-                button.left 
-                    svg
-                        use.caret__arrow(xlink:href="#svg_arrow")
-                button.right
-                    svg
-                        use.caret__arrow(xlink:href="#svg_arrow")
+
 
 .popUP__wrapper.js__popup(style="display: none")
                     .popUP__productImg.js__noPropagation

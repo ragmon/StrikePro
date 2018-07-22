@@ -173,6 +173,7 @@
         <div class="colorTable__wrapper">
           <h4 class="title__xs text-center">Варианты расцветок</h4>
           <div class="colorTable _desctop"></div>
+          <!--.colorTable._mobile-->
         </div>
       </div>
     </div>
@@ -184,37 +185,32 @@
     <div class="colorTable__gallery--top">
       <div class="colorTable__gallery--content">
         <div class="colorTable__gallery--characteristics">
-          <ul class="characteristics__list">
-            <li class="characteristics__item"><span class="characteristics__title">Модель:</span><span class="characteristics__desc">Aquamax Shad 50</span></li>
-          </ul>
+          <ul class="characteristics__list"></ul>
         </div>
         <div class="colorTable__gallery--img"><img src="" alt=""/></div>
         <div class="colorTable__gallery--title"></div>
       </div>
       <div class="colorTable__gallery--variation">
-        <ul class="variation__list">
-          <li class="variation__item"><img src="" alt=""/></li>
-          <li class="variation__item"><img src="" alt=""/></li>
-          <li class="variation__item"><img src="" alt=""/></li>
-          <li class="variation__item"><img src="" alt=""/></li>
-        </ul>
+        <ul class="variation__list"></ul>
       </div>
     </div>
     <div class="colorTable__gallery--bottom">
-      <div class="colorTable__gallery--slider">
-        <ul class="slider__wrap"></ul>
-      </div>
-      <div class="colorTable__gallery--control">
-        <button class="left"> 
-          <svg>
-            <use xlink:href="#svg_arrow" class="caret__arrow"></use>
-          </svg>
-        </button>
-        <button class="right">
-          <svg>
-            <use xlink:href="#svg_arrow" class="caret__arrow"></use>
-          </svg>
-        </button>
+      <div style="width: auto" class="glide colorTable__gallery--slider">
+        <div data-glide-el="track" class="glide__track">
+          <ul class="glide__slides"></ul>
+        </div>
+        <div data-glide-el="controls[nav]" class="glide__arrows colorTable__gallery--control">
+          <button data-glide-dir="&lt;" class="glide__arrow glide__arrow--left left">
+            <svg>
+              <use xlink:href="#svg_arrow" class="caret__arrow"></use>
+            </svg>
+          </button>
+          <button data-glide-dir="&gt;" class="glide__arrow glide__arrow--right right">
+            <svg>
+              <use xlink:href="#svg_arrow" class="caret__arrow"></use>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </div>

@@ -207,19 +207,18 @@
           </ul>
         </div>
       </header><br><br><br>
-      <div class="container"><br><br><br><br>
-        <div class="colorTable _desctop"></div>
+      <div class="container"><br><br><br><br></div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="colorTable__wrapper">
+              <h4 class="title__xs text-center">Варианты расцветок</h4>
+              <div class="colorTable _desctop"></div>
+              <!--.colorTable._mobile-->
+            </div>
+          </div>
+        </div>
       </div>
-      <btn id="glide__unmount">unmount glideslider</btn>
-      <!--.glide(style="width: auto")-->
-      <!--    .glide__track(data-glide-el="track")-->
-      <!--        ul.glide__slides-->
-      <!---->
-      <!--    .glide__arrows(data-glide-el="controls[nav]")-->
-      <!--        btn.glide__arrow.glide__arrow--left(data-glide-dir="<")-->
-      <!--            | prev-->
-      <!--        btn.glide__arrow.glide__arrow--right(data-glide-dir=">")-->
-      <!--            | next-->
       <div class="colorTable__gallery--wrapper js__popup">
         <div class="colorTable__gallery--popup js__noPropagation">
           <button class="close__popup js__closePopup">&#215;</button>
@@ -240,65 +239,73 @@
               <div data-glide-el="track" class="glide__track">
                 <ul class="glide__slides"></ul>
               </div>
-              <div data-glide-el="controls[nav]" class="glide__arrows">
-                <btn data-glide-dir="&lt;" class="glide__arrow glide__arrow--left">prev</btn>
-                <btn data-glide-dir="&gt;" class="glide__arrow glide__arrow--right">next</btn>
+              <div data-glide-el="controls[nav]" class="glide__arrows colorTable__gallery--control">
+                <button data-glide-dir="&lt;" class="glide__arrow glide__arrow--left left">
+                  <svg>
+                    <use xlink:href="#svg_arrow" class="caret__arrow"></use>
+                  </svg>
+                </button>
+                <button data-glide-dir="&gt;" class="glide__arrow glide__arrow--right right">
+                  <svg>
+                    <use xlink:href="#svg_arrow" class="caret__arrow"></use>
+                    <!--h2  Карточка продукта - квадрат-->
+                    <!--br-->
+                    <!--+tileProduct()-->
+                    <!--br-->
+                    <!--h2  Карточка продукта - прямоугольник-->
+                    <!--br-->
+                    <!--+tileProduct('tile--double')-->
+                    <!--br-->
+                    <!--h2  Карточка новости - квадрат-->
+                    <!--br-->
+                    <!--+tileNews()-->
+                    <!--br-->
+                    <!--h2  Карточка новости - прямоугольник-->
+                    <!--br-->
+                    <!--+tileNews('tile--double')-->
+                    <!--br-->
+                    <!--h2  Карточка соцсети - квадрат-->
+                    <!--br-->
+                    <!--+tileSocial()-->
+                    <!--br-->
+                    <!--h2  Карточка соцсети - прямоугольник-->
+                    <!--br-->
+                    <!--+tileSocial('tile--double')-->
+                    <!--br-->
+                    <!--h2  Карточка галерея - квадрат-->
+                    <!--br-->
+                    <!--+tileGallery()-->
+                    <!--br-->
+                    <!--h2  Карточка галерея - прямоугольник-->
+                    <!--br-->
+                    <!--+tileGallery('tile--double')-->
+                    <!--br-->
+                    <!--h2  Карточка видео - квадрат-->
+                    <!--br-->
+                    <!--+tileVideo()-->
+                    <!--br-->
+                    <!--h2  Карточка видео - прямоугольник-->
+                    <!--br-->
+                    <!--+tileVideo('tile--double')-->
+                    <!--br-->
+                    <!--h2  Карточка блог - квадрат-->
+                    <!--br-->
+                    <!--+tileBlog()-->
+                    <!--br-->
+                    <!--h2  Карточка блог - прямоугольник-->
+                    <!--br-->
+                    <!--+tileBlog('tile--double')-->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
         </div>
-        <!--h2  Карточка продукта - квадрат-->
-        <!--br-->
-        <!--+tileProduct()-->
-        <!--br-->
-        <!--h2  Карточка продукта - прямоугольник-->
-        <!--br-->
-        <!--+tileProduct('tile--double')-->
-        <!--br-->
-        <!--h2  Карточка новости - квадрат-->
-        <!--br-->
-        <!--+tileNews()-->
-        <!--br-->
-        <!--h2  Карточка новости - прямоугольник-->
-        <!--br-->
-        <!--+tileNews('tile--double')-->
-        <!--br-->
-        <!--h2  Карточка соцсети - квадрат-->
-        <!--br-->
-        <!--+tileSocial()-->
-        <!--br-->
-        <!--h2  Карточка соцсети - прямоугольник-->
-        <!--br-->
-        <!--+tileSocial('tile--double')-->
-        <!--br-->
-        <!--h2  Карточка галерея - квадрат-->
-        <!--br-->
-        <!--+tileGallery()-->
-        <!--br-->
-        <!--h2  Карточка галерея - прямоугольник-->
-        <!--br-->
-        <!--+tileGallery('tile--double')-->
-        <!--br-->
-        <!--h2  Карточка видео - квадрат-->
-        <!--br-->
-        <!--+tileVideo()-->
-        <!--br-->
-        <!--h2  Карточка видео - прямоугольник-->
-        <!--br-->
-        <!--+tileVideo('tile--double')-->
-        <!--br-->
-        <!--h2  Карточка блог - квадрат-->
-        <!--br-->
-        <!--+tileBlog()-->
-        <!--br-->
-        <!--h2  Карточка блог - прямоугольник-->
-        <!--br-->
-        <!--+tileBlog('tile--double')-->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
-        <!---->
       </div>
     </div>
     <footer class="footer">
