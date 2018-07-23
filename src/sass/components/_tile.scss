@@ -82,6 +82,7 @@ $tile_padding: 0.7rem;
 }
 
 .tile-product {
+  $this: &;
   @include tile_content();
   @include tile_hover();
 
@@ -140,13 +141,16 @@ $tile_padding: 0.7rem;
 
   &_group_list {
     position: absolute;
-    top: 100%;
+    top: 103%;
+    z-index: 1;
     left: 0;
     right: 0;
-    z-index: 5;
     padding: $tile_padding;
-
+    overflow: hidden;
+    transition: .225s all;
     background-color: #f7f7f7;
+    height: 0;
+    opacity: 0;
   }
 
   &_group_item {
@@ -160,6 +164,15 @@ $tile_padding: 0.7rem;
     font-size: 14px;
     line-height: 24px;
     border-left: 2px solid rgba(61, 61, 61, 0.1);
+  }
+
+  &:hover + #{$this}_group_list {
+    opacity: 1;
+    height: auto;
+    z-index: 2;
+    top: 103%;
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.14), 0 6px 10px 0 rgba(0, 0, 0, 0.12);
   }
 
 }

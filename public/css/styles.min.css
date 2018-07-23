@@ -430,12 +430,16 @@ img {
     background-color: #f7f7f7; }
   .tile-product_group_list {
     position: absolute;
-    top: 100%;
+    top: 103%;
+    z-index: 1;
     left: 0;
     right: 0;
-    z-index: 5;
     padding: 0.7rem;
-    background-color: #f7f7f7; }
+    overflow: hidden;
+    transition: .225s all;
+    background-color: #f7f7f7;
+    height: 0;
+    opacity: 0; }
   .tile-product_group_link {
     display: block;
     padding-left: 5px;
@@ -443,6 +447,13 @@ img {
     font-size: 14px;
     line-height: 24px;
     border-left: 2px solid rgba(61, 61, 61, 0.1); }
+  .tile-product:hover + .tile-product_group_list {
+    opacity: 1;
+    height: auto;
+    z-index: 2;
+    top: 103%;
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.14), 0 6px 10px 0 rgba(0, 0, 0, 0.12); }
 
 .tile-news {
   position: absolute;
