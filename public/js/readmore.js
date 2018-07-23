@@ -5,7 +5,7 @@ $(document).ready(function () {
     var $readmoreButtonWrapper = $('.readmore-button_wrapper');
     var $readmoreButton = $('.readmore-button');
 
-
+    // readmore-button_wrapper--half
     function CloseReadMoreContent() {
         var MinHeight = ($($readmoreWrapper).width() / 4).toFixed();
         console.log(MinHeight);
@@ -19,7 +19,7 @@ $(document).ready(function () {
             if ($($readmoreButtonWrapper).hasClass('hidden')) {
                 $($readmoreButtonWrapper).removeClass('hidden');
             }
-        } else if(!$($readmoreButtonWrapper).hasClass('readmore-button_wrapper--close')){
+        } else if (!$($readmoreButtonWrapper).hasClass('readmore-button_wrapper--close')) {
             $($readmoreButtonWrapper).addClass('hidden');
         }
     }
@@ -29,29 +29,42 @@ $(document).ready(function () {
         $($readmoreContent).css('display', 'inline');
     }
 
-    CloseReadMoreContent();
-    $($readmoreButtonWrapper).addClass('readmore-button_wrapper--close');
+    function init() {
 
-    $($readmoreButton).on('click', $.debounce(300, true, function (e) {
-        if ($($readmoreButtonWrapper).hasClass('readmore-button_wrapper--close')) {
-            OpenReadMoreContent();
-            $($readmoreButtonWrapper).removeClass('readmore-button_wrapper--close');
-            $($readmoreButton).text('СВЕРНУТЬ');
-        } else {
-            CloseReadMoreContent();
-            $($readmoreButtonWrapper).addClass('readmore-button_wrapper--close');
-            $($readmoreButton).text('ПОДРОБНЕЕ');
+        console.log('$readmoreWrapper: ', );
 
+        console.log('$readmoreContent: ', $readmoreContent);
+        if (!$readmoreWrapper.length) {
+            return null;
         }
-    }));
+        if($readmoreWrapper["0"].children.length === 3) {
+            $($readmoreButtonWrapper).addClass('readmore-button_wrapper--half');
+        }
+        CloseReadMoreContent();
+        $($readmoreButtonWrapper).addClass('readmore-button_wrapper--close');
 
-    $(window)
-        .resize($.debounce(300, false, function (e) {
-            if ($('.readmore-button_wrapper').hasClass('readmore-button_wrapper--close')) {
+        $($readmoreButton).on('click', $.debounce(300, true, function (e) {
+            if ($($readmoreButtonWrapper).hasClass('readmore-button_wrapper--close')) {
+                OpenReadMoreContent();
+                $($readmoreButtonWrapper).removeClass('readmore-button_wrapper--close');
+                $($readmoreButton).text('СВЕРНУТЬ');
+            } else {
                 CloseReadMoreContent();
+                $($readmoreButtonWrapper).addClass('readmore-button_wrapper--close');
+                $($readmoreButton).text('ПОДРОБНЕЕ');
+
             }
         }));
 
+        $(window)
+            .resize($.debounce(300, false, function (e) {
+                if ($($readmoreButtonWrapper).hasClass('readmore-button_wrapper--close')) {
+                    CloseReadMoreContent();
+                }
+            }));
+    }
+
+    init()
 });
 
 //# sourceMappingURL=readmore.js.map
