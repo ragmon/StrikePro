@@ -9,6 +9,7 @@ $(document).ready(function () {
     function CloseReadMoreContent() {
         var MinHeight = ($($readmoreWrapper).width() / 4).toFixed();
         console.log(MinHeight);
+        console.log($($readmoreWrapper).height());
         if ($($readmoreWrapper).height() > MinHeight) {
             if (window.innerWidth >= 768) {
                 $($readmoreContent).height(MinHeight);
@@ -21,6 +22,8 @@ $(document).ready(function () {
             }
         } else if (!$($readmoreButtonWrapper).hasClass('readmore-button_wrapper--close')) {
             $($readmoreButtonWrapper).addClass('hidden');
+        } else if ($($readmoreWrapper).height() <= MinHeight) {
+            $($readmoreButtonWrapper).addClass('hidden');
         }
     }
 
@@ -30,8 +33,6 @@ $(document).ready(function () {
     }
 
     function init() {
-
-        console.log('$readmoreWrapper: ', );
 
         console.log('$readmoreContent: ', $readmoreContent);
         if (!$readmoreWrapper.length) {

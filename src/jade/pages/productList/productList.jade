@@ -67,8 +67,8 @@ main.page__productList
                         button(type="reset", class="productList__filtrBlock--reset") сбросить фильтр
     .container-fluid
         .row
-            .tile.tile--double(class=' col-4_8 col-lg-3 col-md-4 col-sm-6 ' data-tileid='2')
-                .tile_content
+            .tile.tile--double(class=' col-4_8 col-lg-6 col-md-4 col-sm-6 ' data-tileid='2')
+                .tile_content.tile-product_wrapper
                     a.tile-product(title="Jer-O Minnow")
                         span.tile-product_marker
                         .tile-product_image-wrapper
@@ -76,20 +76,14 @@ main.page__productList
                         .tile-product_title
                             | Jer-O Minnow
                     ul.tile-product_group_list
-                        li.tile-product_group_item
-                            a.tile-product_group_link
-                                |Flex Phantom 90
-                        li.tile-product_group_item
-                            a.tile-product_group_link
-                                |Flex Phantom 90
-                        li.tile-product_group_item
-                            a.tile-product_group_link
-                                |Flex Phantom 90
-                        li.tile-product_group_item
-                            a.tile-product_group_link
-                                |Flex Phantom 90
+                        - var n = 0;
+                            while n < 6
+                                li.tile-product_group_item
+                                    a.tile-product_group_link(href='/')
+                                        | Flex Phantom 90
+                                - n++
             .tile(class='col-2_4 col-lg-3 col-md-4 col-sm-6')
-                .tile_content
+                .tile_content.tile-product_wrapper
                     a.tile-product(title="Jer-O Minnow")
                         span.tile-product_marker
                         .tile-product_image-wrapper
@@ -97,18 +91,12 @@ main.page__productList
                         .tile-product_title
                             | Jer-O Minnow
                     ul.tile-product_group_list
-                        li.tile-product_group_item
-                            a.tile-product_group_link
-                                |Flex Phantom 90
-                        li.tile-product_group_item
-                            a.tile-product_group_link
-                                |Flex Phantom 90
-                        li.tile-product_group_item
-                            a.tile-product_group_link
-                                |Flex Phantom 90
-                        li.tile-product_group_item
-                            a.tile-product_group_link
-                                |Flex Phantom 90
+                        - var n = 0;
+                            while n < 10
+                                li.tile-product_group_item
+                                    a.tile-product_group_link(href='/')
+                                        | Flex Phantom 90
+                                - n++
 
             +tileProduct('col-2_4 col-lg-3 col-md-4 col-sm-6 ', 1)
             +tileProduct('col-2_4 col-lg-3 col-md-4 col-sm-6 ', 1)

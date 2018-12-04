@@ -4,14 +4,20 @@
 
 $tile_padding: 0.7rem;
 
+
+@mixin hover_scale() {
+  z-index: 2;
+  transform: scale(1.05);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+
 @mixin tile_hover() {
   transition: all .125s;
   cursor: pointer;
 
   &:hover {
-    z-index: 2;
-    transform: scale(1.05);
-    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+    @include hover_scale()
   }
 }
 
@@ -54,7 +60,7 @@ $tile_padding: 0.7rem;
 
 .tile {
   position: relative;
-  z-index: 3;
+  //z-index: 3;
   //background-color: rgba(255, 5, 0, 0.3);
   //width: 25%;
   padding: 0;
@@ -166,14 +172,18 @@ $tile_padding: 0.7rem;
     line-height: 24px;
     border-left: 2px solid rgba(61, 61, 61, 0.1);
   }
-
-  &:hover + #{$this}_group_list {
+  // нужно для того чтобы при переещении курсора на группу карточка не сворачивалась
+  &_wrapper:hover #{$this}{
+    transition: all .125s;
+    cursor: pointer;
+    @include hover_scale();
+  }
+  &_wrapper:hover #{$this}_group_list {
     opacity: 1;
-    height: auto;
-    z-index: 2;
-    top: 103%;
-    transform: scale(1.05);
-    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 3px 5px 0 rgba(0, 0, 0, 0.14), 0 6px 10px 0 rgba(0, 0, 0, 0.12);
+    height: 100%;
+    overflow: auto;
+    //top: 103%;
+    @include hover_scale();
   }
 
 }
@@ -243,7 +253,6 @@ $tile_padding: 0.7rem;
     color: #fff;
   }
 
-
   @include tileBackDrop($this);
 
 }
@@ -299,7 +308,7 @@ $tile_padding: 0.7rem;
   @include tile_content(#ffffff);
   @include tile_hover();
 
-  &_content{
+  &_content {
     overflow: hidden;
     color: $color2;
     font-size: 1rem;
