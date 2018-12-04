@@ -112,7 +112,7 @@ $(document).ready(function () {
             }
         }
         return (
-            '<li data-key="'+index+'" class="slider__item glide__slide" id="' + id + '"> ' +
+            '<li data-key="' + index + '" class="slider__item glide__slide" id="' + id + '"> ' +
             '<a href="#!"  class="slider__link" >' +
             '<img src="' + image + '" />' +
             (ultraviolet ? '<div class="colorTable__marker colorTable__marker--ultraviolet"></div>' : '') +
@@ -232,17 +232,16 @@ $(document).ready(function () {
             });
 
 
-
             if (!GlideInit) {
 
                 GlideSlider.mount();
                 GlideInit = true;
 
-                GlideSlider.on('run', function(event) {
-                    console.log('run: ',event);
-                    switch(event.direction){
-                        case('>'):{
-                            if(IndexCurrentSlide === $('.glide__slides')["0"].children.length - 1){
+                GlideSlider.on('run', function (event) {
+                    console.log('run: ', event);
+                    switch (event.direction) {
+                        case('>'): {
+                            if (IndexCurrentSlide === $('.glide__slides')["0"].children.length - 1) {
                                 IndexCurrentSlide = 0;
                             } else {
                                 IndexCurrentSlide += 1;
@@ -250,8 +249,8 @@ $(document).ready(function () {
                             onActivePhoto($($('.glide__slides')["0"].children[IndexCurrentSlide]).attr('id'));
                             break
                         }
-                        case('<'):{
-                            if(IndexCurrentSlide === 0){
+                        case('<'): {
+                            if (IndexCurrentSlide === 0) {
                                 IndexCurrentSlide = $('.glide__slides')["0"].children.length - 1;
                             } else {
                                 IndexCurrentSlide -= 1;
@@ -274,7 +273,6 @@ $(document).ready(function () {
             GlideSlider.go('=' + IndexCurrentSlide);
 
 
-
             return initSlider(this);
         }
         return false;
@@ -288,6 +286,7 @@ $(document).ready(function () {
         initPhotos($(event).attr('id'));
         PanZoomInit();
     }
+
     /** @desc активация элемента списка по id артикла */
     function onActivePhoto(id) {
         initDescription(id);
@@ -307,9 +306,9 @@ $(document).ready(function () {
 
                 for (var i = 0; i < articles.length; i++) {
                     if (articles[i].logo) {
-                        GlideSlidesList.push(sliderItemRender(articles[i].logo.thumb_url, articles[i].id, articles[i],i))
+                        GlideSlidesList.push(sliderItemRender(articles[i].logo.thumb_url, articles[i].id, articles[i], i))
                     } else {
-                        GlideSlidesList.push(sliderItemRender(defaultImage, articles[i].id, articles[i],i))
+                        GlideSlidesList.push(sliderItemRender(defaultImage, articles[i].id, articles[i], i))
                     }
                 }
                 $(GlideSlides).append(GlideSlidesList);
@@ -321,7 +320,7 @@ $(document).ready(function () {
 
     }
 
-    function PanZoomInit(){
+    function PanZoomInit() {
         $panzoom = $(GalleryMainPhoto).find('img').panzoom();
         $panzoom.parent().on('mousewheel.focal', function (e) {
             e.preventDefault();
@@ -337,14 +336,6 @@ $(document).ready(function () {
     }
 
 
-
-
-
-
-
-
-
-
     function colorTable_item_slider() {
         var colorTableItemMobile = $('.colorTable._mobile .colorTable__item');
         var colorTableItemMobileLength = colorTableItemMobile.length;
@@ -355,7 +346,7 @@ $(document).ready(function () {
             var classNav = ".custom-navigation-" + i + " a";
             var photos = articles[i].head_images;
             var photosLength = photos.length;
-            console.log('articles[i]',articles[i]);
+            console.log('articles[i]', articles[i]);
             if (photosLength < 2) continue;
 
             var sliderWrap = document.createElement('div'),
@@ -419,23 +410,29 @@ $(document).ready(function () {
 // http://jsfiddle.net/mekwall/up4nu/
 
 $(document).ready(function () {
-    $(".js-btn3D").on("click", function () {
-        console.log('click')
-        var img3D = $('#reel-image');
-        $(img3D).reel({
-            loops: true,
-            speed: 0.5,
-            frames: 6,
-            revolution: 100,
-            images: "http://test.vostrel.net/jquery.reel/example/object-movie-non-looping-sequence/green/#.png"
-        });
 
-        $(".img_2d").hide();
-        $('#reel-image-reel').show();
-        $(img3D).show()
-    });
+    // js-btn3D
+    if(window.real3DConfig && window.real3DConfig.images){
+        $(".js-btn3D").on("click", function () {
+            var img3D = $('#reel-image');
+            $(img3D).reel({
+                loops: false,
+                speed: 0,
+                frames: 32,
+                revolution: 100,
+                images: window.real3DConfig ? window.real3DConfig.images : '',
+            });
+
+            $(".img_2d").hide();
+            $('#reel-image-reel').show();
+            $(img3D).show()
+        });
+    } else {
+        $('.js-btn3D').hide();
+    }
+
+
     $(".product__sliderImg ul li a").on('click', function (event) {
-        console.log('click')
 
         var img2D = $(".img_2d");
         var img3D = $('#reel-image');

@@ -1610,7 +1610,8 @@ img {
     margin-bottom: 5px; }
 
 #reel-image-reel {
-  width: 100% !important; }
+  width: 100% !important;
+  height: auto; }
 
 .page__product {
   position: relative; }
@@ -2296,17 +2297,14 @@ img {
     z-index: 2;
     width: 100%;
     height: 100px;
-    background-image: linear-gradient(to top, rgba(247, 247, 247, 0) 0%, rgba(247, 247, 247, 0) 100%);
     transition: all .225s;
     cursor: pointer; }
-    .readmore-button_wrapper--white {
-      background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%); }
     .readmore-button_wrapper--close {
       bottom: 0;
       background-image: linear-gradient(to top, #f7f7f7 0%, rgba(247, 247, 247, 0) 100%);
       transition: all .225s; }
-      .readmore-button_wrapper--close--white {
-        background-image: linear-gradient(to top, white 0%, rgba(255, 255, 255, 0) 100%); }
+      .readmore-button_wrapper--close.readmore-button_wrapper--white {
+        background-image: linear-gradient(to top, #ffffff 0%, rgba(247, 247, 247, 0) 100%); }
       @media (min-width: 992px) {
         .readmore-button_wrapper--close.readmore-button_wrapper--half {
           width: 50%; } }

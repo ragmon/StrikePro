@@ -199,13 +199,13 @@
             </div>
           </nav>
         </div>
-        <div class="header-product">
+        <img_2d class="header-product">
           <div class="header-product__image"><a href="/index.html">Brand<img src="http://via.placeholder.com/350x150" alt=""></a></div>
           <div class="header-product__title">loremasdasd asdasdas sadas</div>
           <ul class="header-product__nav">
             <li class="header-product__item"><a href="#main-image" class="header-product__link">Изображение</a></li>
           </ul>
-        </div>
+        </img_2d>
       </header>
       <main class="page__product">     
         <div class="product__wrapper">
@@ -246,21 +246,30 @@
         </div>
         <div class="container-fluid product__desc">
           <h4 class="title__xs text-center">Описание</h4>
-          <div class="readmore js-readmore readmore_close">
-            <div class="tile__wrapper tile__wrapper--big col-md-6 clearfix"><a href="https://www.youtube.com/embed/-uzkjrEnI84" class="tile js__videoPopup"><img src="http://via.placeholder.com/640x480" alt="">
-                <div class="video__control">
-                  <div class="video__control--icon icon-youtube-play"></div>
-                  <div class="video__control--text">посмотреть видео</div>
-                </div></a></div>
-            <div class="tile__text">
+          <div class="readmore-wrapper">
+                    <div class="tile col-md-6 col-xs-12 clearfix tile--double tile__wrapper ">
+                      <div class="tile_content"><a title="Jer-O Minnow" href="https://www.youtube.com/embed/-uzkjrEnI84" class="tile-video js__videoPopup">
+                          <div class="tile-video_image-wrapper"><img src="https://picsum.photos/300/300" class="tile-video_image"></div>
+                          <div class="tile-video_control">
+                            <div class="tile-video_control-icon icon-youtube-play"></div>
+                            <div class="tile-video_control-text"></div>
+                          </div></a></div>
+                    </div>
+            <div class="tile__text readmore-content">
+              Lorem ipsum quisque risus nulla massa commodo ultricies diam ut lorem arcu at sem amet et fusce molestie risus tellus metus adipiscing cursus sodales urna in sapien gravida porttitor lorem
+              Lorem ipsum quisque risus nulla massa commodo ultricies diam ut lorem arcu at sem amet et fusce molestie risus tellus metus adipiscing cursus sodales urna in sapien gravida porttitor lorem
+              Lorem ipsum quisque risus nulla massa commodo ultricies diam ut lorem arcu at sem amet et fusce molestie risus tellus metus adipiscing cursus sodales urna in sapien gravida porttitor lorem
+              Lorem ipsum quisque risus nulla massa commodo ultricies diam ut lorem arcu at sem amet et fusce molestie risus tellus metus adipiscing cursus sodales urna in sapien gravida porttitor lorem
+              Lorem ipsum quisque risus nulla massa commodo ultricies diam ut lorem arcu at sem amet et fusce molestie risus tellus metus adipiscing cursus sodales urna in sapien gravida porttitor lorem
               Lorem ipsum quisque risus nulla massa commodo ultricies diam ut lorem arcu at sem amet et fusce molestie risus tellus metus adipiscing cursus sodales urna in sapien gravida porttitor lorem
               Lorem ipsum quisque risus nulla massa commodo ultricies diam ut lorem arcu at sem amet et fusce molestie risus tellus metus adipiscing cursus sodales urna in sapien gravida porttitor lorem
               Lorem ipsum quisque risus nulla massa commodo ultricies diam ut lorem arcu at sem amet et fusce molestie risus tellus metus adipiscing cursus sodales urna in sapien gravida porttitor lorem
               Lorem ipsum quisque risus nulla massa commodo ultricies diam ut lorem arcu at sem amet et fusce molestie risus tellus metus adipiscing cursus sodales urna in sapien gravida porttitor lorem
               Lorem ipsum quisque risus nulla massa commodo ultricies diam ut lorem arcu at sem amet et fusce molestie risus tellus metus adipiscing cursus sodales urna in sapien gravida porttitor lorem
             </div>
-            <!--.readmore_btn-wrap(style="width: 100%")-->
-            <!--    btn.readmore_btn.js-readmore_btn.item-more Подробнее-->
+            <div class="readmore-button_wrapper readmore-button_wrapper--white">
+              <button class="readmore-button item-more js-readmore_btn">ПОДРОБНЕЕ</button>
+            </div>
           </div>
         </div>
         <div class="container-fluid">
@@ -452,6 +461,10 @@
       window.ajax_url = {
           ajaxSubmitSunscribeUrl: 'http://strike-pro.loc/subscribe',
           autocompleteServerUrl: "http://alex.taran.ru/search/auto_complete"
+      }
+      
+      window.real3DConfig = {
+          images: "http://test.vostrel.net/jquery.reel/example/object-movie-clockwise-sequence/drone/#####.png|1..179|5"
       }
       
       window.yandexMap_config = {

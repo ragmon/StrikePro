@@ -50,18 +50,15 @@
     z-index: 2;
     width: 100%;
     height: 100px;
-    background-image: linear-gradient(to top, rgba(247, 247, 247, 0) 0%, rgba(247, 247, 247, 0) 100%);
+    //background-image: linear-gradient(to top, rgba(247, 247, 247, 0) 0%, rgba(247, 247, 247, 0) 100%);
     transition: all .225s;
     cursor: pointer;
-    &--white {
-      background-image: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 100%);
-    }
     &--close {
       bottom: 0;
       background-image: linear-gradient(to top, rgba(247, 247, 247, 1) 0%, rgba(247, 247, 247, 0) 100%);
       transition: all .225s;
-      &--white {
-        background-image: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+      &#{$this}-button_wrapper--white {
+        background-image: linear-gradient(to top, #ffffff 0%, rgba(247, 247, 247, 0) 100%);
       }
       &#{$this}-button_wrapper--half {
         @media(min-width: 992px){
@@ -69,6 +66,7 @@
         }
       }
     }
+
 
   }
 
