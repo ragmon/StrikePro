@@ -14,7 +14,7 @@ $(document).ready(function () {
 
     var IndexCurrentSlide = 0;
     var $panzoom;
-    var GlideSlider = new Glide('.glide', {
+    var GlideSliderConfig = {
         startAt: IndexCurrentSlide,
         perView: 6,
         type: 'slider',
@@ -25,14 +25,16 @@ $(document).ready(function () {
             1600: {
                 perView: 5
             },
-            1024: {
+            992: {
                 perView: 4
             },
             768: {
                 perView: 3
-            },
+            }
         }
-    });
+    };
+    var GlideSlider = null;
+
 
     var GlideInit = false;
 
@@ -41,6 +43,7 @@ $(document).ready(function () {
     function colorTableItemRender(id, image, data, classWrapper) {
         var title = '';
         var ultraviolet = false;
+        var ClassWrapper = classWrapper ? classWrapper : '';
         var luminous = false;
         for (var i = 0; i < data.features.length; i++) {
             if (data.features[i].title === 'Код цвета') {
@@ -56,7 +59,7 @@ $(document).ready(function () {
         }
 
 
-        return ('<div class="colorTable__item ' + classWrapper + '" id="' + id + '">' +
+        return ('<div class="colorTable__item ' + ClassWrapper + '" id="' + id + '">' +
             '<div class="colorTable__img">' +
             '<img src="' + image + '" alt="">' +
             (ultraviolet ? '<div class="colorTable__marker colorTable__marker--ultraviolet"></div>' : '') +
@@ -163,7 +166,14 @@ $(document).ready(function () {
                 $(GalleryMainPhoto).empty();
                 console.log('articles[i]: ', articles[i]);
                 if (articles[i].logo) {
-
+                    $(GalleryMainPhoto).addClass('colorTable__gallery--img--loading');
+                    // .colorTable__gallery--img--loading
+                    var img = new Image();
+                    img.onload = function () {
+                        $(GalleryMainPhoto).removeClass('colorTable__gallery--img--loading');
+                        console.log("image is loaded");
+                    }
+                    img.src = articles[i].logo.original_url;
                     $(GalleryMainPhoto).append('<img src="' + articles[i].logo.original_url + '" alt="">');
 
                 } else {
@@ -226,19 +236,23 @@ $(document).ready(function () {
     function initGallery() {
         var windowSize = window.innerWidth;
         if (windowSize >= 768) {
+            CreateSliderItems();
             $(GalleryWrap).show();
+            GlideSlider = new Glide('.glide', GlideSliderConfig);
             $(Body).css({
                 "overflow": "hidden"
             });
 
-
+            console.log('GlideInit: ', GlideInit);
             if (!GlideInit) {
-
+                console.log('GlideSlider.mount():');
                 GlideSlider.mount();
+            }
+            if (!GlideInit) {
                 GlideInit = true;
 
-                GlideSlider.on('run', function (event) {
-                    console.log('run: ', event);
+                GlideSlider.on(['mount.before', 'run'], function (event) {
+                    console.log(['mount.before', 'run'], event);
                     switch (event.direction) {
                         case('>'): {
                             if (IndexCurrentSlide === $('.glide__slides')["0"].children.length - 1) {
@@ -300,6 +314,7 @@ $(document).ready(function () {
 
     function CreateSliderItems() {
         try {
+            console.log('CreateSliderItems:');
             var windowSize = window.innerWidth;
             if (windowSize >= 768) {
                 $(GlideSlides).empty();
@@ -312,7 +327,9 @@ $(document).ready(function () {
                     }
                 }
                 $(GlideSlides).append(GlideSlidesList);
-
+                $('.slider__link').on('click', function (event) {
+                    event.preventDefault();
+                })
             }
         } catch (err) {
             throw new Error(err);
@@ -334,7 +351,6 @@ $(document).ready(function () {
             });
         });
     }
-
 
     function colorTable_item_slider() {
         var colorTableItemMobile = $('.colorTable._mobile .colorTable__item');
@@ -393,12 +409,23 @@ $(document).ready(function () {
 
     try {
 
+        $('.colorTable__gallery--popup .js__closePopup').on('click', function () {
+            GlideSlider.destroy();
+            $(GlideSlides).empty();
+            GlideInit = false;
+        });
+
         CreateArticlesTable();
 
-        CreateSliderItems();
+        // CreateSliderItems();
+
+        $(window).resize($.throttle(250, function (ev) {
+            if (window.outerWidth < 768) {
+                colorTable_item_slider();
+            }
+        }));
 
 
-        colorTable_item_slider()
     } catch (err) {
         console.log(err)
     }
@@ -412,7 +439,7 @@ $(document).ready(function () {
 $(document).ready(function () {
 
     // js-btn3D
-    if(window.real3DConfig && window.real3DConfig.images){
+    if (window.real3DConfig && window.real3DConfig.images) {
         $(".js-btn3D").on("click", function () {
             var img3D = $('#reel-image');
             $(img3D).reel({

@@ -90,6 +90,10 @@
 }
 
 .colorTable__gallery {
+
+
+
+
   &--img {
     margin-bottom: 20px;
     overflow: hidden;
@@ -100,6 +104,27 @@
       height: 100%;
       width: auto;
       margin: 0 auto;
+    }
+    &--loading {
+
+      &:after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 49px;
+        height: 49px;
+        margin: 0 auto;
+        border: 3px solid rgb(0,0,0);
+        border-radius: 50%;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        animation: cssload-spin 575ms infinite linear;
+        -o-animation: cssload-spin 575ms infinite linear;
+        -ms-animation: cssload-spin 575ms infinite linear;
+        -webkit-animation: cssload-spin 575ms infinite linear;
+        -moz-animation: cssload-spin 575ms infinite linear;
+      }
     }
   }
 
@@ -455,4 +480,9 @@
       stroke: #000;
     }
   }
+}
+
+
+@keyframes cssload-spin {
+  100%{transform: rotate(360deg); }
 }

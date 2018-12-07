@@ -37,7 +37,7 @@
 
         }
         @media(min-width: 1024px) {
-            width: 25%;
+            width: auto;
             margin-bottom: 0;
         }
         &:last-child{
@@ -57,10 +57,7 @@
         height: 41px;
         vertical-align: middle;
         display: inline-block;
-        width: calc(100% - 56px);
-        @media(min-width: 768px) {
-            width: auto;
-        }
+        width: auto;
     }
     .form-group-noWrap {
         white-space: nowrap;

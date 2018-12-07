@@ -1964,6 +1964,23 @@ img {
     height: 100%;
     width: auto;
     margin: 0 auto; }
+  .colorTable__gallery--img--loading:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 49px;
+    height: 49px;
+    margin: 0 auto;
+    border: 3px solid black;
+    border-radius: 50%;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: cssload-spin 575ms infinite linear;
+    -o-animation: cssload-spin 575ms infinite linear;
+    -ms-animation: cssload-spin 575ms infinite linear;
+    -webkit-animation: cssload-spin 575ms infinite linear;
+    -moz-animation: cssload-spin 575ms infinite linear; }
 
 .colorTable__gallery__marker {
   position: absolute;
@@ -2257,6 +2274,10 @@ img {
   .colorTable__item .flex-next .caret__arrow {
     stroke: #000; }
 
+@keyframes cssload-spin {
+  100% {
+    transform: rotate(360deg); } }
+
 .readmore {
   position: relative; }
   .readmore_text {
@@ -2495,7 +2516,7 @@ img {
         width: 50%; } }
     @media (min-width: 1024px) {
       .footer__col {
-        width: 25%;
+        width: auto;
         margin-bottom: 0; } }
     .footer__col:last-child {
       order: 1; }
@@ -2511,10 +2532,7 @@ img {
     height: 41px;
     vertical-align: middle;
     display: inline-block;
-    width: calc(100% - 56px); }
-    @media (min-width: 768px) {
-      .footer input {
-        width: auto; } }
+    width: auto; }
   .footer .form-group-noWrap {
     white-space: nowrap; }
     .footer .form-group-noWrap .button-base, .footer .form-group-noWrap .item-more {
