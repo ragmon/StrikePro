@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FMakareev/StrikePro.git"
+    "url": "git+https://bitbucket.org:rag_mon/strikepro-catalog-frontend.git"
   },
   "author": "",
   "license": "ISC",
@@ -19,7 +19,7 @@
   "devDependencies": {
     "browser-sync": "^2.24.5",
     "del": "^3.0.0",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "4.0",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.3",
     "gulp-debug": "^4.0.0",
